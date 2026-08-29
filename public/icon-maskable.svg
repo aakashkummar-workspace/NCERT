@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="NCERT Quick">
+  <rect width="512" height="512" fill="#9a2846"/>
+  <g transform="translate(102 102) scale(0.6)">
+    <path d="M150 132h100c30 0 52 20 52 48v200c0-20-18-34-42-34h-110z" fill="#fbf9f6" opacity=".95"/>
+    <path d="M362 132H262c-30 0-52 20-52 48v200c0-20 18-34 42-34h110z" fill="#fbf9f6"/>
+    <path d="M256 180v196" stroke="#9a2846" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>

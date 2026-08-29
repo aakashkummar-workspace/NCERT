@@ -1,0 +1,1351 @@
+{
+  "generatedAt": "2026-08-29T14:14:18.986Z",
+  "source": "https://ncert.nic.in/textbook.php",
+  "books": [
+    {
+      "code": "iebe1",
+      "class": 9,
+      "subject": "English",
+      "medium": "en",
+      "title": "Kaveri",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "How I Taught My Grandmother to Read",
+          "file": "iebe101.pdf",
+          "sha256": "8c4b8ddf595219235bf2ad7f75a94ee1c98fba9d0ff5146ce1ab85303a23c769",
+          "bytes": 1776212,
+          "originalBytes": 4828926
+        },
+        {
+          "n": 2,
+          "title": "The Pot Maker",
+          "file": "iebe102.pdf",
+          "sha256": "61fa9efd64bbf45c95a69f2dcc5c53bf5dbdc052d3f21d2e0f5764175d225d07",
+          "bytes": 1942842,
+          "originalBytes": 4515578
+        },
+        {
+          "n": 3,
+          "title": "Winds of Change",
+          "file": "iebe103.pdf",
+          "sha256": "33da26f511b551a98ccab32dc1c2e7babc40f6a30725e3624df2abbda270faa5",
+          "bytes": 1233263,
+          "originalBytes": 3987773
+        },
+        {
+          "n": 4,
+          "title": "Vitamin",
+          "file": "iebe104.pdf",
+          "sha256": "12002349507e8374aa27ba236157309cfe7bf4e75f1056e91187e73a6986a747",
+          "bytes": 1454021,
+          "originalBytes": 4701865
+        },
+        {
+          "n": 5,
+          "title": "The World of Limitless Possibilities",
+          "file": "iebe105.pdf",
+          "sha256": "6ba3754b149cf1421721b33d5079a012966bad636e1c876948d879e715d42442",
+          "bytes": 1411666,
+          "originalBytes": 3584686
+        },
+        {
+          "n": 6,
+          "title": "Twin Melodies",
+          "file": "iebe106.pdf",
+          "sha256": "44fb82ba1332bbd17ff417da69ce4eed9073edf97037bab4c5a46d81d9d881c3",
+          "bytes": 1038493,
+          "originalBytes": 3474066
+        },
+        {
+          "n": 7,
+          "title": "Carrier of Words",
+          "file": "iebe107.pdf",
+          "sha256": "b4f9dceaf82055ef5e63941c66bb72249e644ab92087d93aa0f0ae98ae307e8b",
+          "bytes": 1500599,
+          "originalBytes": 3627243
+        },
+        {
+          "n": 8,
+          "title": "Follow That Dream",
+          "file": "iebe108.pdf",
+          "sha256": "0c770e2db8b69d9c3576b3eea954b9e034f58b016cc2651d3fc94a645cd573a3",
+          "bytes": 1454933,
+          "originalBytes": 4514440
+        }
+      ]
+    },
+    {
+      "code": "ihga1",
+      "class": 9,
+      "subject": "Hindi",
+      "medium": "hi",
+      "title": "Ganga",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chapter 1",
+          "file": "ihga101.pdf",
+          "sha256": "f643eb7740bd39266acaa225bbc9b8e08b9618517ca2de4b68b8cdda1f827a58",
+          "bytes": 1758899,
+          "originalBytes": 3825273
+        },
+        {
+          "n": 2,
+          "title": "Chapter 2",
+          "file": "ihga102.pdf",
+          "sha256": "d1c005fadc1815b5cde05548efe6c1225a8554eb94aa4df6c890a3ec80cb1937",
+          "bytes": 763033,
+          "originalBytes": 2310922
+        },
+        {
+          "n": 3,
+          "title": "Chapter 3",
+          "file": "ihga103.pdf",
+          "sha256": "70b019541dd291da0d9cf004ebb6d95a58c8edb85b5c29910a4b5154dc305fa9",
+          "bytes": 1445865,
+          "originalBytes": 3139305
+        },
+        {
+          "n": 4,
+          "title": "Chapter 4",
+          "file": "ihga104.pdf",
+          "sha256": "a726c9eb80f3db719c5a205c9924abad7ba58157d33920cb8e09e90e4d562a1d",
+          "bytes": 827773,
+          "originalBytes": 2806423
+        },
+        {
+          "n": 5,
+          "title": "Chapter 5",
+          "file": "ihga105.pdf",
+          "sha256": "c8be4df000effef386d070837d4eec5c641c644a9877f8d91f14f648f2c70c2c",
+          "bytes": 876644,
+          "originalBytes": 2476224
+        },
+        {
+          "n": 6,
+          "title": "Chapter 6",
+          "file": "ihga106.pdf",
+          "sha256": "18e6c3d6f57935764766e7f618650e6cb007f4bad08a1657ac3936fd453d402c",
+          "bytes": 860909,
+          "originalBytes": 2616778
+        },
+        {
+          "n": 7,
+          "title": "Chapter 7",
+          "file": "ihga107.pdf",
+          "sha256": "828e9cddc1bb051efc31413728c8bde90d45e711ccbff6b1407e016bad9c2729",
+          "bytes": 1273882,
+          "originalBytes": 3833663
+        },
+        {
+          "n": 8,
+          "title": "Chapter 8",
+          "file": "ihga108.pdf",
+          "sha256": "b5f96337af3e2b72a89ff27133df317fae0bc4cf8923cc339d1f0ff47c31e098",
+          "bytes": 792694,
+          "originalBytes": 2005159
+        },
+        {
+          "n": 9,
+          "title": "Chapter 9",
+          "file": "ihga109.pdf",
+          "sha256": "f2ceb44da680bcbef3bf0ae8fb88ad72d941c4b249bb403ec924aeb5780081ce",
+          "bytes": 982613,
+          "originalBytes": 2019202
+        },
+        {
+          "n": 10,
+          "title": "Chapter 10",
+          "file": "ihga110.pdf",
+          "sha256": "ce6f379ace6318df02e0916cb2c70f24d2c92ded5ee0429eadfa3e6db455f494",
+          "bytes": 959975,
+          "originalBytes": 1999899
+        },
+        {
+          "n": 11,
+          "title": "Chapter 11",
+          "file": "ihga111.pdf",
+          "sha256": "4f34c5e6017e094a325654bac9c5696beaaa9db4a34eebe078ea09a7d11b6cc3",
+          "bytes": 1740587,
+          "originalBytes": 3449817
+        },
+        {
+          "n": 12,
+          "title": "Chapter 12",
+          "file": "ihga112.pdf",
+          "sha256": "a99250e95c372cf1c4d08eabe1e17d5d72cf0a3aa815474660f91f453503022c",
+          "bytes": 1184996,
+          "originalBytes": 2271257
+        }
+      ]
+    },
+    {
+      "code": "iemh1",
+      "class": 9,
+      "subject": "Mathematics",
+      "medium": "en",
+      "title": "Ganita Manjari",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Orienting Yourself: The Use of Coordinates",
+          "file": "iemh101.pdf",
+          "sha256": "066e14fb16f835e12e03c656991a2704cda9e03b56939346701ccf8e2ad66213",
+          "bytes": 500139,
+          "originalBytes": 1497655
+        },
+        {
+          "n": 2,
+          "title": "Introduction to Linear Polynomials",
+          "file": "iemh102.pdf",
+          "sha256": "727965022f0913e9ee3588910a56a2e97aa2409a75ad963d5aa596ce87a9cda9",
+          "bytes": 414428,
+          "originalBytes": 2875060
+        },
+        {
+          "n": 3,
+          "title": "The World of Numbers",
+          "file": "iemh103.pdf",
+          "sha256": "b7161f6828ec577f9010bdac73378bf564b2c44ea8960871735a7bba44c30939",
+          "bytes": 756523,
+          "originalBytes": 2489935
+        },
+        {
+          "n": 4,
+          "title": "Exploring Alge braic Identities",
+          "file": "iemh104.pdf",
+          "sha256": "6319a3577d8480348aa6148d3e09f230444d4130e6bf0dc6c41ae34c265c8fcc",
+          "bytes": 745243,
+          "originalBytes": 2254660
+        },
+        {
+          "n": 5,
+          "title": "I’m Up and Down, and Round and Round",
+          "file": "iemh105.pdf",
+          "sha256": "90e9b6f1beb75e270062e94e0fb9c1c43cc11d1935777991d2fd32406d151cbc",
+          "bytes": 429507,
+          "originalBytes": 2191396
+        },
+        {
+          "n": 6,
+          "title": "Measuring Space: Perimeter and Area",
+          "file": "iemh106.pdf",
+          "sha256": "388269919689d28addae9f99b5cda26cf2bc591dabfc6e27821281f1aaca7c8d",
+          "bytes": 904254,
+          "originalBytes": 3325755
+        },
+        {
+          "n": 7,
+          "title": "The Mathematics of Maybe: Introduction to Probability",
+          "file": "iemh107.pdf",
+          "sha256": "c7749da5c7d25b1c440da431992f071dc3f40c4ed85332d5e694b70e8e04de91",
+          "bytes": 536633,
+          "originalBytes": 1799139
+        },
+        {
+          "n": 8,
+          "title": "Predicting What Comes Next: Exploring Sequences and Progressions",
+          "file": "iemh108.pdf",
+          "sha256": "efc22f078eed8e0070af4a6ec2a2d230b083b5109cf64dc99b672daaf471a41e",
+          "bytes": 901915,
+          "originalBytes": 2726466
+        }
+      ]
+    },
+    {
+      "code": "iesc1",
+      "class": 9,
+      "subject": "Science",
+      "medium": "en",
+      "title": "Exploration",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Exploration : Entering the World of Secondary Science",
+          "file": "iesc101.pdf",
+          "sha256": "83126afd547b9c674d0cea71615b27eba36dbf5d6335748bfe89c3d1be4adc29",
+          "bytes": 806160,
+          "originalBytes": 3601705
+        },
+        {
+          "n": 2,
+          "title": "Cell: The Building Block of Life",
+          "file": "iesc102.pdf",
+          "sha256": "63f8082dfb6b259cc68b6073e0d76a0550e4422eeb9b61019e82e4daa1d28ffe",
+          "bytes": 2465713,
+          "originalBytes": 11024748
+        },
+        {
+          "n": 3,
+          "title": "Tissues in Action",
+          "file": "iesc103.pdf",
+          "sha256": "5aa9169721a40ceb2fabaded09599efcda7921001b09307bd45bd0f0756f29eb",
+          "bytes": 2849879,
+          "originalBytes": 13793111
+        },
+        {
+          "n": 4,
+          "title": "Describing Motion Around Us",
+          "file": "iesc104.pdf",
+          "sha256": "a66264a793a96495addb91804db36e228f881faeb1b03858c5fa641f6901528e",
+          "bytes": 1909993,
+          "originalBytes": 7393239
+        },
+        {
+          "n": 5,
+          "title": "Exploring Mixtures and their Separation",
+          "file": "iesc105.pdf",
+          "sha256": "6cc4b8eb2b44c09ee2ef77a553ce45bced565dd73de7c6990768199f36e5134c",
+          "bytes": 2781818,
+          "originalBytes": 11737442
+        },
+        {
+          "n": 6,
+          "title": "How Forces Affect Motion",
+          "file": "iesc106.pdf",
+          "sha256": "11d986cb264088456bce6152586f2a83ad189700e1161313a27758e68546176f",
+          "bytes": 1974350,
+          "originalBytes": 7413450
+        },
+        {
+          "n": 7,
+          "title": "Work, Energy, and Simple Machines",
+          "file": "iesc107.pdf",
+          "sha256": "fcee66fad84a54dc1f192f90b8ddf0ab44d39ad6bdb546fd4b80577acfe68207",
+          "bytes": 1976889,
+          "originalBytes": 7711075
+        },
+        {
+          "n": 8,
+          "title": "Journey Inside the Atom",
+          "file": "iesc108.pdf",
+          "sha256": "294cfef7759dd8b4e75623392e9c8147b0fed7490af472b04a5f2ff9ebdd05c5",
+          "bytes": 1619959,
+          "originalBytes": 5780286
+        },
+        {
+          "n": 9,
+          "title": "Atomic Foundations of Matter",
+          "file": "iesc109.pdf",
+          "sha256": "9f57bf868c28efc5549fc6bb93b5056338eadac498c16b809d3217f8d5274f02",
+          "bytes": 1836222,
+          "originalBytes": 6766201
+        },
+        {
+          "n": 10,
+          "title": "Sound Waves : Characteristics and Applications",
+          "file": "iesc110.pdf",
+          "sha256": "85cc6a4277cba89655cc0d2a8db9583383d32c5d00454c3fbc37fa80843d50d4",
+          "bytes": 2304776,
+          "originalBytes": 14325226
+        },
+        {
+          "n": 11,
+          "title": "Reproduction: How Life Continues",
+          "file": "iesc111.pdf",
+          "sha256": "b87e8a5d404a5794730211083dadd0c9f11b3f2887457409fcb31b610f3fde82",
+          "bytes": 2382545,
+          "originalBytes": 10808712
+        },
+        {
+          "n": 12,
+          "title": "Patterns in Life: Diversity and Classification",
+          "file": "iesc112.pdf",
+          "sha256": "af2e6e802eebadd7274209beed2eb6f59fb317ac7bb98dbfd7f9ee0bf80ec996",
+          "bytes": 2727681,
+          "originalBytes": 15495811
+        },
+        {
+          "n": 13,
+          "title": "Earth as a System: Energy, Matter, and Life",
+          "file": "iesc113.pdf",
+          "sha256": "66138085730543237fc9487a343604fa694d8173e921c830c8d6b3bed04e2e55",
+          "bytes": 4194936,
+          "originalBytes": 15306165
+        }
+      ]
+    },
+    {
+      "code": "iest1",
+      "class": 9,
+      "subject": "Social Science",
+      "medium": "en",
+      "title": "Understanding Society India and Beyond PART-I",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Understanding Social Science",
+          "file": "iest101.pdf",
+          "sha256": "e72b00b45e010f862a3bd58383d3d1a46787e215fe44b3fe36f457d1bd39ecaf",
+          "bytes": 1109727,
+          "originalBytes": 2124125
+        },
+        {
+          "n": 2,
+          "title": "Shaping of the Earth’s Surface",
+          "file": "iest102.pdf",
+          "sha256": "e1bafb31be7ba32737f3a9b439988b6eb26921c4e3b3e0024a93b9a64c2e8200",
+          "bytes": 20979485,
+          "originalBytes": 21129721
+        },
+        {
+          "n": 3,
+          "title": "Atmosphere and Climate",
+          "file": "iest103.pdf",
+          "sha256": "581a834be45b93ea92c86c32025df15cf00201579602ab1982e3a1d3c1d7a4b1",
+          "bytes": 15291794,
+          "originalBytes": 15986941
+        },
+        {
+          "n": 4,
+          "title": "Early Humans and Beginning of Civilisation",
+          "file": "iest104.pdf",
+          "sha256": "c05defcc77f4bb582d7e88b0f0409be2abfd2509b9c1bca9776a063f8bd8d81e",
+          "bytes": 6545152,
+          "originalBytes": 8837251
+        },
+        {
+          "n": 5,
+          "title": "State and Society up to 1000 CE",
+          "file": "iest105.pdf",
+          "sha256": "66a48f35b94e9195455b4d4c475cb94bf430e0ce2096965571ce6e86bd301f86",
+          "bytes": 3362429,
+          "originalBytes": 6124480
+        },
+        {
+          "n": 6,
+          "title": "Democracy",
+          "file": "iest106.pdf",
+          "sha256": "41f1ee7d7a312794c470b79f76cd8b909b309a42fc3d10c1d88c3859b33d7c78",
+          "bytes": 1067469,
+          "originalBytes": 2529682
+        },
+        {
+          "n": 7,
+          "title": "Elections",
+          "file": "iest107.pdf",
+          "sha256": "7f7a6fc9d4d877559993392bf2b45d9f9dbf2aba938d67c4019f183e0be79e60",
+          "bytes": 1418264,
+          "originalBytes": 2741125
+        },
+        {
+          "n": 8,
+          "title": "Building Blocks in Economics: The Problem of Choice",
+          "file": "iest108.pdf",
+          "sha256": "ae34f6cd1a9167211ca2172d1e3cea9564742056e63a2011dfbca237585f6abb",
+          "bytes": 696472,
+          "originalBytes": 1540875
+        },
+        {
+          "n": 9,
+          "title": "The Price Puzzle: What Drives the Market",
+          "file": "iest109.pdf",
+          "sha256": "09a5428e5111d8e9443ee35157ad352be40fa7a8fcabd04b78fd2095534b4ef4",
+          "bytes": 7568176,
+          "originalBytes": 7568176
+        }
+      ]
+    },
+    {
+      "code": "jeff1",
+      "class": 10,
+      "subject": "English",
+      "medium": "en",
+      "title": "First Flight",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "A Letter to God",
+          "file": "jeff101.pdf",
+          "sha256": "d22633d87bccb361e8ef49d82b4e0626cba3fa6d446eb2cddbd4eb1bc8b502ce",
+          "bytes": 727935,
+          "originalBytes": 2134196
+        },
+        {
+          "n": 2,
+          "title": "Nelson Mandela: Long Walk to Freedom",
+          "file": "jeff102.pdf",
+          "sha256": "dd608720e251afe08129e0b4bcdcba975c048c9b37a9fc9bd12d34f2929f7fed",
+          "bytes": 714814,
+          "originalBytes": 2177329
+        },
+        {
+          "n": 3,
+          "title": "Two Stories about Flying",
+          "file": "jeff103.pdf",
+          "sha256": "776e5e4ffd9a1185ffd7ad83447ac0e82ea1be1a0688c2145cb8db6b1f0a61cc",
+          "bytes": 862322,
+          "originalBytes": 2324820
+        },
+        {
+          "n": 4,
+          "title": "From the Diary of Anne Frank",
+          "file": "jeff104.pdf",
+          "sha256": "352c4a934dae568ad5e9af43d5a9193dfdb19aa3f24849e0606bda61ede7da92",
+          "bytes": 559931,
+          "originalBytes": 1954669
+        },
+        {
+          "n": 5,
+          "title": "Glimpses of India",
+          "file": "jeff105.pdf",
+          "sha256": "130fe8dd64214769dc6f5ad63f0947c421e3b38764e1e22606fd4cd9e7effca6",
+          "bytes": 580103,
+          "originalBytes": 2114261
+        },
+        {
+          "n": 6,
+          "title": "Mijbil the Otter",
+          "file": "jeff106.pdf",
+          "sha256": "a9a0e0b65f419c3deef397f8b89005b67ef6a1aca17eb80388ea0aece5d89f37",
+          "bytes": 601713,
+          "originalBytes": 1944893
+        },
+        {
+          "n": 7,
+          "title": "Madam Rides the Bus",
+          "file": "jeff107.pdf",
+          "sha256": "06cd25df9d186ae2944228bb09c77991271ea70fe93f401cd7355616e82215c0",
+          "bytes": 873641,
+          "originalBytes": 2406051
+        },
+        {
+          "n": 8,
+          "title": "The Sermon at Benares",
+          "file": "jeff108.pdf",
+          "sha256": "ae63582c55bd2c095d06348dec12a0251ae8458048a1490608b7a5adc43c7f72",
+          "bytes": 505139,
+          "originalBytes": 1546451
+        },
+        {
+          "n": 9,
+          "title": "The Proposal",
+          "file": "jeff109.pdf",
+          "sha256": "65a207f85ff6853cab592e363c6d33a7dc24f1cba480f43807cf7814c1091e28",
+          "bytes": 663986,
+          "originalBytes": 2434690
+        }
+      ]
+    },
+    {
+      "code": "jefp1",
+      "class": 10,
+      "subject": "English",
+      "medium": "en",
+      "title": "Foot Prints Without feet Supp. Reader",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "A Triumph of Surgery",
+          "file": "jefp101.pdf",
+          "sha256": "c32fe2a6198b3fe23f852282793ca9bd9cb8690ea325f99eb16defd9f640514e",
+          "bytes": 1549590,
+          "originalBytes": 2652517
+        },
+        {
+          "n": 2,
+          "title": "The Thief’s Story",
+          "file": "jefp102.pdf",
+          "sha256": "2a7664438c3549d84b5ce4f1e97b7e15efad53918746252accc5c76c00634917",
+          "bytes": 1262666,
+          "originalBytes": 2284460
+        },
+        {
+          "n": 3,
+          "title": "The Midnight Visitor",
+          "file": "jefp103.pdf",
+          "sha256": "9d20c0893c8c7b2e4d2baa7408fcb99ee763f03fa85e15a30068ed8d7362d4e6",
+          "bytes": 1478381,
+          "originalBytes": 2490292
+        },
+        {
+          "n": 4,
+          "title": "A Question of Trust",
+          "file": "jefp104.pdf",
+          "sha256": "29522e6d9827fc14809c4779436bffc0f4ac30f3b07d3ce0f170fd79b5fad01e",
+          "bytes": 1265301,
+          "originalBytes": 2287341
+        },
+        {
+          "n": 5,
+          "title": "Footprints without Feet",
+          "file": "jefp105.pdf",
+          "sha256": "8b15fc2c849a6d4ba2a839498e8109cda3f655bafc4f42663bc531990466f641",
+          "bytes": 1336786,
+          "originalBytes": 2359246
+        },
+        {
+          "n": 6,
+          "title": "The Making of a Scientist",
+          "file": "jefp106.pdf",
+          "sha256": "d8aaab85cbbc7f94d811db126de2c920b8d2f021e851580b97f767c13ab4f594",
+          "bytes": 1307042,
+          "originalBytes": 2419429
+        },
+        {
+          "n": 7,
+          "title": "The Necklace",
+          "file": "jefp107.pdf",
+          "sha256": "c8b20be800e92edeed25cf00820bac3d7125cb06d895e705e5a558a9e6223d39",
+          "bytes": 1561393,
+          "originalBytes": 2758349
+        },
+        {
+          "n": 8,
+          "title": "Bholi",
+          "file": "jefp108.pdf",
+          "sha256": "a2a3f28b53b797f4c6bcfe27a7e8ccfac5e2dd2ec19fa7bedbd65f386bad1e16",
+          "bytes": 1867570,
+          "originalBytes": 2878483
+        },
+        {
+          "n": 9,
+          "title": "The Book That Saved the Earth",
+          "file": "jefp109.pdf",
+          "sha256": "6dc7ff0dc260c19be6d5c979195e58b00f80c17cde8822fb3973eb39e9dd697d",
+          "bytes": 2728777,
+          "originalBytes": 4077029
+        }
+      ]
+    },
+    {
+      "code": "jhkr1",
+      "class": 10,
+      "subject": "Hindi",
+      "medium": "hi",
+      "title": "Kritika",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chapter 1",
+          "file": "jhkr101.pdf",
+          "sha256": "f455dcae1098f632355ec24ca109b1279c3666b2cc3cf17119ab7de0b48c4acb",
+          "bytes": 542843,
+          "originalBytes": 1050928
+        },
+        {
+          "n": 2,
+          "title": "Chapter 2",
+          "file": "jhkr102.pdf",
+          "sha256": "07e53279426cbc3200a0ecd0c90d722dcdd82c3c15ecfe95960ce907bd72e1be",
+          "bytes": 528158,
+          "originalBytes": 1311668
+        },
+        {
+          "n": 3,
+          "title": "Chapter 3",
+          "file": "jhkr103.pdf",
+          "sha256": "5ad29712be0a5df15a2879804a1397defec0d8e200355de520cea7e1ba978dea",
+          "bytes": 228776,
+          "originalBytes": 503374
+        }
+      ]
+    },
+    {
+      "code": "jhks1",
+      "class": 10,
+      "subject": "Hindi",
+      "medium": "hi",
+      "title": "Kshitij-2",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chapter 1",
+          "file": "jhks101.pdf",
+          "sha256": "70432b446ea607f68c8a57fe5ca8b1f9cb9e811e56c50af014cd6d6ae665bb35",
+          "bytes": 548673,
+          "originalBytes": 1071027
+        },
+        {
+          "n": 2,
+          "title": "Chapter 2",
+          "file": "jhks102.pdf",
+          "sha256": "7d2b9c00d0329611b62140b73d81295878d1fb09a5379c809a15d286a5f95774",
+          "bytes": 353294,
+          "originalBytes": 758840
+        },
+        {
+          "n": 3,
+          "title": "Chapter 3",
+          "file": "jhks103.pdf",
+          "sha256": "e972fb76751d090e2945456cb6eb1a7cc7aeddc925d0246599115e198b4439ce",
+          "bytes": 175334,
+          "originalBytes": 457768
+        },
+        {
+          "n": 4,
+          "title": "Chapter 4",
+          "file": "jhks104.pdf",
+          "sha256": "b1f762e16fb194a3c79c229537b5ab680f00084cb0e74017c17648cf1d4def6f",
+          "bytes": 387296,
+          "originalBytes": 739044
+        },
+        {
+          "n": 5,
+          "title": "Chapter 5",
+          "file": "jhks105.pdf",
+          "sha256": "163752feb9a67bcafe60917456880ae42b9fdc210f436f8e6558b8f118e1976f",
+          "bytes": 285550,
+          "originalBytes": 691227
+        },
+        {
+          "n": 6,
+          "title": "Chapter 6",
+          "file": "jhks106.pdf",
+          "sha256": "3d92585ed04a4f86708068d12c997e8df1a8648049e9bac2aa02300d8e2f8ce4",
+          "bytes": 540775,
+          "originalBytes": 1018107
+        },
+        {
+          "n": 7,
+          "title": "Chapter 7",
+          "file": "jhks107.pdf",
+          "sha256": "ff2d72b0d68867cc1860ba61d7bbfd58b03bcbef943db041a0cfbf5bc783ccad",
+          "bytes": 349053,
+          "originalBytes": 857578
+        },
+        {
+          "n": 8,
+          "title": "Chapter 8",
+          "file": "jhks108.pdf",
+          "sha256": "79858f8cc516ae628cc3596c1a03cbd7df2813b250222fea4b02c96af27eeb1c",
+          "bytes": 315815,
+          "originalBytes": 836354
+        },
+        {
+          "n": 9,
+          "title": "Chapter 9",
+          "file": "jhks109.pdf",
+          "sha256": "5e8c3f837c36178350702366f29b21b5ac5815bcafe89e94dee01891b317cc5d",
+          "bytes": 273082,
+          "originalBytes": 613122
+        },
+        {
+          "n": 10,
+          "title": "Chapter 10",
+          "file": "jhks110.pdf",
+          "sha256": "4d282cb6c6fad0a5387afad032af6af8f1e3c8a8da6c9f0c6f334ea286b5fa86",
+          "bytes": 613685,
+          "originalBytes": 1301708
+        },
+        {
+          "n": 11,
+          "title": "Chapter 11",
+          "file": "jhks111.pdf",
+          "sha256": "3cbd7e8f0e86196151e9f505ba50ca8d985725688af14c1ce25c15c870b3b1c9",
+          "bytes": 326714,
+          "originalBytes": 1079393
+        },
+        {
+          "n": 12,
+          "title": "Chapter 12",
+          "file": "jhks112.pdf",
+          "sha256": "cd2c8866d398a339ddfa800d3a16e6c2cde8f8df117aa4ae16258e57aafc2acd",
+          "bytes": 253254,
+          "originalBytes": 714974
+        }
+      ]
+    },
+    {
+      "code": "jhsp1",
+      "class": 10,
+      "subject": "Hindi",
+      "medium": "hi",
+      "title": "Sparsh",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chapter 1",
+          "file": "jhsp101.pdf",
+          "sha256": "92c9521b9156bf683c19a11cb8627a645474d31873026c2713f2b9e12aa82d52",
+          "bytes": 437496,
+          "originalBytes": 1354948
+        },
+        {
+          "n": 2,
+          "title": "Chapter 2",
+          "file": "jhsp102.pdf",
+          "sha256": "ebf33a92136525e3581b5fb23a899dd0ca0f41f7d1e02fddcabeafa740a50ccd",
+          "bytes": 334028,
+          "originalBytes": 1123727
+        },
+        {
+          "n": 3,
+          "title": "Chapter 3",
+          "file": "jhsp103.pdf",
+          "sha256": "301a3303abf0e6e0d958ceac57574ddd8954d42f47628dbbae16f1532b677bd1",
+          "bytes": 298704,
+          "originalBytes": 1212060
+        },
+        {
+          "n": 4,
+          "title": "Chapter 4",
+          "file": "jhsp104.pdf",
+          "sha256": "f3a33a86fbf2e1f978e0823e4778a99332fb3079fdbb93104812c9dff3ddb8bf",
+          "bytes": 302340,
+          "originalBytes": 1159929
+        },
+        {
+          "n": 5,
+          "title": "Chapter 5",
+          "file": "jhsp105.pdf",
+          "sha256": "06b9d8956db95aadb9fd45b2cd9737d57c3b0a3023bf25195238df92d6937fd7",
+          "bytes": 246630,
+          "originalBytes": 1036148
+        },
+        {
+          "n": 6,
+          "title": "Chapter 6",
+          "file": "jhsp106.pdf",
+          "sha256": "c2592eb7f8e890f111d591bdacba6cc73170f04d40e482a5555765b034d21638",
+          "bytes": 294520,
+          "originalBytes": 1087751
+        },
+        {
+          "n": 7,
+          "title": "Chapter 7",
+          "file": "jhsp107.pdf",
+          "sha256": "198380409b0d79a6b87229dd80351bd62d5eb55e4b6562981b8e5b8538b43ecf",
+          "bytes": 740731,
+          "originalBytes": 1277690
+        },
+        {
+          "n": 8,
+          "title": "Chapter 8",
+          "file": "jhsp108.pdf",
+          "sha256": "04b40a964064538c2599a7aeabc94393de35b90e89aea05bcc6014a27c8338ae",
+          "bytes": 568295,
+          "originalBytes": 2088386
+        },
+        {
+          "n": 9,
+          "title": "Chapter 9",
+          "file": "jhsp109.pdf",
+          "sha256": "d595fee90f40cd3d272533b199dd935be1aaf71ccaa154cef3593d71ea1f218d",
+          "bytes": 360490,
+          "originalBytes": 1394757
+        },
+        {
+          "n": 10,
+          "title": "Chapter 10",
+          "file": "jhsp110.pdf",
+          "sha256": "5e377d38e54cd284064cc0671f89d989bec9b071fcf35e89e8d7345c8532846e",
+          "bytes": 274960,
+          "originalBytes": 1492464
+        },
+        {
+          "n": 11,
+          "title": "Chapter 11",
+          "file": "jhsp111.pdf",
+          "sha256": "14ac4c3bb7260f70f17c8e8138cc96cf2dd4eea7757eb590bccaa2884cf3637e",
+          "bytes": 281661,
+          "originalBytes": 1375055
+        },
+        {
+          "n": 12,
+          "title": "Chapter 12",
+          "file": "jhsp112.pdf",
+          "sha256": "d1e943750830e32e2d762293df24bec273f38e9b4abb7903db0fb4554a3e1082",
+          "bytes": 386114,
+          "originalBytes": 1355776
+        },
+        {
+          "n": 13,
+          "title": "Chapter 13",
+          "file": "jhsp113.pdf",
+          "sha256": "f61048c5f6953bb48ab45581c67084f18639f4dbe5b392ae4a85bdf134da418b",
+          "bytes": 364105,
+          "originalBytes": 1466922
+        },
+        {
+          "n": 14,
+          "title": "Chapter 14",
+          "file": "jhsp114.pdf",
+          "sha256": "c4e087eae132dab6afe0119b2a1f1962dfc21687ca7103ed6dece762790d6a60",
+          "bytes": 400278,
+          "originalBytes": 1503932
+        }
+      ]
+    },
+    {
+      "code": "jhsy1",
+      "class": 10,
+      "subject": "Hindi",
+      "medium": "hi",
+      "title": "Sanchayan Bhag-2",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chapter 1",
+          "file": "jhsy101.pdf",
+          "sha256": "1cc35ffadd3cf4b03f88d96aa8af4ab1cf2f6397d334fdc4a83c6d0403dd3769",
+          "bytes": 626845,
+          "originalBytes": 2254812
+        },
+        {
+          "n": 2,
+          "title": "Chapter 2",
+          "file": "jhsy102.pdf",
+          "sha256": "84b422b6a8e44ad89d23612cbb58a65168d4bb56eabb3f316da570e107901d00",
+          "bytes": 840103,
+          "originalBytes": 1920384
+        },
+        {
+          "n": 3,
+          "title": "Chapter 3",
+          "file": "jhsy103.pdf",
+          "sha256": "62b8a2cf45fa87a83209dccb8d4d0359b1eb68a2bffa08eebef78a9aa580a368",
+          "bytes": 540237,
+          "originalBytes": 1813507
+        }
+      ]
+    },
+    {
+      "code": "jemh1",
+      "class": 10,
+      "subject": "Mathematics",
+      "medium": "en",
+      "title": "Mathematics",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Real Numbers",
+          "file": "jemh101.pdf",
+          "sha256": "17ff5de1c1028326d86de057d97f8b82e21f8900f237da09683275575f98488e",
+          "bytes": 479215,
+          "originalBytes": 1534149
+        },
+        {
+          "n": 2,
+          "title": "Polynomials",
+          "file": "jemh102.pdf",
+          "sha256": "ec16787dbfb0a631e59126565da3a9b05921f5fb336c9cf761870779be00c3d7",
+          "bytes": 393317,
+          "originalBytes": 1686285
+        },
+        {
+          "n": 3,
+          "title": "Pair of Linear Equations in Two Variables",
+          "file": "jemh103.pdf",
+          "sha256": "aff93a2223fe5c3d0f3cec14fff01477b9540fed641443eaee7576f614286c55",
+          "bytes": 761275,
+          "originalBytes": 2084232
+        },
+        {
+          "n": 4,
+          "title": "Quadratic Equations",
+          "file": "jemh104.pdf",
+          "sha256": "011b3e95c82a04e72cbed30ccfa02ab08ec46db8a554b422e52d62e8f3da6871",
+          "bytes": 224104,
+          "originalBytes": 1499207
+        },
+        {
+          "n": 5,
+          "title": "Arithmetic Progressions",
+          "file": "jemh105.pdf",
+          "sha256": "4c351070ebe7bf5cc76369a05489e33e5c142b303ba90acf135ffc1b5aafd89a",
+          "bytes": 426227,
+          "originalBytes": 2357823
+        },
+        {
+          "n": 6,
+          "title": "Triangles",
+          "file": "jemh106.pdf",
+          "sha256": "f26942446db236ef3d41b0a675f1ef89a1e4d8f78a3cd8f082890d247bcfeefb",
+          "bytes": 751727,
+          "originalBytes": 2799087
+        },
+        {
+          "n": 7,
+          "title": "Coordinate Geometry",
+          "file": "jemh107.pdf",
+          "sha256": "2266a4ee0b354831f5f345868659691d31e17cea2d3ec8c028facb7c0f03307f",
+          "bytes": 718150,
+          "originalBytes": 2152902
+        },
+        {
+          "n": 8,
+          "title": "Introduction to Trigonometry",
+          "file": "jemh108.pdf",
+          "sha256": "51d2802cce436cb70c7d713343d9a0da85f5963928c4e9a7207fc18111a20155",
+          "bytes": 490011,
+          "originalBytes": 2230227
+        },
+        {
+          "n": 9,
+          "title": "Some Applications of Trigonometry",
+          "file": "jemh109.pdf",
+          "sha256": "e41a8a860fc6c8dbe80ac9acfda2ad415e3728b7ee1d757b136a93bded425fb9",
+          "bytes": 569896,
+          "originalBytes": 1838085
+        },
+        {
+          "n": 10,
+          "title": "Circles",
+          "file": "jemh110.pdf",
+          "sha256": "c96a8725ce9ddc1d58b2f318093643e1822f6bfedf875780fff6a435465a730e",
+          "bytes": 276679,
+          "originalBytes": 1366412
+        },
+        {
+          "n": 11,
+          "title": "Areas Related to Circles",
+          "file": "jemh111.pdf",
+          "sha256": "9bfaec8389fe22a35a87a290e9466dc88403ccfd878623a5126053aa4bd2f110",
+          "bytes": 385256,
+          "originalBytes": 1310079
+        },
+        {
+          "n": 12,
+          "title": "Surface Areas and Volumes",
+          "file": "jemh112.pdf",
+          "sha256": "aac2d71dd6d225db12c700bc760c1edb83d972857f369b3a0e6cce0d317a7611",
+          "bytes": 752074,
+          "originalBytes": 1620005
+        },
+        {
+          "n": 13,
+          "title": "Statistics",
+          "file": "jemh113.pdf",
+          "sha256": "61a7c4599a1ece64794e05a53d837a973445864c28779197b10f0766ae48793b",
+          "bytes": 445560,
+          "originalBytes": 2803743
+        },
+        {
+          "n": 14,
+          "title": "Probability",
+          "file": "jemh114.pdf",
+          "sha256": "c72016bb03e4b35383fc418ed8eb3f6a93e73e5e71f343f611e009529d74875d",
+          "bytes": 364524,
+          "originalBytes": 1847788
+        }
+      ]
+    },
+    {
+      "code": "jesc1",
+      "class": 10,
+      "subject": "Science",
+      "medium": "en",
+      "title": "Science",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chemical Reactions and Equations",
+          "file": "jesc101.pdf",
+          "sha256": "5c172f5f49ae1899bda8058523d0fe9283f9ea7c6ed1d6ce36608845fbda5102",
+          "bytes": 3729795,
+          "originalBytes": 4161216
+        },
+        {
+          "n": 2,
+          "title": "Acids, Bases and Salts",
+          "file": "jesc102.pdf",
+          "sha256": "0d914213740ca1950924935eec84e0ac912813cd350f911ca7ef8e78f243c5c4",
+          "bytes": 3013991,
+          "originalBytes": 3958510
+        },
+        {
+          "n": 3,
+          "title": "Metals and Non-metals",
+          "file": "jesc103.pdf",
+          "sha256": "d090edf4b91358c0a24b63170629bdc52c1990b8f4983a8881027faef955fce7",
+          "bytes": 1737889,
+          "originalBytes": 2891263
+        },
+        {
+          "n": 4,
+          "title": "Carbon and its Compounds",
+          "file": "jesc104.pdf",
+          "sha256": "efbb053ea8cedf29bc6891834613fdbcc17772e369f6b35405f3bb4701c41abe",
+          "bytes": 12420418,
+          "originalBytes": 12420418
+        },
+        {
+          "n": 5,
+          "title": "Life Processes",
+          "file": "jesc105.pdf",
+          "sha256": "3525a39ec4b96025fe921a685ae2085bba7a20c848a0d618a1c9de35f20901a2",
+          "bytes": 9022079,
+          "originalBytes": 9022079
+        },
+        {
+          "n": 6,
+          "title": "Control and Coordination",
+          "file": "jesc106.pdf",
+          "sha256": "edc1dd0c5f62a9a4d4c3c5b6d8b54d618b0b232d90bff1e81b4c80aae975cde0",
+          "bytes": 2259688,
+          "originalBytes": 2378288
+        },
+        {
+          "n": 7,
+          "title": "How do Organisms Reproduce?",
+          "file": "jesc107.pdf",
+          "sha256": "0862b58eb3fbd2ea52f48629eae0acc25a8ce05a459334a1d2cae953f72fe21b",
+          "bytes": 2216198,
+          "originalBytes": 4057580
+        },
+        {
+          "n": 8,
+          "title": "Heredity",
+          "file": "jesc108.pdf",
+          "sha256": "b0357c0bcc860190c9d3dccc7c91ee31a65012442e795be5bc00cd9f621bff5b",
+          "bytes": 18120968,
+          "originalBytes": 18120968
+        },
+        {
+          "n": 9,
+          "title": "Light – Reflection and Refraction",
+          "file": "jesc109.pdf",
+          "sha256": "c96ba3945ab6433df48931e971657e766bd27df5320aa0d37124c685b680ea24",
+          "bytes": 701788,
+          "originalBytes": 2745224
+        },
+        {
+          "n": 10,
+          "title": "The Human Eye and the Colourful World",
+          "file": "jesc110.pdf",
+          "sha256": "1ca94899479931b8538a18b27ad61c737d29b985a610142bba58b8ceb603b15c",
+          "bytes": 730683,
+          "originalBytes": 1725226
+        },
+        {
+          "n": 11,
+          "title": "Electricity",
+          "file": "jesc111.pdf",
+          "sha256": "648e0a9d038c9cb2b07fd242e69c30717001fa5188440a894c21c2f790f0b539",
+          "bytes": 778422,
+          "originalBytes": 2595813
+        },
+        {
+          "n": 12,
+          "title": "Magnetic Effects of Electric Current",
+          "file": "jesc112.pdf",
+          "sha256": "4675637c20802c3afb8eba49d80b53be582b1d302229a3428ce04d419909c132",
+          "bytes": 1352557,
+          "originalBytes": 2215684
+        },
+        {
+          "n": 13,
+          "title": "Our Environment",
+          "file": "jesc113.pdf",
+          "sha256": "64192b4a406020eb5a487b6c5dba96fb6d4aaba223711ba7c958d0824c99e7da",
+          "bytes": 3470849,
+          "originalBytes": 4194929
+        }
+      ]
+    },
+    {
+      "code": "jess1",
+      "class": 10,
+      "subject": "Social Science",
+      "medium": "en",
+      "title": "Contemporary India",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Resources and Development",
+          "file": "jess101.pdf",
+          "sha256": "73bf79afadd118d76d536cce0589c4f65fb2051d0c6be467183ba2eb9d112f28",
+          "bytes": 1141581,
+          "originalBytes": 1799171
+        },
+        {
+          "n": 2,
+          "title": "Forest and Wildlife Resources",
+          "file": "jess102.pdf",
+          "sha256": "b50f1f73877c631fe41e3668ef35254d97f227884dbc943c540e2a82d8193b22",
+          "bytes": 672036,
+          "originalBytes": 1586082
+        },
+        {
+          "n": 3,
+          "title": "Water Resources",
+          "file": "jess103.pdf",
+          "sha256": "09d81163d8c1a502f4f4de2dd9c45783f57025e4b64f08e6d2d981ec20dd9ff4",
+          "bytes": 1361593,
+          "originalBytes": 1984576
+        },
+        {
+          "n": 4,
+          "title": "Agriculture",
+          "file": "jess104.pdf",
+          "sha256": "bab564bbdba26f9da3a88d1145982a707b45d26e00e972c4cd7b527717295b95",
+          "bytes": 1566835,
+          "originalBytes": 2251016
+        },
+        {
+          "n": 5,
+          "title": "Minerals and Energy Resources",
+          "file": "jess105.pdf",
+          "sha256": "f6b7700d6ab6baa0fc1df1cfc5d14bb413ee27ec736c6a6f4e87a1bc049e8b8b",
+          "bytes": 1794548,
+          "originalBytes": 2698946
+        },
+        {
+          "n": 6,
+          "title": "Manufacturing Industries",
+          "file": "jess106.pdf",
+          "sha256": "771d1dfcfb74c56609540c57c824e4a6380753998a70ac52e21a0eb21a741b4f",
+          "bytes": 918503,
+          "originalBytes": 1643551
+        },
+        {
+          "n": 7,
+          "title": "Lifelines of National Economy",
+          "file": "jess107.pdf",
+          "sha256": "12cc2c571b05bace61c0c8c534645ac3c7ee20357bd157816879be7c8467d537",
+          "bytes": 1453161,
+          "originalBytes": 2201818
+        }
+      ]
+    },
+    {
+      "code": "jess2",
+      "class": 10,
+      "subject": "Social Science",
+      "medium": "en",
+      "title": "Understanding Economic Development",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Development",
+          "file": "jess201.pdf",
+          "sha256": "d2fddf8dfc37941b9ee36cea7faa908b3c80cdedfe2f3aa2dc862245946c2169",
+          "bytes": 1547055,
+          "originalBytes": 2484758
+        },
+        {
+          "n": 2,
+          "title": "Sectors of the Indian Economy",
+          "file": "jess202.pdf",
+          "sha256": "00c39e3a38e0fc61ab9cf371362bff1a2c9521bf60891b19eb023f417a3765b1",
+          "bytes": 1591591,
+          "originalBytes": 2697302
+        },
+        {
+          "n": 3,
+          "title": "Money and Credit",
+          "file": "jess203.pdf",
+          "sha256": "41c53ebd6ce5e904c724882f9308dc476c6179532d726d5f84bfc91513109b34",
+          "bytes": 2435590,
+          "originalBytes": 3375236
+        },
+        {
+          "n": 4,
+          "title": "Globalisation and the Indian Economy",
+          "file": "jess204.pdf",
+          "sha256": "2891305364ad3d1000fcb649b9f88fbf35d2edf8f9e1b28537238f8f9da35597",
+          "bytes": 2432244,
+          "originalBytes": 3584392
+        },
+        {
+          "n": 5,
+          "title": "Consumer Rights",
+          "file": "jess205.pdf",
+          "sha256": "7ea9c8e972c24574e23ee324c0568f7554cc499ad528a9f29ece03015d0fb076",
+          "bytes": 2119880,
+          "originalBytes": 3184018
+        }
+      ]
+    },
+    {
+      "code": "jess3",
+      "class": 10,
+      "subject": "Social Science",
+      "medium": "en",
+      "title": "India and the Contemporary World-II",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "The Rise of Nationalism in Europe",
+          "file": "jess301.pdf",
+          "sha256": "c13d3ec55fed90946f1144a2a60dcf707d87f51f5448cfbc51523001303e4d69",
+          "bytes": 4044174,
+          "originalBytes": 5649051
+        },
+        {
+          "n": 2,
+          "title": "Nationalism in India",
+          "file": "jess302.pdf",
+          "sha256": "7ca0f99b457f4518ee9cc548f195e34fd81020b864ee88fb0fa4ba7349c7805d",
+          "bytes": 3815125,
+          "originalBytes": 5057222
+        },
+        {
+          "n": 3,
+          "title": "The Making of a Global World",
+          "file": "jess303.pdf",
+          "sha256": "06a117ff1f0f0f4a46b5f64c8cdb7f78dc5a905c68dae8f3c3e553a279dc10b6",
+          "bytes": 4458064,
+          "originalBytes": 6060574
+        },
+        {
+          "n": 4,
+          "title": "The Age of Industrialisation",
+          "file": "jess304.pdf",
+          "sha256": "3bcfd368afae7a0e583e5cf1b8d51a5e99e66b6a93e8174ee29db422a1cf1f58",
+          "bytes": 4648158,
+          "originalBytes": 6015785
+        },
+        {
+          "n": 5,
+          "title": "Print Culture and the Modern World",
+          "file": "jess305.pdf",
+          "sha256": "30319e3a53709d72e0dcdf5086ac854d103ac7c0480616229b36e922c021f2fb",
+          "bytes": 3983256,
+          "originalBytes": 5466596
+        }
+      ]
+    },
+    {
+      "code": "jess4",
+      "class": 10,
+      "subject": "Social Science",
+      "medium": "en",
+      "title": "Democratic Politics",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Power-sharing",
+          "file": "jess401.pdf",
+          "sha256": "b80c02def83fdd714f97fb92fda053808daf9e4bc893a4255626933b9740c7ee",
+          "bytes": 1122051,
+          "originalBytes": 1865598
+        },
+        {
+          "n": 2,
+          "title": "Federalism",
+          "file": "jess402.pdf",
+          "sha256": "0d4a5810d64c982006161a1b3bfdb6995d96562c7f2ba2fd6ca973be62b9ab4c",
+          "bytes": 1594702,
+          "originalBytes": 2696611
+        },
+        {
+          "n": 3,
+          "title": "Gender, Religion and Caste",
+          "file": "jess403.pdf",
+          "sha256": "95bf0cdb09c78efa7d12bef986fe583782609f4c6432191ec61214fd27ecbbed",
+          "bytes": 1160709,
+          "originalBytes": 2358657
+        },
+        {
+          "n": 4,
+          "title": "Political Parties",
+          "file": "jess404.pdf",
+          "sha256": "75b5bc86633f0f07c54390d6409396f27c15e7546b76269c4d0c5e55756bed09",
+          "bytes": 2324790,
+          "originalBytes": 3555972
+        },
+        {
+          "n": 5,
+          "title": "Outcomes of Democracy",
+          "file": "jess405.pdf",
+          "sha256": "1fd16c40714da7c965a408e12f854f1416635190cd1ee34d9b8340a3a4cd3f42",
+          "bytes": 1265356,
+          "originalBytes": 2164380
+        }
+      ]
+    }
+  ]
+}

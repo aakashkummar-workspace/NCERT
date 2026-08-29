@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/*
+ * Light palette on :root, dark overrides in a media query.
+ * Ink/paper naming keeps the reading-app metaphor consistent across components.
+ */
+:root {
+  --paper: #fbf9f6;
+  --surface: #ffffff;
+  --surface-alt: #f3efe9;
+  --border: #e3ddd3;
+  --ink: #1c1a17;
+  --ink-soft: #5d574e;
+  --ink-faint: #8b8479;
+  --accent: #9a2846;
+  --accent-soft: #f6e8ec;
+  --accent-ink: #ffffff;
+
+  /*
+   * Height of the bottom tab bar's tappable row. Declared once because two
+   * things depend on it: the bar itself and the spacer that keeps page content
+   * out from under it. Comfortably above the 48px minimum tap target.
+   */
+  --tab-bar-h: 3.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14130f;
+    --surface: #1d1b17;
+    --surface-alt: #262320;
+    --border: #34302a;
+    --ink: #ece7df;
+    --ink-soft: #a8a196;
+    --ink-faint: #7b7469;
+    --accent: #e8859e;
+    --accent-soft: #3a2028;
+    --accent-ink: #1a0d12;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  /* Keep content clear of Android/iOS home indicators in standalone mode. */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/*
+ * The bottom tab bar is `fixed`, so it is out of flow and would cover the end
+ * of every page. TabBar renders this spacer as the last flex item in the body,
+ * which reserves exactly the room the bar occupies — once, globally, instead of
+ * per-page bottom padding that any new page could forget. It is rendered by the
+ * same component as the bar, so the reader (which hides the bar) loses both.
+ */
+.tab-bar-spacer {
+  flex: none;
+  height: calc(var(--tab-bar-h) + 0.5rem + env(safe-area-inset-bottom));
+}
+
+/* The reader renders large canvases; never let them force a horizontal scroll. */
+canvas {
+  max-width: 100%;
+}
+
+/*
+ * Night reading mode.
+ *
+ * pdf.js hands us a raster, so the only way to darken a page is a filter. It is
+ * applied to the whole page sheet rather than to the canvas alone: the sheet's
+ * own white background then inverts along with it, so an unrendered page and a
+ * rendered one look the same instead of flashing white. `hue-rotate(180deg)`
+ * after the invert puts photographs and coloured diagrams back to roughly their
+ * real hues — a bare `invert(1)` leaves them as negatives. No colour is declared
+ * here, so both theme palettes carry through unchanged.
+ */
+.night-page {
+  filter: invert(1) hue-rotate(180deg);
+}

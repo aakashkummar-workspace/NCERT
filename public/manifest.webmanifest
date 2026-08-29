@@ -1,0 +1,16 @@
+{
+  "name": "NCERT Quick — Class 9 & 10 Textbooks",
+  "short_name": "NCERT Quick",
+  "description": "Read NCERT Class 9 and Class 10 textbooks offline.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf9f6",
+  "theme_color": "#9a2846",
+  "categories": ["education", "books"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "ncert-quick-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/copy-pdf-worker.mjs && next dev",
+    "build": "node scripts/copy-pdf-worker.mjs && next build",
+    "start": "npx serve out",
+    "lint": "eslint",
+    "content": "npm run content:catalogue && npm run content:manifest && npm run content:pdfs && npm run content:titles",
+    "content:catalogue": "tsx scripts/scrape-catalogue.ts",
+    "content:manifest": "tsx scripts/build-manifest.ts",
+    "content:pdfs": "tsx scripts/fetch-pdfs.ts",
+    "content:titles": "tsx scripts/extract-titles.ts",
+    "content:compress": "tsx scripts/compress-pdfs.ts",
+    "content:papers": "tsx scripts/fetch-papers.ts",
+    "content:extras": "tsx scripts/fetch-extras.ts",
+    "content:dump": "tsx scripts/dump-contents.ts",
+    "content:curriculum": "tsx scripts/fetch-curriculum.ts",
+    "content:syllabus": "tsx scripts/build-syllabus.ts",
+    "test": "node scripts/test-sm2.mjs && node scripts/test-attempts.mjs && node scripts/check-questions.mjs",
+    "test:e2e": "node scripts/smoke.mjs && node scripts/smoke-pwa.mjs && node scripts/smoke-prep.mjs && node scripts/smoke-quiz.mjs",
+    "content:pyqs": "tsx scripts/fetch-pyqs.ts",
+    "quiz:check": "node scripts/check-questions.mjs"
+  },
+  "dependencies": {
+    "dexie": "^4.4.5",
+    "next": "16.3.3",
+    "pdfjs-dist": "^4.10.38",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "playwright": "^1.62.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
+  }
+}

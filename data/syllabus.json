@@ -1,0 +1,415 @@
+{
+  "generatedAt": "2026-08-29T15:37:47.045Z",
+  "subjects": [
+    {
+      "class": 9,
+      "subject": "English",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Reading Skills",
+          "marks": 20,
+          "chapters": [],
+          "note": "assessed on unseen material, not on any chapter"
+        },
+        {
+          "name": "Writing Skills and Grammar",
+          "marks": 20,
+          "chapters": [],
+          "note": "assessed on unseen material, not on any chapter"
+        },
+        {
+          "name": "Language through Literature",
+          "marks": 40,
+          "chapters": [],
+          "note": "the books CBSE prescribes are not the ones in the manifest"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/English_LL_2025-26.pdf"
+    },
+    {
+      "class": 9,
+      "subject": "Mathematics",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Number Systems",
+          "marks": 10,
+          "chapters": [
+            3
+          ],
+          "note": "partial: rationalisation and laws of exponents are not in Ganita Manjari",
+          "bookCode": "iemh1"
+        },
+        {
+          "name": "Algebra",
+          "marks": 20,
+          "chapters": [
+            2,
+            4
+          ],
+          "bookCode": "iemh1"
+        },
+        {
+          "name": "Coordinate Geometry",
+          "marks": 4,
+          "chapters": [
+            1
+          ],
+          "bookCode": "iemh1"
+        },
+        {
+          "name": "Geometry",
+          "marks": 27,
+          "chapters": [
+            5
+          ],
+          "note": "partial: only circles; Euclid, lines and angles, triangles and quadrilaterals are not in Ganita Manjari",
+          "bookCode": "iemh1"
+        },
+        {
+          "name": "Mensuration",
+          "marks": 13,
+          "chapters": [
+            6
+          ],
+          "note": "partial: only Heron's formula; surface areas and volumes are not in Ganita Manjari",
+          "bookCode": "iemh1"
+        },
+        {
+          "name": "Statistics",
+          "marks": 6,
+          "chapters": [],
+          "note": "Ganita Manjari has no statistics chapter"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Maths_Sec_2025-26.pdf"
+    },
+    {
+      "class": 9,
+      "subject": "Science",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Matter - Its Nature and Behaviour",
+          "marks": 25,
+          "chapters": [
+            5,
+            8,
+            9
+          ],
+          "bookCode": "iesc1",
+          "note": "partial: states of matter is not in Exploration"
+        },
+        {
+          "name": "Organization in the Living World",
+          "marks": 22,
+          "chapters": [
+            2,
+            3
+          ],
+          "bookCode": "iesc1"
+        },
+        {
+          "name": "Motion, Force and Work",
+          "marks": 27,
+          "chapters": [
+            4,
+            6,
+            7,
+            10
+          ],
+          "bookCode": "iesc1",
+          "note": "partial: gravitation and floatation are not in Exploration"
+        },
+        {
+          "name": "Food; Food Production",
+          "marks": 6,
+          "chapters": [],
+          "note": "Exploration has no food-production chapter"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Science_Sec_2025-26.pdf"
+    },
+    {
+      "class": 9,
+      "subject": "Social Science",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "History",
+          "marks": 20,
+          "chapters": [],
+          "note": "no book in the manifest matches \"India and the Contemporary World - I\""
+        },
+        {
+          "name": "Geography",
+          "marks": 20,
+          "chapters": [],
+          "note": "no book in the manifest matches \"Contemporary India - I\""
+        },
+        {
+          "name": "Political Science",
+          "marks": 20,
+          "chapters": [],
+          "note": "no book in the manifest matches \"Democratic Politics - I\""
+        },
+        {
+          "name": "Economics",
+          "marks": 20,
+          "chapters": [],
+          "note": "no book in the manifest matches \"Economics\""
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Social_Science_Sec_2025-26.pdf"
+    },
+    {
+      "class": 10,
+      "subject": "English",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Reading Skills",
+          "marks": 20,
+          "chapters": [],
+          "note": "assessed on unseen material, not on any chapter"
+        },
+        {
+          "name": "Writing Skills with Grammar",
+          "marks": 20,
+          "chapters": [],
+          "note": "assessed on unseen material, not on any chapter"
+        },
+        {
+          "name": "Language through Literature",
+          "marks": 40,
+          "chapters": [],
+          "books": [
+            {
+              "bookCode": "jeff1",
+              "chapters": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "bookCode": "jefp1",
+              "chapters": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            }
+          ]
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/English_LL_2025-26.pdf"
+    },
+    {
+      "class": 10,
+      "subject": "Mathematics",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Number Systems",
+          "marks": 6,
+          "chapters": [
+            1
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Algebra",
+          "marks": 20,
+          "chapters": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Coordinate Geometry",
+          "marks": 6,
+          "chapters": [
+            7
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Geometry",
+          "marks": 15,
+          "chapters": [
+            6,
+            10
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Trigonometry",
+          "marks": 12,
+          "chapters": [
+            8,
+            9
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Mensuration",
+          "marks": 10,
+          "chapters": [
+            11,
+            12
+          ],
+          "bookCode": "jemh1"
+        },
+        {
+          "name": "Statistics and Probability",
+          "marks": 11,
+          "chapters": [
+            13,
+            14
+          ],
+          "bookCode": "jemh1"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Maths_Sec_2025-26.pdf"
+    },
+    {
+      "class": 10,
+      "subject": "Science",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "Chemical Substances - Nature and Behaviour",
+          "marks": 25,
+          "chapters": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "bookCode": "jesc1"
+        },
+        {
+          "name": "World of Living",
+          "marks": 25,
+          "chapters": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "bookCode": "jesc1"
+        },
+        {
+          "name": "Natural Phenomena",
+          "marks": 12,
+          "chapters": [
+            9,
+            10
+          ],
+          "bookCode": "jesc1"
+        },
+        {
+          "name": "Effects of Current",
+          "marks": 13,
+          "chapters": [
+            11,
+            12
+          ],
+          "bookCode": "jesc1"
+        },
+        {
+          "name": "Natural Resources",
+          "marks": 5,
+          "chapters": [
+            13
+          ],
+          "bookCode": "jesc1"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Science_Sec_2025-26.pdf"
+    },
+    {
+      "class": 10,
+      "subject": "Social Science",
+      "totalMarks": 80,
+      "internalAssessment": 20,
+      "units": [
+        {
+          "name": "History",
+          "marks": 20,
+          "chapters": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "bookCode": "jess3"
+        },
+        {
+          "name": "Geography",
+          "marks": 20,
+          "chapters": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "bookCode": "jess1"
+        },
+        {
+          "name": "Political Science",
+          "marks": 20,
+          "chapters": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "bookCode": "jess4"
+        },
+        {
+          "name": "Economics",
+          "marks": 20,
+          "chapters": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "bookCode": "jess2"
+        }
+      ],
+      "source": "https://cbseacademic.nic.in/web_material/CurriculumMain26/Sec/Social_Science_Sec_2025-26.pdf"
+    }
+  ]
+}

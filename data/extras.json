@@ -1,0 +1,249 @@
+{
+  "generatedAt": "2026-08-29T15:21:39.708Z",
+  "source": "https://ncert.nic.in/textbook/pdf/",
+  "books": [
+    {
+      "code": "iebe1",
+      "class": 9,
+      "subject": "English",
+      "title": "Kaveri",
+      "extras": [
+        {
+          "kind": "appendix1",
+          "label": "Appendix 1",
+          "file": "iebe1a1.pdf",
+          "bytes": 4014161,
+          "sha256": "e5ad4ca2111e28dcdd1668640b7adc7e6a4f6db98f2e87173a51263f67c5b137"
+        }
+      ],
+      "absent": [
+        "an",
+        "a2"
+      ]
+    },
+    {
+      "code": "ihga1",
+      "class": 9,
+      "subject": "Hindi",
+      "title": "Ganga",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "iemh1",
+      "class": 9,
+      "subject": "Mathematics",
+      "title": "Ganita Manjari",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "iesc1",
+      "class": 9,
+      "subject": "Science",
+      "title": "Exploration",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "iest1",
+      "class": 9,
+      "subject": "Social Science",
+      "title": "Understanding Society India and Beyond PART-I",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jeff1",
+      "class": 10,
+      "subject": "English",
+      "title": "First Flight",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jefp1",
+      "class": 10,
+      "subject": "English",
+      "title": "Foot Prints Without feet Supp. Reader",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jhkr1",
+      "class": 10,
+      "subject": "Hindi",
+      "title": "Kritika",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jhks1",
+      "class": 10,
+      "subject": "Hindi",
+      "title": "Kshitij-2",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jhsp1",
+      "class": 10,
+      "subject": "Hindi",
+      "title": "Sparsh",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jhsy1",
+      "class": 10,
+      "subject": "Hindi",
+      "title": "Sanchayan Bhag-2",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jemh1",
+      "class": 10,
+      "subject": "Mathematics",
+      "title": "Mathematics",
+      "extras": [
+        {
+          "kind": "answers",
+          "label": "Answers to exercises",
+          "file": "jemh1an.pdf",
+          "bytes": 1561426,
+          "sha256": "02dadcf156d050b2dfa97de75be35ca4b5649f88d8f096c7bf45941337e81968"
+        },
+        {
+          "kind": "appendix1",
+          "label": "Appendix 1",
+          "file": "jemh1a1.pdf",
+          "bytes": 2024250,
+          "sha256": "aef72199e2c1f2386208351003fc1a5dae1ad71b2b584f004ca2a9b2214a5cf4"
+        },
+        {
+          "kind": "appendix2",
+          "label": "Appendix 2",
+          "file": "jemh1a2.pdf",
+          "bytes": 1452288,
+          "sha256": "d72497120582d1ee328965e67dba27c9adcd7daa9502557263ea31eb9bd6f5d2"
+        }
+      ],
+      "absent": []
+    },
+    {
+      "code": "jesc1",
+      "class": 10,
+      "subject": "Science",
+      "title": "Science",
+      "extras": [
+        {
+          "kind": "answers",
+          "label": "Answers to exercises",
+          "file": "jesc1an.pdf",
+          "bytes": 825615,
+          "sha256": "360f3bc888a12de5e982e097febf6bd11cfa64a0015160aeb2bc05d16f6b4d17"
+        }
+      ],
+      "absent": [
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jess1",
+      "class": 10,
+      "subject": "Social Science",
+      "title": "Contemporary India",
+      "extras": [
+        {
+          "kind": "appendix1",
+          "label": "Appendix 1",
+          "file": "jess1a1.pdf",
+          "bytes": 449784,
+          "sha256": "b0bc78b44ad162568659eedbc2354fd45ce498c98e9b8260f85f16935d53a0e8"
+        }
+      ],
+      "absent": [
+        "an",
+        "a2"
+      ]
+    },
+    {
+      "code": "jess2",
+      "class": 10,
+      "subject": "Social Science",
+      "title": "Understanding Economic Development",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jess3",
+      "class": 10,
+      "subject": "Social Science",
+      "title": "India and the Contemporary World-II",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "code": "jess4",
+      "class": 10,
+      "subject": "Social Science",
+      "title": "Democratic Politics",
+      "extras": [],
+      "absent": [
+        "an",
+        "a1",
+        "a2"
+      ]
+    }
+  ]
+}

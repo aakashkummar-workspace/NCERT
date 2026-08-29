@@ -1,0 +1,34 @@
+{
+  "_readme": "Hand-curated chapter titles, keyed by NCERT book code then chapter number. These win over anything extracted from the PDFs. Every title below was read off the Contents page of the book's own prelims PDF (see: npx tsx scripts/dump-contents.ts <code> --all) in cases where automatic parsing could not separate it from interleaved poem titles, author names or a two-column layout. Delete an entry to let extraction take over again.",
+
+  "_jeff1": "First Flight interleaves prose chapters with poems, so the contents page defeats the parser. Prose chapter titles only, matching NCERT's chapter PDFs.",
+  "jeff1": {
+    "1": "A Letter to God",
+    "2": "Nelson Mandela: Long Walk to Freedom",
+    "3": "Two Stories about Flying",
+    "4": "From the Diary of Anne Frank",
+    "5": "Glimpses of India",
+    "6": "Mijbil the Otter",
+    "7": "Madam Rides the Bus",
+    "8": "The Sermon at Benares",
+    "9": "The Proposal"
+  },
+
+  "_jess2": "Contents page is a two-column layout; extraction returns all five 'Chapter N' labels before any of the titles.",
+  "jess2": {
+    "1": "Development",
+    "2": "Sectors of the Indian Economy",
+    "3": "Money and Credit",
+    "4": "Globalisation and the Indian Economy",
+    "5": "Consumer Rights"
+  },
+
+  "_jess3": "Chapters are numbered with roman numerals under section headings, which the arabic-numeral parser cannot follow.",
+  "jess3": {
+    "1": "The Rise of Nationalism in Europe",
+    "2": "Nationalism in India",
+    "3": "The Making of a Global World",
+    "4": "The Age of Industrialisation",
+    "5": "Print Culture and the Modern World"
+  }
+}
