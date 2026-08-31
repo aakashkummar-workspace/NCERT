@@ -28,6 +28,10 @@ enum UserRole {
   STUDENT
   EVALUATOR
   ADMIN
+  /// A parent sees a child's trend, never their doubts. The link itself is a
+  /// separate consented edge, not a role — the role only says what this person
+  /// is; ParentLink says whose.
+  PARENT
 }
 
 enum EvaluatorType {
@@ -91,6 +95,15 @@ enum CriterionKind {
   CHOOSE  @map("choose")
   DIAGRAM @map("diagram")
   OPTION  @map("option")
+
+  /// CBSE's OR *inside* a question, where `variant` cannot reach because the
+  /// rest of the question is common to both branches. The group contributes
+  /// its marks ONCE; every BRANCH child must sum to that same figure, or a
+  /// student is graded out of a different total depending which they chose.
+  ALTERNATIVES @map("alternatives")
+  /// One branch of an ALTERNATIVES group. Its own children are ordinary
+  /// STEP / CHOOSE / DIAGRAM criteria.
+  BRANCH       @map("branch")
 }
 
 /// Whether a rubric's steps must be answered in order. `ordering` on the rubric
@@ -611,7 +624,9 @@ model RubricCriterion {
   /// across re-imports, which is what makes the unique below meaningful.
   stepId String @db.VarChar(40)
 
-  /// An `OPTION` hangs under its `CHOOSE` group; every other kind is top level.
+  /// An `OPTION` hangs under its `CHOOSE` group, a `BRANCH` under its
+  /// `ALTERNATIVES` group, and a branch's own steps under that `BRANCH`; every
+  /// other kind is top level.
   parentId String?           @db.Uuid
   parent   RubricCriterion?  @relation("CriterionTree", fields: [parentId], references: [id], onDelete: Cascade)
   children RubricCriterion[] @relation("CriterionTree")
@@ -622,6 +637,10 @@ model RubricCriterion {
   /// it. Named for the contract rather than as a generic `label`, because a
   /// reviewer reads this column against the PDF.
   awardFor String @db.VarChar(300)
+  /// The label the paper prints for a `BRANCH` — CBSE's "A" / "B". Null on
+  /// every other kind. Kept separate from `awardFor` because a student picks a
+  /// branch by its printed letter, not by what it awards.
+  branchLabel String? @db.VarChar(16)
 
   /// What a `STEP` or `DIAGRAM` is worth. NULL on a `CHOOSE` group and on an
   /// `OPTION`.

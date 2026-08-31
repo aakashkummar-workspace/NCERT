@@ -33,7 +33,9 @@ const TABS: Tab[] = [
     label: "Study",
     d: "M12 6.6C10.4 5.1 8.1 4.5 5 4.5v13c3.1 0 5.4.6 7 2 1.6-1.4 3.9-2 7-2v-13c-3.1 0-5.4.6-7 2.1Zm0 0V19.5",
     // Subject and book lists live under /class/… but are still "Study".
-    extra: ["/class", "/bookmarks", "/downloads"],
+    // A micro-bridge is a recap of an earlier chapter, so it reads as Study
+    // rather than Practice — nothing there is scored.
+    extra: ["/class", "/bookmarks", "/downloads", "/bridge"],
   },
   {
     href: "/practice",
@@ -41,8 +43,10 @@ const TABS: Tab[] = [
     d: "M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7Zm0 0v4h4M9.5 13.5h5M9.5 17h3",
     // Quizzes are the short form of the same thing a sample paper is, so they
     // keep this tab lit rather than earning a fifth one — five tabs on a 390px
-    // phone is where labels start truncating.
-    extra: ["/quiz"],
+    // phone is where labels start truncating. A dual-track test is a sample
+    // paper with an auto-marked Section A, so it belongs here for the same
+    // reason.
+    extra: ["/quiz", "/test"],
   },
   {
     href: "/revise",

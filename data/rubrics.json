@@ -16,7 +16,12 @@
       "prompt": "Unlike animals, plants do not have any excretory products as they do not eat food. Comment upon the statement with justification.",
       "ordering": "unordered",
       "acceptEquivalentWording": true,
-      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 1 },
+      "scheme": {
+        "file": "class10-science-2025-26-ms.pdf",
+        "page": 1,
+        "excerpt": "It is completely wrong to say that plants do not produce any excretory products. However, plants use completely different strategies for excretion than those of the animals. They get rid of these wastes in different manner (any two): i. Oxygen, a photosynthetic waste, is removed through stomata. ii. Excess water is removed by transpiration through stomata. iii. Other metabolic wastes are either stored in dead cells, resins and gums or are removed through falling of old leaves. iv. Many waste products are stored in cellular vacuoles [2]"
+      },
+      "markSplit": "inferred",
       "steps": [
         {
           "id": "g1",
@@ -58,8 +63,9 @@
       ],
       "needsReview": true,
       "reviewNotes": [
-        "The scheme prints one total of 2 and lists four points under 'any two'; the 1+1 split is inferred.",
-        "The scheme's opening rebuttal ('it is completely wrong to say plants do not produce excretory products') earns no separate mark here, so a student who only rebuts and lists nothing scores zero. Confirm that is intended."
+        "The scheme prints one total of 2 and lists four points under 'any two'; the 1+1 split is inferred, but it is the only split the scheme's own wording supports.",
+        "The opening rebuttal ('It is completely wrong to say that plants do not produce any excretory products') earns no separate mark, and after checking the scheme it stays that way: CBSE really is this harsh here. The only quantity the scheme prints is '(any two)', and it attaches to the four strategies, so on a 2-mark question the two marks are those two points at 1 each. Paying the rebuttal 1 mark would leave the strategies at ½ each and would drop a student who lists two strategies without an explicit rebuttal — the scheme's own model answer — from 2/2 to 1/2. That is a larger wrong than the one it would fix.",
+        "So a student who only rebuts and lists nothing scores zero, by the scheme. This rubric stays needsReview, which means no grader may paint that answer red until a teacher signs the reading off."
       ]
     },
     {
@@ -124,10 +130,24 @@
       "prompt": "Draw and explain how the nerve cells help in transmission of impulses.",
       "ordering": "ordered",
       "acceptEquivalentWording": true,
-      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 2 },
+      "scheme": {
+        "file": "class10-science-2025-26-ms.pdf",
+        "page": 2,
+        "excerpt": "All information from our environment is detected by the specialised tips of some nerve cells. The information acquired at the end of the dendritic tip of a nerve cell (Fig. a), sets off a chemical reaction that creates an electrical impulse. This impulse travels from the dendrite to the cell body, and then along the axon to its end. At the end of the axon, the electrical impulse sets off the release of some chemicals. These chemicals cross the gap, or synapse, and start a similar electrical impulse in a dendrite of the next neuron. This is how nervous impulses travel in the body. (Fig b). [3]"
+      },
+      "markSplit": "inferred",
       "steps": [
         {
           "id": "s1",
+          "kind": "diagram",
+          "marks": 1,
+          "awardFor": "a correct labelled figure of a neuron showing the path an impulse takes through it",
+          "labels": ["dendrite", "dendritic tip", "cell body", "axon", "axon terminal", "synapse"],
+          "ordered": false,
+          "autoGradable": false
+        },
+        {
+          "id": "s2",
           "marks": 1,
           "awardFor": "information is detected at the dendritic tip, setting off a chemical reaction that creates an electrical impulse",
           "keywords": [
@@ -136,35 +156,29 @@
           ]
         },
         {
-          "id": "s2",
+          "id": "s3",
           "marks": 1,
-          "awardFor": "the impulse travels dendrite to cell body, then along the axon to its end, where chemicals are released",
+          "awardFor": "the impulse travels to the cell body and along the axon, and at the axon's end chemicals are released that cross the synapse and start a similar impulse in the next neuron",
           "keywords": [
-            { "any": ["cell body", "cyton", "soma"] },
-            { "any": ["axon"] },
-            { "any": ["release of chemicals", "chemicals are released", "neurotransmitter"] }
+            { "any": ["axon", "nerve fibre", "nerve fiber"] },
+            { "any": ["release of chemicals", "chemicals are released", "releases chemicals", "neurotransmitter"] },
+            { "any": ["synapse", "synaptic gap", "synaptic cleft", "gap"] },
+            { "any": ["next neuron", "next nerve cell", "another neuron", "dendrite of the next"] }
           ],
           "partial": [
             {
               "when": "keywords-partial",
               "award": 0.5,
-              "note": "names the axon but not the chemical release at its end"
+              "note": "traces part of the path — the axon or the synapse is named, but the chain through to the next neuron is not completed"
             }
-          ]
-        },
-        {
-          "id": "s3",
-          "marks": 1,
-          "awardFor": "the chemicals cross the synapse and start a similar impulse in the dendrite of the next neuron",
-          "keywords": [
-            { "any": ["synapse", "synaptic gap", "gap"] },
-            { "any": ["next neuron", "next nerve cell", "another neuron"] }
           ]
         }
       ],
       "needsReview": true,
       "reviewNotes": [
-        "The stem says 'Draw and explain', but the scheme awards no separate figure mark — all 3 are for the explanation. A student who draws a correct labelled neuron and writes nothing scores zero under this rubric. Confirm before this one is used to paint anything red."
+        "The scheme prints one total of 3 for the whole answer and no per-step marks at all, so every split of it is inferred. This rubric reserves 1 for the figure and 2 for the explanation.",
+        "The figure mark is not printed by CBSE. It is reserved because the stem says 'Draw and explain' and because the scheme's own model answer cites (Fig. a) and (Fig b) inside its prose — the drawing is part of the answer CBSE describes. Without it a student who draws a correct labelled neuron and writes nothing scores zero, which is the worse error. A teacher who reads the scheme as 3 marks of prose should move this mark back into the explanation.",
+        "The explanation's three prose bullets are merged into two steps (impulse generation; conduction along the axon and transmission across the synapse) so that the two remaining marks are whole marks. The merge is this author's, not CBSE's."
       ]
     },
     {
@@ -320,15 +334,20 @@
       "chapter": 2,
       "class": 10,
       "subject": "Science",
-      "prompt": "Sara neutralises dilute NaOH with dilute H2SO4 using phenolphthalein. A. Would concentrated acid need more or fewer than 40 drops? B. How many drops neutralise 6 mL of NaOH? C. Write the equation and classify the reaction.",
+      "prompt": "Sara neutralises dilute NaOH with dilute H2SO4 using phenolphthalein. A. Would concentrated acid need more or fewer than 40 drops? Justify. B. How many mL of NaOH did 3 mL of H2SO4 neutralise? OR, starting from 10 drops of acid, what colour change follows 20 drops of NaOH and why? C. Write the equation and classify the reaction.",
       "ordering": "unordered",
       "acceptEquivalentWording": false,
-      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 5 },
+      "scheme": {
+        "file": "class10-science-2025-26-ms.pdf",
+        "page": 5,
+        "excerpt": "28 A. (b) < 40, because concentrated H2SO4 gives more H+ ions than dilute acid. B. 3 mL of H2SO4 will be 60 drops, which will neutralise 6 mL of NaOH [table: 2 mL/20 drops (1 mL), 3 mL/30 drops (1.5 mL), 4 mL/40 drops (2 mL), 6 mL/3 mL = 60 drops]\nOR\nColour will change from colourless to pink. Phenolphthalein in colourless in acids and turns pink in basic solution. C. 2NaOH + H2SO4 → Na2SO4 + 2H2O (a) neutralisation and double displacement reaction. Base NaOH is getting neutralised and forming salt + water. It is double displacement as Na+ ions are being replaced by H+ and OH- by SO4 2-. It is not precipitation reaction because Na2SO4 is soluble in water. [4]"
+      },
+      "markSplit": "inferred",
       "steps": [
         {
           "id": "s1",
           "marks": 1,
-          "awardFor": "fewer than 40 drops, because concentrated H2SO4 gives more H+ ions than dilute acid",
+          "awardFor": "sub-part A — fewer than 40 drops, because concentrated H2SO4 gives more H+ ions than dilute acid",
           "keywords": [
             { "any": ["less than 40", "fewer than 40", "< 40", "below 40"] },
             { "any": ["more H+ ions", "more hydrogen ions", "higher concentration of H+"] }
@@ -336,53 +355,107 @@
         },
         {
           "id": "s2",
+          "kind": "alternatives",
           "marks": 1,
-          "awardFor": "3 mL is 60 drops, which neutralises 6 mL of NaOH",
-          "keywords": [
-            { "any": ["60 drops", "60"] },
-            { "any": ["6 mL", "6 ml", "6 millilitre"] }
-          ],
-          "unit": { "required": true, "accepted": ["mL", "ml", "millilitre", "milliliter", "drops"] },
-          "partial": [
-            { "when": "unit-missing", "award": 0.5, "note": "numbers right, no volume unit written" },
-            { "when": "arithmetic-slip", "award": 0.5, "note": "the 20-drops-per-mL ratio is used but mis-multiplied" }
+          "awardFor": "sub-part B — whichever of the two printed alternatives the student answered",
+          "alternatives": [
+            {
+              "id": "b-volume",
+              "label": "the volume calculation (printed first)",
+              "awardFor": "3 mL of acid is 60 drops, which neutralises 6 mL of NaOH",
+              "steps": [
+                {
+                  "id": "s2a",
+                  "marks": 1,
+                  "awardFor": "3 mL is 60 drops, which neutralises 6 mL of NaOH",
+                  "keywords": [
+                    { "any": ["60 drops", "60"] },
+                    { "any": ["6 mL", "6 ml", "6 millilitre"] }
+                  ],
+                  "unit": { "required": true, "accepted": ["mL", "ml", "millilitre", "milliliter", "drops"] },
+                  "partial": [
+                    { "when": "unit-missing", "award": 0.5, "note": "numbers right, no volume unit written" },
+                    { "when": "arithmetic-slip", "award": 0.5, "note": "the 20-drops-per-mL ratio is used but mis-multiplied" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "b-colour",
+              "label": "the OR — the colour change",
+              "awardFor": "the solution turns from colourless to pink, because phenolphthalein is colourless in acid and pink in base",
+              "steps": [
+                {
+                  "id": "s2b",
+                  "marks": 1,
+                  "awardFor": "colourless to pink, because phenolphthalein is colourless in an acid and pink in a base",
+                  "keywords": [
+                    { "any": ["colourless to pink", "colorless to pink", "pink"] },
+                    { "any": ["basic", "base", "alkaline", "excess NaOH"] }
+                  ],
+                  "partial": [
+                    {
+                      "when": "keywords-partial",
+                      "award": 0.5,
+                      "note": "names the pink colour but gives no reason from phenolphthalein's behaviour in a base"
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
           "id": "s3",
-          "marks": 0.5,
-          "awardFor": "writes the balanced equation 2NaOH + H2SO4 → Na2SO4 + 2H2O",
+          "marks": 1,
+          "awardFor": "sub-part C — writes the balanced equation 2NaOH + H2SO4 → Na2SO4 + 2H2O",
           "keywords": [
             { "any": ["2NaOH", "2 NaOH"] },
             { "any": ["Na2SO4", "Na₂SO₄"] },
             { "any": ["2H2O", "2 H2O", "2H₂O"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "the right reactants and products, but the equation is not balanced"
+            }
           ]
         },
         {
           "id": "s4",
-          "marks": 0.5,
-          "awardFor": "names it a neutralisation and a double displacement reaction",
-          "keywords": [
-            { "any": ["neutralisation", "neutralization"] },
-            { "any": ["double displacement", "double-displacement"] }
-          ]
-        },
-        {
-          "id": "s5",
           "marks": 1,
-          "awardFor": "justifies both names — a base forms salt and water, Na+ and SO4^2- are exchanged, and it is not precipitation because Na2SO4 is soluble",
+          "awardFor": "sub-part C — picks (a), neutralisation and double displacement, and says why: a base forms salt and water, the ions are exchanged, and Na2SO4 is soluble so nothing precipitates",
           "keywords": [
-            { "any": ["salt and water", "salt + water"] },
-            { "any": ["ions are exchanged", "replaced", "exchange of ions"] },
-            { "any": ["soluble", "not a precipitation reaction", "no precipitate"] }
+            { "any": ["neutralisation", "neutralization", "option (a)", "option a"] },
+            { "any": ["double displacement", "double-displacement"] },
+            {
+              "any": [
+                "salt and water",
+                "salt + water",
+                "ions are exchanged",
+                "replaced",
+                "exchange of ions",
+                "soluble",
+                "not a precipitation reaction",
+                "no precipitate"
+              ]
+            }
           ],
-          "match": "any"
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "names the reaction correctly but gives no reason for the naming"
+            }
+          ]
         }
       ],
       "needsReview": true,
       "reviewNotes": [
-        "The paper's case-study sections are 1+1+2; the scheme prints only the total of 4. Sub-part C's 2 marks are split here into ½ (equation) + ½ (naming) + 1 (justification), which is a judgment.",
-        "The scheme offers an OR for sub-part B (the colourless-to-pink colour change). That alternative is not modelled — a student who answers the OR scores zero on s2 under this rubric."
+        "The scheme prints only the total of 4; no sub-part carries a printed mark. The 1 (A) + 1 (B) + 2 (C) split is inferred from the paper's case-study convention, and the 1 + 1 inside C — equation, then classification with its justification — is inferred too. An earlier draft split C as ½ equation + ½ naming + 1 justification; that was changed because a ½-mark step admits no partial credit, so a right-but-unbalanced equation scored zero.",
+        "Sub-part B carries an OR inside it, with no 'attempt either' header of its own — the scheme simply prints OR between the volume calculation and the colour-change answer. Both branches are modelled as a kind: \"alternatives\" step, each worth the sub-part's whole 1 mark. Before this change a student who answered the OR scored zero.",
+        "Sub-part A's option letter (b) is not required by s1; the rubric asks for the value and the reason, which is what the scheme's own sentence gives."
       ]
     },
     {
@@ -535,7 +608,12 @@
           "autoGradable": false
         }
       ],
-      "needsReview": false
+      "markSplit": "inferred",
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme prints one total of 3 and three prose bullets, one of which is the redraw instruction. The 1 + 1 + 1 split is the author's inference, not CBSE's — the scheme allots no per-step marks. Confirm the split before a grader is allowed to mark any of these steps wrong.",
+        "Sub-part (ii) is a redraw, so it is a diagram step and stays unmarked for a human. A student who redraws correctly and writes nothing therefore caps at 1 of 3 once signed off."
+      ]
     },
     {
       "id": "class10-mathematics-basic-2025-26-q21-b",

@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...but the template must be committable; `.env*` swallows it otherwise.
+!.env.example
 
 # vercel
 .vercel
@@ -56,3 +58,6 @@ data/cbse/
 
 # Scratch scripts kept out of the pipeline proper.
 scripts/.tmp/
+
+# Local dev object storage (the S3 driver's stand-in). Scans and voice notes.
+/.storage/

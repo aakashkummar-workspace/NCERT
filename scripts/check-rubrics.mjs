@@ -17,9 +17,21 @@
  * in half-marks, because CBSE's grain is ½ and adding doubles does not land on
  * 5 reliably.
  *
+ * Three checks here read the provenance text rather than the shape, because
+ * three rubrics once validated cleanly while still marking a correct answer
+ * wrong: a "Draw and explain" question with no figure mark, an OR inside a
+ * sub-part with only one branch modelled, and a mark split the author chose
+ * with nothing recorded to say so. They are driven by `scheme.excerpt` — the
+ * verbatim scheme text — and by the stem, so a rubric that carries no excerpt
+ * is only partly checked. The report says how many those are.
+ *
  * Exit code 1 on any error. Warnings (a type the paper disagrees with, a
- * needsReview flag with nothing said about it) do not fail the run, because
- * the rubric is still usable — but a reviewer needs to see them.
+ * needsReview flag with nothing said about it, a stem that asks for a drawing
+ * this rubric does not pay for) do not fail the run, because the rubric is
+ * still usable — but a reviewer needs to see them. The line between the two is
+ * certainty: a scheme that literally prints "(for correct figure)" or a bare
+ * OR is evidence, and fails the run; the same thing guessed from an abbreviated
+ * prompt is a heuristic, and only warns.
  */
 import { readFile } from "node:fs/promises";
 
@@ -28,7 +40,34 @@ const MANIFEST = "data/manifest.json";
 const PAPERS = "data/papers.json";
 
 const TYPES = new Set(["mcq", "assertion-reason", "vsa", "sa", "la", "case-study"]);
-const KINDS = new Set(["step", "choose", "diagram"]);
+const KINDS = new Set(["step", "choose", "diagram", "alternatives"]);
+const MARK_SPLIT = new Set(["printed", "inferred"]);
+
+/**
+ * CBSE's internal choice, as it is printed. A scheme marks a whole-question
+ * choice with a header ("Students to attempt either option A or B") and a
+ * step-level one with nothing but the word OR alone on a line — which is how
+ * q28's sub-part B went unmodelled for a while, and why the bare-OR pattern is
+ * checked first.
+ */
+const OR_ALONE = /(^|\n)[\s.)\]]*OR[\s.:(]*(\n|$)/;
+const OR_HEADER =
+  /\b(attempt either|either option [A-Z]\b|either sub-?part [A-Z]\b|either [A-Z] or [A-Z]\b|internal choice)/i;
+
+/**
+ * Words in a stem that ask for something drawn. Deliberately excludes "drawn",
+ * which in CBSE Maths nearly always describes a figure the paper supplies
+ * ("a quadrilateral ABCD is drawn to circumscribe a circle") rather than one
+ * the student must produce.
+ */
+const DRAW_STEM = /\b(draw|draws|redraw|sketch|diagram|diagrams|figure|labell?ed|labell?ing|label|plot|construct)\b/i;
+
+/** A scheme that prints a figure mark says so in these words, and means it. */
+const FIGURE_MARK = /\bfor\s+(?:the\s+|a\s+)?correct\s+(?:figure|diagram)|\bfor\s+(?:the\s+|a\s+)?(?:figure|diagram)\b/i;
+
+/** A reviewNote that says where the per-step marks came from. */
+const SPLIT_NOTE =
+  /\b(split|inferred|infers?|inference|allots?|not printed|prints only|prints one total|one total|per-step|per step|judgment|judgement)\b/i;
 const PARTIAL_WHEN = new Set([
   "unit-missing",
   "unit-wrong",
@@ -139,8 +178,27 @@ function checkPartial(id, where, partial, stepHalves) {
   }
 }
 
+/**
+ * Every step in a rubric, including the ones inside an `alternatives` branch.
+ * The rubric-level checks below ask "does this rubric award a figure mark
+ * anywhere?", and a figure mark hidden inside one branch of an OR still counts.
+ */
+function flattenSteps(steps) {
+  const out = [];
+  for (const s of Array.isArray(steps) ? steps : []) {
+    if (!s || typeof s !== "object") continue;
+    out.push(s);
+    if (s.kind === "alternatives") {
+      for (const alt of Array.isArray(s.alternatives) ? s.alternatives : []) {
+        out.push(...flattenSteps(alt?.steps));
+      }
+    }
+  }
+  return out;
+}
+
 /** One entry of `steps`. Returns its contribution in half-marks, or 0. */
-function checkStep(id, entry, index, seenStepIds) {
+function checkStep(id, entry, index, seenStepIds, depth = 0) {
   const where = `step ${asString(entry?.id) ?? `#${index}`}`;
 
   if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
@@ -257,6 +315,79 @@ function checkStep(id, entry, index, seenStepIds) {
     return 0;
   }
 
+  // --- kind: "alternatives" — CBSE's OR inside a question ------------------
+  //
+  // The student answers one branch and it is worth the group's full marks, so
+  // every branch has to sum to the same number. A branch that sums to less is
+  // the defect this kind exists to stop: it grades the student who chose that
+  // option out of a smaller total than the one who chose the other.
+  if (kind === "alternatives") {
+    if (depth > 0) {
+      err(
+        id,
+        `${where} nests one alternatives group inside another; CBSE does not nest internal choice, and a grader can only pick one branch at one level`,
+      );
+      return 0;
+    }
+
+    const alternatives = Array.isArray(entry.alternatives) ? entry.alternatives : null;
+    if (!alternatives) {
+      err(id, `${where} has kind "alternatives" but no "alternatives" array; there is nothing for a student to have chosen between`);
+      return 0;
+    }
+    if (alternatives.length < 2) {
+      err(
+        id,
+        `${where} offers ${alternatives.length} alternative(s); a choice needs at least two, and a single one is a plain step`,
+      );
+      return 0;
+    }
+
+    if (entry.keywords !== undefined) {
+      warn(id, `${where} is an alternatives group with keywords; they will never be matched — they belong on the steps inside each branch`);
+    }
+    if (entry.partial !== undefined) {
+      warn(id, `${where} is an alternatives group with a "partial"; partial credit is declared on the steps inside each branch, not on the group`);
+    }
+
+    const seenAltIds = new Set();
+    alternatives.forEach((alt, i) => {
+      const aWhere = `${where} alternative ${asString(alt?.id) ?? `#${i}`}`;
+      if (!alt || typeof alt !== "object" || Array.isArray(alt)) {
+        err(id, `${aWhere} is not an object`);
+        return;
+      }
+
+      const altId = asString(alt.id);
+      if (!altId) err(id, `${aWhere} has no id`);
+      else if (seenAltIds.has(altId)) err(id, `${where} has two alternatives with id "${altId}"`);
+      else seenAltIds.add(altId);
+
+      if (!asString(alt.awardFor)) {
+        err(id, `${aWhere} has no awardFor; nobody reviewing this rubric could tell which printed option it is`);
+      }
+
+      const altSteps = Array.isArray(alt.steps) ? alt.steps : null;
+      if (!altSteps || altSteps.length === 0) {
+        err(id, `${aWhere} has no steps, so a student who answered that option would score zero`);
+        return;
+      }
+
+      let altTotal = 0;
+      altSteps.forEach((s, j) => {
+        altTotal += checkStep(id, s, j, seenStepIds, depth + 1);
+      });
+      if (altTotal !== marks) {
+        err(
+          id,
+          `${aWhere} sums to ${showMarks(altTotal)} but the group is worth ${showMarks(marks)}; a student who answered that option would be graded out of a different total than one who answered the other`,
+        );
+      }
+    });
+
+    return marks;
+  }
+
   if (kind === "diagram") {
     if (entry.autoGradable === true) {
       err(id, `${where} is a diagram claiming autoGradable: true; a figure cannot be graded from keywords`);
@@ -327,6 +458,10 @@ const main = async () => {
   const seenIds = new Set();
   const seenQuestions = new Map();
   const accepted = [];
+  const declaredVariants = [];
+  let schemeExcerpts = 0;
+  let markSplitInferred = 0;
+  let markSplitPrinted = 0;
 
   rows.forEach((row, i) => {
     const id = asString(pick(row, "id")) ?? `#${i} (no id)`;
@@ -442,6 +577,120 @@ const main = async () => {
       warn(id, "has reviewNotes but is not flagged needsReview");
     }
 
+    // --- provenance text, and the checks that read it -----------------------
+    //
+    // Everything below asks the same question in three ways: is there anything
+    // in this question that a correct answer could satisfy and this rubric
+    // could not pay for? A figure the stem asks for and no step awards; a
+    // branch of an OR that is not modelled; a mark split nobody recorded as a
+    // guess. All three shipped once.
+
+    const scheme = row.scheme;
+    let excerpt;
+    if (scheme !== undefined) {
+      if (typeof scheme !== "object" || scheme === null || Array.isArray(scheme)) {
+        err(id, `has a "scheme" that is not an object; expected { file, page, excerpt? }`);
+      } else if (scheme.excerpt !== undefined) {
+        excerpt = asString(scheme.excerpt);
+        if (!excerpt) err(id, `has a scheme.excerpt that is not a non-empty string`);
+      }
+    }
+    if (excerpt) schemeExcerpts += 1;
+
+    const prompt = asString(row.prompt) ?? "";
+    const allSteps = flattenSteps(row.steps);
+    const topSteps = Array.isArray(row.steps) ? row.steps : [];
+    const hasDiagram = allSteps.some((s) => s?.kind === "diagram");
+    const hasAlternatives = topSteps.some((s) => s?.kind === "alternatives");
+
+    // 1. "Draw and explain", and not a mark for the drawing anywhere.
+    if (excerpt && FIGURE_MARK.test(excerpt) && !hasDiagram) {
+      err(
+        id,
+        `the scheme excerpt prints a figure mark ("${(excerpt.match(FIGURE_MARK) ?? [""])[0].trim()}") but this rubric has no diagram step; the mark CBSE pays for the drawing is unpayable here`,
+      );
+    } else if (DRAW_STEM.test(prompt) && !hasDiagram) {
+      warn(
+        id,
+        `the stem asks for something drawn ("${(prompt.match(DRAW_STEM) ?? [""])[0]}") but no step is kind "diagram", so a student who draws a correct labelled figure and writes nothing scores zero. Either add the figure mark or say in reviewNotes why the scheme gives none`,
+      );
+    }
+
+    // 2. An OR in the scheme with no alternative modelled at either level.
+    const modelsChoice = Boolean(variant) || hasAlternatives;
+    if (!modelsChoice) {
+      if (excerpt && (OR_ALONE.test(excerpt) || OR_HEADER.test(excerpt))) {
+        err(
+          id,
+          `the scheme excerpt offers an alternative (${OR_ALONE.test(excerpt) ? "a bare OR" : `"${(excerpt.match(OR_HEADER) ?? [""])[0]}"`}) but this rubric declares neither a "variant" nor a kind:"alternatives" step; a student who answered the other option scores zero on every step of it`,
+        );
+      } else if (OR_ALONE.test(prompt) || /\bOR\b/.test(prompt) || OR_HEADER.test(prompt)) {
+        warn(
+          id,
+          `the prompt reads as if the paper offers a choice here, but this rubric declares neither a "variant" nor a kind:"alternatives" step; check the scheme before a student who answered the other option is marked zero`,
+        );
+      }
+    }
+
+    // 3. A mark split the author decided on, with nothing in reviewNotes saying so.
+    const markSplit = asString(row.markSplit);
+    const notesExplainSplit = reviewNotes.some((n) => SPLIT_NOTE.test(n));
+    if (markSplit !== undefined) {
+      if (!MARK_SPLIT.has(markSplit)) {
+        err(id, `has markSplit ${JSON.stringify(row.markSplit)}; expected one of ${[...MARK_SPLIT].join(", ")}`);
+      } else {
+        if (markSplit === "inferred") {
+          markSplitInferred += 1;
+          if (!needsReview) {
+            err(
+              id,
+              `declares markSplit "inferred" but is not flagged needsReview; a split the author decided is exactly the conversion judgment needsReview exists to hold back`,
+            );
+          }
+          if (!notesExplainSplit) {
+            err(
+              id,
+              `declares markSplit "inferred" but no reviewNotes entry says where the per-step marks came from; the reviewer has to be told which numbers CBSE printed and which this file invented`,
+            );
+          }
+        } else {
+          markSplitPrinted += 1;
+        }
+      }
+    } else if (needsReview && topSteps.length > 1 && !notesExplainSplit) {
+      warn(
+        id,
+        `is flagged needsReview and splits ${showMarks(halves(pick(row, "maxMarks", "marks", "totalMarks")) ?? 0)} marks across ${topSteps.length} steps, but no reviewNotes entry says whether CBSE printed that split. Add markSplit: "printed" or "inferred", and a note`,
+      );
+    }
+
+    // 4. Whole-question internal choice, declared rather than left implicit.
+    const variantsOffered = row.variantsOffered;
+    if (variantsOffered !== undefined) {
+      if (!Array.isArray(variantsOffered) || variantsOffered.length < 2) {
+        err(
+          id,
+          `has variantsOffered ${JSON.stringify(variantsOffered)}; expected an array of at least two labels, one per option the paper prints`,
+        );
+      } else {
+        const labels = variantsOffered.map(asString);
+        if (labels.some((l) => !l)) {
+          err(id, `has a blank entry in variantsOffered`);
+        } else if (!variant) {
+          err(id, `lists variantsOffered ${JSON.stringify(labels)} but declares no "variant" of its own, so nothing says which option it grades`);
+        } else if (!labels.includes(variant)) {
+          err(
+            id,
+            `is variant "${variant}" but variantsOffered is ${JSON.stringify(labels)}; the option this rubric grades is not one the paper offers`,
+          );
+        } else if (paperSlug && questionNo !== undefined) {
+          for (const label of labels) {
+            declaredVariants.push({ id, key: `${paperSlug}#${questionNo}/${label}`, label });
+          }
+        }
+      }
+    }
+
     // --- the sum ----------------------------------------------------------
 
     const maxMarks = halves(pick(row, "maxMarks", "marks", "totalMarks"));
@@ -487,6 +736,16 @@ const main = async () => {
     });
   });
 
+  // A rubric that names the options its question offers is saying the paper
+  // prints a choice here. If a sibling option has no rubric of its own, the
+  // question is only half covered — a warning, not an error, because authoring
+  // one option at a time is how this file gets written.
+  for (const { id, key, label } of declaredVariants) {
+    if (!seenQuestions.has(key)) {
+      warn(id, `names option "${label}" as offered for this question, but no rubric in this file grades it`);
+    }
+  }
+
   // --- report ------------------------------------------------------------
 
   console.log(`${RUBRICS}: ${rows.length} rows, ${accepted.length} usable\n`);
@@ -518,17 +777,33 @@ const main = async () => {
     return n !== undefined && n % 1 !== 0;
   };
   const halfMarkSteps = rows.filter((r) =>
-    (Array.isArray(r.steps) ? r.steps : []).some((s) => isHalf(s?.marks) || isHalf(s?.marksEach)),
+    flattenSteps(r.steps).some((s) => isHalf(s?.marks) || isHalf(s?.marksEach)),
   ).length;
-  const chooseGroups = rows.filter((r) =>
-    (Array.isArray(r.steps) ? r.steps : []).some((s) => s?.kind === "choose"),
+  const chooseGroups = rows.filter((r) => flattenSteps(r.steps).some((s) => s?.kind === "choose")).length;
+  const diagrams = rows.filter((r) => flattenSteps(r.steps).some((s) => s?.kind === "diagram")).length;
+  const stepChoices = rows.filter((r) =>
+    (Array.isArray(r.steps) ? r.steps : []).some((s) => s?.kind === "alternatives"),
   ).length;
-  const diagrams = rows.filter((r) =>
-    (Array.isArray(r.steps) ? r.steps : []).some((s) => s?.kind === "diagram"),
-  ).length;
+  const wholeChoices = rows.filter((r) => asString(r.variant)).length;
   console.log(
-    `\nAwkward shapes covered: ${chooseGroups} with an "any N of" group, ${halfMarkSteps} with a half-mark award, ${diagrams} with a diagram mark.`,
+    `\nAwkward shapes covered: ${chooseGroups} with an "any N of" group, ${halfMarkSteps} with a half-mark award, ${diagrams} with a diagram mark, ${wholeChoices} grading one option of a whole-question choice, ${stepChoices} with an OR inside a question.`,
   );
+
+  // How far the two text-driven checks above could actually see. A rubric with
+  // no scheme.excerpt is not checked for an unmodelled OR or a printed figure
+  // mark at all, and one with no markSplit is taken on trust.
+  const noExcerpt = rows.length - schemeExcerpts;
+  if (noExcerpt > 0) {
+    console.log(
+      `\n${noExcerpt} of ${rows.length} rubric(s) carry no scheme.excerpt, so the unmodelled-OR and printed-figure-mark checks could not run on them.`,
+    );
+  }
+  const noSplit = rows.length - markSplitInferred - markSplitPrinted;
+  if (noSplit > 0) {
+    console.log(
+      `${noSplit} of ${rows.length} rubric(s) declare no markSplit, so nothing records whether CBSE printed their per-step marks or the author chose them.`,
+    );
+  }
 
   const review = accepted.filter((r) => r.needsReview);
   if (review.length) {

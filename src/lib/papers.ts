@@ -13,6 +13,15 @@
  * are: cbseacademic.nic.in sends no Access-Control-Allow-Origin, so pdf.js
  * cannot fetch them cross-origin.
  *
+ * Most entries now come from scripts/fetch-papers.ts, which mirrors every paper
+ * CBSE publishes and derives the mark grid from the paper's own section table.
+ * That derivation does not always land: for a paper whose sections are stated in
+ * prose, or split by passage rather than by marks, the script writes
+ * `sectionsDerived: false` and an empty `sections` rather than a grid it cannot
+ * stand behind. Those papers are still worth reading — the paper and its scheme
+ * are intact — but they cannot be self-scored here, so `isScorable` sends them
+ * to a read-only screen with no clock. See src/app/practice/[slug]/page.tsx.
+ *
  * CBSE publishes no Class 9 sample papers, so every entry is Class 10.
  */
 import papersJson from "@data/papers.json";
@@ -50,6 +59,14 @@ export interface Paper {
   paperBytes?: number;
   schemeBytes?: number;
   sections: PaperSection[];
+  /**
+   * False when the pipeline could not read a trustworthy mark grid off the
+   * paper; `sections` is then empty. Absent on the three hand-curated papers,
+   * which predate the harvest and were read off the PDF by a person — so the
+   * test is `=== false`, never `!sections.length`. A paper that genuinely has
+   * no sections is a different thing from one whose sections are unknown.
+   */
+  sectionsDerived?: boolean;
 }
 
 export interface PapersManifest {
@@ -88,6 +105,17 @@ export function papersForClass(cls: 9 | 10): Paper[] {
   return allPapers().filter((p) => p.class === cls);
 }
 
+/**
+ * Whether this paper can be sat and marked, or only read.
+ *
+ * A timed attempt is worth nothing without a mark grid to score against, so a
+ * paper the pipeline could not derive one for offers neither. Everything the
+ * scoring UI needs hangs off this one answer.
+ */
+export function isScorable(paper: Paper): boolean {
+  return paper.sectionsDerived !== false;
+}
+
 /** Sections expanded to one entry per question, ascending — the scoring grid. */
 export function questionsFor(paper: Paper): PaperQuestion[] {
   return [...paper.sections]
@@ -119,6 +147,11 @@ export function schemePdfPath(paper: Paper): string {
  * section table that does not add up must never reach the scoring UI.
  */
 export function validatePaper(paper: Paper): string[] {
+  // A paper with no derived grid has nothing to check; it never reaches the
+  // scoring UI, and reporting "sections cover 1-0" for all 36 of them would
+  // bury a real fault in a paper that does.
+  if (!isScorable(paper)) return [];
+
   const problems: string[] = [];
   const sections = [...paper.sections].sort((a, b) => a.from - b.from);
 

@@ -55,6 +55,7 @@ else is a hard error.
   "session": "2025-26",
   "questionNo": 10,                      // as printed on the paper
   "variant": "A",                        // omit unless the paper offers A / OR B
+  "variantsOffered": ["A", "B"],         // optional — every option the paper prints here
   "type": "vsa",                         // mcq | assertion-reason | vsa | sa | la | case-study
   "maxMarks": 2,
   "bookCode": "jesc1",                   // NCERT book code from data/manifest.json
@@ -64,7 +65,12 @@ else is a hard error.
   "prompt": "…",                         // the stem, abbreviated; for the reviewer, not the grader
   "ordering": "unordered",               // ordered | unordered — the default for every step
   "acceptEquivalentWording": true,
-  "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 1 },
+  "scheme": {
+    "file": "class10-science-2025-26-ms.pdf",
+    "page": 1,
+    "excerpt": "…"                       // optional — the scheme's own words, verbatim
+  },
+  "markSplit": "inferred",               // optional — printed | inferred
   "steps": [ /* … */ ],
   "needsReview": true,
   "reviewNotes": ["the scheme prints one total, not a per-step split"]
@@ -81,20 +87,51 @@ nowhere to send the result.
 follows back to the PDF on disk to check the conversion, and what lets a
 reviewer find every rubric derived from a scheme when CBSE reissues it.
 
-`variant` exists because CBSE questions carry internal choice — "Students to
-attempt either option A or B". Each option is a **separate rubric with the
-same `questionNo` and a different `variant`**, and each one must sum to
-`maxMarks` on its own. A student attempts one; the grader picks the variant
-whose steps the answer actually matches.
+`scheme.excerpt` is the scheme's own words for this question, copied verbatim
+from the PDF — worth carrying because it is what lets `rubric:check` read the
+source rather than only the conversion. Two of its checks depend on it: a
+scheme that prints "1 (for correct figure)" must find a `diagram` step, and a
+scheme that prints a bare `OR` must find an alternative modelled. A rubric with
+no excerpt escapes both, and the report says how many of those there are. Keep
+it short — the answer for this question, not the page.
+
+`markSplit` says where the per-step marks came from: `"printed"` when CBSE
+printed them in the margin, as the Maths scheme does throughout, and
+`"inferred"` when the scheme prints one total and the split below it is this
+file's judgment. An `"inferred"` rubric must be `needsReview` and must say in
+`reviewNotes` which numbers are CBSE's and which are not; both are errors,
+because an invented split that reads as an official one is a rubric nobody can
+review.
 
 `acceptEquivalentWording` records CBSE's own "or equivalent wording" licence.
 When true the grader may accept a semantic match, not only a listed phrase.
 Set it false where the answer *is* a specific term or a number — "Anthracite",
 "25 km/hr" — and a near-miss should not be green.
 
+## Internal choice
+
+CBSE offers alternatives at two levels, and the file models both.
+
+**A whole question** — "Students to attempt either option A or B". Each option
+is a **separate rubric with the same `questionNo` and a different `variant`**,
+and each one must sum to `maxMarks` on its own. A student attempts one; the
+grader picks the variant whose steps the answer actually matches.
+
+`variantsOffered` lists every option the paper prints for that question, and is
+how a rubric says "there is another one of these". With it, `rubric:check` can
+warn that option B has no rubric, so half the students who attempted the
+question have nothing to be graded against. Without it, a half-covered choice
+is invisible. `variant` must be one of the labels listed.
+
+**A step inside a question** — the OR that sits inside a sub-part, often with
+no header at all: the scheme simply prints `OR` between two answers, as it does
+in Class X Science 2025-26 Q28 B. That is `kind: "alternatives"`, below. It is
+not a `variant`: the rest of the question is common to both branches, and
+splitting the whole rubric in two would duplicate every other step.
+
 ## Steps
 
-`steps` is an ordered list. Every entry has a `kind`; there are three.
+`steps` is an ordered list. Every entry has a `kind`; there are four.
 
 ### `kind: "step"` — one award, one description
 
@@ -154,6 +191,49 @@ negative". Each entry is a tag and the minimum number of *scoring* options
 that must carry it. A group that meets the count but not the tags is not full
 marks.
 
+### `kind: "alternatives"` — CBSE's OR inside a question
+
+```jsonc
+{
+  "id": "s2",
+  "kind": "alternatives",
+  "marks": 1,                         // what the sub-part is worth, either way
+  "awardFor": "sub-part B — whichever of the two printed alternatives the student answered",
+  "alternatives": [
+    {
+      "id": "b-volume",
+      "label": "the volume calculation (printed first)",
+      "awardFor": "3 mL of acid is 60 drops, which neutralises 6 mL of NaOH",
+      "steps": [ /* ordinary steps, summing to the group's `marks` */ ]
+    },
+    {
+      "id": "b-colour",
+      "label": "the OR — the colour change",
+      "awardFor": "colourless to pink, because phenolphthalein is pink in a base",
+      "steps": [ /* … also summing to the group's `marks` */ ]
+    }
+  ]
+}
+```
+
+The student answers **one** branch and it is worth the group's full `marks`, so
+the group counts `marks` once towards `maxMarks` no matter how many branches it
+lists — and **every branch must sum to `marks` exactly**. A branch that sums to
+less is the defect this kind exists to prevent: it grades the student who chose
+that option out of a smaller total than the one who chose the other, for no
+reason but which alternative they preferred.
+
+A branch's `steps` are ordinary `step`, `choose` or `diagram` entries and are
+validated exactly as they are at the top level; their `id`s must be unique
+across the whole rubric, not just within the branch, because a graded answer
+names the step it matched. Groups do not nest — `alternatives` inside
+`alternatives` is an error. CBSE does not print that, and a grader picks one
+branch at one level.
+
+`keywords` and `partial` do not belong on the group. Nothing matches against
+the group itself; both belong on the steps inside a branch, which is where the
+answer actually lands.
+
 ### `kind: "diagram"` — a mark for a drawing
 
 ```jsonc
@@ -173,6 +253,14 @@ honestly say whether a triangle was drawn correctly. So a diagram step is
 never graded automatically. `labels` is there for the human reviewing the
 page, not for the matcher.
 
+A question that says "Draw", "Sketch" or "Redraw" and a rubric with no diagram
+step is the shape that marks a correct answer wrong: a student who draws a
+perfect labelled figure and writes nothing scores zero. `rubric:check` warns
+about it from the stem and **fails** on it when `scheme.excerpt` shows CBSE
+printing the figure mark in so many words. Where the scheme prints no figure
+mark and you reserve one anyway, say so in `reviewNotes` — that is a judgment,
+and a teacher may take the mark back into the explanation.
+
 ## Green, orange, red — and the fourth case
 
 Each step resolves to exactly one outcome, and the colour follows the outcome.
@@ -186,6 +274,11 @@ Each step resolves to exactly one outcome, and the colour follows the outcome.
 
 Text the student wrote that matches no step and no option is red. That is the
 filler case, and it is grader behaviour, not something a rubric declares.
+
+An `alternatives` group resolves to whichever branch the answer matched, and
+the branch not attempted is not a miss — nothing is painted for it. Where an
+answer matches neither branch, the group is a miss on the branch printed first,
+which is the one the scheme leads with.
 
 **Nothing is ever painted red on a rubric flagged `needsReview`.** An unchecked
 conversion may accuse a student of writing nothing of value, which is the one
@@ -232,7 +325,10 @@ that is the finest grain CBSE uses. Sums are compared in half-mark units
 rather than in floating point — `1.5 + 1.5 + 1.5 + 0.5` must equal 5 exactly,
 and it does not if you add doubles and hope.
 
-The steps of a rubric must sum to `maxMarks`. Not to less, not to more. A
+The steps of a rubric must sum to `maxMarks`. A `choose` group contributes
+`chooseAtLeast × marksEach`; an `alternatives` group contributes its `marks`
+once, however many branches it lists, and each branch must sum to that same
+number. Not to less, not to more. A
 rubric that does not is the single most damaging error in this file, because
 it grades every attempt at that question out of the wrong denominator, and it
 is the first thing `rubric:check` looks at.
@@ -270,12 +366,37 @@ one a reviewer cannot scan.
 - a `diagram` step claiming `autoGradable: true`
 - `paper` not in `data/papers.json`, or `questionNo` outside that paper's range
 - two rubrics for the same `paper` + `questionNo` + `variant`
+- an `alternatives` group with fewer than two `alternatives`, a branch with no
+  `id`, no `awardFor` or no `steps`, two branches with the same `id`, or one
+  nested inside another
+- an `alternatives` branch whose steps do not sum to the group's `marks`
+- a `scheme.excerpt` that prints a figure mark where the rubric has no `diagram`
+  step
+- a `scheme.excerpt` that offers an alternative — a bare `OR`, or "attempt
+  either option A or B" — where the rubric declares neither a `variant` nor an
+  `alternatives` step
+- `markSplit` outside `printed` / `inferred`; `markSplit: "inferred"` without
+  `needsReview`, or with no `reviewNotes` entry saying where the marks came from
+- `variantsOffered` with fewer than two labels, or not containing this rubric's
+  own `variant`, or present on a rubric that declares no `variant`
+- a `scheme` that is not an object, or a `scheme.excerpt` that is not a
+  non-empty string
 
 Warned, but not rejected — the rubric is still usable:
 
 - `type` disagreeing with the section `data/papers.json` puts that question in
 - `needsReview` with no `reviewNotes` saying what needs reviewing
 - a rubric with no `prompt`, which leaves a reviewer nothing to check against
+- a `prompt` that asks for something drawn where no step is a `diagram`
+- a `prompt` that reads as if the paper offers a choice where no alternative is
+  modelled — the abbreviated stem is a weaker witness than the scheme, so this
+  one only warns
+- a `needsReview` rubric that splits its marks across several steps and neither
+  declares `markSplit` nor says in `reviewNotes` whether CBSE printed the split
+- a `variantsOffered` label with no rubric of its own in this file: half the
+  students who attempted that question have nothing to be graded against, but
+  authoring one option at a time is how this file gets written
+- keywords or a `partial` on an `alternatives` group, where nothing matches them
 
 ## Adding rubrics incrementally
 

@@ -15,8 +15,12 @@
  *
  *   npm run build && npx serve out -l 3777
  *   node scripts/smoke-mobile.mjs [baseUrl]
+ *
+ * A preflight runs first and exits 3 without testing anything if the base URL is
+ * not a live build of this app — see scripts/lib/preflight.mjs.
  */
 import { chromium } from "playwright";
+import { preflight } from "./lib/preflight.mjs";
 
 const BASE = process.argv[2] ?? "http://localhost:3777";
 
@@ -87,6 +91,8 @@ async function audit(page) {
 }
 
 async function main() {
+  await preflight(BASE, "scripts/smoke-mobile.mjs");
+
   const browser = await chromium.launch();
   const context = await browser.newContext({
     viewport: { width: 390, height: 844 },

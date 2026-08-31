@@ -5,8 +5,14 @@
  *
  *   npm run build && npm start
  *   node scripts/smoke-pwa.mjs [baseUrl]
+ *
+ * A preflight runs first and exits 3 without testing anything if the base URL is
+ * not a live build of this app — see scripts/lib/preflight.mjs. It matters most
+ * here: every check below is about the service worker, and every one of them
+ * fails identically when the target simply is not this app.
  */
 import { chromium } from "playwright";
+import { preflight } from "./lib/preflight.mjs";
 
 const BASE = process.argv[2] ?? "http://localhost:3000";
 const results = [];
@@ -17,6 +23,8 @@ function check(name, ok, detail = "") {
 }
 
 async function main() {
+  await preflight(BASE, "scripts/smoke-pwa.mjs");
+
   const browser = await chromium.launch();
   const context = await browser.newContext({ viewport: { width: 412, height: 900 } });
   const page = await context.newPage();

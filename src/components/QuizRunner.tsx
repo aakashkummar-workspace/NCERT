@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import { saveQuizResult, type AnsweredQuestion } from "@/lib/quiz-attempts";
 import type { QuizQuestion } from "@/lib/quiz";
+import { loadMemory, selectBridge, signalsFromAnswers } from "@/lib/bridge";
+import { MicroBridgeOffer } from "@/components/MicroBridge";
 
 /**
  * One quiz, one question at a time.
@@ -275,6 +277,24 @@ function QuizResult({
   const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
   const wrong = answers.filter((a) => a.chosen !== a.question.answer);
 
+  // At most one run-up, chosen once when the sheet first renders. Recomputing
+  // it on every render would re-roll the offer under the student mid-read, and
+  // selectBridge already rate-limits itself against what they have been shown.
+  const [offer] = useState(() =>
+    selectBridge(
+      signalsFromAnswers(
+        answers.map((a) => ({
+          bookCode: a.question.bookCode,
+          chapter: a.question.chapter,
+          id: a.question.id,
+          correct: a.chosen === a.question.answer,
+        })),
+      ),
+      loadMemory(),
+    ),
+  );
+  const [offerOpen, setOfferOpen] = useState(true);
+
   return (
     <div>
       <div className="rounded-2xl border border-border bg-surface p-5 text-center">
@@ -299,6 +319,12 @@ function QuizResult({
               : "Saved. The chapters you struggled with will come back sooner in Revise."}
         </p>
       </div>
+
+      {offer && offerOpen && (
+        <div className="mt-4">
+          <MicroBridgeOffer offer={offer} onClose={() => setOfferOpen(false)} />
+        </div>
+      )}
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {wrong.length > 0 && (

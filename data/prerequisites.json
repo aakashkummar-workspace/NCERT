@@ -1,0 +1,758 @@
+{
+  "generatedAt": "2026-08-31",
+  "source": "Authored by hand against data/manifest.json. Chapter coverage was read off the mirrored PDFs in data/ncert-original/. Not generated — see data/prerequisites.schema.md.",
+  "bridges": [
+    {
+      "id": "jemh1-01",
+      "bookCode": "jemh1",
+      "chapter": 1,
+      "questionIds": ["jemh1-01-003", "jemh1-01-004"],
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 3,
+          "minutes": 2,
+          "why": "Real Numbers restarts exactly where Class 9 stopped: rationals, irrationals, and why some decimals stop and others repeat.",
+          "recap": [
+            "Every real number is either rational (a fraction p/q with q not 0) or irrational (√2, π — no fraction gives it).",
+            "A rational number's decimal either terminates or repeats. It terminates only when the denominator, in lowest terms, is made of 2s and 5s.",
+            "√2 is irrational by contradiction: assume √2 = p/q in lowest terms, and you can always show p and q are both even. Class 10 reuses that argument unchanged."
+          ]
+        },
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Prime factorisation, HCF and LCM",
+          "why": "Half of this chapter is the Fundamental Theorem of Arithmetic applied to HCF and LCM, and that arithmetic is built in Class 6-8."
+        }
+      ]
+    },
+    {
+      "id": "jemh1-02",
+      "bookCode": "jemh1",
+      "chapter": 2,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 2,
+          "minutes": 1,
+          "why": "You have already met polynomials in one variable and drawn their graphs. Class 10 only raises the degree.",
+          "recap": [
+            "A linear polynomial is ax + b with a not 0. Its graph is a straight line.",
+            "Its zero is the x where the value is 0 — where the line crosses the x-axis. Solve ax + b = 0 to get x = -b/a.",
+            "\"Zero of a polynomial\" and \"x-intercept of its graph\" are the same fact said twice."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 4,
+          "minutes": 1,
+          "why": "Finding the zeroes of a quadratic means factorising it, which is the algebra-tiles work from Class 9.",
+          "recap": [
+            "(a + b)² = a² + 2ab + b², (a - b)² = a² - 2ab + b², (a + b)(a - b) = a² - b².",
+            "To factorise x² + px + q, find two numbers that add to p and multiply to q."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-03",
+      "bookCode": "jemh1",
+      "chapter": 3,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 2,
+          "minutes": 1,
+          "why": "A pair of linear equations is a pair of straight lines, and the solution is where they cross.",
+          "recap": [
+            "A linear relationship plots as a straight line: pick two values of x, get two points, join them.",
+            "Two lines that cross once give one solution; parallel lines give none; the same line twice gives infinitely many."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 1,
+          "minutes": 1,
+          "why": "The graphical method is plotting, so placing and reading points has to be automatic before the method is worth anything.",
+          "recap": [
+            "A point is (x, y): x steps along from the origin, y steps up.",
+            "Signs pick the quadrant. (-, +) is top-left, (-, -) is bottom-left."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-04",
+      "bookCode": "jemh1",
+      "chapter": 4,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jemh1",
+          "chapter": 2,
+          "minutes": 1,
+          "why": "A quadratic equation is a quadratic polynomial set equal to zero, so its roots are that polynomial's zeroes under another name.",
+          "recap": [
+            "For ax² + bx + c, the sum of the zeroes is -b/a and the product is c/a.",
+            "A quadratic has at most two zeroes — which is why a quadratic equation has at most two roots."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 4,
+          "minutes": 1,
+          "why": "The factorisation method is splitting the middle term, and that is Class 9 identity work.",
+          "recap": [
+            "Split the middle term: for x² + 7x + 12, find two numbers adding to 7 and multiplying to 12 — 3 and 4.",
+            "Then x² + 7x + 12 = (x + 3)(x + 4), and a product is zero only when one bracket is zero."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-04-completing-the-square",
+      "bookCode": "jemh1",
+      "chapter": 4,
+      "concept": "Completing the square",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 4,
+          "minutes": 1,
+          "why": "Completing the square is one identity run backwards. If (a + b)² is not automatic, the method looks like a trick instead of a step.",
+          "recap": [
+            "(x + k)² = x² + 2kx + k². Read it right to left: given x² + 2kx, the missing piece is k².",
+            "So x² + 6x becomes (x + 3)² - 9: halve the 6, square it, add it, take it away again.",
+            "That is the whole method. The quadratic formula is this done once with letters instead of numbers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-05",
+      "bookCode": "jemh1",
+      "chapter": 5,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 8,
+          "minutes": 2,
+          "why": "Class 9 already builds arithmetic progressions and the sum of the first n terms. Class 10 formalises the same two rules.",
+          "recap": [
+            "A sequence follows a rule. In an AP the rule is: add the same number every time. That number is the common difference d.",
+            "Explicit rule: the nth term is a + (n - 1)d. Recursive rule: each term is the one before it plus d.",
+            "Sum of the first n terms: pair the first with the last. S = n/2 × [2a + (n - 1)d]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-06",
+      "bookCode": "jemh1",
+      "chapter": 6,
+      "prerequisites": [
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Congruence of triangles, and ratio and proportion",
+          "why": "Similarity is congruence with the equal-sides condition relaxed to equal ratios. Without congruence criteria and comfortable ratio work, the AA and SSS similarity rules have nothing to stand on.",
+          "note": "The Class 9 NCF Mathematics book (Ganita Manjari) carries no triangles chapter, so this genuinely has no earlier chapter in this app."
+        }
+      ]
+    },
+    {
+      "id": "jemh1-07",
+      "bookCode": "jemh1",
+      "chapter": 7,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 1,
+          "minutes": 2,
+          "why": "The coordinate plane and the distance formula are both Class 9. Class 10 adds one new formula on top of them.",
+          "recap": [
+            "Plot (x, y): x along, y up. The origin is (0, 0).",
+            "Distance between (x1, y1) and (x2, y2) is √[(x2 - x1)² + (y2 - y1)²] — Pythagoras on the gap in x and the gap in y.",
+            "The only genuinely new thing in Class 10 is the section formula, for a point cutting a segment in a given ratio."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-08",
+      "bookCode": "jemh1",
+      "chapter": 8,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jemh1",
+          "chapter": 6,
+          "minutes": 2,
+          "why": "Sin, cos and tan only exist because similar right triangles have identical side ratios. That is the similarity chapter, two chapters back.",
+          "recap": [
+            "Two triangles are similar when their angles match; then their matching sides are all in the same ratio.",
+            "So in any right triangle with a given acute angle, opposite/hypotenuse is a fixed number whatever the size. That number is the sine of the angle.",
+            "Pythagoras, a² + b² = c², is what turns one known ratio into the other two."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-09",
+      "bookCode": "jemh1",
+      "chapter": 9,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jemh1",
+          "chapter": 8,
+          "minutes": 2,
+          "why": "A height-and-distance question is one right triangle and one ratio. If the ratios are shaky the diagram will not save you.",
+          "recap": [
+            "sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent.",
+            "Know 0°, 30°, 45°, 60° and 90° by heart. Almost every question in this chapter uses nothing else.",
+            "Angle of elevation is measured up from the horizontal; angle of depression is measured down from it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-10",
+      "bookCode": "jemh1",
+      "chapter": 10,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 5,
+          "minutes": 2,
+          "why": "Class 9 defines the circle, its chords and the angles they subtend. Class 10 adds exactly one object to that picture: the tangent.",
+          "recap": [
+            "A circle is every point at the same distance — the radius — from the centre.",
+            "A chord joins two points on the circle. A chord through the centre is a diameter.",
+            "A tangent touches at exactly one point, and it is perpendicular to the radius drawn to that point. Almost every Class 10 proof starts there."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-11",
+      "bookCode": "jemh1",
+      "chapter": 11,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 6,
+          "minutes": 2,
+          "why": "Arc length and sector area are already in the Class 9 perimeter-and-area chapter. Class 10 mostly combines them with a triangle.",
+          "recap": [
+            "Circumference = 2πr. Area = πr².",
+            "An arc is a fraction of the circumference: (θ/360) × 2πr. A sector is the same fraction of the area: (θ/360) × πr².",
+            "A segment is the sector minus the triangle formed by the two radii and the chord."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jemh1-12",
+      "bookCode": "jemh1",
+      "chapter": 12,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 6,
+          "minutes": 1,
+          "why": "Every surface-area formula here is a flat area wrapped around a solid, so the flat areas have to be solid first.",
+          "recap": [
+            "Rectangle = l × b. Triangle = ½ × base × height. Circle = πr².",
+            "The curved surface of a cylinder is a rectangle rolled up: 2πr × h."
+          ]
+        },
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Volume and surface area of cubes, cuboids and cylinders",
+          "why": "Class 10 combines solids — a cone on a hemisphere, a cylinder with a cone scooped out. The single solids themselves are Class 8.",
+          "note": "The Class 9 NCF Mathematics book covers plane figures only, so the solids are nowhere in this app."
+        }
+      ]
+    },
+    {
+      "id": "jemh1-13",
+      "bookCode": "jemh1",
+      "chapter": 13,
+      "prerequisites": [
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Mean, median, mode and reading a frequency table",
+          "why": "Class 10 Statistics is these three averages recomputed for grouped data. The ungrouped versions are Class 7-8.",
+          "note": "The Class 9 NCF Mathematics book has no statistics chapter, so there is no earlier chapter in this app to send you to."
+        }
+      ]
+    },
+    {
+      "id": "jemh1-14",
+      "bookCode": "jemh1",
+      "chapter": 14,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 7,
+          "minutes": 2,
+          "why": "Class 9 introduces probability from first principles. Class 10 uses the same definition on harder sample spaces.",
+          "recap": [
+            "P(event) = favourable outcomes / total equally likely outcomes.",
+            "It always lands between 0 and 1, and P(not E) = 1 - P(E).",
+            "Write the sample space out first. Two dice give 36 outcomes, not 12 — that one slip costs more marks here than anything else."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "jesc1-01",
+      "bookCode": "jesc1",
+      "chapter": 1,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 9,
+          "minutes": 2,
+          "why": "Writing an equation needs chemical formulae, and balancing one is the law of conservation of mass. Both are Class 9, chapter 9.",
+          "recap": [
+            "Mass is conserved: every atom on the left must appear on the right. That is the only reason equations are balanced at all.",
+            "A formula comes from valency, criss-crossed: calcium (2+) with chlorine (1-) gives CaCl2.",
+            "(s), (l), (g) and (aq) mark the state. (aq) means dissolved in water."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 8,
+          "minutes": 1,
+          "why": "Valency decides every formula you will write this year, and valency comes from where the electrons sit.",
+          "recap": [
+            "Electrons fill shells 2, 8, 8. Valency is how many an atom must gain, lose or share to fill its outer shell.",
+            "Sodium has one spare electron, so valency 1. Oxygen is two short, so valency 2."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-01-balancing",
+      "bookCode": "jesc1",
+      "chapter": 1,
+      "concept": "Balancing a chemical equation",
+      "questionIds": ["jesc1-01-005"],
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 9,
+          "minutes": 1,
+          "why": "Balancing is not a puzzle with a trick. It is the law of conservation of mass, and the law is what tells you which numbers you are allowed to change.",
+          "recap": [
+            "Atoms are neither made nor destroyed in a reaction, so the count of each element must match on both sides.",
+            "Change only the coefficient in front of a formula. Changing a subscript makes it a different substance, not a balanced one.",
+            "Count one element at a time, leave hydrogen and oxygen until last, then check every element once more."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-02",
+      "bookCode": "jesc1",
+      "chapter": 2,
+      "questionIds": ["jesc1-02-001", "jesc1-02-003"],
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jesc1",
+          "chapter": 1,
+          "minutes": 1,
+          "why": "Neutralisation, and every acid test in this chapter, is a reaction you have to write and balance first.",
+          "recap": [
+            "Acid + base gives salt + water. Metal + acid gives salt + hydrogen.",
+            "Balance by counting atoms of each element on both sides. Never rewrite a formula to make it balance."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 5,
+          "minutes": 1,
+          "why": "pH and dilution are statements about concentration, which is the Class 9 solutions chapter.",
+          "recap": [
+            "Concentration is how much solute sits in how much solution.",
+            "Diluting adds water. The amount of solute does not change, so the concentration falls.",
+            "That is why acid is added to water and never water to acid — the heat needs somewhere to go."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-03",
+      "bookCode": "jesc1",
+      "chapter": 3,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 9,
+          "minutes": 1,
+          "why": "Ionic bonding — a metal handing electrons to a non-metal — is the single idea that explains how metals behave.",
+          "recap": [
+            "A metal loses electrons and becomes a positive ion. A non-metal gains them and becomes negative.",
+            "The two attract, and that is the ionic bond: high melting point, brittle, conducts only when molten or dissolved."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "jesc1",
+          "chapter": 1,
+          "minutes": 1,
+          "why": "The reactivity series is read straight off displacement reactions, so you have to recognise one on sight.",
+          "recap": [
+            "In a displacement reaction a more reactive metal pushes a less reactive one out of its compound.",
+            "Oxidation is gain of oxygen or loss of electrons. Reduction is the opposite. Both happen in the same reaction."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-04",
+      "bookCode": "jesc1",
+      "chapter": 4,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 9,
+          "minutes": 1,
+          "why": "Every structure you draw this chapter is a covalent bond diagram, which Class 9 already taught.",
+          "recap": [
+            "A covalent bond is a shared pair of electrons. Neither atom loses one outright.",
+            "Carbon has 4 outer electrons and shares all 4 — which is why every carbon in a correct structure shows exactly four bonds."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 8,
+          "minutes": 1,
+          "why": "Catenation and the homologous series are counting arguments about valency. Get valency wrong and every formula after it is wrong.",
+          "recap": [
+            "Valency is the number of bonds an atom forms: carbon 4, hydrogen 1, oxygen 2, nitrogen 3.",
+            "That is why the alkane series steps up by CH2 each time — one more carbon needs two more hydrogens to stay full."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-05",
+      "bookCode": "jesc1",
+      "chapter": 5,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 2,
+          "minutes": 1,
+          "why": "Nutrition, respiration and transport happen inside a cell before they happen inside you.",
+          "recap": [
+            "The cell is the unit of life. The membrane decides what gets in and what leaves.",
+            "Mitochondria release energy; chloroplasts capture light. Respiration and photosynthesis are things organelles do."
+          ]
+        },
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 3,
+          "minutes": 1,
+          "why": "Transport in plants is two tissues and nothing else, and you met both last year.",
+          "recap": [
+            "A tissue is a group of similar cells doing one job.",
+            "Xylem carries water and minerals up. Phloem carries food in both directions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-06",
+      "bookCode": "jesc1",
+      "chapter": 6,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 3,
+          "minutes": 2,
+          "why": "A reflex arc is nervous tissue wired to muscular tissue. Both were named and drawn in Class 9.",
+          "recap": [
+            "Nervous tissue is made of neurons: dendrites take the signal in, the axon carries it out.",
+            "Muscular tissue contracts, which is how a signal becomes a movement.",
+            "A reflex is that pair wired through the spinal cord — the brain is told afterwards rather than asked first."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-07",
+      "bookCode": "jesc1",
+      "chapter": 7,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 11,
+          "minutes": 2,
+          "why": "Class 9 already sets out why organisms reproduce and what variation is for. Class 10 fills in the organs.",
+          "recap": [
+            "Asexual reproduction makes copies from one parent. Sexual reproduction mixes DNA from two.",
+            "The mixing is the point: variation is what lets a species survive a change in its surroundings.",
+            "Cell division is the mechanism underneath both."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-08",
+      "bookCode": "jesc1",
+      "chapter": 8,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jesc1",
+          "chapter": 7,
+          "minutes": 2,
+          "why": "Mendel's rules only make sense once gametes do. Everything in Heredity rests on one set of chromosomes coming from each parent.",
+          "recap": [
+            "Gametes carry one set of chromosomes each. Fertilisation puts two sets back together.",
+            "So you hold two copies of every gene, one from each parent — that is what a pair like Tt means.",
+            "Sex determination in humans is the same fact: the egg always gives X, the sperm gives X or Y."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-09",
+      "bookCode": "jesc1",
+      "chapter": 9,
+      "prerequisites": [
+        {
+          "kind": "out-of-corpus",
+          "grade": 7,
+          "topic": "Light: reflection and plane mirrors",
+          "why": "Class 10 opens with the laws of reflection already assumed and moves straight to curved mirrors. If plane mirrors are shaky, the sign convention will not stick.",
+          "note": "The Class 9 NCF Science book (Exploration) has no light chapter, so this app holds nothing earlier to open."
+        }
+      ]
+    },
+    {
+      "id": "jesc1-10",
+      "bookCode": "jesc1",
+      "chapter": 10,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jesc1",
+          "chapter": 9,
+          "minutes": 2,
+          "why": "The eye is one convex lens and one screen. Every defect and every correction in this chapter is the previous chapter's lens formula.",
+          "recap": [
+            "A convex lens converges light to a focus. The eye's lens does exactly this, onto the retina.",
+            "1/v - 1/u = 1/f, and power P = 1/f in dioptres. Myopia and hypermetropia corrections are this formula and nothing more.",
+            "Refraction bends light when it changes medium. Dispersion is refraction that bends each colour by a different amount."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-11",
+      "bookCode": "jesc1",
+      "chapter": 11,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 7,
+          "minutes": 1,
+          "why": "Electrical energy and power are the same work-and-power definitions from Class 9, with charge doing the moving.",
+          "recap": [
+            "Work is force × distance. Energy is the capacity to do work. Both are measured in joules.",
+            "Power is work per second, measured in watts. A 60 W bulb converts 60 joules every second.",
+            "In Class 10 this becomes W = VIt and P = VI. Same definitions, electrical quantities."
+          ]
+        },
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Electric current, cells and circuit diagrams",
+          "why": "Ohm's law arrives on page one assuming you can already read a circuit diagram and say what a cell does.",
+          "note": "The Class 9 NCF Science book has no electricity chapter, so there is no earlier chapter here to open."
+        }
+      ]
+    },
+    {
+      "id": "jesc1-12",
+      "bookCode": "jesc1",
+      "chapter": 12,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "jesc1",
+          "chapter": 11,
+          "minutes": 2,
+          "why": "Every magnetic effect in this chapter starts from a current. No current, no field — so the previous chapter has to be solid.",
+          "recap": [
+            "Current is charge per second, and it only flows round a closed loop.",
+            "Ohm's law V = IR fixes how much current a given voltage drives through a given resistance.",
+            "A bigger current gives a stronger field. That one sentence answers most of the field-pattern questions here."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jesc1-13",
+      "bookCode": "jesc1",
+      "chapter": 13,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 13,
+          "minutes": 2,
+          "why": "Class 9 already treats the Earth as one system, with energy flowing through it and matter cycling round. Class 10 narrows that to the ecosystem.",
+          "recap": [
+            "Energy enters as sunlight and leaves as heat. It flows one way and does not come back.",
+            "Matter does come back: the water, carbon, nitrogen and oxygen cycles are the same atoms reused.",
+            "Only about 10% of the energy at one trophic level reaches the next, which is why food chains are short."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "iesc1-06",
+      "bookCode": "iesc1",
+      "chapter": 6,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 4,
+          "minutes": 2,
+          "why": "F = ma says a force produces acceleration. If acceleration is still vague, the law is just three letters.",
+          "recap": [
+            "Speed is distance per second. Velocity is speed with a direction attached.",
+            "Acceleration is change of velocity per second — so turning at a steady speed is still acceleration.",
+            "On a distance-time graph the slope is speed. On a velocity-time graph the slope is acceleration and the area is distance."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iesc1-07",
+      "bookCode": "iesc1",
+      "chapter": 7,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 6,
+          "minutes": 2,
+          "why": "Work is defined in terms of force and displacement, so the force chapter has to come first.",
+          "recap": [
+            "A force changes motion. With no net force, motion does not change at all.",
+            "Work is done only when a force moves its point of application along the direction of the force.",
+            "No displacement, or a force at right angles to the motion, means zero work — however tired you are."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iesc1-09",
+      "bookCode": "iesc1",
+      "chapter": 9,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iesc1",
+          "chapter": 8,
+          "minutes": 2,
+          "why": "Bonding and formulae are decided by the outer shell, so the structure of the atom has to be settled first.",
+          "recap": [
+            "An atom is a nucleus of protons and neutrons, with electrons in shells around it.",
+            "Atomic number = number of protons. Mass number = protons + neutrons.",
+            "Electrons fill 2, then 8, then 8. The outer shell alone decides how the atom combines."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iemh1-04",
+      "bookCode": "iemh1",
+      "chapter": 4,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 2,
+          "minutes": 1,
+          "why": "Identities are statements about polynomials, so the vocabulary — term, degree, like terms — has to be in place.",
+          "recap": [
+            "A polynomial is a sum of terms like 3x² - 5x + 2. Its degree is the highest power.",
+            "Like terms have the same variable to the same power. Only like terms can be added."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iemh1-06",
+      "bookCode": "iemh1",
+      "chapter": 6,
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "bookCode": "iemh1",
+          "chapter": 5,
+          "minutes": 1,
+          "why": "Half this chapter measures circles, using the names the circles chapter has just defined.",
+          "recap": [
+            "The radius runs centre to edge; the diameter is twice it.",
+            "An arc is a piece of the circle's edge. A sector is the slice between two radii."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iemh1-07",
+      "bookCode": "iemh1",
+      "chapter": 7,
+      "prerequisites": [
+        {
+          "kind": "out-of-corpus",
+          "grade": 8,
+          "topic": "Data handling: tallies, tables and simple chance",
+          "why": "Probability starts by counting outcomes in a table. The counting, not the probability, is where most of the marks go.",
+          "note": "This is the first probability chapter in the corpus, so there is nothing earlier here to open."
+        }
+      ]
+    }
+  ]
+}

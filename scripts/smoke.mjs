@@ -7,8 +7,12 @@
  * Checks the things that only a real browser can prove: that pdf.js renders a
  * chapter, that reading progress survives a reload, that a downloaded chapter
  * is readable with the network cut, and that an undownloaded one fails politely.
+ *
+ * A preflight runs first and exits 3 without testing anything if the base URL is
+ * not a live build of this app — see scripts/lib/preflight.mjs.
  */
 import { chromium } from "playwright";
+import { preflight } from "./lib/preflight.mjs";
 
 const BASE = process.argv[2] ?? "http://localhost:3222";
 const results = [];
@@ -19,6 +23,8 @@ function check(name, ok, detail = "") {
 }
 
 async function main() {
+  await preflight(BASE, "scripts/smoke.mjs");
+
   const browser = await chromium.launch();
   const context = await browser.newContext({ viewport: { width: 412, height: 900 } });
   const page = await context.newPage();

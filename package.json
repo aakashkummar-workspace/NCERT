@@ -18,21 +18,32 @@
     "content:dump": "tsx scripts/dump-contents.ts",
     "content:curriculum": "tsx scripts/fetch-curriculum.ts",
     "content:syllabus": "tsx scripts/build-syllabus.ts",
-    "test": "node scripts/test-sm2.mjs && node scripts/test-attempts.mjs && node scripts/check-questions.mjs && node scripts/check-rubrics.mjs && node scripts/spike-score.mjs",
-    "test:e2e": "node scripts/smoke.mjs && node scripts/smoke-pwa.mjs && node scripts/smoke-prep.mjs && node scripts/smoke-quiz.mjs",
+    "test": "node scripts/test-sm2.mjs && node scripts/test-attempts.mjs && node scripts/test-pacing.mjs && node scripts/test-bridge.mjs && node scripts/check-questions.mjs && node scripts/check-rubrics.mjs && node scripts/check-prerequisites.mjs && node scripts/spike-score.mjs && node scripts/test-dualtrack.mjs && node scripts/test-grading.mjs && node scripts/test-shadow.mjs && node scripts/test-parent.mjs",
+    "test:e2e": "node scripts/smoke.mjs && node scripts/smoke-pwa.mjs && node scripts/smoke-prep.mjs && node scripts/smoke-quiz.mjs && node scripts/test-queue.mjs && node scripts/test-ledger.mjs",
     "content:pyqs": "tsx scripts/fetch-pyqs.ts",
     "content:exemplar": "tsx scripts/fetch-exemplar.ts",
     "quiz:check": "node scripts/check-questions.mjs",
+    "ledger:test": "node scripts/test-ledger.mjs",
+    "test:parent": "node scripts/test-parent.mjs",
     "rubric:check": "node scripts/check-rubrics.mjs",
+    "bridge:check": "node scripts/check-prerequisites.mjs",
+    "rubric:draft": "tsx scripts/extract-rubrics.ts",
     "spike:grade": "node scripts/spike-grade.mjs",
     "spike:score": "node scripts/spike-score.mjs",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:validate": "prisma validate",
-    "db:studio": "prisma studio"
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "shadow:check": "node scripts/test-shadow.mjs",
+    "queue:test": "node scripts/test-queue.mjs"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0",
     "@prisma/client": "^6.14.0",
     "dexie": "^4.4.5",
     "next": "16.3.3",
@@ -41,7 +52,6 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.70.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

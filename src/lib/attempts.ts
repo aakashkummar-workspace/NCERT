@@ -17,6 +17,10 @@
  * `remainingMs` / `isExpired` are pure functions of (startedAt, durationMs, now)
  * — and, like the SM-2 maths, testable without a browser. See
  * scripts/test-attempts.mjs.
+ *
+ * Pacing obeys the same rule. `markReached` writes one wall-clock stamp per
+ * question and nothing else; how long a section took is derived from those
+ * stamps in src/lib/pacing.ts, never accumulated here.
  */
 import Dexie, { type EntityTable } from "dexie";
 import { review, upsertCard, type Confidence } from "@/lib/revision";
@@ -30,6 +34,19 @@ export interface QuestionScore {
   score: number | null;
   /** False when the student left the question blank in the exam. */
   attempted: boolean;
+  /**
+   * Wall-clock ms at which the student reported starting this question, or
+   * undefined if they never marked it — which is most of them, since the
+   * tracker only asks at section boundaries.
+   *
+   * Optional and additive: an attempt written before pacing existed has none
+   * of these, and reads as a student who has not marked their progress. That
+   * is the whole compatibility story, because Dexie's `stores()` declares
+   * indexes rather than columns and this field is not indexed — version 1's
+   * schema already holds it. Bumping the version would run an upgrade
+   * transaction over a live exam to change nothing.
+   */
+  reachedAt?: number;
 }
 
 export interface Attempt {
@@ -220,6 +237,55 @@ export async function saveScore(
       scores,
       // Keep an already-published total honest when a mark is corrected.
       totalScore: attempt.totalScore === undefined ? undefined : sumScores(scores),
+    };
+    await db.attempts.put(updated);
+    return updated;
+  });
+}
+
+/**
+ * Stamp the moment the student says they have reached question `n`.
+ *
+ * The stamp is clamped into the paper's own window: never before the clock
+ * started, never after it ran out. A device whose clock steps while the exam is
+ * running would otherwise write a stamp that makes a later section look
+ * instantaneous, and the pacing maths would report a student ahead when they
+ * are not.
+ *
+ * Moving back to an earlier question clears the stamps after it. That is not
+ * lost data — it is the honest reading: if the student is back on Q26 then Q32
+ * has not been reached, and leaving the old stamp would credit them with work
+ * they are still doing.
+ *
+ * Like `saveScore` this is one transaction and callers do not await it, so a
+ * stamp landing at the same moment as a mark cannot rewrite the record from a
+ * stale snapshot.
+ */
+export async function markReached(
+  id: string,
+  n: number,
+  now = Date.now(),
+): Promise<Attempt | undefined> {
+  return db.transaction("rw", db.attempts, async () => {
+    const attempt = await db.attempts.get(id);
+    if (!attempt) return undefined;
+    if (!attempt.scores.some((q) => q.n === n)) return undefined;
+
+    const at = Math.min(
+      Math.max(now, attempt.startedAt),
+      attempt.startedAt + attempt.durationMs,
+    );
+    const updated: Attempt = {
+      ...attempt,
+      scores: attempt.scores.map((q) => {
+        if (q.n === n) return { ...q, reachedAt: at };
+        if (q.n > n && q.reachedAt !== undefined) {
+          const rest: QuestionScore = { ...q };
+          delete rest.reachedAt;
+          return rest;
+        }
+        return q;
+      }),
     };
     await db.attempts.put(updated);
     return updated;

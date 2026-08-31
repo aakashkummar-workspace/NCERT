@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import ExamTimer from "@/components/ExamTimer";
+import PacingTracker from "@/components/PacingTracker";
 import PaperViewer from "@/components/PaperViewer";
 import ScoringGrid from "@/components/ScoringGrid";
 import {
@@ -19,6 +20,7 @@ import {
   finaliseScoring,
   formatClock,
   isExpired,
+  markReached,
   remainingMs,
   saveScore,
   startAttempt,
@@ -172,6 +174,35 @@ export default function PaperAttempt({ paper, questions }: Props) {
     [attemptId],
   );
 
+  /*
+   * Written the same way as a mark: optimistically, and not awaited. A tap in
+   * the middle of an exam must not wait on IndexedDB, and the stamp is a
+   * wall-clock instant taken here — so a slow write records the moment the
+   * student tapped, not the moment the disk got round to it.
+   */
+  const onReach = useCallback(
+    (n: number) => {
+      const at = Date.now();
+      setAttempt((prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          scores: prev.scores.map((s) => {
+            if (s.n === n) return { ...s, reachedAt: at };
+            if (s.n > n && s.reachedAt !== undefined) {
+              const rest = { ...s };
+              delete rest.reachedAt;
+              return rest;
+            }
+            return s;
+          }),
+        };
+      });
+      if (attemptId) void markReached(attemptId, n, at);
+    },
+    [attemptId],
+  );
+
   async function onFinalise() {
     if (!attemptId) return;
     setBusy(true);
@@ -295,6 +326,13 @@ export default function PaperAttempt({ paper, questions }: Props) {
             startedAt={attempt.startedAt}
             durationMs={attempt.durationMs}
             onExpire={onExpire}
+          />
+          <PacingTracker
+            questions={questions}
+            startedAt={attempt.startedAt}
+            durationMs={attempt.durationMs}
+            scores={attempt.scores}
+            onReach={onReach}
           />
           <div className="border-b border-border bg-paper/90 px-4 py-2 backdrop-blur">
             <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
