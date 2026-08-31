@@ -1,0 +1,98 @@
+[
+  {
+    "answerId": "pc01",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "full marks, all three steps hit"
+  },
+  {
+    "answerId": "pc02",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "missing unit on the final value"
+  },
+  {
+    "answerId": "pc03",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "model credited a vague definition the teacher rejected"
+  },
+  {
+    "answerId": "pc04",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "model missed a correct but non-standard construction"
+  },
+  {
+    "answerId": "pc05",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 0,
+    "note": "blank apart from the question number"
+  },
+  {
+    "answerId": "pc06",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 5,
+    "note": "complete, diagram labelled"
+  },
+  {
+    "answerId": "pc07",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 3,
+    "note": "half mark for a partially correct reason"
+  },
+  {
+    "answerId": "pc08",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 4,
+    "note": "half mark docked for a missing verification step"
+  },
+  {
+    "answerId": "pc09",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 2,
+    "note": "method marks the teacher would not give"
+  },
+  {
+    "answerId": "pc10",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 1,
+    "note": "formula written, no substitution"
+  },
+  {
+    "answerId": "pc11",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 1,
+    "teacherMarks": 1,
+    "note": "one-mark MCQ, excluded from the gate"
+  },
+  {
+    "answerId": "pc12",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 1,
+    "teacherMarks": 0,
+    "note": "one-mark MCQ, excluded from the gate"
+  }
+]

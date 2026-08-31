@@ -1,0 +1,82 @@
+[
+  {
+    "answerId": "fo01",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 0,
+    "note": "irrelevant filler read as three keyword hits"
+  },
+  {
+    "answerId": "fo02",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "agrees with the teacher"
+  },
+  {
+    "answerId": "fo03",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "generous on a half-stated reason"
+  },
+  {
+    "answerId": "fo04",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "penalised a correct shortcut"
+  },
+  {
+    "answerId": "fo05",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "agrees with the teacher"
+  },
+  {
+    "answerId": "fo06",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 1,
+    "note": "awarded a whole derivation the student never wrote"
+  },
+  {
+    "answerId": "fo07",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 3,
+    "note": "half mark apart"
+  },
+  {
+    "answerId": "fo08",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 4,
+    "note": "missed the final step on a crowded page"
+  },
+  {
+    "answerId": "fo09",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 2,
+    "note": "one method mark too many"
+  },
+  {
+    "answerId": "fo10",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 5,
+    "note": "agrees with the teacher"
+  }
+]

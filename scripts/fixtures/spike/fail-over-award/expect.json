@@ -1,0 +1,17 @@
+{
+  "note": "fails ONLY on over-awarding: 80% within +/-1, but two answers +3",
+  "pass": false,
+  "gateN": 10,
+  "gateWithinRate": 0.8,
+  "gateOver": 2,
+  "gateUnder": 0,
+  "worstOverAward": 3,
+  "worstUnderAward": -1,
+  "problems": 0,
+  "missingVerdicts": 0,
+  "criteria": {
+    "withinOne": true,
+    "overAward": false,
+    "coverage": true
+  }
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "answerId": "mx01",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.9
+  },
+  {
+    "answerId": "mx02",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 1.5,
+    "confidence": 0.76
+  },
+  {
+    "answerId": "mx03",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 1,
+    "confidence": 0.88
+  },
+  {
+    "answerId": "mx04",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 1,
+    "confidence": 0.55
+  },
+  {
+    "answerId": "mx05",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 4,
+    "confidence": 0.7
+  },
+  {
+    "answerId": "mx06",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 2,
+    "confidence": 0.86
+  },
+  {
+    "answerId": "mx07",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 4.5,
+    "confidence": 0.81
+  },
+  {
+    "answerId": "mx08",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 1,
+    "confidence": 0.63
+  },
+  {
+    "answerId": "mx09",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.87
+  },
+  {
+    "answerId": "mx10",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.85
+  },
+  {
+    "answerId": "mx11",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.8
+  },
+  {
+    "answerId": "mx12",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.92
+  },
+  {
+    "answerId": "mx13",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 4,
+    "confidence": 0.83
+  },
+  {
+    "answerId": "mx14",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 3,
+    "confidence": 0.79
+  },
+  {
+    "answerId": "mx15",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 5,
+    "confidence": 0.88
+  },
+  {
+    "answerId": "mx16",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 4.5,
+    "confidence": 0.9
+  }
+]

@@ -18,7 +18,12 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(SHELL_CACHE)
-      .then((cache) => cache.addAll(["/", "/offline"]))
+      // Trailing slashes are load-bearing: `next start` with `trailingSlash`
+      // answers "/offline" with a 308. `addAll` follows it and caches a
+      // *redirected* response, which can never satisfy a navigation request —
+      // the fallback below then throws instead of rendering. Cache the
+      // canonical form.
+      .then((cache) => cache.addAll(["/", "/offline/"]))
       .catch(() => undefined)
       .then(() => self.skipWaiting()),
   );
@@ -59,7 +64,7 @@ async function handleNavigation(request) {
   } catch {
     return (
       (await caches.match(request, { cacheName: SHELL_CACHE })) ??
-      (await caches.match("/offline", { cacheName: SHELL_CACHE })) ??
+      (await caches.match("/offline/", { cacheName: SHELL_CACHE })) ??
       (await caches.match("/", { cacheName: SHELL_CACHE })) ??
       new Response("Offline", { status: 503, headers: { "content-type": "text/plain" } })
     );

@@ -1,0 +1,32 @@
+[
+  {
+    "answerId": "sample-01",
+    "rubricId": "class10-science-2025-26-q13",
+    "imagePath": "answer-01.png"
+  },
+  {
+    "answerId": "sample-02",
+    "rubricId": "class10-science-2025-26-q13",
+    "imagePath": "answer-02.png"
+  },
+  {
+    "answerId": "sample-03",
+    "rubricId": "class10-mathematics-basic-2025-26-q34-a",
+    "imagePath": "answer-03.png"
+  },
+  {
+    "answerId": "sample-04",
+    "rubricId": "class10-mathematics-basic-2025-26-q33-b",
+    "imagePath": "answer-04.png"
+  },
+  {
+    "answerId": "sample-05",
+    "rubricId": "class10-mathematics-basic-2025-26-q33-b",
+    "imagePath": "answer-05.png"
+  },
+  {
+    "answerId": "sample-06",
+    "rubricId": "class10-social-science-2025-26-q38-b",
+    "imagePath": "answer-06.png"
+  }
+]

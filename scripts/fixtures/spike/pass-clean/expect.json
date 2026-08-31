@@ -1,0 +1,17 @@
+{
+  "note": "obvious pass: the model tracks the teacher on every long answer",
+  "pass": true,
+  "gateN": 10,
+  "gateWithinRate": 1,
+  "gateOver": 0,
+  "gateUnder": 0,
+  "worstOverAward": 1,
+  "worstUnderAward": -1,
+  "problems": 0,
+  "missingVerdicts": 0,
+  "criteria": {
+    "withinOne": true,
+    "overAward": true,
+    "coverage": true
+  }
+}

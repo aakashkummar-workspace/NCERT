@@ -1,0 +1,17 @@
+{
+  "note": "Maths and Science fail differently; Maths alone would pass the gate",
+  "pass": false,
+  "gateN": 16,
+  "gateWithinRate": 0.625,
+  "gateOver": 5,
+  "gateUnder": 1,
+  "worstOverAward": 2,
+  "worstUnderAward": -2,
+  "problems": 0,
+  "missingVerdicts": 0,
+  "criteria": {
+    "withinOne": false,
+    "overAward": true,
+    "coverage": true
+  }
+}

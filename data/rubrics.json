@@ -1,0 +1,1441 @@
+{
+  "generatedAt": "2026-08-31",
+  "source": "Hand-converted from the CBSE Class X 2025-26 sample-paper marking schemes in public/papers/ (class10-science-2025-26-ms.pdf, class10-mathematics-basic-2025-26-ms.pdf, class10-social-science-2025-26-ms.pdf). Every rubric is a draft for a teacher to review; see data/rubrics.schema.md.",
+  "rubrics": [
+    {
+      "id": "class10-science-2025-26-q10",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 10,
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jesc1",
+      "chapter": 5,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "Unlike animals, plants do not have any excretory products as they do not eat food. Comment upon the statement with justification.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 1 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1,
+          "awardFor": "any two strategies plants use to get rid of waste",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "oxygen, a photosynthetic waste, is removed through stomata",
+              "keywords": [
+                { "any": ["stomata", "stomatal pore", "stomatal opening"] },
+                { "any": ["oxygen", "O2", "O₂"] }
+              ]
+            },
+            {
+              "id": "o2",
+              "awardFor": "excess water is removed by transpiration",
+              "keywords": [
+                { "any": ["transpiration", "transpired", "water vapour through leaves"] },
+                { "any": ["excess water", "extra water", "water"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "metabolic wastes stored in dead cells, resins and gums, or shed with old leaves",
+              "keywords": [
+                { "any": ["resin", "gum", "dead cells", "falling of old leaves", "shedding leaves", "leaf fall"] }
+              ]
+            },
+            {
+              "id": "o4",
+              "awardFor": "waste products are stored in cellular vacuoles",
+              "keywords": [{ "any": ["vacuole", "vacuoles", "cell sap"] }]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme prints one total of 2 and lists four points under 'any two'; the 1+1 split is inferred.",
+        "The scheme's opening rebuttal ('it is completely wrong to say plants do not produce excretory products') earns no separate mark here, so a student who only rebuts and lists nothing scores zero. Confirm that is intended."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q11-a",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 11,
+      "variant": "A",
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jesc1",
+      "chapter": 5,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "How many chambers are there in the heart of (i) fishes and (ii) humans? How is mixing of oxygenated and deoxygenated blood prevented?",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 1 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "two chambers in a fish heart; blood is pumped to the gills, oxygenated, and passes directly to the body",
+          "keywords": [
+            { "any": ["two chambers", "2 chambers", "two-chambered"] },
+            { "any": ["gills", "gill"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "four chambers in the human heart; the septum separates the right and left sides and prevents mixing",
+          "keywords": [
+            { "any": ["four chambers", "4 chambers", "four-chambered"] },
+            { "any": ["septum", "partition", "separation of right and left"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "chamber count right, no mechanism for preventing mixing"
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme prints one total of 2 for both sub-parts; the 1+1 split is inferred from the two numbered sub-parts."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q13",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 13,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jesc1",
+      "chapter": 6,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "Draw and explain how the nerve cells help in transmission of impulses.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 2 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "information is detected at the dendritic tip, setting off a chemical reaction that creates an electrical impulse",
+          "keywords": [
+            { "any": ["dendrite", "dendritic tip", "dendrites"] },
+            { "any": ["electrical impulse", "electric impulse", "impulse"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "the impulse travels dendrite to cell body, then along the axon to its end, where chemicals are released",
+          "keywords": [
+            { "any": ["cell body", "cyton", "soma"] },
+            { "any": ["axon"] },
+            { "any": ["release of chemicals", "chemicals are released", "neurotransmitter"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "names the axon but not the chemical release at its end"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 1,
+          "awardFor": "the chemicals cross the synapse and start a similar impulse in the dendrite of the next neuron",
+          "keywords": [
+            { "any": ["synapse", "synaptic gap", "gap"] },
+            { "any": ["next neuron", "next nerve cell", "another neuron"] }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The stem says 'Draw and explain', but the scheme awards no separate figure mark — all 3 are for the explanation. A student who draws a correct labelled neuron and writes nothing scores zero under this rubric. Confirm before this one is used to paint anything red."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q16-a",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 16,
+      "variant": "A",
+      "type": "la",
+      "maxMarks": 5,
+      "bookCode": "jesc1",
+      "chapter": 7,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "Puneet wants to grow banana plants. (i) Should he opt for seeds or another method of reproduction? Justify. (ii) What causes variation, and are variations good or bad? Justify.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 3 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "rejects seeds, because banana plants have lost the capacity to produce seeds",
+          "keywords": [
+            { "any": ["should not choose seeds", "not seeds", "no seeds", "cannot use seeds"] },
+            { "any": ["lost the capacity to produce seeds", "do not produce seeds", "seedless"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "recommends vegetative propagation, by stem cutting",
+          "keywords": [
+            { "any": ["vegetative propagation", "vegetative reproduction"] },
+            { "any": ["stem cutting", "cutting", "sucker", "rhizome"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "names vegetative propagation but no method"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 1,
+          "awardFor": "errors and variations in DNA copying cause variation",
+          "keywords": [
+            { "any": ["DNA copying", "DNA replication", "copying of DNA"] },
+            { "any": ["error", "errors", "inaccuracies", "variation in copying"] }
+          ]
+        },
+        {
+          "id": "s4",
+          "marks": 1,
+          "awardFor": "variation is good — it helps a population tide over unfavourable conditions through the survival of some variants",
+          "keywords": [
+            { "any": ["survival", "survive", "tide over"] },
+            { "any": ["unfavourable conditions", "changed conditions", "niche", "drastic change"] }
+          ]
+        },
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 1,
+          "marksEach": 1,
+          "awardFor": "any one way variation can be bad",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "the parents' desirable characters are lost",
+              "keywords": [{ "any": ["desirable characters are lost", "loses parental traits", "good traits lost"] }]
+            },
+            {
+              "id": "o2",
+              "awardFor": "some variants cannot survive the new conditions",
+              "keywords": [{ "any": ["not able to survive", "cannot survive", "die out"] }]
+            },
+            {
+              "id": "o3",
+              "awardFor": "the variant cannot use the cellular apparatus efficiently",
+              "keywords": [{ "any": ["cellular apparatus", "cell machinery", "inefficient"] }]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme prints one total of 5 across both sub-parts; the 2 + 3 split, and the 1+1 inside each, are inferred.",
+        "Sub-part (ii) is Heredity (jesc1 chapter 8) content sitting inside a reproduction question. Filed under chapter 7 because the question as a whole is about plant reproduction; a teacher may prefer chapter 8."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q25",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 25,
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jesc1",
+      "chapter": 3,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "A pin is fixed to an aluminium wire with wax and the wire is heated. A. If the aluminium wire is replaced by silver, will the observation change? B. Will the aluminium wire melt?",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 4 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "the pin still drops but takes less time, because silver is a better conductor of heat than aluminium",
+          "keywords": [
+            { "any": ["less time", "faster", "sooner", "quicker"] },
+            { "any": ["better conductor of heat", "better thermal conductor", "conducts heat better"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "says the pin drops faster but gives no reason"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "no, the aluminium wire will not melt, because metals have high melting points",
+          "keywords": [
+            { "any": ["will not melt", "does not melt", "no"] },
+            { "any": ["high melting point", "melting points are high"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "answers 'no' with no reason"
+            }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-science-2025-26-q28",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 28,
+      "type": "case-study",
+      "maxMarks": 4,
+      "bookCode": "jesc1",
+      "chapter": 2,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "Sara neutralises dilute NaOH with dilute H2SO4 using phenolphthalein. A. Would concentrated acid need more or fewer than 40 drops? B. How many drops neutralise 6 mL of NaOH? C. Write the equation and classify the reaction.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 5 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "fewer than 40 drops, because concentrated H2SO4 gives more H+ ions than dilute acid",
+          "keywords": [
+            { "any": ["less than 40", "fewer than 40", "< 40", "below 40"] },
+            { "any": ["more H+ ions", "more hydrogen ions", "higher concentration of H+"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "3 mL is 60 drops, which neutralises 6 mL of NaOH",
+          "keywords": [
+            { "any": ["60 drops", "60"] },
+            { "any": ["6 mL", "6 ml", "6 millilitre"] }
+          ],
+          "unit": { "required": true, "accepted": ["mL", "ml", "millilitre", "milliliter", "drops"] },
+          "partial": [
+            { "when": "unit-missing", "award": 0.5, "note": "numbers right, no volume unit written" },
+            { "when": "arithmetic-slip", "award": 0.5, "note": "the 20-drops-per-mL ratio is used but mis-multiplied" }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 0.5,
+          "awardFor": "writes the balanced equation 2NaOH + H2SO4 → Na2SO4 + 2H2O",
+          "keywords": [
+            { "any": ["2NaOH", "2 NaOH"] },
+            { "any": ["Na2SO4", "Na₂SO₄"] },
+            { "any": ["2H2O", "2 H2O", "2H₂O"] }
+          ]
+        },
+        {
+          "id": "s4",
+          "marks": 0.5,
+          "awardFor": "names it a neutralisation and a double displacement reaction",
+          "keywords": [
+            { "any": ["neutralisation", "neutralization"] },
+            { "any": ["double displacement", "double-displacement"] }
+          ]
+        },
+        {
+          "id": "s5",
+          "marks": 1,
+          "awardFor": "justifies both names — a base forms salt and water, Na+ and SO4^2- are exchanged, and it is not precipitation because Na2SO4 is soluble",
+          "keywords": [
+            { "any": ["salt and water", "salt + water"] },
+            { "any": ["ions are exchanged", "replaced", "exchange of ions"] },
+            { "any": ["soluble", "not a precipitation reaction", "no precipitate"] }
+          ],
+          "match": "any"
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The paper's case-study sections are 1+1+2; the scheme prints only the total of 4. Sub-part C's 2 marks are split here into ½ (equation) + ½ (naming) + 1 (justification), which is a judgment.",
+        "The scheme offers an OR for sub-part B (the colourless-to-pink colour change). That alternative is not modelled — a student who answers the OR scores zero on s2 under this rubric."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q34-a",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 34,
+      "variant": "A",
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jesc1",
+      "chapter": 11,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "(i) Effective resistance of two 8 ohm resistors in the combination. (ii) Current flowing through the 4-ohm resistor.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 7 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "combines the two 8 Ω resistors in parallel to get 4 Ω",
+          "keywords": [
+            { "any": ["R1R2/(R1+R2)", "product over sum", "1/R = 1/R1 + 1/R2", "parallel"] },
+            { "any": ["4 ohm", "4 Ω", "4Ω", "4 ohms"] }
+          ],
+          "unit": { "required": true, "accepted": ["Ω", "ohm", "ohms"] },
+          "partial": [
+            { "when": "unit-missing", "award": 0.5, "note": "4 is written with no unit" },
+            { "when": "formula-only", "award": 0.5, "note": "the parallel formula is quoted but never evaluated" }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "uses I = V/R with the total 8 Ω to get 1 A",
+          "keywords": [
+            { "any": ["I = V/R", "V/R", "Ohm's law"] },
+            { "any": ["1 A", "1 ampere", "1 amp"] }
+          ],
+          "unit": { "required": true, "accepted": ["A", "amp", "ampere", "amperes"] },
+          "partial": [
+            { "when": "unit-missing", "award": 0.5, "note": "1 is written with no unit" },
+            { "when": "order-broken", "award": 0.5, "note": "the current is stated before the 4 Ω combination is established" }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-science-2025-26-q36",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 36,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jesc1",
+      "chapter": 11,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "A student needs a 0.12 Ω resistor from copper wire of 0.80 mm diameter (ρ = 1.8 × 10⁻⁸ Ωm). (i) Determine the cross-sectional area. (ii) Calculate the length required.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 9 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1.5,
+          "awardFor": "uses A = πd²/4 with d = 0.80 × 10⁻³ m to get approximately 5 × 10⁻⁷ m²",
+          "keywords": [
+            { "any": ["πd²/4", "pi d^2 / 4", "πr²", "pi r squared"] },
+            { "any": ["5 x 10-7", "5 × 10⁻⁷", "5e-7", "0.0000005"] }
+          ],
+          "unit": { "required": true, "accepted": ["m2", "m²", "square metre", "sq m"] },
+          "partial": [
+            { "when": "unit-missing", "award": 1, "note": "area right, m² not written" },
+            { "when": "formula-only", "award": 0.5, "note": "the area formula is quoted and never substituted into" }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "rearranges R = ρl/A to l = RA/ρ and gets approximately 3.33 m",
+          "keywords": [
+            { "any": ["RA/ρ", "l = RA/rho", "R = ρl/A", "resistivity formula"] },
+            { "any": ["3.33", "3.3", "10/3"] }
+          ],
+          "unit": { "required": true, "accepted": ["m", "metre", "meter", "metres", "meters"] },
+          "partial": [
+            { "when": "unit-missing", "award": 1, "note": "length right, m not written" },
+            { "when": "order-broken", "award": 0.5, "note": "the length is quoted before the area is established" }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme prints one total of 3 with no split; 1½ + 1½ is inferred from the two sub-parts."
+      ]
+    },
+    {
+      "id": "class10-science-2025-26-q37",
+      "paper": "class10-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 37,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jesc1",
+      "chapter": 12,
+      "class": 10,
+      "subject": "Science",
+      "prompt": "(i) Is the student's claim that the magnetic field at X is stronger than at Y correct? Explain. (ii) Redraw the diagram and mark the direction of the field lines.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-science-2025-26-ms.pdf", "page": 10 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "awardFor": "states that the closeness of the field lines is directly related to the strength of the field",
+          "keywords": [
+            { "any": ["closeness", "closer together", "crowded", "density of field lines"] },
+            { "any": ["strength", "stronger", "field strength"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "concludes the field at X, at the pole, is stronger than at Y — the claim is correct",
+          "keywords": [
+            { "any": ["X is stronger", "stronger at X", "field at X is more"] },
+            { "any": ["pole", "at the pole", "near the pole"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "agrees the claim is correct but does not tie it to the pole"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "kind": "diagram",
+          "marks": 1,
+          "awardFor": "redraws the diagram with arrows marked correctly from North to South",
+          "labels": ["N", "S", "arrows on field lines", "X", "Y"],
+          "autoGradable": false
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q21-b",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 21,
+      "variant": "B",
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jemh1",
+      "chapter": 1,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "Find the smallest number which is divisible by both 306 and 657.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 3 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 0.5,
+          "awardFor": "states that the smallest number divisible by both is their LCM",
+          "keywords": [{ "any": ["LCM", "lowest common multiple", "least common multiple"] }]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "writes both prime factorisations: 306 = 2 × 3² × 17 and 657 = 3² × 73",
+          "keywords": [
+            { "any": ["2 × 3² × 17", "2 x 3^2 x 17", "2*3^2*17"] },
+            { "any": ["3² × 73", "3^2 x 73", "3*3*73"] }
+          ],
+          "partial": [
+            { "when": "keywords-partial", "award": 0.5, "note": "only one of the two numbers is factorised" }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "evaluates the LCM as 22338",
+          "keywords": [{ "any": ["22338", "22,338"] }]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q25-a",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 25,
+      "variant": "A",
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jemh1",
+      "chapter": 8,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "Evaluate 2 sin 30° tan 60° − 3 cos² 60° sec² 30°.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 3 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1.5,
+          "awardFor": "substitutes the standard values: 2(1/2)(√3) − 3(1/2)²(2/√3)²",
+          "keywords": [
+            { "any": ["sin 30 = 1/2", "1/2", "½"] },
+            { "any": ["tan 60 = √3", "√3", "root 3"] },
+            { "any": ["sec 30 = 2/√3", "2/√3", "2/root 3"] }
+          ],
+          "partial": [
+            { "when": "keywords-partial", "award": 1, "note": "two of the three standard values substituted correctly" },
+            { "when": "formula-only", "award": 0.5, "note": "the standard values are listed but never substituted" }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "simplifies to √3 − 1",
+          "keywords": [{ "any": ["√3 − 1", "√3 - 1", "root 3 - 1", "sqrt(3) - 1"] }]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q28",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 28,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jemh1",
+      "chapter": 10,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "A quadrilateral ABCD is drawn to circumscribe a circle. Show that (AB + CD) / (AD + BC) = 1.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 5 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1.5,
+          "awardFor": "states that tangents drawn to a circle from an external point are equal, and writes the four pairs AP = AS, PB = BQ, CR = CQ, DR = DS",
+          "keywords": [
+            { "any": ["tangents from an external point are equal", "tangents from external point", "equal tangents"] },
+            { "any": ["AP = AS", "AP=AS"] },
+            { "any": ["PB = BQ", "PB=BQ", "BP = BQ"] }
+          ],
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 1,
+              "note": "quotes the equal-tangents property but writes fewer than all four pairs"
+            },
+            {
+              "when": "formula-only",
+              "award": 0.5,
+              "note": "the property is stated with no pairs written down"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "adds the four equations to reach AB + CD = AD + BC",
+          "keywords": [{ "any": ["AB + CD = AD + BC", "AB+CD = AD+BC", "AB + CD = BC + AD"] }]
+        },
+        {
+          "id": "s3",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "concludes the required ratio equals 1",
+          "keywords": [{ "any": ["= 1", "equals 1", "ratio is 1", "hence proved"] }]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q31",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 31,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jemh1",
+      "chapter": 5,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "The sum of the first n terms of an AP is 5n² − n. Find the nth term of the AP.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 6 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 0.5,
+          "awardFor": "states the relation aₙ = Sₙ − Sₙ₋₁",
+          "keywords": [{ "any": ["an = Sn - Sn-1", "aₙ = Sₙ − Sₙ₋₁", "Sn - S(n-1)"] }]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "substitutes Sₙ = 5n² − n and Sₙ₋₁ = 5(n − 1)² − (n − 1)",
+          "keywords": [
+            { "any": ["5n2 - n", "5n² − n", "5n^2 - n"] },
+            { "any": ["5(n - 1)2", "5(n − 1)²", "5(n-1)^2"] }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "simplifies to aₙ = 10n − 6",
+          "keywords": [{ "any": ["10n - 6", "10n − 6", "10n-6"] }],
+          "partial": [
+            { "when": "arithmetic-slip", "award": 1, "note": "correct expansion, wrong constant term" },
+            { "when": "sign-error", "award": 1, "note": "10n + 6 rather than 10n − 6" }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q33-b",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 33,
+      "variant": "B",
+      "type": "la",
+      "maxMarks": 5,
+      "bookCode": "jemh1",
+      "chapter": 4,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "A train travels 300 km. If its speed were 5 km/hr more, it would take 2 hours less. Find the original speed of the train.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 9 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 0.5,
+          "awardFor": "lets the original speed be x km/hr over a distance of 300 km",
+          "keywords": [
+            { "any": ["let the speed be x", "let original speed", "speed = x"] },
+            { "any": ["300", "300 km"] }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "writes both times: 300/x and 300/(x + 5)",
+          "keywords": [
+            { "any": ["300/x"] },
+            { "any": ["300/(x+5)", "300/(x + 5)"] }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "forms the equation 300/x − 300/(x + 5) = 2",
+          "keywords": [{ "any": ["300/x - 300/(x+5) = 2", "300/x − 300/(x + 5) = 2", "to - tn = 2"] }],
+          "partial": [
+            { "when": "sign-error", "award": 0.5, "note": "the two times are subtracted the wrong way round" }
+          ]
+        },
+        {
+          "id": "s4",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "reduces to the quadratic x² + 5x − 750 = 0",
+          "keywords": [{ "any": ["x2 + 5x - 750 = 0", "x² + 5x − 750 = 0", "x^2+5x-750"] }],
+          "partial": [
+            { "when": "arithmetic-slip", "award": 1, "note": "cross-multiplication done, constant term wrong" }
+          ]
+        },
+        {
+          "id": "s5",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "factorises to (x − 25)(x + 30) = 0, giving x = 25 or x = −30",
+          "keywords": [
+            { "any": ["(x - 25)(x + 30)", "(x − 25)(x + 30)", "x = 25 or x = -30"] }
+          ],
+          "partial": [
+            { "when": "arithmetic-slip", "award": 0.5, "note": "one root correct, the other not" }
+          ]
+        },
+        {
+          "id": "s6",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "rejects the negative root and states the original speed as 25 km/hr",
+          "keywords": [
+            { "any": ["speed cannot be negative", "not possible", "reject -30"] },
+            { "any": ["25 km/hr", "25 km/h", "25 kmph"] }
+          ],
+          "unit": { "required": true, "accepted": ["km/hr", "km/h", "kmph", "km per hour"] }
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q34-a",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 34,
+      "variant": "A",
+      "type": "la",
+      "maxMarks": 5,
+      "bookCode": "jemh1",
+      "chapter": 9,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "The angle of elevation of the top of a chimney from the foot of a 40 m tower is 60°, and the angle of depression of the foot of the chimney from the top of the tower is 30°. Find the height of the chimney and the length of the wire joining the two tops.",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 9 },
+      "steps": [
+        {
+          "id": "s1",
+          "kind": "diagram",
+          "marks": 1,
+          "awardFor": "a correct labelled figure showing the chimney, the tower, both angles and the 40 m height",
+          "labels": ["chimney", "tower", "60°", "30°", "40 m"],
+          "autoGradable": false,
+          "ordered": false
+        },
+        {
+          "id": "s2",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "uses tan 30° = 40/BC to get BC = 40√3 m",
+          "keywords": [
+            { "any": ["tan 30", "tan30°", "tan 30°"] },
+            { "any": ["40√3", "40 root 3", "40*sqrt(3)"] }
+          ],
+          "unit": { "required": true, "accepted": ["m", "metre", "meter", "metres", "meters"] },
+          "partial": [
+            { "when": "unit-missing", "award": 1, "note": "value right, m not written" },
+            { "when": "formula-only", "award": 0.5, "note": "the ratio is set up and never solved" }
+          ]
+        },
+        {
+          "id": "s3",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "uses tan 60° = AB / 40√3 to get the chimney height AB = 120 m",
+          "keywords": [
+            { "any": ["tan 60", "tan60°", "tan 60°"] },
+            { "any": ["120", "120 m"] }
+          ],
+          "unit": { "required": true, "accepted": ["m", "metre", "meter", "metres", "meters"] },
+          "partial": [
+            { "when": "unit-missing", "award": 1, "note": "height right, m not written" }
+          ]
+        },
+        {
+          "id": "s4",
+          "marks": 1,
+          "ordered": true,
+          "awardFor": "uses AE = 80 m and ED = 40√3 m to get the wire length AD = √(6400 + 4800) = 40√7 m",
+          "keywords": [
+            { "any": ["40√7", "40 root 7", "40*sqrt(7)"] }
+          ],
+          "unit": { "required": true, "accepted": ["m", "metre", "meter", "metres", "meters"] },
+          "partial": [
+            { "when": "unit-missing", "award": 0.5, "note": "length right, m not written" },
+            { "when": "arithmetic-slip", "award": 0.5, "note": "Pythagoras applied correctly, sum under the root wrong" }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-mathematics-basic-2025-26-q36-iii-a",
+      "paper": "class10-mathematics-basic-2025-26",
+      "session": "2025-26",
+      "questionNo": 36,
+      "variant": "iii-A",
+      "type": "case-study",
+      "maxMarks": 4,
+      "bookCode": "jemh1",
+      "chapter": 7,
+      "class": 10,
+      "subject": "Mathematics",
+      "prompt": "Carpooling case study. (i) Distance between B and C. (ii) Mid-point of BC. (iii)(A) Which society is farthest from the office at O?",
+      "ordering": "ordered",
+      "acceptEquivalentWording": false,
+      "scheme": { "file": "class10-mathematics-basic-2025-26-ms.pdf", "page": 11 },
+      "steps": [
+        {
+          "id": "s1",
+          "marks": 1,
+          "ordered": false,
+          "awardFor": "distance between B and C is 4√2 units",
+          "keywords": [{ "any": ["4√2", "4 root 2", "4*sqrt(2)"] }],
+          "unit": { "required": true, "accepted": ["units", "unit"] },
+          "partial": [
+            { "when": "unit-missing", "award": 0.5, "note": "value right, 'units' not written" }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "ordered": false,
+          "awardFor": "mid-point of BC is (4, 4)",
+          "keywords": [{ "any": ["(4, 4)", "(4,4)", "4, 4"] }]
+        },
+        {
+          "id": "s3",
+          "marks": 1.5,
+          "ordered": true,
+          "awardFor": "computes all three distances from the origin: OA = √41, OB = √40, OC = √40",
+          "keywords": [
+            { "any": ["√41", "root 41", "sqrt(41)"] },
+            { "any": ["√40", "root 40", "sqrt(40)"] }
+          ],
+          "partial": [
+            { "when": "keywords-partial", "award": 1, "note": "two of the three distances computed" },
+            { "when": "formula-only", "award": 0.5, "note": "the distance formula is quoted and never used" }
+          ]
+        },
+        {
+          "id": "s4",
+          "marks": 0.5,
+          "ordered": true,
+          "awardFor": "concludes that society A is the farthest from the office",
+          "keywords": [{ "any": ["society A", "A is farthest", "A is the farthest"] }]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-social-science-2025-26-q5-a",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 5,
+      "variant": "A",
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jess3",
+      "chapter": 3,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "'The Silk route was a good example of vibrant pre-modern trade and cultural links between distant parts of the world.' Explain with any two examples.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 1 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1,
+          "awardFor": "any two examples of trade or cultural exchange along the silk routes",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "Chinese pottery, textiles and Indian spices travelled west; precious metals flowed from Europe to Asia",
+              "keywords": [
+                { "any": ["pottery", "textiles", "spices", "silk"] },
+                { "any": ["gold", "silver", "precious metals"] }
+              ]
+            },
+            {
+              "id": "o2",
+              "awardFor": "Buddhism spread from India in several directions through the intersecting points of the silk routes",
+              "keywords": [
+                { "any": ["Buddhism", "Buddhist"] },
+                { "any": ["spread", "travelled", "carried"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "early Christian missionaries and later Muslim preachers travelled this route to reach Asia",
+              "keywords": [
+                { "any": ["Christian missionaries", "missionaries", "Muslim preachers", "preachers"] },
+                { "any": ["Asia", "travelled the route", "same route"] }
+              ]
+            }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-social-science-2025-26-q16",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 16,
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jess1",
+      "chapter": 4,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Rice is a commercial crop in Haryana and Punjab but a subsistence crop in Odisha. Explain why, using geographical factors and economic practices.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 3 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1,
+          "awardFor": "any two contrasts between the two regions",
+          "requireTags": { "climate": 1, "economic": 1 },
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "Punjab and Haryana have well-developed canal irrigation and a climate suited to high-yielding varieties; Odisha's rice is largely rainfed",
+              "keywords": [
+                { "any": ["irrigation", "canal", "Sutlej-Yamuna", "tube well"] },
+                { "any": ["rainfed", "monsoon", "rain-fed", "depends on rainfall"] }
+              ],
+              "tags": ["climate"]
+            },
+            {
+              "id": "o2",
+              "awardFor": "Punjab and Haryana grow rice for national and international markets with government procurement and transport; Odisha grows mostly for local use",
+              "keywords": [
+                { "any": ["market", "procurement", "export", "surplus", "commercial"] },
+                { "any": ["local consumption", "personal use", "subsistence", "own use"] }
+              ],
+              "tags": ["economic"]
+            },
+            {
+              "id": "o3",
+              "awardFor": "Punjab and Haryana use modern machinery and high-yielding varieties; Odisha's farming is traditional and family-scale",
+              "keywords": [
+                { "any": ["machinery", "modern techniques", "high-yielding", "HYV"] },
+                { "any": ["traditional", "family", "sustenance", "small scale"] }
+              ],
+              "tags": ["economic"]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme requires 'at least one related to climate and one economic'. The farming-practices point is tagged economic here so that it can partner the climate point; a teacher may consider it a third, untagged category, in which case an answer of points 2 and 3 would no longer be full marks."
+      ]
+    },
+    {
+      "id": "class10-social-science-2025-26-q24",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 24,
+      "type": "vsa",
+      "maxMarks": 2,
+      "bookCode": "jess4",
+      "chapter": 2,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Highlight any two key features of federalism.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 6 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1,
+          "awardFor": "any two features of federalism",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "there are two or more levels or tiers of government",
+              "keywords": [{ "any": ["two or more levels", "tiers of government", "two levels of government"] }]
+            },
+            {
+              "id": "o2",
+              "awardFor": "each tier governs the same citizens but has its own jurisdiction in legislation, taxation and administration",
+              "keywords": [
+                { "any": ["jurisdiction", "own sphere", "separate powers"] },
+                { "any": ["legislation", "taxation", "administration"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "the jurisdictions of each tier are specified in the constitution, so each tier's authority is constitutionally guaranteed",
+              "keywords": [
+                { "any": ["specified in the constitution", "constitutionally guaranteed", "written in the constitution"] }
+              ]
+            },
+            {
+              "id": "o4",
+              "awardFor": "the fundamental provisions cannot be unilaterally changed by one level of government",
+              "keywords": [
+                { "any": ["cannot be unilaterally changed", "consent of both levels", "not changed by one level alone"] }
+              ]
+            },
+            {
+              "id": "o5",
+              "awardFor": "courts interpret the constitution and the highest court umpires disputes between levels",
+              "keywords": [
+                { "any": ["courts", "highest court", "supreme court", "umpire"] }
+              ]
+            },
+            {
+              "id": "o6",
+              "awardFor": "sources of revenue for each level are clearly specified, ensuring financial autonomy",
+              "keywords": [
+                { "any": ["sources of revenue", "financial autonomy", "revenue is specified"] }
+              ]
+            }
+          ]
+        }
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "class10-social-science-2025-26-q28",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 28,
+      "type": "case-study",
+      "maxMarks": 4,
+      "bookCode": "jess4",
+      "chapter": 1,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Sri Lanka and Belgium source passage. 28.1 State any two demands of Tamils in Sri Lanka. 28.2 State the results of the Majoritarian Government in Sri Lanka. 28.3 Explain any two provisions of the Belgian model of power sharing.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 8 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 1,
+          "marksEach": 1,
+          "awardFor": "any one demand of the Sri Lankan Tamils",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "recognition of Tamil as an official language",
+              "keywords": [
+                { "any": ["Tamil"] },
+                { "any": ["official language", "state language", "recognise as official"] }
+              ]
+            },
+            {
+              "id": "o2",
+              "awardFor": "regional autonomy",
+              "keywords": [{ "any": ["regional autonomy", "autonomy", "self-rule for the region"] }]
+            },
+            {
+              "id": "o3",
+              "awardFor": "equality of opportunity in education and jobs",
+              "keywords": [
+                { "any": ["equality of opportunity", "equal opportunities"] },
+                { "any": ["education", "jobs", "employment"] }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "marks": 1,
+          "awardFor": "the majoritarian government created distrust between Tamils and Sinhalas, which led to civil war, deaths on both sides, and families fleeing as refugees",
+          "keywords": [
+            { "any": ["distrust", "alienation", "mistrust"] },
+            { "any": ["civil war", "war", "violence"] },
+            { "any": ["refugees", "forced to leave", "fled the country"] }
+          ],
+          "match": "any",
+          "partial": [
+            {
+              "when": "keywords-partial",
+              "award": 0.5,
+              "note": "names the distrust but not the civil war or its consequences"
+            }
+          ]
+        },
+        {
+          "id": "g3",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1,
+          "awardFor": "any two provisions of the Belgian model of power sharing",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "equal numbers of Dutch- and French-speaking ministers in the central government, with some laws needing majorities from each linguistic group",
+              "keywords": [
+                { "any": ["equal number of ministers", "equal representation of ministers", "Dutch and French ministers shall be equal"] }
+              ]
+            },
+            {
+              "id": "o2",
+              "awardFor": "many central powers were given to the state governments of the two regions, which are not subordinate to the centre",
+              "keywords": [
+                { "any": ["state governments", "regional governments"] },
+                { "any": ["not subordinate", "independent of the centre"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "Brussels has a separate government in which Dutch and French have equal representation",
+              "keywords": [
+                { "any": ["Brussels"] },
+                { "any": ["equal representation", "separate government"] }
+              ]
+            },
+            {
+              "id": "o4",
+              "awardFor": "a third community government, elected by each language community, has power over cultural, educational and language issues",
+              "keywords": [
+                { "any": ["community government", "third kind of government"] },
+                { "any": ["cultural", "educational", "language related"] }
+              ]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The paper says 28.1 asks for 'any two demands' but the scheme prints '(Any one to be considered)' and allots 1 mark. This rubric follows the scheme, not the paper. A student who lists exactly one demand is full marks here."
+      ]
+    },
+    {
+      "id": "class10-social-science-2025-26-q35",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 35,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jess2",
+      "chapter": 1,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Explain the importance of public facilities for development.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 9 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 2,
+          "marksEach": 1.5,
+          "awardFor": "any two public facilities, each explained",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "healthcare and public health — reduces mortality, keeps the workforce productive",
+              "keywords": [
+                { "any": ["healthcare", "health care", "public health", "hospitals"] },
+                { "any": ["mortality", "life expectancy", "productive", "disease"] }
+              ]
+            },
+            {
+              "id": "o2",
+              "awardFor": "education and skill development — equal learning opportunity, literacy, innovation, growth",
+              "keywords": [
+                { "any": ["education", "schooling", "skill development"] },
+                { "any": ["literacy", "equal opportunity", "innovation", "growth"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "sanitation and clean water — prevents disease, raises life expectancy, cuts healthcare costs",
+              "keywords": [
+                { "any": ["sanitation", "clean water", "safe drinking water"] },
+                { "any": ["disease", "cholera", "life expectancy", "health"] }
+              ]
+            },
+            {
+              "id": "o4",
+              "awardFor": "infrastructure — roads, transport and energy connect markets and improve quality of life",
+              "keywords": [
+                { "any": ["infrastructure", "roads", "transport", "electricity", "energy"] },
+                { "any": ["markets", "connectivity", "quality of life", "economic activity"] }
+              ]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme allots 1½ + 1½ = 3 for 'any two', so a facility named without explanation should not take the full 1½. There is no half-of-1½ award in CBSE's grain, so no partial rule is declared on the group; a named-but-unexplained facility currently scores full or nothing. A teacher should decide whether a 1-mark partial is fair here."
+      ]
+    },
+    {
+      "id": "class10-social-science-2025-26-q37",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 37,
+      "type": "sa",
+      "maxMarks": 3,
+      "bookCode": "jess2",
+      "chapter": 4,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Explain any three factors that have enabled globalisation.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 10 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 3,
+          "marksEach": 1,
+          "awardFor": "any three factors, each well explained",
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "the movement of goods and services between countries",
+              "keywords": [{ "any": ["movement of goods", "trade in goods and services", "goods and services"] }]
+            },
+            {
+              "id": "o2",
+              "awardFor": "information and communication technology",
+              "keywords": [
+                { "any": ["information technology", "communication technology", "IT", "internet", "telecommunication"] }
+              ]
+            },
+            {
+              "id": "o3",
+              "awardFor": "transportation technology",
+              "keywords": [
+                { "any": ["transportation technology", "transport technology", "containers", "faster shipping", "air transport"] }
+              ]
+            },
+            {
+              "id": "o4",
+              "awardFor": "the movement of people between countries",
+              "keywords": [{ "any": ["movement of people", "migration", "people move between countries"] }]
+            },
+            {
+              "id": "o5",
+              "awardFor": "liberalisation of foreign trade and foreign investment policy",
+              "keywords": [
+                { "any": ["liberalisation", "liberalization", "removal of trade barriers"] },
+                { "any": ["foreign trade", "foreign investment", "investment policy"] }
+              ]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme says 'any 3 well explained' but lists the five factors as bare phrases with no explanation of its own. The keyword sets here therefore test only that the factor is named, not that it is explained — this rubric is more generous than an examiner would be."
+      ]
+    },
+    {
+      "id": "class10-social-science-2025-26-q38-b",
+      "paper": "class10-social-science-2025-26",
+      "session": "2025-26",
+      "questionNo": 38,
+      "variant": "B",
+      "type": "la",
+      "maxMarks": 5,
+      "bookCode": "jess2",
+      "chapter": 2,
+      "class": 10,
+      "subject": "Social Science",
+      "prompt": "Privatisation can have both positive and negative effects on the economy. Support the statement with argument.",
+      "ordering": "unordered",
+      "acceptEquivalentWording": true,
+      "scheme": { "file": "class10-social-science-2025-26-ms.pdf", "page": 10 },
+      "steps": [
+        {
+          "id": "g1",
+          "kind": "choose",
+          "chooseAtLeast": 5,
+          "marksEach": 1,
+          "awardFor": "any five effects of privatisation",
+          "requireTags": { "positive": 2, "negative": 2 },
+          "options": [
+            {
+              "id": "o1",
+              "awardFor": "increased efficiency and productivity",
+              "keywords": [{ "any": ["efficiency", "productivity", "more efficient"] }],
+              "tags": ["positive"]
+            },
+            {
+              "id": "o2",
+              "awardFor": "improved quality of services",
+              "keywords": [{ "any": ["quality of services", "better services", "improved service"] }],
+              "tags": ["positive"]
+            },
+            {
+              "id": "o3",
+              "awardFor": "reduced burden on the government",
+              "keywords": [{ "any": ["reduced government burden", "less burden on government", "fiscal burden"] }],
+              "tags": ["positive"]
+            },
+            {
+              "id": "o4",
+              "awardFor": "exclusion of public welfare, because profit becomes the only motive",
+              "keywords": [
+                { "any": ["public welfare", "welfare is excluded"] },
+                { "any": ["profit motive", "profit being the only motive", "only profit"] }
+              ],
+              "tags": ["negative"]
+            },
+            {
+              "id": "o5",
+              "awardFor": "loss of employment security",
+              "keywords": [{ "any": ["employment security", "job security", "loss of jobs", "retrenchment"] }],
+              "tags": ["negative"]
+            },
+            {
+              "id": "o6",
+              "awardFor": "a wider gap between rich and poor, because basic facilities become inaccessible",
+              "keywords": [
+                { "any": ["gap between rich and poor", "inequality", "disparity"] },
+                { "any": ["basic facilities", "inaccessible", "unaffordable"] }
+              ],
+              "tags": ["negative"]
+            },
+            {
+              "id": "o7",
+              "awardFor": "lower government accountability",
+              "keywords": [{ "any": ["accountability", "less accountable", "no accountability"] }],
+              "tags": ["negative"]
+            }
+          ]
+        }
+      ],
+      "needsReview": true,
+      "reviewNotes": [
+        "The scheme says 'ANY 5 points... however, at least 2 positive and 2 negative effects must be included'. Modelled as chooseAtLeast 5 with requireTags positive 2, negative 2. The fifth point may come from either side, which is what the scheme implies but does not say.",
+        "Privatisation is filed here under jess2 chapter 2 (Sectors of the Indian Economy), where public and private sectors are compared. It is also touched on in chapter 4 (Globalisation); a teacher may prefer that filing."
+      ]
+    }
+  ]
+}

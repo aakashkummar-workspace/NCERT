@@ -1,0 +1,151 @@
+[
+  {
+    "answerId": "pc01",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.94,
+    "steps": [
+      {
+        "stepId": "s1",
+        "description": "States that the image is virtual and erect",
+        "outOf": 1,
+        "awarded": 1,
+        "decision": "full",
+        "reason": "Both properties stated explicitly in line 2.",
+        "evidence": "the image formed is virtual and erect"
+      },
+      {
+        "stepId": "s2",
+        "description": "Gives the correct magnification with sign",
+        "outOf": 1,
+        "awarded": 1,
+        "decision": "full",
+        "reason": "m = +2 written with the sign.",
+        "evidence": "m = +2"
+      },
+      {
+        "stepId": "s3",
+        "description": "Draws a labelled ray diagram",
+        "outOf": 1,
+        "awarded": 1,
+        "decision": "full",
+        "reason": "Two rays drawn, focus and centre of curvature labelled.",
+        "evidence": "[ray diagram, labelled F and C]"
+      }
+    ],
+    "spans": [
+      {
+        "text": "the image formed is virtual and erect",
+        "tag": "green",
+        "stepId": "s1",
+        "note": "core keywords hit"
+      },
+      {
+        "text": "m = +2",
+        "tag": "green",
+        "stepId": "s2",
+        "note": "correct sign convention"
+      },
+      {
+        "text": "as we all know from the chapter",
+        "tag": "red",
+        "stepId": null,
+        "note": "filler, no marks"
+      }
+    ],
+    "transcription": "Q6. The image formed is virtual and erect ... m = +2 ... [ray diagram]",
+    "illegible": false,
+    "model": "claude-opus-5",
+    "gradedAt": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "answerId": "pc02",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.88
+  },
+  {
+    "answerId": "pc03",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.61
+  },
+  {
+    "answerId": "pc04",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.72
+  },
+  {
+    "answerId": "pc05",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 0,
+    "confidence": 0.91
+  },
+  {
+    "answerId": "pc06",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 5,
+    "confidence": 0.96
+  },
+  {
+    "answerId": "pc07",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 3.5,
+    "confidence": 0.83
+  },
+  {
+    "answerId": "pc08",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 3.5,
+    "confidence": 0.79
+  },
+  {
+    "answerId": "pc09",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 3,
+    "confidence": 0.66
+  },
+  {
+    "answerId": "pc10",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 1,
+    "confidence": 0.87
+  },
+  {
+    "answerId": "pc11",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 1,
+    "marksAwarded": 1,
+    "confidence": 0.99
+  },
+  {
+    "answerId": "pc12",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 1,
+    "marksAwarded": 0,
+    "confidence": 0.98
+  }
+]

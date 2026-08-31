@@ -1,0 +1,515 @@
+{
+  "generatedAt": "2026-08-31T08:06:01.296Z",
+  "source": "https://ncert.nic.in/exemplar-problems.php",
+  "books": [
+    {
+      "code": "ieep1",
+      "class": 9,
+      "subject": "Science",
+      "medium": "en",
+      "title": "Exemplar Problems — Science",
+      "solutions": "back-matter",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Matter in Our Surroundings",
+          "file": "ieep101.pdf",
+          "path": "/exemplar/ieep1/ieep101.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep101.pdf"
+        },
+        {
+          "n": 2,
+          "title": "Is Matter Around Us Pure",
+          "file": "ieep102.pdf",
+          "path": "/exemplar/ieep1/ieep102.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep102.pdf"
+        },
+        {
+          "n": 3,
+          "title": "Atoms and Molecules",
+          "file": "ieep103.pdf",
+          "path": "/exemplar/ieep1/ieep103.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep103.pdf"
+        },
+        {
+          "n": 4,
+          "title": "Structure of the Atom",
+          "file": "ieep104.pdf",
+          "path": "/exemplar/ieep1/ieep104.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep104.pdf"
+        },
+        {
+          "n": 5,
+          "title": "The Fundamental Unit of Life",
+          "file": "ieep105.pdf",
+          "path": "/exemplar/ieep1/ieep105.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep105.pdf"
+        },
+        {
+          "n": 6,
+          "title": "Tissues",
+          "file": "ieep106.pdf",
+          "path": "/exemplar/ieep1/ieep106.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep106.pdf"
+        },
+        {
+          "n": 7,
+          "title": "Diversity in Living Organisms",
+          "file": "ieep107.pdf",
+          "path": "/exemplar/ieep1/ieep107.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep107.pdf"
+        },
+        {
+          "n": 8,
+          "title": "Motion",
+          "file": "ieep108.pdf",
+          "path": "/exemplar/ieep1/ieep108.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep108.pdf"
+        },
+        {
+          "n": 9,
+          "title": "Force and Laws of Motion",
+          "file": "ieep109.pdf",
+          "path": "/exemplar/ieep1/ieep109.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep109.pdf"
+        },
+        {
+          "n": 10,
+          "title": "Gravitation",
+          "file": "ieep110.pdf",
+          "path": "/exemplar/ieep1/ieep110.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep110.pdf"
+        },
+        {
+          "n": 11,
+          "title": "Work and Energy",
+          "file": "ieep111.pdf",
+          "path": "/exemplar/ieep1/ieep111.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep111.pdf"
+        },
+        {
+          "n": 12,
+          "title": "Sound",
+          "file": "ieep112.pdf",
+          "path": "/exemplar/ieep1/ieep112.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep112.pdf"
+        },
+        {
+          "n": 13,
+          "title": "Why Do We Fall Ill",
+          "file": "ieep113.pdf",
+          "path": "/exemplar/ieep1/ieep113.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep113.pdf"
+        },
+        {
+          "n": 14,
+          "title": "Natural Resources",
+          "file": "ieep114.pdf",
+          "path": "/exemplar/ieep1/ieep114.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep114.pdf"
+        },
+        {
+          "n": 15,
+          "title": "Improvement in Food Resources",
+          "file": "ieep115.pdf",
+          "path": "/exemplar/ieep1/ieep115.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep115.pdf"
+        }
+      ],
+      "extras": [
+        {
+          "name": "answers",
+          "file": "ieep1an.pdf",
+          "path": "/exemplar/ieep1/ieep1an.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep1an.pdf"
+        },
+        {
+          "name": "prelims",
+          "file": "ieep1ps.pdf",
+          "path": "/exemplar/ieep1/ieep1ps.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep1ps.pdf"
+        }
+      ]
+    },
+    {
+      "code": "ieep2",
+      "class": 9,
+      "subject": "Mathematics",
+      "medium": "en",
+      "title": "Exemplar Problems — Mathematics",
+      "solutions": "inline",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Number Systems",
+          "file": "ieep201.pdf",
+          "path": "/exemplar/ieep2/ieep201.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep201.pdf"
+        },
+        {
+          "n": 2,
+          "title": "Polynomials",
+          "file": "ieep202.pdf",
+          "path": "/exemplar/ieep2/ieep202.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep202.pdf"
+        },
+        {
+          "n": 3,
+          "title": "Coordinate Geometry",
+          "file": "ieep203.pdf",
+          "path": "/exemplar/ieep2/ieep203.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep203.pdf"
+        },
+        {
+          "n": 4,
+          "title": "Linear Equations in Two Variables",
+          "file": "ieep204.pdf",
+          "path": "/exemplar/ieep2/ieep204.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep204.pdf"
+        },
+        {
+          "n": 5,
+          "title": "Introduction to Euclid's Geometry",
+          "file": "ieep205.pdf",
+          "path": "/exemplar/ieep2/ieep205.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep205.pdf"
+        },
+        {
+          "n": 6,
+          "title": "Lines and Angles",
+          "file": "ieep206.pdf",
+          "path": "/exemplar/ieep2/ieep206.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep206.pdf"
+        },
+        {
+          "n": 7,
+          "title": "Triangles",
+          "file": "ieep207.pdf",
+          "path": "/exemplar/ieep2/ieep207.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep207.pdf"
+        },
+        {
+          "n": 8,
+          "title": "Quadrilaterals",
+          "file": "ieep208.pdf",
+          "path": "/exemplar/ieep2/ieep208.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep208.pdf"
+        },
+        {
+          "n": 9,
+          "title": "Areas of Parallelograms and Triangles",
+          "file": "ieep209.pdf",
+          "path": "/exemplar/ieep2/ieep209.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep209.pdf"
+        },
+        {
+          "n": 10,
+          "title": "Circles",
+          "file": "ieep210.pdf",
+          "path": "/exemplar/ieep2/ieep210.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep210.pdf"
+        },
+        {
+          "n": 11,
+          "title": "Constructions",
+          "file": "ieep211.pdf",
+          "path": "/exemplar/ieep2/ieep211.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep211.pdf"
+        },
+        {
+          "n": 12,
+          "title": "Heron's Formula",
+          "file": "ieep212.pdf",
+          "path": "/exemplar/ieep2/ieep212.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep212.pdf"
+        },
+        {
+          "n": 13,
+          "title": "Surface Areas and Volumes",
+          "file": "ieep213.pdf",
+          "path": "/exemplar/ieep2/ieep213.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep213.pdf"
+        },
+        {
+          "n": 14,
+          "title": "Statistics and Probability",
+          "file": "ieep214.pdf",
+          "path": "/exemplar/ieep2/ieep214.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep214.pdf"
+        },
+        {
+          "n": 15,
+          "title": "Design of the Question Paper, Set I",
+          "file": "ieep215.pdf",
+          "path": "/exemplar/ieep2/ieep215.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep215.pdf"
+        }
+      ],
+      "extras": [
+        {
+          "name": "answers",
+          "file": "ieep2an.pdf",
+          "path": "/exemplar/ieep2/ieep2an.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep2an.pdf"
+        },
+        {
+          "name": "prelims",
+          "file": "ieep2ps.pdf",
+          "path": "/exemplar/ieep2/ieep2ps.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep2ps.pdf"
+        }
+      ]
+    },
+    {
+      "code": "jeep1",
+      "class": 10,
+      "subject": "Science",
+      "medium": "en",
+      "title": "Exemplar Problems — Science",
+      "solutions": "back-matter",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Chemical Reactions and Equations",
+          "file": "jeep101.pdf",
+          "path": "/exemplar/jeep1/jeep101.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep101.pdf"
+        },
+        {
+          "n": 2,
+          "title": "Acids, Bases and Salts",
+          "file": "jeep102.pdf",
+          "path": "/exemplar/jeep1/jeep102.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep102.pdf"
+        },
+        {
+          "n": 3,
+          "title": "Metals and Non-metals",
+          "file": "jeep103.pdf",
+          "path": "/exemplar/jeep1/jeep103.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep103.pdf"
+        },
+        {
+          "n": 4,
+          "title": "Carbon and its Compounds",
+          "file": "jeep104.pdf",
+          "path": "/exemplar/jeep1/jeep104.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep104.pdf"
+        },
+        {
+          "n": 5,
+          "title": "Periodic Classification of Elements",
+          "file": "jeep105.pdf",
+          "path": "/exemplar/jeep1/jeep105.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep105.pdf"
+        },
+        {
+          "n": 6,
+          "title": "Life Processes",
+          "file": "jeep106.pdf",
+          "path": "/exemplar/jeep1/jeep106.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep106.pdf"
+        },
+        {
+          "n": 7,
+          "title": "Control and Coordination",
+          "file": "jeep107.pdf",
+          "path": "/exemplar/jeep1/jeep107.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep107.pdf"
+        },
+        {
+          "n": 8,
+          "title": "How do Organisms Reproduce?",
+          "file": "jeep108.pdf",
+          "path": "/exemplar/jeep1/jeep108.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep108.pdf"
+        },
+        {
+          "n": 9,
+          "title": "Heredity and Evolution",
+          "file": "jeep109.pdf",
+          "path": "/exemplar/jeep1/jeep109.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep109.pdf"
+        },
+        {
+          "n": 10,
+          "title": "Light – Reflection and Refraction",
+          "file": "jeep110.pdf",
+          "path": "/exemplar/jeep1/jeep110.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep110.pdf"
+        },
+        {
+          "n": 11,
+          "title": "The Human Eye and the Colourful World",
+          "file": "jeep111.pdf",
+          "path": "/exemplar/jeep1/jeep111.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep111.pdf"
+        },
+        {
+          "n": 12,
+          "title": "Electricity",
+          "file": "jeep112.pdf",
+          "path": "/exemplar/jeep1/jeep112.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep112.pdf"
+        },
+        {
+          "n": 13,
+          "title": "Magnetic Effects of Electric Current",
+          "file": "jeep113.pdf",
+          "path": "/exemplar/jeep1/jeep113.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep113.pdf"
+        },
+        {
+          "n": 14,
+          "title": "Sources of Energy",
+          "file": "jeep114.pdf",
+          "path": "/exemplar/jeep1/jeep114.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep114.pdf"
+        },
+        {
+          "n": 15,
+          "title": "Our Environment",
+          "file": "jeep115.pdf",
+          "path": "/exemplar/jeep1/jeep115.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep115.pdf"
+        },
+        {
+          "n": 16,
+          "title": "Management of Natural Resources",
+          "file": "jeep116.pdf",
+          "path": "/exemplar/jeep1/jeep116.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep116.pdf"
+        }
+      ],
+      "extras": [
+        {
+          "name": "answers",
+          "file": "jeep1an.pdf",
+          "path": "/exemplar/jeep1/jeep1an.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep1an.pdf"
+        },
+        {
+          "name": "prelims",
+          "file": "jeep1ps.pdf",
+          "path": "/exemplar/jeep1/jeep1ps.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep1ps.pdf"
+        }
+      ]
+    },
+    {
+      "code": "jeep2",
+      "class": 10,
+      "subject": "Mathematics",
+      "medium": "en",
+      "title": "Exemplar Problems — Mathematics",
+      "solutions": "inline",
+      "chapters": [
+        {
+          "n": 1,
+          "title": "Real Numbers",
+          "file": "jeep201.pdf",
+          "path": "/exemplar/jeep2/jeep201.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep201.pdf"
+        },
+        {
+          "n": 2,
+          "title": "Polynomials",
+          "file": "jeep202.pdf",
+          "path": "/exemplar/jeep2/jeep202.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep202.pdf"
+        },
+        {
+          "n": 3,
+          "title": "Pair of Linear Equations in Two Variables",
+          "file": "jeep203.pdf",
+          "path": "/exemplar/jeep2/jeep203.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep203.pdf"
+        },
+        {
+          "n": 4,
+          "title": "Quadratic Equations",
+          "file": "jeep204.pdf",
+          "path": "/exemplar/jeep2/jeep204.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep204.pdf"
+        },
+        {
+          "n": 5,
+          "title": "Arithmetic Progressions",
+          "file": "jeep205.pdf",
+          "path": "/exemplar/jeep2/jeep205.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep205.pdf"
+        },
+        {
+          "n": 6,
+          "title": "Triangles",
+          "file": "jeep206.pdf",
+          "path": "/exemplar/jeep2/jeep206.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep206.pdf"
+        },
+        {
+          "n": 7,
+          "title": "Coordinate Geometry",
+          "file": "jeep207.pdf",
+          "path": "/exemplar/jeep2/jeep207.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep207.pdf"
+        },
+        {
+          "n": 8,
+          "title": "Introduction to Trigonometry and its Applications",
+          "file": "jeep208.pdf",
+          "path": "/exemplar/jeep2/jeep208.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep208.pdf"
+        },
+        {
+          "n": 9,
+          "title": "Circles",
+          "file": "jeep209.pdf",
+          "path": "/exemplar/jeep2/jeep209.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep209.pdf"
+        },
+        {
+          "n": 10,
+          "title": "Constructions",
+          "file": "jeep210.pdf",
+          "path": "/exemplar/jeep2/jeep210.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep210.pdf"
+        },
+        {
+          "n": 11,
+          "title": "Area Related to Circles",
+          "file": "jeep211.pdf",
+          "path": "/exemplar/jeep2/jeep211.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep211.pdf"
+        },
+        {
+          "n": 12,
+          "title": "Surface Areas and Volumes",
+          "file": "jeep212.pdf",
+          "path": "/exemplar/jeep2/jeep212.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep212.pdf"
+        },
+        {
+          "n": 13,
+          "title": "Statistics and Probability",
+          "file": "jeep213.pdf",
+          "path": "/exemplar/jeep2/jeep213.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep213.pdf"
+        }
+      ],
+      "extras": [
+        {
+          "name": "answers",
+          "file": "jeep2an.pdf",
+          "path": "/exemplar/jeep2/jeep2an.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep2an.pdf"
+        },
+        {
+          "name": "prelims",
+          "file": "jeep2ps.pdf",
+          "path": "/exemplar/jeep2/jeep2ps.pdf",
+          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep2ps.pdf"
+        }
+      ]
+    }
+  ]
+}

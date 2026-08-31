@@ -1,0 +1,17 @@
+{
+  "note": "passes on both boundaries: exactly 80% within +/-1, worst over-award exactly +2",
+  "pass": true,
+  "gateN": 10,
+  "gateWithinRate": 0.8,
+  "gateOver": 1,
+  "gateUnder": 1,
+  "worstOverAward": 2,
+  "worstUnderAward": -2,
+  "problems": 0,
+  "missingVerdicts": 0,
+  "criteria": {
+    "withinOne": true,
+    "overAward": true,
+    "coverage": true
+  }
+}

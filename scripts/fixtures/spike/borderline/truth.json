@@ -1,0 +1,82 @@
+[
+  {
+    "answerId": "bd01",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "+2 exactly: the largest over-award the gate still allows"
+  },
+  {
+    "answerId": "bd02",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "-2: harsh, but the gate tolerates harshness"
+  },
+  {
+    "answerId": "bd03",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "+1 exactly, on the tolerance line"
+  },
+  {
+    "answerId": "bd04",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "-1 exactly, on the tolerance line"
+  },
+  {
+    "answerId": "bd05",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 1.5,
+    "note": "half marks agree exactly"
+  },
+  {
+    "answerId": "bd06",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 2.5,
+    "note": "+1 from half-mark starting points"
+  },
+  {
+    "answerId": "bd07",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 4,
+    "note": "-1"
+  },
+  {
+    "answerId": "bd08",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 3.5,
+    "note": "+0.5"
+  },
+  {
+    "answerId": "bd09",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 5,
+    "note": "-0.5"
+  },
+  {
+    "answerId": "bd10",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 0,
+    "note": "blank, agreed"
+  }
+]

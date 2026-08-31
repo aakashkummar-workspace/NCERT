@@ -1,0 +1,34 @@
+[
+  {
+    "answerId": "um01",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 4,
+    "confidence": 0.9
+  },
+  {
+    "answerId": "um02",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 3,
+    "confidence": 0.7
+  },
+  {
+    "answerId": "um03",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 2,
+    "confidence": 0.68
+  },
+  {
+    "answerId": "um99",
+    "questionId": "q-mat-9",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 2,
+    "confidence": 0.8
+  }
+]

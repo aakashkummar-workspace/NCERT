@@ -1,0 +1,82 @@
+[
+  {
+    "answerId": "fo01",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 3,
+    "confidence": 0.92
+  },
+  {
+    "answerId": "fo02",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.9
+  },
+  {
+    "answerId": "fo03",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.7
+  },
+  {
+    "answerId": "fo04",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 2,
+    "confidence": 0.68
+  },
+  {
+    "answerId": "fo05",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "marksAwarded": 1,
+    "confidence": 0.85
+  },
+  {
+    "answerId": "fo06",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 4,
+    "confidence": 0.89
+  },
+  {
+    "answerId": "fo07",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "marksAwarded": 3.5,
+    "confidence": 0.81
+  },
+  {
+    "answerId": "fo08",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 3,
+    "confidence": 0.64
+  },
+  {
+    "answerId": "fo09",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 3,
+    "confidence": 0.71
+  },
+  {
+    "answerId": "fo10",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "marksAwarded": 5,
+    "confidence": 0.95
+  }
+]

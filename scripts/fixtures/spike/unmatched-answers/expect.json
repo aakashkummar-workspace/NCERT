@@ -1,0 +1,17 @@
+{
+  "note": "coverage failure: one answer never graded, one verdict with no ground truth",
+  "pass": false,
+  "gateN": 3,
+  "gateWithinRate": 1,
+  "gateOver": 0,
+  "gateUnder": 0,
+  "worstOverAward": 1,
+  "worstUnderAward": -1,
+  "problems": 0,
+  "missingVerdicts": 1,
+  "criteria": {
+    "withinOne": true,
+    "overAward": true,
+    "coverage": false
+  }
+}

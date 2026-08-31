@@ -1,0 +1,130 @@
+[
+  {
+    "answerId": "mx01",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "agrees"
+  },
+  {
+    "answerId": "mx02",
+    "questionId": "q-mat-1",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "half mark harsh"
+  },
+  {
+    "answerId": "mx03",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "agrees"
+  },
+  {
+    "answerId": "mx04",
+    "questionId": "q-mat-2",
+    "subject": "Maths",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "could not follow working written down the margin"
+  },
+  {
+    "answerId": "mx05",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 5,
+    "note": "dropped a mark for an unlabelled diagram"
+  },
+  {
+    "answerId": "mx06",
+    "questionId": "q-mat-3",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 2,
+    "note": "agrees"
+  },
+  {
+    "answerId": "mx07",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 4,
+    "note": "half mark generous"
+  },
+  {
+    "answerId": "mx08",
+    "questionId": "q-mat-4",
+    "subject": "Maths",
+    "maxMarks": 5,
+    "teacherMarks": 0,
+    "note": "credited a written-out formula the teacher ignored"
+  },
+  {
+    "answerId": "mx09",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 1,
+    "note": "keyword match, no understanding"
+  },
+  {
+    "answerId": "mx10",
+    "questionId": "q-sci-1",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 2,
+    "note": "generous by one"
+  },
+  {
+    "answerId": "mx11",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 0,
+    "note": "rewarded restating the question"
+  },
+  {
+    "answerId": "mx12",
+    "questionId": "q-sci-2",
+    "subject": "Science",
+    "maxMarks": 3,
+    "teacherMarks": 3,
+    "note": "agrees"
+  },
+  {
+    "answerId": "mx13",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 2,
+    "note": "keywords present, reasoning absent"
+  },
+  {
+    "answerId": "mx14",
+    "questionId": "q-sci-3",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 1,
+    "note": "keywords present, reasoning absent"
+  },
+  {
+    "answerId": "mx15",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 3,
+    "note": "full marks for a partly wrong mechanism"
+  },
+  {
+    "answerId": "mx16",
+    "questionId": "q-sci-4",
+    "subject": "Science",
+    "maxMarks": 5,
+    "teacherMarks": 4,
+    "note": "half mark generous"
+  }
+]

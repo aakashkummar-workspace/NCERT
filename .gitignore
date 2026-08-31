@@ -45,6 +45,7 @@ data/prelims/
 public/papers/
 data/curriculum/
 public/pyqs/
+public/exemplar/
 
 # Mirrored third-party PDFs. Never committed: they are someone else's
 # copyright, they are large, and every one is regenerable from scripts/.
