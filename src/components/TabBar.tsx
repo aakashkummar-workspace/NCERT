@@ -35,7 +35,7 @@ const TABS: Tab[] = [
     // Subject and book lists live under /class/… but are still "Study".
     // A micro-bridge is a recap of an earlier chapter, so it reads as Study
     // rather than Practice — nothing there is scored.
-    extra: ["/class", "/bookmarks", "/downloads", "/bridge"],
+    extra: ["/class", "/bookmarks", "/downloads", "/bridge", "/hub"],
   },
   {
     href: "/practice",
