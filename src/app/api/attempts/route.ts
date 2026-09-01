@@ -182,6 +182,28 @@ export const POST = route(
   },
 );
 
+/**
+ * Every sitting this student has, newest first — the sittings history at
+ * `/sittings/`.
+ *
+ * Four counts come back beside each row, and they are four genuinely different
+ * states that a single "graded / not graded" flag would flatten into a lie:
+ *
+ *   `questions`   rows in the mark grid — the size of the paper
+ *   `selfMarked`  the student marked themselves against the scheme
+ *   `sent`        a photograph of that question was submitted for marking
+ *   `marked`      somebody (a rubric or a teacher) awarded a mark
+ *
+ * A self-marked practice paper is `selfMarked > 0, sent 0, marked 0`, and that
+ * is not a broken sitting — it is the normal and complete state of the flow
+ * most students use. The screen says so in words rather than showing an empty
+ * marks column.
+ *
+ * The counts are aggregated here rather than shipped as rows: fifty sittings at
+ * forty questions is two thousand rows to say four numbers apiece, on a phone.
+ * `answers` is counted per grid row because that is what "this question was
+ * photographed" means — a `Submission` can exist with no answer declared on it.
+ */
 export const GET = route({ auth: "STUDENT" }, async ({ user }) => {
   const attempts = await prisma.attempt.findMany({
     where: { studentId: user.id },
@@ -198,12 +220,25 @@ export const GET = route({ auth: "STUDENT" }, async ({ user }) => {
       totalScore: true,
       startedAt: true,
       submittedAt: true,
+      questions: {
+        select: {
+          selfScore: true,
+          awardedMarks: true,
+          _count: { select: { answers: true } },
+        },
+      },
+      _count: { select: { submissions: true } },
     },
   });
   return {
-    attempts: attempts.map((a) => ({
+    attempts: attempts.map(({ questions, _count, ...a }) => ({
       ...a,
       totalScore: a.totalScore === null ? null : Number(a.totalScore),
+      questions: questions.length,
+      selfMarked: questions.filter((q) => q.selfScore !== null).length,
+      sent: questions.filter((q) => q._count.answers > 0).length,
+      marked: questions.filter((q) => q.awardedMarks !== null).length,
+      submissions: _count.submissions,
     })),
   };
 });

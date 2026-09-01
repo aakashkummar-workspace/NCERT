@@ -155,6 +155,16 @@ export default function PracticePage() {
 
         <RecentAttempts />
 
+        {/* RecentAttempts is what is on *this phone*. This is what the account
+            holds, which is not the same list: a paper sat on another device, or
+            one somebody has since marked, is only in the second. */}
+        <Link
+          href="/sittings"
+          className="mb-6 flex min-h-12 items-center rounded-2xl border border-border bg-surface px-4 py-3 text-sm text-accent transition-colors hover:border-accent/50"
+        >
+          Every paper you have sat
+        </Link>
+
         {groups.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border p-8 text-center">
             <p className="text-sm text-ink-soft">No sample papers are mirrored yet.</p>

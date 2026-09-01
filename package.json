@@ -18,7 +18,7 @@
     "content:dump": "tsx scripts/dump-contents.ts",
     "content:curriculum": "tsx scripts/fetch-curriculum.ts",
     "content:syllabus": "tsx scripts/build-syllabus.ts",
-    "test": "node scripts/test-sm2.mjs && node scripts/test-attempts.mjs && node scripts/test-pacing.mjs && node scripts/test-bridge.mjs && node scripts/check-questions.mjs && node scripts/check-rubrics.mjs && node scripts/check-prerequisites.mjs && node scripts/spike-score.mjs && node scripts/test-dualtrack.mjs && node scripts/test-grading.mjs && node scripts/test-shadow.mjs && node scripts/test-parent.mjs && node scripts/build-teacher-queue.mjs --check",
+    "test": "node scripts/test-sm2.mjs && node scripts/test-attempts.mjs && node scripts/test-pacing.mjs && node scripts/test-bridge.mjs && node scripts/check-questions.mjs && node scripts/check-rubrics.mjs && node scripts/check-proposals.mjs && node scripts/check-prerequisites.mjs && node scripts/spike-score.mjs && node scripts/test-dualtrack.mjs && node scripts/test-grading.mjs && node scripts/test-shadow.mjs && node scripts/test-parent.mjs && node scripts/build-teacher-queue.mjs --check",
     "test:e2e": "node scripts/smoke.mjs && node scripts/smoke-pwa.mjs && node scripts/smoke-prep.mjs && node scripts/smoke-quiz.mjs && node scripts/test-queue.mjs && node scripts/test-ledger.mjs && node scripts/smoke-journey.mjs",
     "content:pyqs": "tsx scripts/fetch-pyqs.ts",
     "content:exemplar": "tsx scripts/fetch-exemplar.ts",
@@ -40,7 +40,8 @@
     "queue:test": "node scripts/test-queue.mjs",
     "content:exemplar-questions": "tsx scripts/extract-exemplar-questions.ts",
     "journey:test": "node scripts/smoke-journey.mjs",
-    "teacher:queue": "node scripts/build-teacher-queue.mjs"
+    "teacher:queue": "node scripts/build-teacher-queue.mjs",
+    "proposal:check": "node scripts/check-proposals.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

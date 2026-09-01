@@ -21,6 +21,15 @@
  * Pacing obeys the same rule. `markReached` writes one wall-clock stamp per
  * question and nothing else; how long a section took is derived from those
  * stamps in src/lib/pacing.ts, never accumulated here.
+ *
+ * ## The server knows about this, and this knows nothing about the server
+ *
+ * A finished paper is carried up to `POST /api/attempts/` so that a parent can
+ * see it and a teacher could one day mark it. None of that happens here:
+ * `markSynced()` and `allAttempts()` are the whole of this file's involvement,
+ * and both are written by src/lib/handoff-sync.ts — the one module that knows
+ * both halves. Nothing in the exam path awaits a network, nothing fails when
+ * there is none, and a sitting is never deleted or blocked by a failed push.
  */
 import Dexie, { type EntityTable } from "dexie";
 import { review, upsertCard, type Confidence } from "@/lib/revision";
@@ -64,6 +73,27 @@ export interface Attempt {
   /** Set by finaliseScoring. */
   totalScore?: number;
   maxMarks: number;
+  /**
+   * The server's `Attempt.id`, once this paper has been carried up by
+   * `src/lib/handoff-sync.ts`. Undefined means "the server has never been told
+   * about this sitting" — which is the normal state offline, and is never an
+   * error: the device is the record of truth and the server is a copy.
+   */
+  serverAttemptId?: string;
+  /**
+   * The `totalScore` that was last pushed, or null where a sitting was pushed
+   * before it had been scored.
+   *
+   * Without it a correction never reaches the server: the student submits
+   * online (pushed, no total), self-marks offline (push fails), comes back
+   * online — and a sync that only asked "does it have a server id?" would say
+   * yes and never send the marks. Comparing the pushed total against the
+   * current one makes a re-mark a re-push and an unchanged sitting silent.
+   *
+   * Optional and not indexed, so it needs no Dexie version bump — exactly the
+   * compatibility story `reachedAt` above documents.
+   */
+  syncedTotalScore?: number | null;
 }
 
 // --- the clock ------------------------------------------------------------
@@ -337,6 +367,43 @@ export async function finaliseScoring(id: string): Promise<Attempt | undefined> 
   }
 
   return updated;
+}
+
+/**
+ * Remember that this paper has reached the server, and with which total.
+ *
+ * Written by `src/lib/handoff-sync.ts` and by nothing else. Idempotent: the
+ * server keys on `clientAttemptId`, so a re-push answers with the same id, and
+ * a no-op write is skipped rather than churning the record under a reader.
+ *
+ * Deliberately not a `saveScore`-style merge of the whole attempt: this reads
+ * the row inside the transaction, so a sync landing at the same moment as a
+ * mark being corrected cannot rewrite the marks from its own stale snapshot.
+ */
+export async function markSynced(
+  id: string,
+  serverAttemptId: string,
+  totalScore: number | null,
+): Promise<Attempt | undefined> {
+  return db.transaction("rw", db.attempts, async () => {
+    const attempt = await db.attempts.get(id);
+    if (!attempt) return undefined;
+    if (
+      attempt.serverAttemptId === serverAttemptId &&
+      attempt.syncedTotalScore === totalScore
+    ) {
+      return attempt;
+    }
+    const updated: Attempt = { ...attempt, serverAttemptId, syncedTotalScore: totalScore };
+    await db.attempts.put(updated);
+    return updated;
+  });
+}
+
+/** Every practice paper on this device, newest first. */
+export async function allAttempts(): Promise<Attempt[]> {
+  const all = await db.attempts.toArray();
+  return all.sort((a, b) => b.startedAt - a.startedAt);
 }
 
 /** Newest first, so the history list reads as a timeline. */

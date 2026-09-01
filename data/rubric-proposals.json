@@ -1,0 +1,2494 @@
+{
+  "generatedAt": "2026-09-01",
+  "status": "PROPOSED — NOT LIVE",
+  "readThisFirst": "Nothing in this file marks anybody. It is a set of drafts written so that the fourteen decisions in docs/teacher-review.md Part A arrive as something to approve or amend rather than something to author from scratch. data/rubrics.json and data/rubrics.draft.json are untouched by it and stay untouched until a human copies a proposal across by hand. scripts/check-proposals.mjs fails if any of these steps has already been copied into the live file, so an approved proposal cannot leave a ghost behind here that nobody notices.",
+  "source": "Each proposal was written from the marking-scheme PDF under public/papers/ and the question paper beside it, read directly rather than from the summary in docs/teacher-review.md. Where CBSE printed a mark in its margin, the proposal uses CBSE's number and says so in cbsePrinted. Where CBSE printed only a total, the split is this file's judgment and iInferred says what it rests on.",
+  "howToRead": {
+    "ref": "the entry in docs/teacher-review.md Part A this answers",
+    "kind": "replace-steps — the rubric exists, the steps below would take the place of its steps; new-rubric — no rubric exists for this option, the whole object below would be added; confirm-as-is — no change proposed, and the reason is given",
+    "todayAStudentLoses": "who is mis-marked before the proposal",
+    "cbsePrinted": "what is in CBSE's margin. Not this file's to move.",
+    "iInferred": "everything else, and what it rests on",
+    "teacherQuestion": "what is still yours to settle, narrowed as far as it would go",
+    "ifAdopted": "who scores differently, and by how much",
+    "proposed": "for replace-steps, the fields that would change on the existing rubric; for new-rubric, the whole rubric. Shaped as data/rubrics.schema.md defines, so approving it is a copy and not a translation."
+  },
+  "noteOnDiagrams": "Several proposals below add a diagram step. Per data/rubrics.schema.md a diagram step is never auto-graded: it resolves to unmarked, with no colour, and waits for a person. So agreeing to a diagram mark is not agreeing that the machine will judge a drawing — it is reserving that mark for yourself, and accepting that the machine's top score on the question drops by that much. That is a different thing to agree to, and it is the thing being asked.",
+  "proposals": [
+    {
+      "ref": "A1",
+      "title": "Science 2024-25 sample, Q34 option A — substitution, combustion, homologues",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2024-25-q34-a",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2024-25",
+      "questionNo": 34,
+      "variant": "A",
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-science-2024-25-ms.pdf",
+        "page": 6
+      },
+      "todayAStudentLoses": "The rubric contains one thing: any two characteristics of a homologous series, at 2½ each. A student who justifies Keerthi, comments on methane and propane, draws the electron dot structure of ethane and answers the ethyne part — four of the five marks CBSE prints — and does not list two characteristics scores 0 out of 5.",
+      "cbsePrinted": "Five separate (1)s down the margin of page 6 and the top of page 7: (1) against the Keerthi justification; (1) against methane and propane undergoing combustion; (1) against the electron dot structure of ethane; (1) against ANY TWO CHARACTERISTICS; (1) against the ethyne answer. The mark split of this question is entirely CBSE's. Nothing about the 5 is a judgment.",
+      "iInferred": "Two things. First, that CBSE's single (1) against ANY TWO CHARACTERISTICS divides as ½ a characteristic — CBSE prints the 1 against the group and asks for two, and ½ each is the only division of 1 into 2 that CBSE's grain allows. Second, that 'Draw the electron dot structure of the immediate lower homologue of Propane' is a drawing, so its printed 1 becomes a diagram step and is reserved for a human rather than keyword-matched.",
+      "teacherQuestion": "Two yes/no. (1) Half a mark per characteristic — yes or no? (2) Is the electron dot structure a drawing you want to mark yourself, or would you rather the machine accepted the written words 'ethane' or 'C2H6' for it? If the second, say so and the diagram step becomes an ordinary step.",
+      "ifAdopted": "A student who answers (i), (ii) and (iii) and lists no characteristics goes from 0/5 to 4/5. A student who lists two characteristics and nothing else goes from 5/5 to 1/5. Because the electron-dot mark is reserved for a person, the machine's own ceiling on this question is 4 out of 5.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "Keerthi is correct: substitution occurs in saturated hydrocarbons, where hydrogen atoms are replaced; unsaturated hydrocarbons undergo addition across the double or triple bond",
+            "keywords": [
+              {
+                "any": [
+                  "Keerthi",
+                  "Keerthi's thinking is correct",
+                  "Keerthi is correct"
+                ]
+              },
+              {
+                "any": [
+                  "substitution",
+                  "substituted",
+                  "replaced",
+                  "replacement"
+                ]
+              },
+              {
+                "any": [
+                  "saturated",
+                  "saturated hydrocarbon",
+                  "alkane",
+                  "single bond"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names Keerthi as correct but gives no reason, or gives the reason without saying whose thinking it supports"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "methane and propane undergo combustion in the presence of oxygen and release a large amount of energy",
+            "keywords": [
+              {
+                "any": [
+                  "combustion",
+                  "burn",
+                  "burning",
+                  "burnt",
+                  "oxidised"
+                ]
+              },
+              {
+                "any": [
+                  "oxygen",
+                  "O2",
+                  "O₂",
+                  "air"
+                ]
+              },
+              {
+                "any": [
+                  "energy",
+                  "heat",
+                  "large amount of energy",
+                  "heat and light"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "says they burn but does not say that energy is released, or the reverse"
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "kind": "diagram",
+            "marks": 1,
+            "awardFor": "correct electron dot structure of ethane, the immediate lower homologue of propane",
+            "labels": [
+              "ethane",
+              "C2H6",
+              "C–C shared pair",
+              "six C–H shared pairs"
+            ],
+            "autoGradable": false
+          },
+          {
+            "id": "g1",
+            "kind": "choose",
+            "chooseAtLeast": 2,
+            "marksEach": 0.5,
+            "awardFor": "any two characteristics of a homologous series",
+            "options": [
+              {
+                "id": "o1",
+                "awardFor": "successive members differ by a CH2 unit, that is by 14 u of molecular mass",
+                "keywords": [
+                  {
+                    "any": [
+                      "CH2",
+                      "–CH2–",
+                      "14 u",
+                      "14u",
+                      "14 amu",
+                      "methylene"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o2",
+                "awardFor": "all members share the same general formula and the same functional group",
+                "keywords": [
+                  {
+                    "any": [
+                      "general formula",
+                      "same formula",
+                      "functional group"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o3",
+                "awardFor": "all members show similar chemical properties",
+                "keywords": [
+                  {
+                    "any": [
+                      "similar chemical properties",
+                      "same chemical properties",
+                      "chemical properties are similar"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o4",
+                "awardFor": "physical properties change gradually along the series",
+                "keywords": [
+                  {
+                    "any": [
+                      "gradual",
+                      "gradually",
+                      "vary gradually",
+                      "physical properties"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 1,
+            "awardFor": "ethyne with enough oxygen burns completely with a clean blue flame; with air, or with too little oxygen, combustion is incomplete and the flame is sooty",
+            "keywords": [
+              {
+                "any": [
+                  "complete combustion",
+                  "completely",
+                  "clean flame",
+                  "blue flame"
+                ]
+              },
+              {
+                "any": [
+                  "sooty",
+                  "soot",
+                  "smoky",
+                  "yellow flame",
+                  "incomplete combustion"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names the sooty flame without saying why, or describes only the oxygen case"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Every mark here is CBSE's own: five (1)s printed down the margin of the scheme, page 6 and the top of page 7. Only the half plus half inside the characteristics group is this file's, and it is the only division of CBSE's 1 into two that a half-mark grain permits.",
+          "The electron dot structure is modelled as a diagram step, so its mark is never awarded automatically and waits for a human. That is not a mark CBSE reserved for a figure — CBSE prints (1) against it as it does against the prose — it is this file reading 'Draw the electron dot structure' in the stem as a drawing. A teacher who would rather the machine accepted the word 'ethane' should say so and this becomes an ordinary step.",
+          "Proposed by scripts/check-proposals.mjs's companion file data/rubric-proposals.json. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A1b",
+      "title": "Science 2024-25 sample, Q34 option B — cleansing action and saponification (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-science-2024-25-q34-b",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2024-25",
+      "questionNo": 34,
+      "variant": "B",
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-science-2024-25-ms.pdf",
+        "page": 7
+      },
+      "todayAStudentLoses": "Every student who chose option B. There is nothing for their script to be marked against at all, so it comes back ungraded rather than wrong. This is the second problem docs/teacher-review.md raises under A1.",
+      "cbsePrinted": "(1) against the choice of B with its reason; '(Labelled fig - 1 + 2)' against the cleansing-action part, so 1 for the micelle diagram and 2 for the explanation; '(0.5 + 0.5)' against the saponification part, so half for the equation and half for naming the process. 1 + 1 + 2 + ½ + ½ = 5. All of it printed.",
+      "iInferred": "Only the wording of the concepts inside each step. The numbers are CBSE's, including the figure mark, which CBSE prints in so many words.",
+      "teacherQuestion": "Is this accurate enough to use, so that a student who picks option B is graded rather than left ungraded? Yes or no.",
+      "ifAdopted": "Students who chose option B stop coming back ungraded. The machine's ceiling on the option is 4 of 5, because CBSE itself puts 1 mark on the labelled micelle diagram and a machine never awards a drawing.",
+      "proposed": {
+        "id": "class10-science-2024-25-q34-b",
+        "paper": "class10-science-2024-25",
+        "session": "2024-25",
+        "questionNo": 34,
+        "variant": "B",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "la",
+        "maxMarks": 5,
+        "bookCode": "jesc1",
+        "chapter": 4,
+        "class": 10,
+        "subject": "Science",
+        "prompt": "Attempt either option A or B. B. (i) 'A' and 'B' are sodium salts of a long-chain carboxylic acid and a long-chain sulphonic acid. Which would you prefer as a cleansing agent in hand-pump water, and why? (ii) Elaborate on the process of cleansing action; illustrate a micelle with a labelled diagram. (iii) Write the chemical equation for the preparation of soap from an ester, and name the process.",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-science-2024-25-ms.pdf",
+          "page": 7,
+          "excerpt": "B. (i) 'B' is preferred for cleansing action. The calcium and magnesium salts present in underground water are precipitated with carboxylic acids. The Ca++ and Mg++ salts of sulphonic acid are soluble in water. 'B' is a more effective cleansing agent in presence of Ca and Mg salts. (1) (ii) Soaps are molecules in which the two ends have differing properties, one is hydrophilic, that is, it dissolves in water, while the other end is hydrophobic. The soap molecules thus form structures called micelles where one end of the molecules is towards the oil droplet while the ionic end faces outside. This forms an emulsion in water. (Labelled fig - 1 + 2) (iii) CH3(CH2)16COOR + NaOH gives CH3(CH2)16COONa + ROH. The process is saponification. (0.5 + 0.5)"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "B, the sulphonic acid salt, because the calcium and magnesium salts of sulphonic acid stay soluble in hard water while those of carboxylic acid are precipitated",
+            "keywords": [
+              {
+                "any": [
+                  "B",
+                  "sulphonic",
+                  "sulfonic",
+                  "detergent"
+                ]
+              },
+              {
+                "any": [
+                  "calcium",
+                  "magnesium",
+                  "Ca",
+                  "Mg",
+                  "hard water"
+                ]
+              },
+              {
+                "any": [
+                  "soluble",
+                  "does not precipitate",
+                  "no scum",
+                  "precipitated"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "picks B but gives no reason involving the calcium and magnesium salts"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "kind": "diagram",
+            "marks": 1,
+            "awardFor": "labelled diagram of a micelle",
+            "labels": [
+              "oil droplet or dirt",
+              "hydrophobic hydrocarbon tail",
+              "hydrophilic ionic head",
+              "water"
+            ],
+            "autoGradable": false
+          },
+          {
+            "id": "s3",
+            "marks": 2,
+            "awardFor": "a soap molecule has a hydrophilic ionic end and a hydrophobic hydrocarbon end; the tails turn in towards the oil and the ionic heads face the water, forming micelles that carry the dirt away as an emulsion",
+            "keywords": [
+              {
+                "any": [
+                  "hydrophilic",
+                  "water loving",
+                  "ionic end",
+                  "ionic head"
+                ]
+              },
+              {
+                "any": [
+                  "hydrophobic",
+                  "water repelling",
+                  "hydrocarbon end",
+                  "carbon chain"
+                ]
+              },
+              {
+                "any": [
+                  "micelle",
+                  "micelles"
+                ]
+              },
+              {
+                "any": [
+                  "emulsion",
+                  "dirt is washed away",
+                  "oil droplet",
+                  "dissolving the dirt"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 1,
+                "note": "describes the two ends of the soap molecule but never reaches the micelle, or names the micelle with no account of the two ends"
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 0.5,
+            "awardFor": "the equation: the ester plus sodium hydroxide gives the sodium salt of the acid and an alcohol",
+            "keywords": [
+              {
+                "any": [
+                  "NaOH",
+                  "sodium hydroxide"
+                ]
+              },
+              {
+                "any": [
+                  "COONa",
+                  "sodium salt",
+                  "CH3COONa",
+                  "ROH",
+                  "alcohol"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s5",
+            "marks": 0.5,
+            "awardFor": "names the process: saponification",
+            "keywords": [
+              {
+                "any": [
+                  "saponification",
+                  "saponified"
+                ]
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Every mark is CBSE's own, printed on page 7 of the scheme: (1), then '(Labelled fig - 1 + 2)', then '(0.5 + 0.5)'. Nothing was divided by this file.",
+          "CBSE prints the figure mark here in so many words, so the micelle is a diagram step and is never awarded automatically. The machine's ceiling on this option is 4 of 5.",
+          "Saponification is a specific term, so acceptEquivalentWording is off on that step and a near miss should not be green.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. Saponification is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    },
+    {
+      "ref": "A2",
+      "title": "Science 2015-16 sample, Q21 — speciation, the gene, the hair-colour cross",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2015-16-q21",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2015-16",
+      "questionNo": 21,
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-science-2015-16-ms.pdf",
+        "page": 4
+      },
+      "todayAStudentLoses": "The rubric is a single 'any two of' group worth 2½ each, and the two things it will accept are the definition of a gene and the hair-colour cross. So the speciation part — which is what the group is labelled after — earns nothing, and a student who names migration and mutation and stops scores 0 out of 5. Conversely a student who defines a gene and does the cross scores a full 5 without ever mentioning speciation.",
+      "cbsePrinted": "Six numbers down the margin of page 4, read off by line position rather than by text order. 1 sits level with 'A. Speciation may take place by'. 1 sits level with the second line of the gene definition. ½ sits level with 'Red hair – Mother – Recessive so bb'. ½ sits level with 'Black hair – father Dominant so BB'. 1 sits level with the 'Father Mother' row of the cross. 1 sits level with the 'F1 Bb (Black)' row. 1 + 1 + ½ + ½ + 1 + 1 = 5.",
+      "iInferred": "That CBSE's single 1 against part A divides as half a mark per speciation mechanism, since the scheme asks for any two and 1 splits into two halves and nothing else. Also, that the conclusion 'the child will have black hair' is carried by the F1 mark rather than being a seventh unmarked line — the margin prints nothing against it and there is no mark left over.",
+      "teacherQuestion": "One number and one confirmation. (1) Part A gets 1 mark for two mechanisms — half a mark each — yes or no? (2) The margin alignment above is the whole basis for the split; if you read the column differently, write the six numbers you would use.",
+      "ifAdopted": "A student who names two mechanisms and stops goes from 0/5 to 1/5. A student who defines the gene and works the cross correctly and skips speciation goes from 5/5 to 4/5. A student who does everything scores 5 either way. The scoring stops depending on which two of the three parts happened to be answered.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "g1",
+            "kind": "choose",
+            "chooseAtLeast": 2,
+            "marksEach": 0.5,
+            "awardFor": "any two ways speciation takes place",
+            "options": [
+              {
+                "id": "o1",
+                "awardFor": "migration",
+                "keywords": [
+                  {
+                    "any": [
+                      "migration",
+                      "migrate",
+                      "gene flow"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o2",
+                "awardFor": "natural selection",
+                "keywords": [
+                  {
+                    "any": [
+                      "natural selection",
+                      "selection pressure"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o3",
+                "awardFor": "mutation",
+                "keywords": [
+                  {
+                    "any": [
+                      "mutation",
+                      "mutations",
+                      "variation in DNA"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o4",
+                "awardFor": "genetic drift",
+                "keywords": [
+                  {
+                    "any": [
+                      "genetic drift",
+                      "drift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "defines a gene as a functional segment of DNA",
+            "keywords": [
+              {
+                "any": [
+                  "segment of DNA",
+                  "section of DNA",
+                  "part of DNA",
+                  "piece of DNA",
+                  "unit of DNA",
+                  "sequence of DNA"
+                ]
+              },
+              {
+                "any": [
+                  "functional",
+                  "codes for",
+                  "controls a trait",
+                  "unit of heredity",
+                  "protein"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names DNA but does not say the gene is a functional segment of it"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 0.5,
+            "awardFor": "the mother carries red hair, which is recessive, so her contribution is b",
+            "keywords": [
+              {
+                "any": [
+                  "mother",
+                  "maternal"
+                ]
+              },
+              {
+                "any": [
+                  "recessive",
+                  "bb",
+                  "b"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 0.5,
+            "awardFor": "the father carries black hair, which is dominant, so his contribution is B",
+            "keywords": [
+              {
+                "any": [
+                  "father",
+                  "paternal"
+                ]
+              },
+              {
+                "any": [
+                  "dominant",
+                  "BB",
+                  "B"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 1,
+            "awardFor": "sets out the cross of the two parents",
+            "keywords": [
+              {
+                "any": [
+                  "parents",
+                  "P generation",
+                  "cross",
+                  "×",
+                  "x"
+                ]
+              },
+              {
+                "any": [
+                  "BB",
+                  "Bb",
+                  "bb"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s5",
+            "marks": 1,
+            "awardFor": "the F1 child is Bb and therefore has black hair, because black is dominant",
+            "keywords": [
+              {
+                "any": [
+                  "F1",
+                  "F₁",
+                  "offspring",
+                  "child"
+                ]
+              },
+              {
+                "any": [
+                  "Bb"
+                ]
+              },
+              {
+                "any": [
+                  "black",
+                  "black hair"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "reaches Bb but never states the hair colour, or states black with no genotype behind it"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "The six marks are CBSE's own column on page 4 of the scheme, read off by line position: 1 against part A, 1 against the gene definition, half and half against the two parental genotypes, 1 against the parental cross, 1 against the F1 result.",
+          "The half plus half inside the speciation group is this file's, not CBSE's: CBSE prints one 1 against a list it asks two items from, and 1 divides into two halves and nothing else at CBSE's grain.",
+          "Science 2016-17 Q21 is the same question with the same scheme page. Whatever is decided here should be applied there unchanged.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A3",
+      "title": "Science 2016-17 sample, Q21 — the same question, the same scheme, the same proposal",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2016-17-q21",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2016-17",
+      "questionNo": 21,
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-science-2016-17-ms.pdf",
+        "page": 4
+      },
+      "todayAStudentLoses": "Identical to A2. I compared the two marking-scheme pages line by line: the answer text and the mark column are the same, including the position of every number.",
+      "cbsePrinted": "The same six numbers in the same six places on page 4: 1 against 'A. Speciation may take place by', 1 against the end of the gene definition, ½ and ½ against the mother's and father's genotypes, 1 against the parental cross row, 1 against the F1 row.",
+      "iInferred": "The same half plus half inside the speciation group, on the same grounds.",
+      "teacherQuestion": "None separately. Whatever you decide for A2 applies here without change. If you would rather rule twice, the questions are the same two.",
+      "ifAdopted": "Exactly the effects described in A2, in the second year's paper as well.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "g1",
+            "kind": "choose",
+            "chooseAtLeast": 2,
+            "marksEach": 0.5,
+            "awardFor": "any two ways speciation takes place",
+            "options": [
+              {
+                "id": "o1",
+                "awardFor": "migration",
+                "keywords": [
+                  {
+                    "any": [
+                      "migration",
+                      "migrate",
+                      "gene flow"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o2",
+                "awardFor": "natural selection",
+                "keywords": [
+                  {
+                    "any": [
+                      "natural selection",
+                      "selection pressure"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o3",
+                "awardFor": "mutation",
+                "keywords": [
+                  {
+                    "any": [
+                      "mutation",
+                      "mutations",
+                      "variation in DNA"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o4",
+                "awardFor": "genetic drift",
+                "keywords": [
+                  {
+                    "any": [
+                      "genetic drift",
+                      "drift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "defines a gene as a functional segment of DNA",
+            "keywords": [
+              {
+                "any": [
+                  "segment of DNA",
+                  "section of DNA",
+                  "part of DNA",
+                  "piece of DNA",
+                  "unit of DNA",
+                  "sequence of DNA"
+                ]
+              },
+              {
+                "any": [
+                  "functional",
+                  "codes for",
+                  "controls a trait",
+                  "unit of heredity",
+                  "protein"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names DNA but does not say the gene is a functional segment of it"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 0.5,
+            "awardFor": "the mother carries red hair, which is recessive, so her contribution is b",
+            "keywords": [
+              {
+                "any": [
+                  "mother",
+                  "maternal"
+                ]
+              },
+              {
+                "any": [
+                  "recessive",
+                  "bb",
+                  "b"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 0.5,
+            "awardFor": "the father carries black hair, which is dominant, so his contribution is B",
+            "keywords": [
+              {
+                "any": [
+                  "father",
+                  "paternal"
+                ]
+              },
+              {
+                "any": [
+                  "dominant",
+                  "BB",
+                  "B"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 1,
+            "awardFor": "sets out the cross of the two parents",
+            "keywords": [
+              {
+                "any": [
+                  "parents",
+                  "P generation",
+                  "cross",
+                  "×",
+                  "x"
+                ]
+              },
+              {
+                "any": [
+                  "BB",
+                  "Bb",
+                  "bb"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s5",
+            "marks": 1,
+            "awardFor": "the F1 child is Bb and therefore has black hair, because black is dominant",
+            "keywords": [
+              {
+                "any": [
+                  "F1",
+                  "F₁",
+                  "offspring",
+                  "child"
+                ]
+              },
+              {
+                "any": [
+                  "Bb"
+                ]
+              },
+              {
+                "any": [
+                  "black",
+                  "black hair"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "reaches Bb but never states the hair colour, or states black with no genotype behind it"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "The six marks are CBSE's own column on page 4 of the 2016-17 scheme, which is line for line the 2015-16 page.",
+          "The half plus half inside the speciation group is this file's, not CBSE's.",
+          "Decided together with class10-science-2015-16-q21. If one is amended the other must be amended the same way.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A4",
+      "title": "Science 2022-23 practice paper, Q33 — ozone formation, ground-level ozone, health consequences",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2022-23-apq-q33",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2022-23-apq",
+      "questionNo": 33,
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-science-2022-23-apq-ms.pdf",
+        "page": 5
+      },
+      "todayAStudentLoses": "The rubric holds only part (c), at 1½ per consequence, and one of its three options is the scheme's instruction line rather than an answer, so the word 'consequences' scores 1½ on its own. A student who explains the formation of ozone and why ground-level ozone is a pollutant — 2 of the 3 marks CBSE prints — and names no health consequence scores 0 out of 3.",
+      "cbsePrinted": "All three marks, in words rather than in a margin: '(a) 0.5 marks for each correct point' over two points; '(b) Ozone is deadly to humans at lower levels of the atmosphere. [1 mark]'; '(c) 0.5 marks each for any two consequences'. ½ + ½ + 1 + ½ + ½ = 3.",
+      "iInferred": "Nothing about the marks. Only which extra consequences to list beyond CBSE's two, since the scheme says 'Accept any other valid answer' and names only skin cancer and cataract. I have added weakened immunity and sunburn or premature ageing of the skin.",
+      "teacherQuestion": "One yes/no: are 'weakened immune system' and 'sunburn or premature ageing of the skin' acceptable alongside skin cancer and cataract? If not, strike them and the group falls back to CBSE's two.",
+      "ifAdopted": "A student who answers (a) and (b) and gives no consequence goes from 0/3 to 2/3. A student who writes only the word 'consequences' goes from 1½/3 to 0. Full answers score 3 either way.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 0.5,
+            "awardFor": "high-energy UV radiation from the Sun breaks molecular oxygen into free oxygen atoms",
+            "keywords": [
+              {
+                "any": [
+                  "UV",
+                  "ultraviolet",
+                  "ultra violet",
+                  "high energy radiation"
+                ]
+              },
+              {
+                "any": [
+                  "breaks",
+                  "splits",
+                  "dissociates",
+                  "breaks apart",
+                  "broken"
+                ]
+              },
+              {
+                "any": [
+                  "free oxygen",
+                  "oxygen atoms",
+                  "nascent oxygen",
+                  "atomic oxygen"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 0.5,
+            "awardFor": "the free oxygen combines with molecular oxygen to form ozone",
+            "keywords": [
+              {
+                "any": [
+                  "combines",
+                  "reacts",
+                  "joins",
+                  "adds"
+                ]
+              },
+              {
+                "any": [
+                  "ozone",
+                  "O3",
+                  "O₃"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 1,
+            "awardFor": "at ground level ozone is a pollutant because it is deadly to humans — it is poisonous in the lower atmosphere",
+            "keywords": [
+              {
+                "any": [
+                  "deadly",
+                  "poisonous",
+                  "toxic",
+                  "harmful",
+                  "damaging"
+                ]
+              },
+              {
+                "any": [
+                  "lower level",
+                  "lower atmosphere",
+                  "ground level",
+                  "troposphere",
+                  "near the surface"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "says ozone is harmful without tying the harm to the lower atmosphere, so the contrast the question turns on is missing"
+              }
+            ]
+          },
+          {
+            "id": "g1",
+            "kind": "choose",
+            "chooseAtLeast": 2,
+            "marksEach": 0.5,
+            "awardFor": "any two health consequences of ozone depletion",
+            "options": [
+              {
+                "id": "o1",
+                "awardFor": "skin cancer",
+                "keywords": [
+                  {
+                    "any": [
+                      "skin cancer",
+                      "cancer of the skin"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o2",
+                "awardFor": "cataract",
+                "keywords": [
+                  {
+                    "any": [
+                      "cataract",
+                      "cataracts",
+                      "damage to the eyes",
+                      "eye damage"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o3",
+                "awardFor": "weakened immune system",
+                "keywords": [
+                  {
+                    "any": [
+                      "immune",
+                      "immunity",
+                      "immune system"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "o4",
+                "awardFor": "sunburn or premature ageing of the skin",
+                "keywords": [
+                  {
+                    "any": [
+                      "sunburn",
+                      "sun burn",
+                      "ageing of skin",
+                      "aging of skin",
+                      "premature ageing",
+                      "wrinkling"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Every mark is CBSE's own, printed in words on page 5 of the scheme: half plus half for (a), 1 for (b), half plus half for (c). Nothing was divided by this file.",
+          "Options o3 and o4 in the consequences group are not CBSE's. The scheme lists skin cancer and cataract and adds 'Accept any other valid answer'; these two are this file's reading of that licence and a teacher may strike them.",
+          "The two half-mark steps carry no partial rule, because CBSE has no quarter mark: a half-mark step is green or it is red.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A5",
+      "title": "Mathematics (Standard) 2022-23 sample, Q30 option A — the parallelogram circumscribing a circle",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-mathematics-standard-2022-23-q30-a",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-standard-2022-23",
+      "questionNo": 30,
+      "variant": "A",
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-mathematics-standard-2022-23-ms.pdf",
+        "page": 5
+      },
+      "todayAStudentLoses": "Nothing structural — the four marks are CBSE's own and they sum correctly. What is wrong is the keywords: step 2 is satisfied by the single word 'adding', and step 1 by the word 'circle'. A student who writes 'adding the circle' scores 2 of 3.",
+      "cbsePrinted": "Four numbers down the margin of page 5: 1 against the block that names the tangent points and writes the four equal-tangent pairs; 1 against 'AB+CD=AD+BC'; ½ against 'AB=DC and AD=BC (opposite sides of parallelogram)'; ½ against the conclusion. 1 + 1 + ½ + ½ = 3. No figure mark anywhere in the column — and the scheme's own page sets its text around a drawn figure while still paying nothing for it.",
+      "iInferred": "Only the concepts inside each step. The proposal below adds no figure mark, on the strength of that margin.",
+      "teacherQuestion": "One yes/no, and it is the real one: the paper supplies no figure here, so the candidate must draw and label one to write this proof at all. Does that drawing carry half a mark, taken out of the first step and leaving half for naming the tangent points and stating the equal-tangent property? Say yes and the amendment is already written out under proposed.ifYouWantAFigureMark. Say no and CBSE's column stands as printed.",
+      "ifAdopted": "As proposed: nobody's total changes; what changes is that loose single words stop earning whole marks, so a student who writes 'adding' and nothing else loses the mark they get today. If you also take the figure mark: a student who draws a correct labelled figure and writes a short proof gains half a mark, and the machine's ceiling on the question falls to 2½ of 3, because a drawing waits for a person.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "names the four points of contact and writes the four equal-tangent pairs, quoting that tangents from an external point are equal",
+            "keywords": [
+              {
+                "any": [
+                  "tangents from an external point are equal",
+                  "tangents drawn from an exterior point",
+                  "equal in length",
+                  "equal tangents"
+                ]
+              },
+              {
+                "any": [
+                  "AP = AS",
+                  "AP=AS",
+                  "BP = BQ",
+                  "BP=BQ",
+                  "CR = CQ",
+                  "CR=CQ",
+                  "DR = DS",
+                  "DR=DS"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "quotes the equal-tangent property without writing the four pairs, or writes the pairs with no property named"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "adds the four equalities and reaches AB + CD = AD + BC",
+            "keywords": [
+              {
+                "any": [
+                  "adding",
+                  "add",
+                  "sum",
+                  "on adding"
+                ]
+              },
+              {
+                "any": [
+                  "AB+CD=AD+BC",
+                  "AB + CD = AD + BC",
+                  "AB+CD = AD+BC"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "adds the equalities but never lands on AB + CD = AD + BC"
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 0.5,
+            "awardFor": "uses that opposite sides of a parallelogram are equal: AB = DC and AD = BC",
+            "keywords": [
+              {
+                "any": [
+                  "opposite sides",
+                  "opposite side"
+                ]
+              },
+              {
+                "any": [
+                  "parallelogram"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 0.5,
+            "awardFor": "concludes 2AB = 2AD, so AB = BC = CD = DA and the parallelogram is a rhombus",
+            "keywords": [
+              {
+                "any": [
+                  "AB = AD",
+                  "AB=AD",
+                  "2AB = 2AD",
+                  "2AB=2AD",
+                  "AB=BC=CD=AD",
+                  "all sides equal",
+                  "adjacent sides equal"
+                ]
+              },
+              {
+                "any": [
+                  "rhombus"
+                ]
+              }
+            ]
+          }
+        ],
+        "ifYouWantAFigureMark": {
+          "note": "Not part of the proposal, and not counted in its sum. This is the amendment written out, so that saying yes to the teacher's question is a tick rather than an afternoon. It replaces s1 above with these two entries and leaves s2, s3 and s4 alone; the total is still 3.",
+          "steps": [
+            {
+              "id": "s0",
+              "kind": "diagram",
+              "marks": 0.5,
+              "awardFor": "correct labelled figure: a parallelogram ABCD circumscribing a circle, touching it at P, Q, R and S",
+              "labels": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "O"
+              ],
+              "ordered": false,
+              "autoGradable": false
+            },
+            {
+              "id": "s1",
+              "marks": 0.5,
+              "awardFor": "quotes that tangents from an external point are equal and writes the four equal-tangent pairs",
+              "keywords": [
+                {
+                  "any": [
+                    "tangents from an external point are equal",
+                    "tangents drawn from an exterior point",
+                    "equal in length",
+                    "equal tangents"
+                  ]
+                },
+                {
+                  "any": [
+                    "AP = AS",
+                    "AP=AS",
+                    "BP = BQ",
+                    "BP=BQ",
+                    "CR = CQ",
+                    "CR=CQ",
+                    "DR = DS",
+                    "DR=DS"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "needsReview": true,
+        "reviewNotes": [
+          "The four marks are CBSE's own column on page 5 of the scheme: 1 + 1 + half + half = 3.",
+          "No diagram step is proposed, because the scheme's mark column prints none — and the scheme's own page sets its text around a drawn figure while still paying nothing for it. That is evidence, not silence. The stem nevertheless supplies no figure, so the candidate must draw one; the amendment that pays it half a mark out of the first step is written out under ifYouWantAFigureMark and is the teacher's to accept.",
+          "Keywords have been split into real concepts. Under the draft, the single word 'adding' earned a whole mark.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A5b",
+      "title": "Mathematics (Standard) 2022-23 sample, Q30 option B — the angle between two parallel tangents (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-mathematics-standard-2022-23-q30-b",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-standard-2022-23",
+      "questionNo": 30,
+      "variant": "B",
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-mathematics-standard-2022-23-ms.pdf",
+        "page": 6
+      },
+      "todayAStudentLoses": "Everyone who took the OR. Their script has nothing to be marked against and comes back ungraded. This is the second problem docs/teacher-review.md raises under A5.",
+      "cbsePrinted": "Five numbers down the margin of page 6: 1 against the block joining OC and setting up the two triangles with OP = OC, PA = CA and AO common; ½ against the SSS congruency; ½ against angle 1 = angle 2 by CPCT and likewise angle 3 = angle 4; ½ against the co-interior angles being supplementary; ½ against 2 angle 2 + 2 angle 4 = 180 degrees, so angle 2 + angle 4 = 90 degrees. 1 + ½ + ½ + ½ + ½ = 3.",
+      "iInferred": "Only the concepts inside each step, and that the final line 'angle AOB = 90 degrees' is carried by the last half mark rather than being unmarked — the column prints nothing beside it and there is no mark left over.",
+      "teacherQuestion": "Is this accurate enough to use, so that a student who took the OR is graded rather than left ungraded? Yes or no. The figure here is printed on the question paper, so no drawing mark arises.",
+      "ifAdopted": "Students who chose option B stop coming back ungraded, and the question becomes fully machine-markable — nothing on this option sits on a drawing.",
+      "proposed": {
+        "id": "class10-mathematics-standard-2022-23-q30-b",
+        "paper": "class10-mathematics-standard-2022-23",
+        "session": "2022-23",
+        "questionNo": 30,
+        "variant": "B",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "sa",
+        "maxMarks": 3,
+        "bookCode": "jemh1",
+        "chapter": 10,
+        "class": 10,
+        "subject": "Mathematics",
+        "prompt": "In the figure XY and X'Y' are two parallel tangents to a circle with centre O and another tangent AB with point of contact C intersecting XY at A and X'Y' at B. What is the measure of angle AOB?",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-mathematics-standard-2022-23-ms.pdf",
+          "page": 6,
+          "excerpt": "Join OC. In Δ OPA and Δ OCA: OP = OC (radii of same circle); PA = CA (length of two tangents from an external point); AO = AO (Common) (1). Therefore Δ OPA congruent Δ OCA (By SSS congruency criterion) (half). Hence angle 1 = angle 2 (CPCT); Similarly angle 3 = angle 4 (half). angle PAB + angle QBA = 180 (co interior angles are supplementary as XY parallel X'Y') (half). 2 angle 2 + 2 angle 4 = 180; angle 2 + angle 4 = 90 (half). angle 2 + angle 4 + angle AOB = 180 (Angle sum property). Using (1), we get angle AOB = 90"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "joins OC and sets up the two triangles: OP = OC as radii, PA = CA as tangents from an external point, AO common",
+            "keywords": [
+              {
+                "any": [
+                  "join OC",
+                  "joining OC",
+                  "construction OC"
+                ]
+              },
+              {
+                "any": [
+                  "radii",
+                  "radius",
+                  "OP = OC",
+                  "OP=OC"
+                ]
+              },
+              {
+                "any": [
+                  "tangents from an external point",
+                  "two tangents",
+                  "PA = CA",
+                  "PA=CA"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "sets up the triangles but omits one of the three equalities the congruence rests on"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 0.5,
+            "awardFor": "concludes that the two triangles are congruent by SSS",
+            "keywords": [
+              {
+                "any": [
+                  "SSS",
+                  "side side side"
+                ]
+              },
+              {
+                "any": [
+                  "congruent",
+                  "congruency",
+                  "congruence"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 0.5,
+            "awardFor": "angle 1 = angle 2 by CPCT, and similarly angle 3 = angle 4",
+            "keywords": [
+              {
+                "any": [
+                  "CPCT",
+                  "corresponding parts of congruent triangles"
+                ]
+              },
+              {
+                "any": [
+                  "angle 1 = angle 2",
+                  "angle 3 = angle 4",
+                  "similarly"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 0.5,
+            "awardFor": "the two angles at A and B sum to 180 degrees, because XY parallel to X'Y' makes them co-interior",
+            "keywords": [
+              {
+                "any": [
+                  "co interior",
+                  "co-interior",
+                  "cointerior",
+                  "allied angles",
+                  "supplementary"
+                ]
+              },
+              {
+                "any": [
+                  "180",
+                  "180°"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s5",
+            "marks": 0.5,
+            "awardFor": "halving gives angle 2 + angle 4 = 90 degrees, so by the angle sum property angle AOB = 90 degrees",
+            "keywords": [
+              {
+                "any": [
+                  "90",
+                  "90°"
+                ]
+              },
+              {
+                "any": [
+                  "angle sum",
+                  "sum of angles",
+                  "AOB"
+                ]
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Every mark is CBSE's own column on page 6 of the scheme: 1 + half + half + half + half = 3.",
+          "The four half-mark steps carry no partial rule, because a half-mark step cannot be partially credited at CBSE's grain: it is green or it is red.",
+          "The figure is printed on the question paper, so no diagram step arises.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. The 90 degrees in the final step is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    },
+    {
+      "ref": "A6",
+      "title": "Science 2025-26 sample, Q13 — Draw and explain how the nerve cells help in transmission of impulses",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2025-26-q13",
+        "file": "data/rubrics.json"
+      },
+      "paper": "class10-science-2025-26",
+      "questionNo": 13,
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-science-2025-26-ms.pdf",
+        "page": 2
+      },
+      "todayAStudentLoses": "Nobody is scored zero for a right answer here. The complaint is the opposite one: 1 of the 3 marks is reserved for a figure CBSE never paid for, and because a machine never awards a drawing, every student's machine total on this question is capped at 2 out of 3 — including a perfect script.",
+      "cbsePrinted": "One number: 3, against the whole answer. Nothing per step, and no figure mark. The scheme's body is three bullets, and it names '(Fig. a)' and '(Fig b)' inside its own sentences without paying for either.",
+      "iInferred": "All of it. The proposal is 1 mark per bullet, following the scheme's own three bullets, and no figure mark — which is a change to the live file, and the only proposal in this set that takes a mark away from somewhere rather than putting one back.",
+      "teacherQuestion": "One yes/no, and this is the one to be most sceptical of. CBSE printed three marks over three prose bullets and paid nothing for a drawing. Do you follow the scheme — 1 + 1 + 1, fully machine-markable — or does 'Draw' in the stem earn the student a mark you will mark yourself? If the second, keep the live rubric exactly as it stands and strike this proposal.",
+      "ifAdopted": "A student who writes all three stages goes from a capped 2/3 to 3/3. A student who draws a correct labelled neuron and writes little goes from a reserved mark to nothing. The question stops dragging the accuracy test downwards.",
+      "proposed": {
+        "markSplit": "inferred",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "information is detected at the specialised dendritic tip of a nerve cell and sets off a chemical reaction that creates an electrical impulse",
+            "keywords": [
+              {
+                "any": [
+                  "dendrite",
+                  "dendritic tip",
+                  "dendrites",
+                  "dendron"
+                ]
+              },
+              {
+                "any": [
+                  "chemical reaction",
+                  "chemical change"
+                ]
+              },
+              {
+                "any": [
+                  "electrical impulse",
+                  "electric impulse",
+                  "impulse"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names the dendritic tip and the impulse but not the chemical reaction that generates it"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "the impulse travels from the dendrite to the cell body and then along the axon to its end, where it triggers the release of chemicals",
+            "keywords": [
+              {
+                "any": [
+                  "cell body",
+                  "cyton",
+                  "soma"
+                ]
+              },
+              {
+                "any": [
+                  "axon",
+                  "nerve fibre",
+                  "nerve fiber"
+                ]
+              },
+              {
+                "any": [
+                  "release of chemicals",
+                  "chemicals are released",
+                  "releases chemicals",
+                  "neurotransmitter"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "traces the impulse along the axon but never reaches the release of chemicals at its end"
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 1,
+            "awardFor": "the chemicals cross the gap, or synapse, and start a similar impulse in a dendrite of the next neuron",
+            "keywords": [
+              {
+                "any": [
+                  "synapse",
+                  "synaptic gap",
+                  "synaptic cleft",
+                  "gap"
+                ]
+              },
+              {
+                "any": [
+                  "next neuron",
+                  "next nerve cell",
+                  "another neuron",
+                  "dendrite of the next"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "names the synapse but does not say the impulse is started again in the next neuron"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "CBSE prints one total of 3 for the whole answer and nothing per step, so this 1 + 1 + 1 is inferred. What it rests on is the scheme's own body: three bullets, three marks, one mark a bullet.",
+          "This proposal removes the figure mark the live rubric reserves. CBSE prints no figure mark here — its (Fig. a) and (Fig b) are illustrations inside its prose, not marks in its column — and the reserved mark caps every machine total on this question at 2 of 3. The cost is that a student who draws a correct labelled neuron and writes little now scores nothing for the drawing. That is the trade, and it is the teacher's to take or refuse.",
+          "This is the only proposal in this file that takes a mark away from a student rather than restoring one. Read it twice.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A7",
+      "title": "Science 2016-17 sample, Q22 — the rainbow, the three phenomena, the Sun at sunrise and noon",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-science-2016-17-q22",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-science-2016-17",
+      "questionNo": 22,
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-science-2016-17-ms.pdf",
+        "page": 4
+      },
+      "todayAStudentLoses": "The marks are right; the keywords are not. Step 2 is satisfied by the word 'dispersion' alone and step 3 by the same word, so a student who writes 'dispersion' twice collects 2 of the 5. And 'Red' — CBSE's own half-mark answer to which colour is at the top — is not checked for at all: that step's keywords are the words of the previous line.",
+      "cbsePrinted": "Four numbers down the margin of page 4: 1 against the water-droplets-as-prisms paragraph; 1½ against the naming of the three phenomena; ½ against 'Red'; 2 against the sunrise, sunset and noon paragraph. 1 + 1½ + ½ + 2 = 5. No figure mark, though the stem says 'with the help of a diagram'.",
+      "iInferred": "Only the concepts inside each step. No figure mark is proposed, because the column prints none and all five marks are already spoken for.",
+      "teacherQuestion": "One yes/no: the stem says 'with the help of a diagram' and CBSE pays nothing for one. Does the ray diagram carry half a mark, taken out of the three-phenomena step and leaving it at 1? Say yes and the amendment is already written out under proposed.ifYouWantAFigureMark. Say no and CBSE's four numbers stand.",
+      "ifAdopted": "As proposed, nobody's total changes but 'Red' finally earns its half mark and a repeated single word stops earning two. If you also take the figure mark: a student who draws the ray diagram gains half a mark, and the machine's ceiling on the question falls to 4½ of 5.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "water droplets act like tiny prisms: they refract and disperse the incoming sunlight, reflect it internally, and refract it again as it leaves the drop",
+            "keywords": [
+              {
+                "any": [
+                  "water droplet",
+                  "water drops",
+                  "rain drop",
+                  "raindrop",
+                  "prism",
+                  "prisms"
+                ]
+              },
+              {
+                "any": [
+                  "refract",
+                  "refraction",
+                  "refracted"
+                ]
+              },
+              {
+                "any": [
+                  "internal reflection",
+                  "reflect it internally",
+                  "reflected internally",
+                  "total internal reflection"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "likens the droplet to a prism but traces only part of the path through it"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1.5,
+            "awardFor": "names the three phenomena of light involved: refraction, dispersion and internal reflection",
+            "keywords": [
+              {
+                "any": [
+                  "refraction",
+                  "refract"
+                ]
+              },
+              {
+                "any": [
+                  "dispersion",
+                  "disperse",
+                  "splitting of light"
+                ]
+              },
+              {
+                "any": [
+                  "internal reflection",
+                  "total internal reflection"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 1,
+                "note": "names two of the three phenomena"
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 0.5,
+            "awardFor": "red is the colour at the top of the rainbow",
+            "keywords": [
+              {
+                "any": [
+                  "red"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "marks": 2,
+            "awardFor": "at sunrise and sunset light travels a longer path through the atmosphere, so more of the blue is scattered away and the Sun looks reddish or orange; at noon the path is shorter, scattering is less and the Sun looks white",
+            "keywords": [
+              {
+                "any": [
+                  "longer distance",
+                  "larger distance",
+                  "more particles",
+                  "thicker layer of air",
+                  "travels more"
+                ]
+              },
+              {
+                "any": [
+                  "scatter",
+                  "scattered",
+                  "scattering"
+                ]
+              },
+              {
+                "any": [
+                  "red",
+                  "reddish",
+                  "orange"
+                ]
+              },
+              {
+                "any": [
+                  "noon",
+                  "midday",
+                  "overhead"
+                ]
+              },
+              {
+                "any": [
+                  "white",
+                  "whitish"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 1,
+                "note": "explains the reddish Sun at sunrise or sunset but not the white Sun at noon, or the reverse"
+              }
+            ]
+          }
+        ],
+        "ifYouWantAFigureMark": {
+          "note": "Not part of the proposal, and not counted in its sum. It replaces s2 above with these two entries and leaves s1, s3 and s4 alone; the total is still 5.",
+          "steps": [
+            {
+              "id": "s0",
+              "kind": "diagram",
+              "marks": 0.5,
+              "awardFor": "correct ray diagram of a rainbow: sunlight entering a raindrop, refracting, reflecting internally and dispersing on the way out to the observer",
+              "labels": [
+                "sunlight",
+                "water droplet",
+                "refraction",
+                "internal reflection",
+                "dispersion",
+                "observer",
+                "red",
+                "violet"
+              ],
+              "ordered": false,
+              "autoGradable": false
+            },
+            {
+              "id": "s2",
+              "marks": 1,
+              "awardFor": "names the three phenomena of light involved: refraction, dispersion and internal reflection",
+              "keywords": [
+                {
+                  "any": [
+                    "refraction",
+                    "refract"
+                  ]
+                },
+                {
+                  "any": [
+                    "dispersion",
+                    "disperse",
+                    "splitting of light"
+                  ]
+                },
+                {
+                  "any": [
+                    "internal reflection",
+                    "total internal reflection"
+                  ]
+                }
+              ],
+              "partial": [
+                {
+                  "when": "keywords-partial",
+                  "award": 0.5,
+                  "note": "names two of the three phenomena"
+                }
+              ]
+            }
+          ]
+        },
+        "needsReview": true,
+        "reviewNotes": [
+          "The four marks are CBSE's own column on page 4 of the scheme: 1 + 1½ + half + 2 = 5.",
+          "No diagram step is proposed, because CBSE's column prints none and every one of the five marks is already attached to prose. The stem does ask for a diagram; the amendment that pays it half a mark out of the three-phenomena step is written out under ifYouWantAFigureMark and is the teacher's to accept.",
+          "Red is a specific answer, so acceptEquivalentWording is off on that step. Under the draft that half mark was unreachable: its keywords were the words of the previous line.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. Red is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A8",
+      "title": "Science 2025-26 sample, Q10 — plants and excretory products",
+      "kind": "confirm-as-is",
+      "targets": {
+        "rubricId": "class10-science-2025-26-q10",
+        "file": "data/rubrics.json"
+      },
+      "paper": "class10-science-2025-26",
+      "questionNo": 10,
+      "maxMarks": 2,
+      "scheme": {
+        "file": "class10-science-2025-26-ms.pdf",
+        "page": 1
+      },
+      "todayAStudentLoses": "A student who rebuts the statement correctly — that it is completely wrong to say plants produce no excretory products — and lists no strategy scores 0 out of 2.",
+      "cbsePrinted": "One number: 2, against the whole answer. One quantity inside it: '(any two)', and it attaches to the four strategies, not to the opening rebuttal.",
+      "iInferred": "Nothing, and that is the point of this entry. I read the scheme page myself rather than the summary, and reached the conclusion the live rubric's own notes already record. No change is proposed.",
+      "teacherQuestion": "One yes/no: confirm that the rebuttal earns nothing, so that 2 marks means two strategies at 1 each. The only alternative CBSE's half-mark grain permits is 1 for the rebuttal and half a mark per strategy — which would drop a student who lists two strategies without an explicit rebuttal, which is exactly the scheme's own model answer, from 2/2 to 1/2. On balance I do not think you should take it, but it is the only other shape available.",
+      "ifAdopted": "Nothing changes in how anyone is scored. What changes is that the rubric stops being unreviewed, and the grader is finally allowed to mark a genuinely empty answer red on it.",
+      "proposed": null
+    },
+    {
+      "ref": "A9",
+      "title": "Social Science 2023-24 practice set 2, Q37 — the map question",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-social-science-2023-24-apq-set2-q37",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-social-science-2023-24-apq-set2",
+      "questionNo": 37,
+      "maxMarks": 5,
+      "scheme": {
+        "file": "class10-social-science-2023-24-apq-set2-ms.pdf",
+        "page": 17
+      },
+      "todayAStudentLoses": "Everyone. The rubric's two steps match on the words of the question rather than on any answer: step 1 is satisfied by the word 'India' and step 2 by the words 'Jallianwala Bagh' — which are not answers to this paper's question at all. A student who names both places correctly and marks all three symbols may match neither step.",
+      "cbsePrinted": "The section heading itself: 'MAP SKILL-BASED QUESTION (2+3=5)', and 2 and 3 again in the margin against parts (a) and (b). So 2 for identifying and naming the two marked places, 3 for locating and labelling any three of the four listed items with suitable symbols.",
+      "iInferred": "Two things, and the second is serious. First, that CBSE's 2 for part (a) divides 1 per place, and its 3 for part (b) 1 per item — the only division its own counts allow. Second, and this is the one to look at: the marking scheme prints answers that do not belong to this question paper. The paper asks for the place associated with the peasant satyagraha in Gujarat and for the Congress session of December 1920; the scheme answers Madras for a 1927 session, and Amritsar for the Jallianwala Bagh. CBSE has printed another set's answers on this page. The proposal therefore uses the paper's own answers — Kheda and Nagpur — and those two names are mine, not CBSE's.",
+      "teacherQuestion": "Two. (1) Are Kheda and Nagpur the answers to this paper's A and B — yes or no? I am confident, but the printed scheme contradicts me and it is not my contradiction to resolve. (2) Part (b) is a cross on an outline of India: modelled below as a drawing worth 3, which no machine will ever award. Confirm that, or say that a name written beside the symbol should earn it instead — CBSE prints exactly that alternative for visually impaired candidates on the same page, so the wording already exists if you want it.",
+      "ifAdopted": "Students stop being scored on whether they happened to write the word 'India'. Part (a) becomes markable — 2 of the 5. Part (b)'s 3 marks wait for a person, so the machine's ceiling on this question is 2 of 5, and honestly so: it cannot see where a cross was put.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "unordered",
+        "acceptEquivalentWording": false,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "place A — the place associated with the peasant satyagraha in Gujarat: Kheda",
+            "keywords": [
+              {
+                "any": [
+                  "Kheda",
+                  "Kaira"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "place B — the Indian National Congress session of December 1920: Nagpur",
+            "keywords": [
+              {
+                "any": [
+                  "Nagpur"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "kind": "diagram",
+            "marks": 3,
+            "awardFor": "locates and labels any three of the four listed items on the outline map with suitable symbols",
+            "labels": [
+              "Pune — a software technology park in Maharashtra",
+              "Bokaro — a coal mine in Jharkhand",
+              "Haldia — a seaport in West Bengal",
+              "Tehri Dam — the tallest dam in India"
+            ],
+            "ordered": false,
+            "autoGradable": false
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "The 2 and the 3 are CBSE's own, printed in the section heading (2+3=5) and again in the margin of page 17. The 1 plus 1 inside part (a), and the treatment of part (b) as a single drawing worth 3, are this file's.",
+          "The names Kheda and Nagpur are NOT from the marking scheme. The scheme on page 17 answers a different pair of clues from the ones this paper's Q37 prints — it gives Madras and Amritsar against questions about a 1927 session and the Jallianwala Bagh, where the paper asks about a Gujarat peasant satyagraha and the December 1920 session. CBSE appears to have printed another set's answers. Kheda and Nagpur are the answers to the questions actually asked, and they are this file's, not CBSE's. This is the one place in this file where a proposal contradicts the printed scheme, and it must not be signed off without a teacher agreeing to that.",
+          "Part (b) is modelled as a single diagram step worth 3, so it is never awarded automatically. It is not that a machine marks the map badly; it cannot see a pencil cross on an outline of India at all. The same page prints a name-only version of part (b) for visually impaired candidates, which is the alternative if a written answer is to be accepted instead.",
+          "acceptEquivalentWording is off: these are place names, and a near miss is not the place.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A10",
+      "title": "Mathematics (Standard) 2022-23 sample, Q23 — the angle AQB from the tangents at P",
+      "kind": "replace-steps",
+      "targets": {
+        "rubricId": "class10-mathematics-standard-2022-23-q23",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-standard-2022-23",
+      "questionNo": 23,
+      "maxMarks": 2,
+      "scheme": {
+        "file": "class10-mathematics-standard-2022-23-ms.pdf",
+        "page": 2
+      },
+      "todayAStudentLoses": "Nothing to do with a figure — that warning is the false alarm the review page suspected. What a student loses is to the keywords: every one of the three steps accepts the bare word 'angle', so writing 'angle' three times scores 2 out of 2, and none of the three numbers 90, 105 and 52.5 is checked for at all.",
+      "cbsePrinted": "Three numbers down the margin of page 2: ½ against the two right angles between radius and tangent; ½ against the angle at the centre being 105 degrees; 1 against the answer 52.5 degrees. ½ + ½ + 1 = 2.",
+      "iInferred": "Only the concepts inside each step, and two partial rules on the last: that a candidate who quotes the centre-angle rule and slips arithmetically keeps half, and that a right value with no degree sign keeps half. Both are mine.",
+      "teacherQuestion": "Two, both quick. (1) The paper prints the figure — the stem opens 'In the given figure, O is the centre of the circle' — so no drawing mark arises. Confirm in one line. (2) Should an arithmetic slip in the last step keep half a mark, or is 52.5 all or nothing?",
+      "ifAdopted": "The numbers finally have to be right. A student who writes the word 'angle' and no working goes from 2/2 to 0. A student who does the geometry correctly scores 2 as before.",
+      "proposed": {
+        "markSplit": "printed",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 0.5,
+            "awardFor": "the two angles at the points of contact are 90 degrees, because the radius is perpendicular to the tangent there",
+            "keywords": [
+              {
+                "any": [
+                  "90",
+                  "90°"
+                ]
+              },
+              {
+                "any": [
+                  "radius",
+                  "radii"
+                ]
+              },
+              {
+                "any": [
+                  "tangent",
+                  "tangents",
+                  "perpendicular"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 0.5,
+            "awardFor": "the angle at the centre AOB is 105 degrees, by the angle sum property",
+            "keywords": [
+              {
+                "any": [
+                  "105",
+                  "105°"
+                ]
+              },
+              {
+                "any": [
+                  "angle sum",
+                  "sum of angles",
+                  "angle sum property"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 1,
+            "awardFor": "AQB is half of 105, that is 52.5 degrees, because the angle at the remaining part of the circle is half the angle the arc subtends at the centre",
+            "keywords": [
+              {
+                "any": [
+                  "52.5",
+                  "52.5°",
+                  "52·5",
+                  "105/2"
+                ]
+              },
+              {
+                "any": [
+                  "half",
+                  "remaining part of the circle",
+                  "at the centre"
+                ]
+              }
+            ],
+            "unit": {
+              "required": true,
+              "accepted": [
+                "°",
+                "degree",
+                "degrees"
+              ]
+            },
+            "partial": [
+              {
+                "when": "arithmetic-slip",
+                "award": 0.5,
+                "note": "quotes the centre-angle rule and halves 105 but the number that comes out is wrong"
+              },
+              {
+                "when": "unit-missing",
+                "award": 0.5,
+                "note": "52.5 is right, the degree sign is absent"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "The three marks are CBSE's own column on page 2 of the scheme: half + half + 1 = 2.",
+          "No diagram step. The question paper prints the figure — the stem opens 'In the given figure, O is the centre of the circle' — so the candidate draws nothing and the automatic drawing warning on this rubric is a false alarm.",
+          "The two partial rules on the final step are this file's, not CBSE's. Both are legal only because that step is worth a whole mark; the two half-mark steps above it are green or red with nothing in between.",
+          "Keywords have been split into real concepts and the three numbers are now checked for. Under the draft, the bare word 'angle' satisfied all three steps.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. 52.5 is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "Proposed. No teacher has approved it."
+        ]
+      }
+    },
+    {
+      "ref": "A11",
+      "title": "Mathematics 2018-19 sample, Q21 option B — the sphere melted and recast (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-mathematics-2018-19-q21-b",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-2018-19",
+      "questionNo": 21,
+      "variant": "B",
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-mathematics-2018-19-ms.pdf",
+        "page": 5
+      },
+      "todayAStudentLoses": "Everyone who chose the OR. Nothing exists for their script to be marked against.",
+      "cbsePrinted": "Three 1s down the margin of page 5: 1 against 'Number of balls = Volume of solid sphere / Volume of 1 spherical ball'; 1 against the substitution; 1 against '= 1000'. 1 + 1 + 1 = 3.",
+      "iInferred": "Only the concepts inside each step, and that the radius of a small ball is 0.3 cm — the paper gives the diameter as 0.6 cm and the scheme substitutes 0.3 without saying so.",
+      "teacherQuestion": "Two. (1) Is this accurate enough to use? (2) The middle mark is for substituting correctly. Should a candidate who uses the diameter 0.6 instead of the radius 0.3 keep half of it as a slip, or lose it outright? A wrong radius is a conceptual error rather than an arithmetic one, so I have not written a partial rule for it.",
+      "ifAdopted": "Students who chose option B stop coming back ungraded. The question is fully machine-markable; no mark sits on a drawing.",
+      "proposed": {
+        "id": "class10-mathematics-2018-19-q21-b",
+        "paper": "class10-mathematics-2018-19",
+        "session": "2018-19",
+        "questionNo": 21,
+        "variant": "B",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "sa",
+        "maxMarks": 3,
+        "bookCode": "jemh1",
+        "chapter": 12,
+        "class": 10,
+        "subject": "Mathematics",
+        "prompt": "A solid sphere of radius 3 cm is melted and then recast into small spherical balls each of diameter 0.6 cm. Find the number of balls.",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-mathematics-2018-19-ms.pdf",
+          "page": 5,
+          "excerpt": "Number of balls = Volume of solid sphere / Volume of 1 spherical ball (1) = (4/3 x pi x 3 x 3 x 3) / (4/3 x pi x 0.3 x 0.3 x 0.3) (1) = 1000 (1)"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "states that the number of balls is the volume of the solid sphere divided by the volume of one small ball",
+            "keywords": [
+              {
+                "any": [
+                  "number of balls",
+                  "no. of balls",
+                  "number of spheres"
+                ]
+              },
+              {
+                "any": [
+                  "volume of solid sphere",
+                  "volume of the sphere",
+                  "volume of big sphere"
+                ]
+              },
+              {
+                "any": [
+                  "volume of 1 spherical ball",
+                  "volume of one ball",
+                  "volume of small sphere",
+                  "volume of each ball"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "formula-only",
+                "award": 0.5,
+                "note": "quotes the volume formula for a sphere but never sets up the ratio the answer needs"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "substitutes correctly, with radius 3 cm for the solid sphere and 0.3 cm — half of the 0.6 cm diameter — for each small ball",
+            "keywords": [
+              {
+                "any": [
+                  "4/3",
+                  "4/3 pi",
+                  "four thirds"
+                ]
+              },
+              {
+                "any": [
+                  "0.3",
+                  "0·3",
+                  "3/10"
+                ]
+              },
+              {
+                "any": [
+                  "3 x 3 x 3",
+                  "3^3",
+                  "27"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "marks": 1,
+            "awardFor": "the number of balls is 1000",
+            "keywords": [
+              {
+                "any": [
+                  "1000",
+                  "1,000"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "arithmetic-slip",
+                "award": 0.5,
+                "note": "the ratio is set up and substituted correctly and the number that comes out is wrong"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Every mark is CBSE's own column on page 5 of the scheme: 1 + 1 + 1 = 3.",
+          "The scheme substitutes 0.3 cm without remarking that the paper gives a diameter of 0.6 cm. Step 2 therefore checks for 0.3 explicitly, so that a candidate who substitutes 0.6 does not collect the mark. Whether that should instead be a half-mark slip is the teacher's to say.",
+          "The partial rules are this file's, not CBSE's.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. 1000 is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    },
+    {
+      "ref": "A12",
+      "title": "Mathematics (Basic) 2025-26 sample, Q27 option A — the modal agriculture holding (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-mathematics-basic-2025-26-q27-a",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-basic-2025-26",
+      "questionNo": 27,
+      "variant": "A",
+      "maxMarks": 3,
+      "scheme": {
+        "file": "class10-mathematics-basic-2025-26-ms.pdf",
+        "page": 4
+      },
+      "todayAStudentLoses": "Everyone who chose option A — the mode question. Only option B, the assumed-mean table, is written up.",
+      "cbsePrinted": "Two numbers on page 4: 1 against the table where the modal class is picked out, and 2 against the block that substitutes into the mode formula and reaches 6.166. 1 + 2 = 3.",
+      "iInferred": "Only the concepts inside each step, and two partial rules on the second: 1 for quoting the mode formula without substituting, and 1 for substituting correctly and slipping in the arithmetic. Those two are mine.",
+      "teacherQuestion": "Two. (1) Is this accurate enough to use? (2) The scheme's own answer is 6.166 and then 'Hence, modal agriculture holdings of the village is 6.17 hectare (approx.)'. Is 6.17 required, or does 6.166 stand on its own? I have accepted both.",
+      "ifAdopted": "Students who chose option A stop coming back ungraded. The question is fully machine-markable.",
+      "proposed": {
+        "id": "class10-mathematics-basic-2025-26-q27-a",
+        "paper": "class10-mathematics-basic-2025-26",
+        "session": "2025-26",
+        "questionNo": 27,
+        "variant": "A",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "sa",
+        "maxMarks": 3,
+        "bookCode": "jemh1",
+        "chapter": 13,
+        "class": 10,
+        "subject": "Mathematics",
+        "prompt": "The frequency distribution table of agriculture holdings in a village is given — area of land in hectares 1-3, 3-5, 5-7, 7-9, 9-11, 11-13 against 20, 45, 80, 55, 40 and 12 families. Find the modal agriculture holdings of the village.",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-mathematics-basic-2025-26-ms.pdf",
+          "page": 4,
+          "excerpt": "Modal class 5 - 7, with f0 = 45, f1 = 80, f2 = 55 (1). Modal class = 5 - 7, l = 5, h = 2. Mode = l + ((f1 - f0)/(2f1 - f0 - f2)) h = 5 + ((80 - 45)/(2(80) - 45 - 55)) 2 = 6.166. Hence, modal agriculture holdings of the village is 6.17 hectare (approx.) (2)"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "identifies 5-7 as the modal class, and reads off l = 5, h = 2, f1 = 80, f0 = 45, f2 = 55",
+            "keywords": [
+              {
+                "any": [
+                  "modal class",
+                  "highest frequency",
+                  "maximum frequency"
+                ]
+              },
+              {
+                "any": [
+                  "5 - 7",
+                  "5-7",
+                  "5 to 7"
+                ]
+              },
+              {
+                "any": [
+                  "80"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "keywords-partial",
+                "award": 0.5,
+                "note": "picks the modal class but does not read off the values the formula needs"
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 2,
+            "awardFor": "substitutes into the mode formula and reaches 6.17 hectares, approximately",
+            "keywords": [
+              {
+                "any": [
+                  "80 - 45",
+                  "(80-45)",
+                  "35"
+                ]
+              },
+              {
+                "any": [
+                  "2(80) - 45 - 55",
+                  "160 - 45 - 55",
+                  "60"
+                ]
+              },
+              {
+                "any": [
+                  "6.17",
+                  "6.166",
+                  "6·17",
+                  "6.1666"
+                ]
+              }
+            ],
+            "unit": {
+              "required": false,
+              "accepted": [
+                "hectare",
+                "hectares",
+                "ha"
+              ]
+            },
+            "partial": [
+              {
+                "when": "formula-only",
+                "award": 1,
+                "note": "quotes the mode formula and never substitutes the values into it"
+              },
+              {
+                "when": "arithmetic-slip",
+                "award": 1,
+                "note": "substitutes correctly and the number that comes out is wrong"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Both marks are CBSE's own column on page 4 of the scheme: 1 + 2 = 3.",
+          "The two partial rules on step 2 are this file's, not CBSE's. They are legal because the step is worth 2 marks.",
+          "The scheme's own answer is 6.166 rounded to 6.17; both are accepted, and a teacher who wants the rounded form only should strike 6.166 from the keywords.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    },
+    {
+      "ref": "A13",
+      "title": "Mathematics (Standard) 2019-20 sample, Q35 option A — construct a triangle and a similar triangle (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-mathematics-standard-2019-20-q35-a",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-standard-2019-20",
+      "questionNo": 35,
+      "variant": "A",
+      "maxMarks": 4,
+      "scheme": {
+        "file": "class10-mathematics-standard-2019-20-ms.pdf",
+        "page": 6
+      },
+      "todayAStudentLoses": "Everyone who chose option A. But read the next line before deciding this is a gap worth filling.",
+      "cbsePrinted": "Two numbers on page 6: 1 against 'Correct construction of given triangle' and 3 against 'Correct construction of similar triangle with scale factor 3/4'. 1 + 3 = 4. CBSE's own words for both marks are 'correct construction' — this is a drawing from end to end, and CBSE says so.",
+      "iInferred": "Nothing. There is nothing to infer: both marks are printed and both are constructions.",
+      "teacherQuestion": "Not really about this rubric. All four marks are a drawing, so a machine will award nothing on it, for any script, ever — and the same is already true of option B, which is also a construction. The question is whether construction questions belong in an automatically marked set at all. If the answer is no, discard this proposal and withdraw both options of Q35 rather than writing the second one up. If yes, adopt it and accept that Q35 is a page you mark by hand.",
+      "ifAdopted": "Students who chose option A stop coming back with nothing at all against their script, and get a page with four marks reserved for a person instead. The machine's ceiling on this question is 0 out of 4 either way.",
+      "proposed": {
+        "id": "class10-mathematics-standard-2019-20-q35-a",
+        "paper": "class10-mathematics-standard-2019-20",
+        "session": "2019-20",
+        "questionNo": 35,
+        "variant": "A",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "case-study",
+        "maxMarks": 4,
+        "bookCode": "jemh1",
+        "chapter": 6,
+        "class": 10,
+        "subject": "Mathematics",
+        "prompt": "Draw a triangle ABC with side BC = 6.5 cm, angle B = 30 degrees, angle A = 105 degrees. Then construct another triangle whose sides are 3/4 times the corresponding sides of triangle ABC.",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-mathematics-standard-2019-20-ms.pdf",
+          "page": 6,
+          "excerpt": "Correct construction of given triangle (1). Correct construction of similar triangle with scale factor 3/4 (3)"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "kind": "diagram",
+            "marks": 1,
+            "awardFor": "correct construction of triangle ABC with BC = 6.5 cm, angle B = 30 degrees and angle A = 105 degrees",
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "BC = 6.5 cm",
+              "angle B = 30",
+              "angle A = 105"
+            ],
+            "autoGradable": false
+          },
+          {
+            "id": "s2",
+            "kind": "diagram",
+            "marks": 3,
+            "awardFor": "correct construction of the similar triangle with scale factor 3/4: the ray of equal divisions from B, the four points marked off, the fourth joined to C and the parallel drawn through the third",
+            "labels": [
+              "ray BX",
+              "B1",
+              "B2",
+              "B3",
+              "B4",
+              "B4C joined",
+              "B3C' parallel to B4C",
+              "A'",
+              "C'"
+            ],
+            "autoGradable": false
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Both marks are CBSE's own column on page 6 of the scheme, and CBSE's own words for both are 'correct construction'.",
+          "Every mark on this rubric is a diagram step, so nothing on this question is ever awarded automatically: a machine's score on it is 0 of 4 for every script, including a perfect one. Option B of the same question has exactly the same property. Before adopting this, decide whether construction questions belong in an automatically marked set — if not, the right action is to withdraw Q35 rather than to write up its second option.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    },
+    {
+      "ref": "A14",
+      "title": "Mathematics 2018-19 sample, Q7 option A — HCF, LCM and the other number (the option nobody wrote up)",
+      "kind": "new-rubric",
+      "targets": {
+        "rubricId": "class10-mathematics-2018-19-q7-a",
+        "file": "data/rubrics.draft.json"
+      },
+      "paper": "class10-mathematics-2018-19",
+      "questionNo": 7,
+      "variant": "A",
+      "maxMarks": 2,
+      "scheme": {
+        "file": "class10-mathematics-2018-19-ms.pdf",
+        "page": 1
+      },
+      "todayAStudentLoses": "Everyone who took the HCF and LCM option rather than the irrationality proof.",
+      "cbsePrinted": "Two 1s down the margin of page 1: 1 against 'HCF x LCM = Product of two numbers'; 1 against '9 x 360 = 45 x 2nd number, 2nd number = 72'. 1 + 1 = 2.",
+      "iInferred": "Only the concepts inside each step, and one partial rule for an arithmetic slip on the second. 72 is a specific number, so acceptEquivalentWording is off there.",
+      "teacherQuestion": "One yes/no: is this accurate enough to use? It is the simplest of the four missing options and the least likely to need amending.",
+      "ifAdopted": "Students who chose option A stop coming back ungraded. Fully machine-markable; nothing sits on a drawing.",
+      "proposed": {
+        "id": "class10-mathematics-2018-19-q7-a",
+        "paper": "class10-mathematics-2018-19",
+        "session": "2018-19",
+        "questionNo": 7,
+        "variant": "A",
+        "variantsOffered": [
+          "A",
+          "B"
+        ],
+        "type": "vsa",
+        "maxMarks": 2,
+        "bookCode": "jemh1",
+        "chapter": 1,
+        "class": 10,
+        "subject": "Mathematics",
+        "prompt": "The HCF and LCM of two numbers are 9 and 360 respectively. If one number is 45, find the other number.",
+        "ordering": "ordered",
+        "acceptEquivalentWording": true,
+        "scheme": {
+          "file": "class10-mathematics-2018-19-ms.pdf",
+          "page": 1,
+          "excerpt": "HCF x LCM = Product of two numbers (1). 9 x 360 = 45 x 2nd number. 2nd number = 72 (1)"
+        },
+        "markSplit": "printed",
+        "steps": [
+          {
+            "id": "s1",
+            "marks": 1,
+            "awardFor": "states that HCF times LCM equals the product of the two numbers",
+            "keywords": [
+              {
+                "any": [
+                  "HCF",
+                  "H.C.F",
+                  "highest common factor"
+                ]
+              },
+              {
+                "any": [
+                  "LCM",
+                  "L.C.M",
+                  "lowest common multiple",
+                  "least common multiple"
+                ]
+              },
+              {
+                "any": [
+                  "product",
+                  "product of two numbers",
+                  "product of the numbers"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "marks": 1,
+            "awardFor": "substitutes to get 9 x 360 = 45 times the other number, so the other number is 72",
+            "keywords": [
+              {
+                "any": [
+                  "9 x 360",
+                  "9 × 360",
+                  "3240"
+                ]
+              },
+              {
+                "any": [
+                  "72"
+                ]
+              }
+            ],
+            "partial": [
+              {
+                "when": "arithmetic-slip",
+                "award": 0.5,
+                "note": "substitutes into HCF times LCM equals the product correctly and the number that comes out is wrong"
+              }
+            ]
+          }
+        ],
+        "needsReview": true,
+        "reviewNotes": [
+          "Both marks are CBSE's own column on page 1 of the scheme: 1 + 1 = 2.",
+          "72 is a specific number, so acceptEquivalentWording is off on the second step and a near miss should not be green.",
+          "The partial rule on the second step is this file's, not CBSE's.",
+          "The schema carries \"or equivalent wording\" as one flag for the whole rubric, not per step. 72 is an answer that must be exact, so a grader must not accept a near miss there even though the rubric-wide flag is on. If that cannot be honoured, turn the rubric-wide flag off and accept that the prose steps become stricter too.",
+          "This rubric has never been read by a teacher. It is proposed, not approved."
+        ]
+      }
+    }
+  ]
+}

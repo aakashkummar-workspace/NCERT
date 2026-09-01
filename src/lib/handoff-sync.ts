@@ -35,7 +35,31 @@
  * battery bug. `syncPending()` returns how much is still outstanding, and
  * `GradeSync` stops the timer the moment that reaches zero. There is nothing to
  * poll for on a sitting where every written answer is already graded.
+ *
+ * ## Two kinds of sitting, one route
+ *
+ * There are two exam flows on this device and they are not the same shape:
+ *
+ *  - a **dual-track test** (`src/lib/test-attempts.ts`) — Section A marked by
+ *    the app, Section B written on paper and handed off to be marked elsewhere.
+ *    Pushed *and* polled.
+ *  - a **practice paper** (`src/lib/attempts.ts`) — the original timed run at a
+ *    CBSE sample paper, self-marked from end to end. Pushed only.
+ *
+ * Both land on `POST /api/attempts/` as `Attempt` + `AttemptQuestion`, because
+ * both are the same fact — this student sat this paper and these are the marks
+ * — and everything downstream (the parent's subject trend, an `Answer` bound to
+ * the question it answers, a teacher's mark) is written against that pair. A
+ * second path would be a second copy of the idempotency argument, the offline
+ * argument and the "the server never overwrites a teacher's mark" argument.
+ * `syncPracticeAttempt()` below is the whole of the difference.
  */
+import {
+  allAttempts as allPracticeAttempts,
+  markSynced as markPracticeSynced,
+  type Attempt as PracticeAttempt,
+} from "./attempts";
+import { getPaper, questionsFor, type PaperQuestion } from "./papers";
 import {
   allTestAttempts,
   attachGrade,
@@ -51,7 +75,7 @@ import {
 
 /** What one poll found, for a caller deciding whether to poll again. */
 export interface SyncOutcome {
-  /** Sittings pushed to the server this run. */
+  /** Sittings pushed to the server this run — practice papers and tests both. */
   synced: number;
   /** Handoffs that gained a scan or a grade this run. */
   attached: number;
@@ -149,6 +173,132 @@ export async function syncAttempt(attempt: TestAttempt): Promise<string | null> 
   return result.attemptId;
 }
 
+// --- the practice paper, which is the other kind of sitting -----------------
+
+/**
+ * A timed practice paper is entirely self-marked, and that is the honest map.
+ *
+ * `src/lib/attempts.ts` is the original flow and the one students use most: the
+ * clock runs, they write on paper, then they mark themselves against the
+ * official scheme. Its `QuestionScore` carries `score` and `maxMarks` per
+ * question and nothing else, which is exactly what `AttemptQuestion.selfScore`
+ * and `maxMarks` are for. So the mapping is one-to-one and needs no invention:
+ *
+ *   QuestionScore.n         -> AttemptQuestion.questionNumber
+ *   QuestionScore.maxMarks  -> AttemptQuestion.maxMarks
+ *   QuestionScore.score     -> AttemptQuestion.selfScore   (null = unscored)
+ *   QuestionScore.attempted -> AttemptQuestion.attempted
+ *
+ * ### What is deliberately *not* mapped
+ *
+ *  - **No `WrittenHandoff`, and no scan.** A practice paper has no Section A/B
+ *    split and no "I wrote this one" tick: the student never claimed to have a
+ *    page for anybody to photograph. Writing handoffs here would put questions
+ *    into `sittingsAwaitingScan()` that the student never offered, and put a
+ *    permanent `pending` on the poll that nothing could ever clear. Every
+ *    question in the grid is a paper question, so all of it is sent — and none
+ *    of it is claimed to be awaiting a mark.
+ *  - **No `awardedMarks`.** As on the dual-track path, that column belongs to
+ *    the grading lane. This body has no field for it at all.
+ *  - **Nothing is pulled back.** `pullGrades()` writes onto handoffs, and there
+ *    are none. A practice paper is push-only, which is why it adds nothing to
+ *    `SyncOutcome.pending` and so cannot keep `GradeSync`'s timer alive.
+ *
+ * `type`, `sectionLabel` and `topic` are not in the store, because the store is
+ * about marks and the clock. They come from `data/papers.json`, which is baked
+ * in at build time and so is available with no network — the same place
+ * `ScoringGrid` reads them from, so a question cannot be typed one way on the
+ * screen and another on the server.
+ */
+function practiceBody(attempt: PracticeAttempt) {
+  const paper = getPaper(attempt.paperSlug);
+  const meta = new Map<number, PaperQuestion>(
+    paper ? questionsFor(paper).map((q) => [q.n, q]) : [],
+  );
+  return {
+    clientAttemptId: attempt.id,
+    paperSlug: attempt.paperSlug,
+    subject: attempt.subject,
+    classNum: attempt.classNum,
+    maxMarks: Math.round(attempt.maxMarks),
+    startedAt: new Date(attempt.startedAt).toISOString(),
+    durationMs: attempt.durationMs,
+    submittedAt: attempt.submittedAt ? new Date(attempt.submittedAt).toISOString() : undefined,
+    status: attempt.status,
+    totalScore: attempt.totalScore,
+    questions: attempt.scores.map((q) => {
+      const from = meta.get(q.n);
+      return {
+        questionNumber: q.n,
+        maxMarks: q.maxMarks,
+        // A paper whose slug is not in the manifest cannot have been sat, since
+        // `startAttempt` is only ever called with one. The fallback exists so a
+        // stale attempt left by an older manifest still syncs rather than 400s.
+        type: from?.type ?? ("sa" as const),
+        sectionLabel: from?.section.slice(0, 8),
+        topic: from?.topic?.slice(0, 60),
+        // Null is "nobody has scored this yet", not zero. Sending a zero would
+        // tell a parent the student got it wrong when they simply stopped
+        // marking half way.
+        selfScore: q.score ?? undefined,
+        attempted: q.attempted,
+      };
+    }),
+  };
+}
+
+/**
+ * Push one practice paper. Returns the server's `Attempt.id`, or null if it
+ * could not be reached. Never throws — offline, 401 and 500 are all "not now".
+ */
+export async function syncPracticeAttempt(attempt: PracticeAttempt): Promise<string | null> {
+  const result = await json<SyncResponse>("/api/attempts/", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(practiceBody(attempt)),
+  });
+  if (!result?.attemptId) return null;
+  try {
+    await markPracticeSynced(attempt.id, result.attemptId, attempt.totalScore ?? null);
+  } catch {
+    // The push landed; only the note that it did was lost. The next pass sends
+    // the same body under the same `clientAttemptId` and the server upserts the
+    // same row, so the cost of a failed write here is one duplicate request —
+    // never a lost sitting, and never a rejected promise reaching a caller that
+    // fired this and walked away.
+  }
+  return result.attemptId;
+}
+
+/**
+ * Every finished practice paper the server does not yet hold, or holds at a
+ * stale total. Returns how many were pushed.
+ *
+ * Only *submitted* papers, for the same reason the dual-track pass gives: a
+ * paper still running is an exam in progress. A submitted paper that has not
+ * been self-marked yet is still pushed — it is a real sitting, it is real
+ * effort, and a parent being shown "sat, not yet marked" is honest where being
+ * shown nothing is not.
+ */
+async function pushPracticeAttempts(): Promise<number> {
+  let attempts: PracticeAttempt[];
+  try {
+    attempts = await allPracticeAttempts();
+  } catch {
+    return 0;
+  }
+
+  let synced = 0;
+  for (const attempt of attempts) {
+    if (attempt.status !== "submitted") continue;
+    const total = attempt.totalScore ?? null;
+    if (attempt.serverAttemptId && attempt.syncedTotalScore === total) continue;
+    // Offline. Leave the record exactly as it is and try again next pass.
+    if (await syncPracticeAttempt(attempt)) synced++;
+  }
+  return synced;
+}
+
 /**
  * Read one sitting's scans and marks back and write them onto its handoffs.
  *
@@ -214,16 +364,25 @@ export async function pullGrades(attempt: TestAttempt): Promise<number> {
  * progress, and the server has no business holding half of one — nothing
  * downstream can use it, and an interrupted upload during an exam is exactly
  * the thing this module must never cause.
+ *
+ * Both kinds of sitting go up here. A practice paper is pushed first and never
+ * polled: it has no written handoff, so it contributes to `synced` and never to
+ * `pending` — which is what keeps `GradeSync`'s timer stopping when there is
+ * genuinely nothing left to wait for. A practice paper that cannot be pushed is
+ * also not a reason to skip the dual-track half, so its failures stay inside
+ * `pushPracticeAttempts`.
  */
 export async function syncPending(): Promise<SyncOutcome> {
+  const practice = await pushPracticeAttempts();
+
   let attempts: TestAttempt[];
   try {
     attempts = await allTestAttempts();
   } catch {
-    return EMPTY;
+    return { ...EMPTY, synced: practice };
   }
 
-  let synced = 0;
+  let synced = practice;
   let attached = 0;
   /** Sittings the server now knows about, by their Dexie key. */
   const onServer = new Set<string>();

@@ -71,6 +71,7 @@ const STUDENT: Item[] = [
     blurb: "Photograph what you wrote. It comes back marked against the scheme, step by step.",
     caveat: "Grading runs only when a model key is set. Until then submissions queue rather than guess.",
   },
+  { href: "/sittings/", title: "Papers you have sat", blurb: "Every sitting, self-marked or sent away — and which of them anybody is still marking." },
   { href: "/results/", title: "Marked answers", blurb: "Green, orange and red over your own handwriting, beside the scheme's own words." },
   { href: "/doubts/", title: "Doubts", blurb: "Ask under a nickname if you would rather. Type it or record it." },
   { href: "/parent/", title: "Parent access", blurb: "Who has asked to see your work, and what they would see. Yours to allow or stop." },

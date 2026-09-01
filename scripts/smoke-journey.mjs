@@ -12,6 +12,8 @@
  *
  *    1  sign in                     as a Class 10 student
  *    2  sit a dual-track test       Section A auto-marks, Section B hands off
+ *   2b  sit a practice paper        the other flow, self-marked end to end, and
+ *                                   the one students actually use most
  *    3  photograph the written half create, pages, answers, submit
  *    4  ask for grading             with no ANTHROPIC_API_KEY it must degrade
  *                                   to `queued` and write NOTHING
@@ -40,6 +42,10 @@
  *            `GET /api/attempts/{id}/grades/`, and reads the SM-2 card the
  *            teacher's mark landed on
  *
+ * Step 2b rides the same device for the same reason: a practice paper is
+ * IndexedDB from end to end too, and until it was synced neither a parent nor a
+ * teacher could see one.
+ *
  * — which is the actual product path, not a simulation of one. Nothing here
  * calls `attachGrade()` itself; it waits for the application to.
  *
@@ -57,7 +63,7 @@
  */
 import { execFileSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
-import { rmSync } from "node:fs";
+import { readFileSync, rmSync } from "node:fs";
 import path from "node:path";
 import { deflateSync } from "node:zlib";
 import { PrismaClient } from "@prisma/client";
@@ -86,6 +92,29 @@ const CHAPTER_BOOK = "jesc1";
 const CHAPTER = 5;
 /** What the student gave themselves at step 2, before anybody else marked it. */
 const SELF_MARKS = 1.5;
+
+/**
+ * The practice paper for step 2b — the *other* exam flow, and the one students
+ * use most. `src/lib/attempts.ts` is entirely self-marked: no Section A/B
+ * split, no written handoff, nobody else marking. It had no sync at all, so a
+ * self-marked paper reached neither a parent nor a teacher.
+ *
+ * Deliberately a different subject from `PAPER`, so the parent's subject trend
+ * has to show it as its own line rather than being satisfied by the dual-track
+ * sitting's Science. Deliberately the smallest scorable Class 10 paper on the
+ * shelf (13 questions, 40 marks): the point is that the flow syncs, not that a
+ * robot can fill in forty number inputs.
+ */
+const PRACTICE_PAPER = "class10-social-science-2021-22-term2";
+const PRACTICE_SUBJECT = "Social Science";
+const PRACTICE_MAX = 40;
+/** The three questions the walk marks itself, and what it awards. Q1 and Q2 are 2-mark. */
+const PRACTICE_MARKS = [
+  [1, 2],
+  [2, 1.5],
+  [6, 3],
+];
+const PRACTICE_TOTAL = PRACTICE_MARKS.reduce((n, [, m]) => n + m, 0);
 
 const results = [];
 function check(name, ok, detail = "") {
@@ -381,6 +410,90 @@ async function main() {
     );
   }
 
+  // === 2b. the other exam flow ============================================
+  step("2b", "a self-marked practice paper");
+
+  const practice = deviceReady ? await sitThePracticePaper(device.page) : null;
+  if (practice) {
+    check(
+      "a self-marked practice paper reaches the server too",
+      typeof practice.serverAttemptId === "string" && practice.serverAttemptId.length === 36,
+      `Attempt.id ${String(practice.serverAttemptId).slice(0, 8)}… for client id ${practice.attemptId}`,
+    );
+    const prow = practice.serverAttemptId
+      ? await prisma.attempt.findUnique({
+          where: { id: practice.serverAttemptId },
+          include: { questions: { orderBy: { questionNumber: "asc" } } },
+        })
+      : null;
+    check(
+      "it is the same Attempt row a dual-track sitting writes, keyed the same way",
+      prow?.clientAttemptId === practice.attemptId && prow?.studentId === studentId,
+      `${prow?.clientAttemptId}`,
+    );
+    check(
+      "the whole mark grid goes up, not a written half",
+      (prow?.questions ?? []).length === practice.questionCount,
+      `${prow?.questions?.length} AttemptQuestion rows for a ${practice.questionCount}-question paper`,
+    );
+    check(
+      "the student’s own marks land on AttemptQuestion.selfScore",
+      PRACTICE_MARKS.every(([n, m]) =>
+        Number((prow?.questions ?? []).find((q) => q.questionNumber === n)?.selfScore) === m,
+      ),
+      PRACTICE_MARKS.map(([n, m]) => `q${n}=${m}`).join(" "),
+    );
+    check(
+      "a question nobody scored is null, never a zero",
+      (prow?.questions ?? []).some((q) => q.selfScore === null),
+      "\"a student who has only marked half the paper should not be told the other half was wrong\"",
+    );
+    check(
+      "nothing on a self-marked paper is claimed to be awaiting a mark",
+      (prow?.questions ?? []).every((q) => q.awardedMarks === null),
+      "the student never said they had written a page for anybody to photograph",
+    );
+    check(
+      "question type and section come from the paper, not invented on the device",
+      (prow?.questions ?? []).every((q) => !!q.sectionLabel) &&
+        new Set((prow?.questions ?? []).map((q) => q.type)).size > 1,
+      `types: ${[...new Set((prow?.questions ?? []).map((q) => q.type))].join(", ")}`,
+    );
+    check(
+      "the paper’s own total reaches the server",
+      Math.abs(Number(prow?.totalScore) - PRACTICE_TOTAL) < 1e-9 && prow?.maxMarks === PRACTICE_MAX,
+      `${prow?.totalScore} of ${prow?.maxMarks}`,
+    );
+    check(
+      "the sitting is recorded as submitted, with its own wall clock",
+      prow?.status === "SUBMITTED" && prow?.durationMs > 0 && !!prow?.submittedAt,
+      `${prow?.status}, ${prow?.durationMs}ms allowed`,
+    );
+
+    // The consumer for GET /api/attempts/, which had none. It is the screen a
+    // student opens to ask "which of these is anybody still marking?".
+    const history = await req(student, "GET", "/api/attempts/");
+    const listed = (history.json.attempts ?? []).find((a) => a.id === practice.serverAttemptId);
+    check("GET /api/attempts/ has a caller, and lists the sitting", history.status === 200 && !!listed, `${history.status}, ${history.json.attempts?.length} sittings`);
+    check(
+      "and says plainly that a self-marked paper was sent to nobody",
+      listed?.selfMarked === PRACTICE_MARKS.length && listed?.sent === 0 && listed?.marked === 0,
+      `${listed?.selfMarked} self-marked, ${listed?.sent} sent, ${listed?.marked} marked — not a broken sitting`,
+    );
+
+    const screen = await device.page.goto(`${BASE}/sittings/`, { waitUntil: "networkidle", timeout: 120_000 });
+    const shown = await device.page
+      .locator("text=/nothing sent for marking/")
+      .first()
+      .textContent()
+      .catch(() => null);
+    check(
+      "/sittings/ draws it without pretending it is unfinished",
+      screen?.status() === 200 && typeof shown === "string",
+      shown ? shown.trim() : "the \"nothing sent for marking\" line was not on the page",
+    );
+  }
+
   // === 3. photograph the written half =====================================
   step(3, "the written answers are photographed and submitted");
 
@@ -615,6 +728,33 @@ async function main() {
     marked?.rubric ? `${marked.rubric.externalId}, ${marked.rubric.scheme.length} scheme lines` : "no rubric on the grade",
   );
 
+  // Gap 2. The capture flow’s own "See this script" link sends a student
+  // here, so this is the one screen they land on *expecting* a mark — and it
+  // was the only one of the three that did not go and fetch one. /revise and
+  // the dual-track done screen polled; this did not.
+  //
+  // Checked structurally rather than by pulling the grade here, because step 7
+  // below proves the pull itself and doing it twice would prove it once: if
+  // /results/{id} landed the grade, step 7’s /revise check would pass on an
+  // already-landed grade and stop testing /revise at all.
+  if (device.page) {
+    const errorsBefore = device.errors.length;
+    const res = await device.page.goto(`${BASE}/results/${submissionId}/`, {
+      waitUntil: "networkidle",
+      timeout: 120_000,
+    });
+    check(
+      "the marked-script screen renders the student’s own script",
+      res?.status() === 200 && device.errors.length === errorsBefore,
+      device.errors.slice(errorsBefore, errorsBefore + 2).join(" | ") || `${res?.status()}`,
+    );
+    check(
+      "and it now goes and asks for marks rather than waiting to be told",
+      mountsGradeSync("src/app/results/[id]/page.tsx"),
+      "GradeSync polls GET /api/attempts/{id}/grades/; its cadence still stops when nothing is pending",
+    );
+  }
+
   const stranger = await req(evaluator, "GET", `/api/submissions/${submissionId}/pages/`);
   check(
     "the evaluator who reviewed it may still read the script",
@@ -794,6 +934,22 @@ async function main() {
     (overview.json.effort?.weeks ?? []).some((w) => w.sessions >= 1),
     `${(overview.json.effort?.weeks ?? []).length} week(s) of effort`,
   );
+  // Gap 1, from the far end. A self-marked practice paper is the flow students
+  // use most and it had no sync at all, so a parent watching a child who sat
+  // nothing but practice papers saw an empty dashboard.
+  const practiceTrend = (overview.json.subjects ?? []).find((t) => t.subject === PRACTICE_SUBJECT);
+  check(
+    "a self-marked practice paper reaches the parent’s subject trend",
+    !!practiceTrend && practiceTrend.papers >= 1 && typeof practiceTrend.recent === "number",
+    practiceTrend
+      ? `${PRACTICE_SUBJECT}: ${practiceTrend.papers} paper(s), recent ${practiceTrend.recent}`
+      : `no ${PRACTICE_SUBJECT} line at all — only the dual-track sitting reached the server`,
+  );
+  check(
+    "and counts as effort, alongside the dual-track sitting",
+    (overview.json.effort?.weeks ?? []).reduce((n, w) => n + w.sessions, 0) >= 2,
+    `${(overview.json.effort?.weeks ?? []).reduce((n, w) => n + w.sessions, 0)} session(s) across both flows`,
+  );
   check(
     "so the dashboard no longer says a working child has not started",
     !JSON.stringify(overview.json.recommendations ?? []).includes("has not started"),
@@ -876,6 +1032,74 @@ async function sitTheTest(page) {
   }
 }
 
+/**
+ * Step 2b: the practice flow, in the same browser and on the same session.
+ *
+ * `src/lib/attempts.ts` has no HTTP surface either, so like step 2 this can
+ * only be walked rather than posted. Pre-flight, Start, submit early (the paper
+ * is a two-hour clock and the walk does not have two hours), self-mark three
+ * questions against the unlocked scheme, Finish. Finishing is what pushes.
+ *
+ * Returns null with a FAIL recorded rather than throwing, so a broken practice
+ * flow does not take the other seven steps down with it.
+ */
+async function sitThePracticePaper(page) {
+  try {
+    await page.goto(`${BASE}/practice/${PRACTICE_PAPER}/`, { waitUntil: "domcontentloaded", timeout: 120_000 });
+    // A paper already running from an earlier run of this walk would offer
+    // Resume instead of Start. Fixtures are per-run, so this is belt and braces.
+    const discard = page.getByRole("button", { name: "Discard it" });
+    if (await discard.isVisible().catch(() => false)) await discard.click();
+    await page.getByRole("button", { name: /^Start/ }).click();
+
+    await page.getByRole("button", { name: "Submit and score" }).click();
+    await page.getByRole("button", { name: "Yes, submit" }).click();
+    await page.waitForSelector("text=/Mark your own paper/", { timeout: 30_000 });
+
+    // Below md the scheme and the grid are two screens with a toggle; the
+    // viewport here is a 390px phone, so the grid has to be asked for.
+    const toMarks = page.getByRole("button", { name: "My marks" });
+    if (await toMarks.isVisible().catch(() => false)) await toMarks.click();
+
+    for (const [n, marks] of PRACTICE_MARKS) {
+      await page.locator(`#q-${n}-marks`).fill(String(marks));
+      await page.waitForTimeout(150);
+    }
+    await page.waitForTimeout(400);
+    await page.getByRole("button", { name: "Finish scoring" }).click();
+    await page.waitForSelector("text=/Go to revision/", { timeout: 30_000 });
+
+    // Fire and forget by design: the score screen must not wait on a network,
+    // so the server id lands a moment after Finish returns.
+    const attempt = await waitForRow(
+      page,
+      "ncert-attempts",
+      (a) => a?.paperSlug === PRACTICE_PAPER && Boolean(a?.serverAttemptId),
+      20_000,
+    );
+    return {
+      attemptId: attempt?.id,
+      serverAttemptId: attempt?.serverAttemptId,
+      totalScore: attempt?.totalScore,
+      questionCount: (attempt?.scores ?? []).length,
+    };
+  } catch (err) {
+    check("the practice paper can be walked in a browser", false, String(err).slice(0, 160));
+    return null;
+  }
+}
+
+/** Poll one named IndexedDB until a row satisfies `ready`, then return it. */
+async function waitForRow(page, dbName, ready, timeoutMs) {
+  const until = Date.now() + timeoutMs;
+  let row = (await readAll(page, dbName, "attempts")).find(ready);
+  while (!row && Date.now() < until) {
+    await page.waitForTimeout(500);
+    row = (await readAll(page, dbName, "attempts")).find(ready);
+  }
+  return row;
+}
+
 /** Poll the sitting in IndexedDB until `ready`, or give up and return it anyway. */
 async function waitFor(page, ready, timeoutMs) {
   const until = Date.now() + timeoutMs;
@@ -911,6 +1135,17 @@ function readAll(page, dbName, store) {
 async function readOne(page, dbName, store) {
   const rows = await readAll(page, dbName, store);
   return rows[0];
+}
+
+/** Whether a page mounts the grade poll at all. Source, not DOM: GradeSync
+ *  renders null until something lands, so there is nothing to select for. */
+function mountsGradeSync(file) {
+  try {
+    const source = readFileSync(path.resolve(import.meta.dirname, "..", file), "utf8");
+    return /from "@\/components\/GradeSync"/.test(source) && /<GradeSync[ />]/.test(source);
+  } catch {
+    return false;
+  }
 }
 
 /** How many places outside its own module use the handoff contract. */

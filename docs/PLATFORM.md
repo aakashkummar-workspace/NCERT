@@ -491,6 +491,14 @@ sitting, not a random number a client has to remember across a reinstall. Demand
 where the client has to invent the identity; use the natural unique where it already has
 one. Either way the database decides, never a read-then-write.
 
+Both exam flows land there. A dual-track sitting (`src/lib/test-attempts.ts`) is pushed and
+then polled for a teacher’s mark; a self-marked practice paper (`src/lib/attempts.ts`) is
+pushed and never polled, because it has no written handoff for anybody to mark. They share
+one route because they are the same fact — this student sat this paper, these are the marks
+— and everything downstream (`Answer.attemptQuestionId`, the parent’s subject trend,
+`GET /api/attempts/`) is written against `Attempt` + `AttemptQuestion`. `src/lib/handoff-sync.ts`
+is the only module that knows both halves.
+
 ### Claiming a ticket is not this
 
 Claiming is a single conditional `UPDATE` against `evaluation_tickets` — `status`,

@@ -6,6 +6,7 @@ import ExamTimer from "@/components/ExamTimer";
 import PacingTracker from "@/components/PacingTracker";
 import PaperViewer from "@/components/PaperViewer";
 import ScoringGrid from "@/components/ScoringGrid";
+import { syncPracticeAttempt } from "@/lib/handoff-sync";
 import {
   formatDuration,
   paperPdfPath,
@@ -210,6 +211,14 @@ export default function PaperAttempt({ paper, questions }: Props) {
     if (done) setAttempt(done);
     setPhase("done");
     setBusy(false);
+    /*
+     * Fire and forget, exactly as DualTrackTest does it. A self-marked paper is
+     * worth a parent seeing and worth a teacher one day marking, so it goes up
+     * — but a student on no network must still get their score screen, so
+     * nothing above this line waits on it. `syncPracticeAttempt` swallows every
+     * failure; the next `syncPending()` from /revise or /results retries.
+     */
+    if (done) void syncPracticeAttempt(done);
   }
 
   function onAttemptAgain() {
