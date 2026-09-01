@@ -80,6 +80,14 @@ created offline, mid-exam, on a phone that may not see a network for three hours
 syncs later. Storing `${paperSlug}:${startedAt}` unique-per-student means a retried sync
 updates the existing row instead of forking one exam into two.
 
+`POST /api/attempts/` is that sync, and `GET /api/attempts/{id}/grades/` is its return
+leg — the two halves of the join between a sitting in IndexedDB and a mark in Postgres.
+The device calls both from `src/lib/handoff-sync.ts`, which is the only file that knows
+both sides. For a dual-track sitting the `AttemptQuestion` rows are the **written** half:
+`questionNumber` is the number the paper prints, which is what an uploaded `Answer` is
+matched on. Section A is assembled from the quiz bank and numbered by position, so its
+numbers are not the paper's; it reaches the server folded into `Attempt.totalScore`.
+
 **`storageKey`, never a URL.** Pages and voice notes store an object key. Pre-signed URLs
 expire; a stored one is a dead link the next day. Mint the URL at read time.
 

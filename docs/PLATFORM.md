@@ -481,6 +481,16 @@ fragment: Prisma reports the *index* name on Postgres
 (`submissions_studentId_idempotencyKey_key`), and matching on nothing catches unrelated
 collisions and returns the wrong row.
 
+### When the key is the row itself
+
+Some mutations carry their own natural key and need no header. `POST /api/attempts/` syncs
+a sitting the device has already named — `Attempt.clientAttemptId` is Dexie's own primary
+key — and `@@unique([studentId, clientAttemptId])` makes the retry an update rather than a
+second exam. That is a *stronger* guarantee than an `Idempotency-Key`: the key is the
+sitting, not a random number a client has to remember across a reinstall. Demand the header
+where the client has to invent the identity; use the natural unique where it already has
+one. Either way the database decides, never a read-then-write.
+
 ### Claiming a ticket is not this
 
 Claiming is a single conditional `UPDATE` against `evaluation_tickets` — `status`,
@@ -580,6 +590,7 @@ reseeds. It upserts and never truncates: another lane has real work in this data
 | `+919810000021` | Meera Iyer | evaluator, `SCHOOL_TEACHER`, Science 9 + 10 |
 | `+919810000022` | Sandeep Rao | evaluator, `FREELANCE`, Mathematics 10 + Social Science 10 |
 | `+919810000023` | Priya Balan | evaluator, **`activeForRouting: false`** |
+| `+919810000030` | Nisha Verma | `ADMIN`, in the public scope — the one who can route a seeded student |
 | `+919810000031` | Vikram Desai | `ADMIN`, in the school scope |
 
 Every one of them also has an `@example.invalid` email address and the password
@@ -589,6 +600,14 @@ skipped entirely when `NODE_ENV === "production"`.
 The two evaluators have deliberately **disjoint** subjects, so a router that ignores
 subject entirely still shows up as the wrong name on a ticket. Priya is off the queue
 without being deleted — the case `activeForRouting` exists for, and the one a router forgets.
+
+There are **two admins, in two scopes**, and the pair is the point. Every admin-only route
+filters by `user.scopeId`, so Vikram — a school-scope admin — cannot route, dispatch or
+read anything belonging to a public-scope student, and every seeded student is public-scope.
+For a while he was the only seeded admin, which made `POST /api/tickets/dispatch/`
+unreachable for every fixture on the platform: nobody could send a seeded student's script
+to a human. Nisha is the public-scope admin that fixes it; Vikram stays as the fixture that
+proves the boundary still holds.
 
 There is no parent, because there is no `PARENT` in `UserRole` and `prisma/README.md`
 scopes parent links out of Phases 0–4. Rather than fabricate one under a role that means

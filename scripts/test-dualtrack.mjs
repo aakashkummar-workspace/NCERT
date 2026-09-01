@@ -49,6 +49,21 @@ for (const [name, src, pattern] of [
   ["test-attempts.ts re-exports the clock rather than copying it", attemptsSrc, /export \{ formatClock, isExpired, remainingMs \}/],
   ["test-attempts.ts lets a grade supersede the self-report", attemptsSrc, /if \(answer\.handoff\.grade\) return answer\.handoff\.grade\.awarded;/],
   ["test-attempts.ts skips unscored written answers", attemptsSrc, /if \(marks === null\) continue;/],
+  [
+    "test-attempts.ts has three written statuses, not two",
+    attemptsSrc,
+    /export type WrittenStatus = "unmarked" \| "written" \| "skipped";/,
+  ],
+  [
+    "test-attempts.ts scores only a declared blank as zero",
+    attemptsSrc,
+    /if \(answer\.status === "skipped"\) return 0;/,
+  ],
+  [
+    "test-attempts.ts leaves an untouched written answer unscored",
+    attemptsSrc,
+    /if \(answer\.status !== "written"\) return null;/,
+  ],
   ["test-attempts.ts writes one card per chapter", attemptsSrc, /sourceType: "exercise",[\s\S]{0,200}questionNo: bucket\.chapter/],
   ["quiz.ts still lets the manifest decide class and subject", quizSrc, /cls = book\.class;\s*\n\s*subject = book\.subject;/],
 ]) {
@@ -388,8 +403,9 @@ function markSectionA(responses) {
 }
 
 function writtenMarks(answer) {
-  if (answer.status === "unattempted") return 0;
   if (answer.handoff.grade) return answer.handoff.grade.awarded;
+  if (answer.status === "skipped") return 0;
+  if (answer.status !== "written") return null;
   return answer.selfMarks;
 }
 
@@ -484,7 +500,7 @@ function blankAttempt(test, id = "t:1") {
       n: item.n,
       section: item.section,
       maxMarks: item.maxMarks,
-      status: "unattempted",
+      status: "unmarked",
       selfMarks: null,
       handoff: {
         id: `${id}#${item.n}`,
@@ -734,7 +750,8 @@ const sitting = {
   sectionB: [
     written(10, 2, { selfMarks: 2 }),
     written(11, 3, { selfMarks: 1.5 }),
-    written(12, 5, { status: "unattempted" }),
+    written(12, 5, { status: "skipped" }),
+    written(14, 6, { status: "unmarked" }), // never touched — not a declared blank
     written(13, 4, {}), // written, not yet marked
   ],
 };
@@ -743,10 +760,29 @@ const s = scoreTest(sitting);
 check("Section A total", s.sectionAMarks === 3, `${s.sectionAMarks}`);
 check("Section B total", s.sectionBMarks === 3.5, `${s.sectionBMarks}`);
 check("one sitting, one score", s.total === 6.5, `${s.total}`);
-check("out of both sections together", s.maxMarks === 19, `${s.maxMarks}`);
-check("an unmarked written answer is counted as unscored, not as zero", s.unscored === 1);
-check("an unattempted written answer is a hard zero", writtenMarks(sitting.sectionB[2]) === 0);
-check("an unmarked written answer has no mark yet", writtenMarks(sitting.sectionB[3]) === null);
+check("out of both sections together", s.maxMarks === 25, `${s.maxMarks}`);
+check(
+  "an unmarked and an untouched written answer are both counted as unscored",
+  s.unscored === 2,
+  `${s.unscored}`,
+);
+check("a written answer the student declared blank is a hard zero", writtenMarks(sitting.sectionB[2]) === 0);
+check("a written answer nobody has marked has no mark yet", writtenMarks(sitting.sectionB[3]) === null);
+/*
+ * The bug this distinction exists to kill. `unmarked` is the state every row
+ * starts in, and it used to be spelled `unattempted` and read as zero — so a
+ * sitting where the student ticked two of nineteen boxes scored the other
+ * seventeen at nought and scheduled every one of them at confidence "again".
+ * Silence from a student is not a zero, and the type now says so.
+ */
+check(
+  "a question the student never touched is not scored zero",
+  writtenMarks(sitting.sectionB[4]) === null,
+);
+check(
+  "and a legacy sitting's old `unattempted` rows read the same lenient way",
+  writtenMarks({ ...sitting.sectionB[4], status: "unattempted" }) === null,
+);
 
 // The grading lane's write must beat the student's own marking.
 const graded = {
@@ -823,6 +859,8 @@ const revisionSitting = {
     }),
     written(20, 5, { selfMarks: 1 }), // no rubric, so no chapter
     written(21, 3, {}), // written, unmarked — must not be assumed zero
+    written(22, 4, { status: "unmarked" }), // never touched at all
+    written(23, 4, { status: "skipped" }), // declared blank: a real zero
   ],
 };
 
@@ -850,6 +888,15 @@ check(
 check(
   "an unmarked written answer writes no card at all",
   !byId.has("paper:class10-science-2025-26:21"),
+);
+check(
+  "a question the student never touched writes no card either",
+  !byId.has("paper:class10-science-2025-26:22"),
+);
+check(
+  "but a question the student says they left blank does, at zero",
+  byId.get("paper:class10-science-2025-26:23")?.score === 0 &&
+    byId.get("paper:class10-science-2025-26:23")?.confidence === "again",
 );
 check(
   "a Section A question with no chapter writes no chapter card",

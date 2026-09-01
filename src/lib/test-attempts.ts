@@ -51,6 +51,7 @@ import Dexie, { type EntityTable } from "dexie";
 import { confidenceFor, formatClock, isExpired, remainingMs } from "./attempts";
 import { review, upsertCard } from "./revision";
 import type { ClassNum } from "./manifest";
+import type { QuestionType as PaperQuestionType } from "./papers";
 import type { DualTrackTest } from "./tests";
 
 /**
@@ -61,6 +62,30 @@ import type { DualTrackTest } from "./tests";
 export { formatClock, isExpired, remainingMs };
 
 export type TestAttemptStatus = "in-progress" | "submitted";
+
+/**
+ * What the student has said about one Section B question.
+ *
+ * Three states, not two, and the third is the point. `unmarked` is the state
+ * every row starts in and means **the student has not said anything yet** —
+ * it is the absence of a declaration, not a declaration of a blank. `skipped`
+ * is the student saying, in as many words, that they left the question out;
+ * that is a genuine zero and it is scored as one.
+ *
+ * The distinction used to be inferred from a default. Every row began at
+ * `"unattempted"` and `writtenMarks` read that as zero, so a sitting where a
+ * student ticked two of nineteen boxes scored the other seventeen at nought
+ * and scheduled every one of them for re-revision at confidence "again" —
+ * exactly what the comment on `writeRevisionCards` says must not happen. A
+ * default cannot carry a meaning; only a state the student put the row into
+ * can. Hence three names.
+ *
+ * Attempts written before this existed carry the old `"unattempted"` string.
+ * `writtenMarks` treats any status that is not `written` or `skipped` as
+ * unmarked, which reads a legacy blank as "nobody said" — the lenient reading,
+ * and the one that cannot invent a zero the student never claimed.
+ */
+export type WrittenStatus = "unmarked" | "written" | "skipped";
 
 /** One Section A question as this sitting recorded it. */
 export interface McqResponse {
@@ -170,9 +195,19 @@ export interface WrittenAnswer {
   n: number;
   section: string;
   topic?: string;
+  /**
+   * The paper's own form for this question, carried so a finished sitting can
+   * be described to the server without the paper. Optional: a sitting written
+   * before the sync existed has none, and reads as a short answer.
+   */
+  type?: PaperQuestionType;
   maxMarks: number;
-  /** "written" is the intent to submit a page; "unattempted" is a blank. */
-  status: "written" | "unattempted";
+  /**
+   * "written" is the intent to submit a page, "skipped" is the student saying
+   * they left it out, and "unmarked" — the state every row starts in — is the
+   * student having said nothing at all. See `WrittenStatus`.
+   */
+  status: WrittenStatus;
   /** Marks the student gave themselves against the scheme; null until scored. */
   selfMarks: number | null;
   handoff: WrittenHandoff;
@@ -194,6 +229,16 @@ export interface TestAttempt {
   sectionA: McqResponse[];
   sectionB: WrittenAnswer[];
   maxMarks: number;
+  /**
+   * The `Attempt.id` this sitting was synced to, once it has been.
+   *
+   * A UUID minted by the server; the Dexie key above is what the server knows
+   * it by (`Attempt.clientAttemptId`). Undefined means the sitting has never
+   * reached the server, which is the normal state of an exam sat on a train:
+   * `src/lib/handoff-sync.ts` retries later, and nothing about the sitting
+   * depends on it.
+   */
+  serverAttemptId?: string;
   /** Set by finaliseTest, and refreshed whenever a late grade arrives. */
   sectionAMarks?: number;
   sectionBMarks?: number;
@@ -248,10 +293,20 @@ export function markSectionA(responses: McqResponse[]): SectionAResult {
  * that question. `null` means nobody has scored it yet, which is different from
  * zero: an unscored question is skipped by the revision write rather than
  * treated as a question the student got wrong.
+ *
+ * **A question the student never touched is `null`, not zero.** It is the third
+ * status, not a default, that decides this — see `WrittenStatus`.
  */
 export function writtenMarks(answer: WrittenAnswer): number | null {
-  if (answer.status === "unattempted") return 0;
   if (answer.handoff.grade) return answer.handoff.grade.awarded;
+  // Said to be blank by the student: a real zero, and scored as one.
+  if (answer.status === "skipped") return 0;
+  // Nothing said. Not `written` and not `skipped` — including the legacy
+  // `"unattempted"` a sitting from before this distinction existed carries —
+  // is the absence of a declaration, and the absence of a declaration is not
+  // a zero. It is skipped by the revision write rather than treated as a
+  // question the student got wrong.
+  if (answer.status !== "written") return null;
   return answer.selfMarks;
 }
 
@@ -340,8 +395,9 @@ export async function startTestAttempt(test: DualTrackTest): Promise<TestAttempt
       n: item.n,
       section: item.section,
       topic: item.topic,
+      type: item.type,
       maxMarks: item.maxMarks,
-      status: "unattempted",
+      status: "unmarked",
       selfMarks: null,
       handoff: {
         id: handoffId(id, item.n),
@@ -429,14 +485,17 @@ export async function answerMcq(
 export async function setWrittenStatus(
   id: string,
   n: number,
-  status: WrittenAnswer["status"],
+  status: WrittenStatus,
 ): Promise<TestAttempt | undefined> {
-  return edit(id, (attempt) => ({
-    ...attempt,
-    sectionB: attempt.sectionB.map((w) =>
-      w.n === n ? { ...w, status, selfMarks: status === "unattempted" ? null : w.selfMarks } : w,
-    ),
-  }));
+  return edit(id, (attempt) => {
+    const sectionB = attempt.sectionB.map((w) =>
+      w.n === n ? { ...w, status, selfMarks: status === "written" ? w.selfMarks : null } : w,
+    );
+    // Declaring a question blank after the total has been published moves the
+    // total: it is a mark the student has now claimed, where before there was
+    // no claim at all.
+    return { ...attempt, sectionB, ...publishedTotals(attempt, sectionB) };
+  });
 }
 
 /**
@@ -543,6 +602,28 @@ export async function attachGrade(
   });
   if (updated?.totalScore !== undefined) await writeRevisionCards(updated);
   return updated;
+}
+
+/**
+ * Remember which server `Attempt` this sitting is. Written by the sync in
+ * `src/lib/handoff-sync.ts` and by nothing else; idempotent, because the server
+ * keys on `clientAttemptId` and so answers with the same id every time.
+ */
+export async function setServerAttemptId(
+  id: string,
+  serverAttemptId: string,
+): Promise<TestAttempt | undefined> {
+  return edit(id, (attempt) =>
+    attempt.serverAttemptId === serverAttemptId
+      ? undefined
+      : { ...attempt, serverAttemptId },
+  );
+}
+
+/** Every sitting on this device, newest first. */
+export async function allTestAttempts(): Promise<TestAttempt[]> {
+  const all = await db.attempts.toArray();
+  return all.sort((a, b) => b.startedAt - a.startedAt);
 }
 
 /** Written answers a student says they wrote and nobody has graded yet. */

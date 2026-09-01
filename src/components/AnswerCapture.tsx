@@ -31,9 +31,26 @@
  * The bytes go through our own route rather than to a pre-signed URL, because
  * content type, size and sha256 are pinned server-side and there is no
  * parameter to pass them in — see the note in the pages route.
+ *
+ * ## Which sitting these pages came out of
+ *
+ * A photographed script that names the exam it was written in is worth much
+ * more than one that does not: `POST /api/submissions/` takes an `attemptId`,
+ * `/answers/` uses it to bind each answer to its `AttemptQuestion`, and a mark
+ * awarded on that row can find its way back to the sitting — and so to the
+ * revision schedule — through `src/lib/handoff-sync.ts`. Without it a grade
+ * stops at the results screen.
+ *
+ * So this screen offers the sittings on this device whose written half is still
+ * unmarked, and picking one fills in the paper, the subject, the class **and
+ * the question numbers the student ticked in Section B** — the numbers the
+ * paper prints, which is what everything downstream matches on. Picking one is
+ * optional: a loose photograph of an answer written outside a timed run is
+ * still a submission, and the `attemptId` is simply absent.
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ensureSynced, sittingsAwaitingScan, type ScannableSitting } from "@/lib/handoff-sync";
 
 type QuestionType = "mcq" | "assertion-reason" | "vsa" | "sa" | "la" | "case-study";
 
@@ -137,12 +154,17 @@ function problemWith(shot: Shot): string | null {
   return null;
 }
 
+/** "14 Mar" — a sitting is identified by its paper and the day it was sat. */
+const DATE = new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short" });
+
 const uid = () =>
   typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
 
 export interface AnswerCaptureProps {
   /** The paper these answers belong to, when the student came from one. */
   paperSlug?: string;
+  /** A server `Attempt.id`, when the caller already knows the sitting. */
+  attemptId?: string;
   subject?: string;
   classNum?: 9 | 10;
   /** Called with the new submission id once it is queued. */
@@ -151,6 +173,7 @@ export interface AnswerCaptureProps {
 
 export default function AnswerCapture({
   paperSlug,
+  attemptId: initialAttemptId,
   subject: initialSubject = "Science",
   classNum: initialClass = 10,
   onSubmitted,
@@ -163,12 +186,32 @@ export default function AnswerCapture({
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<{ submissionId: string; queued: boolean; configured: boolean } | null>(null);
+  /** Sittings on this device with written answers nobody has marked. */
+  const [sittings, setSittings] = useState<ScannableSitting[]>([]);
+  const [chosen, setChosen] = useState<string | null>(null);
+  /** The server `Attempt.id` this upload names, if any. */
+  const [attemptId, setAttemptId] = useState<string | undefined>(initialAttemptId);
 
   const shutter = useRef<HTMLInputElement>(null);
   const retakeFor = useRef<string | null>(null);
   // One key for the life of this capture. Regenerating it on retry is the bug
   // idempotency exists to prevent.
   const idempotencyKey = useRef<string>(uid());
+
+  // The sittings this device holds. `.then` with a `live` guard rather than an
+  // async effect body, as RevisionQueue does: a resolve after unmount must be a
+  // no-op. Failure is silence — the picker is an aid, not a gate.
+  useEffect(() => {
+    let live = true;
+    sittingsAwaitingScan()
+      .then((found) => {
+        if (live) setSittings(found);
+      })
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, []);
 
   // Object URLs outlive the component unless they are revoked, and a script is
   // a dozen 4 MB photographs.
@@ -253,6 +296,35 @@ export default function AnswerCapture({
       ),
     );
 
+  /**
+   * Adopt a sitting: its paper, its subject, its class, and the questions the
+   * student ticked. The sync is opportunistic — if the server cannot be
+   * reached, the upload proceeds without an `attemptId` rather than stopping.
+   */
+  function pick(sitting: ScannableSitting | null) {
+    if (!sitting) {
+      setChosen(null);
+      setAttemptId(initialAttemptId);
+      return;
+    }
+    setChosen(sitting.clientAttemptId);
+    setSlug(sitting.paperSlug);
+    setSubject(sitting.subject);
+    setClassNum(sitting.classNum);
+    setDeclared(
+      sitting.questions.map((q) => ({
+        id: uid(),
+        questionNumber: q.n,
+        maxMarks: q.maxMarks,
+        type: q.type,
+        shotIds: [],
+      })),
+    );
+    void ensureSynced(sitting.clientAttemptId).then((serverId) => {
+      setAttemptId(serverId ?? undefined);
+    });
+  }
+
   async function upload() {
     setError(null);
     if (!shots.length) return setError("Take at least one photograph first.");
@@ -267,8 +339,12 @@ export default function AnswerCapture({
 
     try {
       setBusy("Creating the submission…");
+      // One last try at naming the sitting: a student who photographed their
+      // script on a train has been offline since they picked it.
+      const namedAttempt = attemptId ?? (chosen ? ((await ensureSynced(chosen)) ?? undefined) : undefined);
       const created = await postJson("/api/submissions/", {
         paperSlug: slug || undefined,
+        attemptId: namedAttempt,
         subject,
         classNum,
         pageCount: shots.length,
@@ -345,6 +421,46 @@ export default function AnswerCapture({
 
   return (
     <div className="flex flex-col gap-6">
+      {sittings.length > 0 && (
+        <section className="rounded-lg border border-border bg-surface p-3">
+          <h2 className="text-sm font-semibold">Which sitting are these from?</h2>
+          <p className="mt-1 text-xs text-ink-faint">
+            Picking one ties every mark back to that exam, so a teacher&apos;s marks reach your
+            revision schedule. It fills in the paper and the question numbers you ticked.
+          </p>
+          <ul className="mt-3 flex flex-col gap-2">
+            {sittings.map((sitting) => {
+              const picked = chosen === sitting.clientAttemptId;
+              return (
+                <li key={sitting.clientAttemptId}>
+                  <button
+                    type="button"
+                    aria-pressed={picked}
+                    onClick={() => pick(picked ? null : sitting)}
+                    className={`min-h-12 w-full rounded-md border px-3 py-2 text-left text-xs ${
+                      picked ? "border-accent bg-accent-soft text-ink" : "border-border text-ink-soft"
+                    }`}
+                  >
+                    <span className="block font-medium text-ink">{sitting.title}</span>
+                    <span className="block text-ink-faint">
+                      {DATE.format(sitting.submittedAt ?? sitting.startedAt)} ·{" "}
+                      {sitting.questions.length} written{" "}
+                      {sitting.questions.length === 1 ? "answer" : "answers"} unmarked
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          {chosen && !attemptId && (
+            <p className="mt-2 text-xs text-ink-faint">
+              This sitting has not reached the server yet. The upload will go ahead either way; the
+              link to the exam is made as soon as there is a connection.
+            </p>
+          )}
+        </section>
+      )}
+
       <section>
         <input
           ref={shutter}

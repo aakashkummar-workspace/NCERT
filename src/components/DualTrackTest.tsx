@@ -3,13 +3,16 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import ExamTimer from "@/components/ExamTimer";
+import GradeSync from "@/components/GradeSync";
 import PaperViewer from "@/components/PaperViewer";
 import SectionAMcq from "@/components/SectionAMcq";
 import SectionBWritten from "@/components/SectionBWritten";
+import { syncAttempt } from "@/lib/handoff-sync";
 import type { DualTrackTest as Test } from "@/lib/tests";
 import {
   activeTestAttempt,
   answerMcq,
+  getTestAttempt,
   deleteTestAttempt,
   finaliseTest,
   formatClock,
@@ -23,7 +26,7 @@ import {
   submitTestAttempt,
   testAttemptsFor,
   type TestAttempt,
-  type WrittenAnswer,
+  type WrittenStatus,
 } from "@/lib/test-attempts";
 
 /**
@@ -190,14 +193,14 @@ export default function DualTrackTest({
   );
 
   const onStatus = useCallback(
-    (n: number, status: WrittenAnswer["status"]) => {
+    (n: number, status: WrittenStatus) => {
       setAttempt((prev) =>
         prev
           ? {
               ...prev,
               sectionB: prev.sectionB.map((w) =>
                 w.n === n
-                  ? { ...w, status, selfMarks: status === "unattempted" ? null : w.selfMarks }
+                  ? { ...w, status, selfMarks: status === "written" ? w.selfMarks : null }
                   : w,
               ),
             }
@@ -234,7 +237,24 @@ export default function DualTrackTest({
     if (done) setAttempt(done);
     setPhase("done");
     setBusy(false);
+
+    /*
+     * The sitting is over and scored; only now does the server hear about it,
+     * and the student waits for none of it. `syncAttempt` swallows every
+     * failure — offline is the ordinary case for an exam sat on a train — and
+     * `GradeSync` on the screen below retries. Nothing above this line depends
+     * on a network, and nothing below it may take a mark away.
+     */
+    if (done) void syncAttempt(done);
   }
+
+  /** A grade that landed changes the total, so re-read the sitting it is on. */
+  const onGraded = useCallback(() => {
+    if (!attemptId) return;
+    void getTestAttempt(attemptId).then((fresh) => {
+      if (fresh) setAttempt(fresh);
+    });
+  }, [attemptId]);
 
   function onAttemptAgain() {
     setAttempt(null);
@@ -624,6 +644,10 @@ export default function DualTrackTest({
             </div>
           ))}
         </dl>
+
+        <div className="mt-4">
+          <GradeSync onGraded={onGraded} />
+        </div>
 
         <div className="mt-4 rounded-2xl border border-border bg-surface p-5">
           <p className="text-sm text-ink-soft">

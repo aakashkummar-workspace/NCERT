@@ -203,6 +203,37 @@ function urgencyOf(
 }
 
 /**
+ * The rubric one answer is marked against: whatever the current grade already
+ * used, else the newest version authored for this paper and question.
+ *
+ * There is exactly one of these because there must be exactly one. The canvas
+ * resolves a rubric to draw the checklist, and `appendHumanGrade` resolves one
+ * to record on the row; if those two rules ever differ, an evaluator ticks the
+ * lines of rubric A and the grade claims rubric B.
+ *
+ * `currentRubricId` is passed in where the caller has already read the head, so
+ * that a resolution inside a transaction does not re-read it.
+ */
+export async function rubricForAnswer(
+  answerId: string,
+  currentRubricId?: string | null,
+): Promise<{ id: string } | null> {
+  if (currentRubricId) return prisma.rubric.findUnique({ where: { id: currentRubricId } });
+  const answer = await prisma.answer.findUnique({
+    where: { id: answerId },
+    select: { questionNumber: true, submission: { select: { paperSlug: true } } },
+  });
+  if (!answer?.submission.paperSlug) return null;
+  return prisma.rubric.findFirst({
+    where: {
+      paperSlug: answer.submission.paperSlug,
+      questionNumber: answer.questionNumber,
+    },
+    orderBy: { version: "desc" },
+  });
+}
+
+/**
  * The right-hand panel of the grading canvas: every rubric line for this answer,
  * with the current verdict, **unmarked first**.
  *
@@ -217,17 +248,10 @@ export async function checklistFor(answerId: string): Promise<Checklist> {
   if (!answer) throw ApiError.notFound("Answer");
 
   const current = await currentGradeFor(answerId);
-
-  // The rubric this answer is graded against: whatever the current grade used,
-  // else the newest version for this paper and question.
-  const rubric = current?.rubricId
-    ? await prisma.rubric.findUnique({ where: { id: current.rubricId } })
-    : answer.submission.paperSlug
-      ? await prisma.rubric.findFirst({
-          where: { paperSlug: answer.submission.paperSlug, questionNumber: answer.questionNumber },
-          orderBy: { version: "desc" },
-        })
-      : null;
+  const found = await rubricForAnswer(answerId, current?.rubricId ?? null);
+  const rubric = found
+    ? await prisma.rubric.findUnique({ where: { id: found.id } })
+    : null;
 
   if (!rubric) {
     return {
@@ -489,10 +513,24 @@ export async function appendHumanGrade(input: AppendGradeInput): Promise<AppendG
         select: { id: true, revision: true, rubricId: true },
       });
 
+      // A human marking an answer the model never touched is the normal path
+      // whenever no ANTHROPIC_API_KEY is configured — there is no head to
+      // inherit a rubric from. Falling through to NULL there produced a grade
+      // that named no scheme: the student's results screen drew the mark with
+      // no marking scheme beside it, and the parent dashboard's chapter signal
+      // (which joins grade -> rubric -> bookCode/chapter) stayed empty however
+      // many answers were graded. Resolved the same way the canvas resolved the
+      // checklist the evaluator just ticked, so the two cannot disagree.
+      const rubricId =
+        input.rubricId ??
+        head?.rubricId ??
+        (await rubricForAnswer(input.answerId))?.id ??
+        null;
+
       const created = await tx.gradingResult.create({
         data: {
           answerId: input.answerId,
-          rubricId: input.rubricId ?? head?.rubricId ?? null,
+          rubricId,
           source: "HUMAN",
           revision: (head?.revision ?? 0) + 1,
           supersedesId: head?.id ?? null,

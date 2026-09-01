@@ -232,6 +232,30 @@ const USERS: SeedUser[] = [
     },
   },
 
+  /*
+   * Two admins, in two scopes, because an admin is an admin *of a scope* and
+   * every admin-only route filters by `user.scopeId`.
+   *
+   * Vikram was the only one, and he is in the school scope while every seeded
+   * student is in the public one. That made `POST /api/tickets/dispatch/` —
+   * ADMIN-only, and scope-bound through the submission's own student —
+   * unreachable for every fixture on the platform: nobody could route a seeded
+   * student's script to a human, which is the first step of the whole
+   * human-review journey. Suites were provisioning a public-scope admin of
+   * their own to get past it.
+   *
+   * Nisha is that admin, seeded. Vikram stays exactly as he was: he is the
+   * fixture that proves the boundary holds, and a suite that asserts he *cannot*
+   * see public-scope work is asserting the right thing.
+   */
+  {
+    key: "admin-public",
+    scopeId: PUBLIC_SCOPE,
+    phone: "+919810000030",
+    displayName: "Nisha Verma",
+    email: "nisha.verma@example.invalid",
+    role: "ADMIN",
+  },
   {
     key: "admin-school",
     scopeId: SCHOOL_SCOPE,
@@ -639,6 +663,7 @@ async function main(): Promise<void> {
     log("  meera.iyer@example.invalid      Meera Iyer — Science evaluator, Class 9 + 10");
     log("  imran.qureshi@example.invalid   Imran Qureshi — Class 10 student");
     log("  devika.nair@example.invalid     Devika Nair — Class 9 student");
+    log("  nisha.verma@example.invalid     Nisha Verma — ADMIN in the public scope");
     log("");
     // Vikram is an ADMIN in the school scope, and the sign-in form is
     // public-scope the way all B2C sign-in is here: nothing accepts a tenant
@@ -653,6 +678,7 @@ async function main(): Promise<void> {
   log(`  curl -X POST localhost:3310/api/dev/login/ -H 'content-type: application/json' \\`);
   log(`       -d '{"phone":"+919810000001"}'   # Aarti, Class 10 student, HITL on`);
   log(`       -d '{"phone":"+919810000021"}'   # Meera, Science evaluator`);
+  log(`       -d '{"phone":"+919810000030"}'   # Nisha, public-scope admin`);
   log(`       -d '{"phone":"+919810000031","scopeId":"${SCHOOL_SCOPE}"}'  # Vikram, school admin\n`);
 }
 

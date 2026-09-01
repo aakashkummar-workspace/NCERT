@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { TestWrittenItem } from "@/lib/tests";
-import { writtenMarks, type WrittenAnswer } from "@/lib/test-attempts";
+import { writtenMarks, type WrittenAnswer, type WrittenStatus } from "@/lib/test-attempts";
 
 /**
  * Section B of a dual-track test: the descriptive half, written on paper.
@@ -18,6 +18,15 @@ import { writtenMarks, type WrittenAnswer } from "@/lib/test-attempts";
  *
  * A Class 10 Science paper leaves twenty of these, so a row has to survive a
  * 360px phone: the number, what the question is, one toggle, one input.
+ *
+ * ## Two toggles, because a blank row is not a blank answer
+ *
+ * "Written on paper" ticked is a page to photograph. "Left blank" is the
+ * student saying they answered nothing, which is a real zero and is scored as
+ * one. A row with neither is a row the student has not reached, and it scores
+ * nothing at all — not zero. Only the first of those used to exist, so every
+ * untouched row read as a declared blank and dragged the chapter it belongs to
+ * down to nought; see `WrittenStatus` in src/lib/test-attempts.ts.
  */
 
 /**
@@ -35,7 +44,7 @@ interface Props {
   answers: WrittenAnswer[];
   /** True once the paper is submitted and the marking scheme has unlocked. */
   scoring: boolean;
-  onStatus: (n: number, status: WrittenAnswer["status"]) => void;
+  onStatus: (n: number, status: WrittenStatus) => void;
   onMarks: (n: number, marks: number | null) => void;
 }
 
@@ -62,6 +71,8 @@ export default function SectionBWritten({
   const byNumber = new Map(answers.map((a) => [a.n, a]));
 
   const written = answers.filter((a) => a.status === "written").length;
+  /** Rows the student has said nothing about. They score nothing — not zero. */
+  const untouched = answers.filter((a) => a.status !== "written" && a.status !== "skipped").length;
   const maxMarks = items.reduce((n, item) => n + item.maxMarks, 0);
   const total = answers.reduce((n, a) => n + (writtenMarks(a) ?? 0), 0);
 
@@ -90,6 +101,7 @@ export default function SectionBWritten({
         {items.map((item) => {
           const answer = byNumber.get(item.n);
           const attempted = answer?.status === "written";
+          const skipped = answer?.status === "skipped";
           const grade = answer?.handoff.grade;
           const committed = answer?.selfMarks ?? null;
           const value = drafts[item.n] ?? (committed === null ? "" : formatMarks(committed));
@@ -126,11 +138,26 @@ export default function SectionBWritten({
                     type="checkbox"
                     checked={attempted}
                     aria-label={`Question ${item.n} written on paper`}
-                    onChange={(e) => onStatus(item.n, e.target.checked ? "written" : "unattempted")}
+                    onChange={(e) => onStatus(item.n, e.target.checked ? "written" : "unmarked")}
                     className="size-4 accent-accent"
                   />
                   <span>Written on paper</span>
                 </label>
+
+                {/* The declared blank. Tapping it is the only thing in this app
+                    that scores a written question zero — a row nobody touched
+                    stays unscored, because silence is not an answer. */}
+                <button
+                  type="button"
+                  aria-pressed={skipped}
+                  aria-label={`Question ${item.n} left blank`}
+                  onClick={() => onStatus(item.n, skipped ? "unmarked" : "skipped")}
+                  className={`min-h-11 rounded-lg border px-3 text-xs transition-colors ${
+                    skipped ? "border-accent bg-accent-soft text-ink" : "border-border text-ink-faint"
+                  }`}
+                >
+                  Left blank
+                </button>
 
                 {scoring && (
                   <div className="ml-auto flex shrink-0 items-center gap-1">
@@ -169,6 +196,12 @@ export default function SectionBWritten({
               {/* The handoff, said out loud. A student who ticked a question has
                   a page that can be photographed and graded later; saying so is
                   what makes the marks input feel provisional rather than final. */}
+              {skipped && (
+                <p className="mt-1.5 text-[11px] text-ink-faint">
+                  Left blank — this one counts zero.
+                </p>
+              )}
+
               {attempted && (
                 <p className="mt-1.5 text-[11px] text-ink-faint">
                   {grade
@@ -192,7 +225,8 @@ export default function SectionBWritten({
       <div className="sticky bottom-0 flex items-center justify-between gap-3 rounded-b-2xl border-t border-border bg-surface/95 px-3 py-2.5 backdrop-blur">
         <span className="text-xs text-ink-faint">
           {scoring
-            ? `${written} of ${items.length} attempted`
+            ? `${written} of ${items.length} attempted` +
+              (untouched > 0 ? ` · ${untouched} not marked either way` : "")
             : `${written} of ${items.length} written`}
         </span>
         {scoring && (
