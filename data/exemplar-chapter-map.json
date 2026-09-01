@@ -597,7 +597,20 @@
         "'Mendel' and 'dominant' hit jesc108",
         "zero hits for 'Darwin', 'speciation', 'natural selection' and 'vestigial' across all of jesc1"
       ],
-      "caveat": "This is the Class 10 equivalent of the Class 9 mole note, and it is larger. Evolution - natural selection, speciation, fossils as evidence, homologous and analogous organs, human evolution - was removed by the 2023 rationalisation, and the chapter title records the removal. Exemplar questions on evolution are filed here because heredity and evolution were one chapter when the Exemplar was written, and they are on a topic this chapter no longer teaches. A student meeting them under 'Heredity' is being asked something the book does not answer. A teacher should read the unit's questions before setting them."
+      "caveat": "This is the Class 10 equivalent of the Class 9 mole note, and it is larger. Evolution - natural selection, speciation, fossils as evidence, homologous and analogous organs, human evolution - was removed by the 2023 rationalisation, and the chapter title records the removal. Exemplar questions on evolution are filed here because heredity and evolution were one chapter when the Exemplar was written, and they are on a topic this chapter no longer teaches. The ten of them are named in outOfSyllabus below, so the student is told before answering rather than after.",
+      "outOfSyllabus": [
+        {
+          "questions": [9, 10, 12, 13, 14, 17, 18, 19, 24, 25],
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked.",
+          "evidence": [
+            "jesc108 sections: 8.2 HEREDITY, 8.2.1 Inherited Traits, 8.2.2 Rules for the Inheritance of Traits, 8.2.3 How do these Traits get Expressed?, 8.2.4 Sex Determination - and nothing else",
+            "zero hits for 'Darwin', 'speciation', 'natural selection', 'vestigial', 'acquired', 'genus' and 'new species' across all thirteen jesc1 chapters",
+            "the only 'evolution' in jesc108 is the sentence 'Selection of variants by environmental factors forms the basis for evolutionary processes, as we will discuss in later sections' - a promise the rationalised chapter does not keep",
+            "'homologous' hits jesc104 eleven times, all of them 'homologous series' in organic chemistry; 'fossil' hits jesc104 once, as 'fossil fuels'"
+          ]
+        }
+      ]
     },
     {
       "exemplarBook": "jeep1",
@@ -827,7 +840,18 @@
       "evidence": [
         "jemh106 headings 6.1-6.5"
       ],
-      "caveat": "Medium rather than high because two topics the Exemplar unit leans on were cut: the areas of similar triangles, and the Pythagoras theorem with its converse. The chapter's introduction still promises 'a simple proof of Pythagoras Theorem', but there is no section for it - it survives as a fact used, not a result proved. Exemplar questions that turn on the ratio of areas, or on proving a triangle right-angled, are out of syllabus."
+      "caveat": "Medium rather than high because two topics the Exemplar unit leans on were cut: the areas of similar triangles, and the Pythagoras theorem with its converse. The chapter's introduction still promises 'a simple proof of Pythagoras Theorem', but there is no section for it - it survives as a fact used, not a result proved. Exemplar questions that turn on the ratio of areas, or on proving a triangle right-angled, are out of syllabus; the one that survives extraction is named in outOfSyllabus below.",
+      "outOfSyllabus": [
+        {
+          "questions": [2],
+          "label": "the Pythagoras theorem, cut from Class 10 Maths in 2023",
+          "why": "Q2 gives the two diagonals of a rhombus and asks for its side. It is answered by halving both diagonals and applying Pythagoras to the right triangle they make - and jemh1 ch6 has no Pythagoras section, only the promise of one in its introduction. No other question extracted from this unit turns on Pythagoras or on the ratio of areas of similar triangles.",
+          "evidence": [
+            "jemh106 headings run 6.1 Introduction, 6.2 Similar Figures, 6.3 Similarity of Triangles, 6.4 Criteria for Similarity of Triangles, 6.5 Summary - no Pythagoras section",
+            "the single 'Pythagoras' hit in jemh106 is the introduction's 'giving a simple proof of Pythagoras Theorem learnt earlier'"
+          ]
+        }
+      ]
     },
     {
       "exemplarBook": "jeep2",
@@ -843,7 +867,18 @@
       "evidence": [
         "jemh107 headings 7.1-7.4"
       ],
-      "caveat": "Finding the area of a triangle from the coordinates of its vertices was cut ('area of a triangle' gets zero hits in jemh1)."
+      "caveat": "Finding the area of a triangle from the coordinates of its vertices was cut ('area of a triangle' gets zero hits in jemh1). The one extracted question that asks for it is named in outOfSyllabus below.",
+      "outOfSyllabus": [
+        {
+          "questions": [7],
+          "label": "the area of a triangle from its vertices, cut from Class 10 Maths in 2023",
+          "why": "Q7 asks for the area of the triangle A(3, 0), B(7, 0), C(8, 4) - the deleted section 7.4 exactly. The rest of the extracted questions are distance formula and section formula, both of which the chapter still teaches.",
+          "evidence": [
+            "jemh107 headings run 7.1 Introduction, 7.2 Distance Formula, 7.3 Section Formula, 7.4 Summary - the area section is gone",
+            "'area of a triangle' gets zero hits across jemh1; ch7's one remaining area exercise is a rhombus, and it is given the half-product-of-diagonals formula as a printed hint"
+          ]
+        }
+      ]
     },
     {
       "exemplarBook": "jeep2",
@@ -916,7 +951,18 @@
       "evidence": [
         "jemh111 headings 11.1-11.2"
       ],
-      "caveat": "Medium rather than high because the chapter has been cut down to a single section. The circumference and area of a circle, and areas of combinations of plane figures, were removed ('combinations of plane figures' gets zero hits), and a good part of the Exemplar unit assumes them."
+      "caveat": "Medium rather than high because the chapter has been cut down to a single section. The circumference and area of a circle, and areas of combinations of plane figures, were removed ('combinations of plane figures' gets zero hits), and a good part of the Exemplar unit assumes them - in fact every question that survives extraction does, so all four are named in outOfSyllabus below.",
+      "outOfSyllabus": [
+        {
+          "questions": [3, 5, 6, 9],
+          "label": "the circumference and area of a whole circle, cut from Class 10 Maths in 2023",
+          "why": "All four compare the circumference or area of a whole circle with a square's perimeter or with another circle's. None mentions a sector or a segment, which is the only thing the rationalised chapter now teaches. This is the one Class 10 unit where every extracted question is out of syllabus, and it is why the row is medium.",
+          "evidence": [
+            "jemh111 is 8,029 characters and carries one numbered heading, 11.1 Areas of Sector and Segment of a Circle",
+            "'circumference' hits jemh111 exactly once, inside an exercise question, never as a section"
+          ]
+        }
+      ]
     },
     {
       "exemplarBook": "jeep2",

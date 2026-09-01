@@ -187,13 +187,22 @@ same order. It does not mean every question in the unit is in syllabus. The
 about something the chapter no longer contains — a teacher should read these
 before setting a quiz from them.
 
+A caveat is prose for a teacher. Where the questions it describes could be named
+one by one, the row also carries an `outOfSyllabus` block, and then the student
+is told too — see *Telling the student* below.
+
 **The big one — Class 10 Science 9 → `jesc1` ch8.** The chapter is *Heredity*,
 and *Evolution* was removed: natural selection, speciation, fossils as evidence,
 homologous and analogous organs, human evolution. `Darwin`, `speciation`,
-`natural selection` and `vestigial` all get zero hits across `jesc1`. The
-Exemplar unit is roughly half evolution, and those questions are filed under a
-chapter that does not answer them. This is the Class 10 counterpart of the Class
-9 mole note below, and much larger; it is why the row is `medium`.
+`natural selection` and `vestigial` all get zero hits across `jesc1`, and so do
+`acquired`, `genus` and `new species`. The chapter runs 8.1 variation, then
+8.2 HEREDITY with 8.2.1 Inherited Traits, 8.2.2 Rules for the Inheritance of
+Traits, 8.2.3 How do these Traits get Expressed? and 8.2.4 Sex Determination,
+and stops; its one remaining use of the word promises evolution "in later
+sections" that no longer exist. The Exemplar unit is roughly half evolution, and
+those questions are filed under a chapter that does not answer them. This is the
+Class 10 counterpart of the Class 9 mole note below, and much larger; it is why
+the row is `medium`.
 
 Class 10 Maths keeps its chapters but not all of their sections. Every one of
 these is a documented caveat on an otherwise `high` row:
@@ -222,6 +231,86 @@ And the three Class 9 `medium` rows, for completeness:
 One Class 9 `high` row carries a caveat too: Science 3 → `iesc1` ch9 is the right
 chapter by topic, but the mole concept and Avogadro's number are in the Exemplar
 unit and not in the NCF chapter.
+
+## Telling the student — the `outOfSyllabus` block
+
+A caveat protects a teacher who reads this file. It does nothing for the student
+sitting in a chapter revision at ten at night, who meets *"The theory of evolution
+of species by natural selection was given by"* inside a chapter called *Heredity*,
+cannot answer it, and has no way of knowing that the reason is a chapter that was
+cut rather than a chapter they failed to read. That is the failure worth fixing:
+not a wrong label, but a right label with a silence around it.
+
+Two honest answers were available — drop the questions, or keep them and say so.
+The repo's rule is that an honest gap beats a wrong label, but a question the
+student is warned about is not a wrong label, and dropping would have thrown away
+sixteen sound Exemplar MCQs with published answers. So they are kept and named.
+
+A row may carry an `outOfSyllabus` array. Each entry lists the printed question
+numbers it covers, a short `label`, the `why`, and its `evidence`. The extractor
+prefixes each named question's stem with `[Out of syllabus: <label>]` and copies
+the label and reasoning into the question's `provenance`. The prefix goes in the
+stem because the stem is the one field the app is certain to render:
+`src/lib/quiz.ts` normalises a fixed set of fields and silently drops anything
+else, so a flag invented for this would have reached the student as nothing at
+all — which is the exact failure it exists to prevent.
+
+The numbers are checked, not trusted. A number the exercise does not contain is
+refused into `rejects` as `stale-out-of-syllabus`, so a renumbered exercise
+cannot quietly leave a question unlabelled.
+
+**Sixteen questions are marked, all Class 10.** Class 9's caveats are prose only,
+and were deliberately left that way.
+
+| Where | Questions | Marked as |
+|---|---|---|
+| Science 9 → `jesc1` ch8 | 9, 10, 12, 13, 14, 17, 18, 19, 24, 25 | Evolution, cut from Class 10 Science in 2023 |
+| Maths 6 → `jemh1` ch6 | 2 | the Pythagoras theorem, cut from Class 10 Maths in 2023 |
+| Maths 7 → `jemh1` ch7 | 7 | the area of a triangle from its vertices, cut from Class 10 Maths in 2023 |
+| Maths 11 → `jemh1` ch11 | 3, 5, 6, 9 | the circumference and area of a whole circle, cut from Class 10 Maths in 2023 |
+
+**The Heredity unit splits 12 to 10.** The twelve that stay unmarked are genuinely
+heredity and `jesc1` ch8 still teaches them: Q1 exchange of genetic material, Q2
+and Q3 Mendel and dominance, Q4 one gene one protein, Q6, Q7, Q8 and Q23 sex
+determination, Q15 variation and survival — whose option (c) is very nearly a
+sentence of 8.1 — Q16 maternal and paternal DNA, Q20 alleles on copies of a
+chromosome, Q21 what a gene is. The ten that are marked are Darwin (24),
+speciation (10, 18), fossils in the strata (14), homologous and analogous organs
+(12, 13), birds from reptiles (25), evolution and classification (17), and
+acquired versus inherited traits (9, 19).
+
+**The eight Class 10 Maths caveats cost six questions, not eight.** Applying the
+same test to each: units 2, 4, 8 and 12 have no surviving extracted questions at
+all, so their caveats mark nothing. Unit 1's four survivors are all answerable
+from the Fundamental Theorem of Arithmetic and section 1.3 — none needs Euclid's
+algorithm and none is the terminating-decimal question, which was refused as
+mangled. Unit 3's nine survivors are graphical and consistency questions; none
+uses cross-multiplication. That leaves Maths 6 Q2 (a rhombus's side from its
+diagonals — Pythagoras, which ch6 only promises), Maths 7 Q7 (the deleted area
+formula, verbatim), and all four of Maths 11, where every extracted question is
+about a whole circle and the chapter is now the single section 11.1 *Areas of
+Sector and Segment of a Circle*. Unit 11 is the one place where marking is total.
+
+## Where the explanations come from
+
+The extractor attaches an explanation only where a book prints one beside that
+exact question. Two things were expected to yield them and one did.
+
+- **The Maths Exemplars yield nothing.** Their MCQ *Sample Questions* are
+  answered `Solution : Answer (B)` and nothing more, in every unit of both
+  `ieep2` and `jeep2`; the worked solutions are for the short- and long-answer
+  sample questions, which are not MCQs and are not extracted. Attaching a sample
+  question's reasoning to a different exercise question would be a mismatched
+  rationale, which is worse than none.
+- **The Class 10 Science answer key yields eight hints**, printed inline as
+  `20. (b) Hint— Reactivity series Mg> Zn> Cu> Ag`. `ieep1` prints none against
+  an MCQ. Of the eight, four sit beside questions the extractor had already
+  refused; two more are destroyed by the text layer — one loses the charge from
+  `Pb²⁺`, the other loses `H⁺` and `Cl⁻` — and are refused into
+  `explanationRejects` rather than shipped. Two survive.
+
+Two of 434, then. The honest figure, and the reason is not the extractor: the
+corpus simply does not print a rationale beside a multiple-choice answer.
 
 ## What a human could still recover
 

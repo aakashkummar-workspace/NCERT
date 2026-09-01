@@ -10,7 +10,7 @@
  * be narrowed with --class before writing it: that would drop the other class's
  * rows from the file.
  *
- * Four things about this job are worth knowing before changing anything here.
+ * Six things about this job are worth knowing before changing anything here.
  *
  * 1. **Exemplar book codes are not textbook codes.** `ieep1` is the Class 9
  *    Science Exemplar; the book a student actually owns is `iesc1`. Worse, the
@@ -46,6 +46,24 @@
  *    are not in the text layer at all, so "(a) Litmus" arrives as "a Litmus";
  *    those questions are refused rather than have a marker inferred from a bare
  *    letter, which would mistake a stem's own line for an option.
+ *
+ * 5. **A correctly-filed question can still be off-syllabus.** The 2023
+ *    rationalisation cut sections out of chapters it kept, so `jesc1` ch8 is
+ *    still the right home for the Exemplar's heredity questions and answers none
+ *    of its evolution ones. Where the map's `outOfSyllabus` block names those
+ *    questions, their stems are prefixed `[Out of syllabus: …]` — see the
+ *    `OutOfSyllabus` interface for why the prefix goes in the stem and nowhere
+ *    else. Sixteen questions carry it, all Class 10.
+ *
+ * 6. **An explanation is extracted, never written.** The only rationales this
+ *    corpus prints against a multiple-choice answer are the inline hints in the
+ *    Class 10 Science answer key ("20. (b) Hint— Reactivity series Mg> Zn> Cu>
+ *    Ag"); the Maths Exemplars answer even their worked Sample MCQs with a bare
+ *    "Solution : Answer (B)". So the yield is small — two questions of 434 — and
+ *    that is the corpus, not a shortcoming of `hintsOfBlock`. Making it larger
+ *    would mean composing rationales, and a fabricated one beside an official
+ *    answer is worse than a blank, because it reads as authoritative. A hint
+ *    whose maths the text layer damaged goes to `explanationRejects` instead.
  *
  * The output is a separate file. data/questions.json is hand-authored and
  * merging the two is a human decision, not this script's.
@@ -125,12 +143,44 @@ interface MapException {
   why: string;
 }
 
+/**
+ * A hand-authored note that a named run of questions, though filed in the right
+ * chapter, asks about something that chapter no longer teaches.
+ *
+ * The 2023 rationalisation cut sections out of chapters it kept. `jesc1` ch8 is
+ * still the heredity chapter and is still where the Exemplar's heredity
+ * questions belong — but the same Exemplar unit is half evolution, and evolution
+ * was deleted. Dropping those questions would lose ten sound MCQs; filing them
+ * silently would put a Darwin question inside a Class 10 chapter revision with
+ * nothing to say it is off-syllabus, and a student who cannot answer it reads
+ * that as their own failure rather than as a chapter that was cut.
+ *
+ * So they are kept and labelled. The extractor prefixes the stem with
+ * `[Out of syllabus: <label>]`, which is the only place the app is certain to
+ * show it — `src/lib/quiz.ts` normalises a fixed set of fields and would drop
+ * any flag invented here — and records the reasoning in `provenance` so a
+ * teacher can check it. That is a decision about the syllabus, so it is written
+ * down here beside the mapping evidence rather than inferred from the question.
+ *
+ * A number listed here that the exercise does not contain fails loudly, into
+ * `rejects`: the map must not be allowed to rot into labelling nothing.
+ */
+interface OutOfSyllabus {
+  /** Question numbers as printed in the exercise. */
+  questions: number[];
+  /** Shown to the student, inside the bracket. Name the topic and when it went. */
+  label: string;
+  why: string;
+  evidence?: string[];
+}
+
 interface Mapping {
   exemplarBook: string;
   unit: number;
   unitTitle: string;
   target: Target | null;
   exceptions?: MapException[];
+  outOfSyllabus?: OutOfSyllabus[];
   confidence: string;
   why: string;
 }
@@ -150,6 +200,8 @@ interface OutQuestion {
   question: string;
   options: string[];
   answer: number;
+  /** Only ever the book's own words, and only when they survive extraction intact. */
+  explanation?: string;
   marks: number;
   difficulty: "medium";
   origin: "exemplar";
@@ -162,6 +214,9 @@ interface OutQuestion {
     file: string;
     answerKey: string;
     mapConfidence: string;
+    /** Where in the corpus the explanation was printed, so it can be checked. */
+    explanationSource?: string;
+    outOfSyllabus?: { label: string; why: string };
   };
 }
 
@@ -598,13 +653,102 @@ function parseMathsUnit(lines: Line[], body: number, unit: number): RawQuestion[
 // --- the answer keys ------------------------------------------------------
 
 /**
+ * What the published key says about one MCQ.
+ *
+ * Usually just a letter. A handful of Class 10 Science answers also carry a
+ * hint, printed inline beside the letter, and that hint is the only explanation
+ * anywhere in this corpus that belongs to a specific multiple-choice question —
+ * see `hintsOfBlock`.
+ */
+interface KeyEntry {
+  letter: string;
+  /** The book's own words, when it printed a hint here and it survived extraction. */
+  hint?: string;
+  /** Set instead of `hint` when the book printed one and it did not survive, and why. */
+  hintRefused?: string;
+}
+type AnswerKey = Map<number, KeyEntry>;
+
+/** "13. (b)" — the token the whole pairing hangs on, in both subjects. */
+const ANSWER_TOKEN = /(\d{1,2})\s*\.\s*\(([a-eA-E])\)/g;
+
+/**
+ * "13. (b) Hint— …", anywhere on the line: the Class 10 Science key sets two
+ * answers to a line, so a hint can open halfway through one.
+ *
+ * The dash is required and must be one the text layer produced cleanly. On the
+ * pages typeset in the broken font it arrives as "Hint²", and a page whose
+ * punctuation did not survive is a page whose chemistry did not survive either
+ * — so refusing to recognise a hint there is the point, not a limitation.
+ */
+const HINT_OPEN = /(\d{1,2})\s*\.\s*\([a-eA-E]\)\s*Hints?\s*[—–-]\s*(\S.*)$/;
+
+/**
+ * The hints the key prints beside its MCQ answers, refusing every one that
+ * extraction damaged.
+ *
+ * A hint runs from its opening line to the next answer token, so anything the
+ * typesetter left in between belongs to it — including the separate short lines
+ * that superscripts and subscripts become. That is exactly why the run is
+ * checked line by line rather than only as assembled text: "13. (b) Hint— Lead
+ * sulphate being insoluble will not dissociate into" + "2+" + "Pb ions." reads
+ * as a complete sentence about "Pb ions", which is not what the book says. An
+ * explanation that quietly loses a charge or a subscript is worse than none,
+ * because it sits beside an official answer looking authoritative.
+ */
+function hintsOfBlock(block: Line[], body: number, answers: AnswerKey): void {
+  for (const [i, line] of block.entries()) {
+    const open = HINT_OPEN.exec(line.text);
+    if (!open) continue;
+    const n = Number(open[1]);
+    const entry = answers.get(n);
+    if (!entry) continue;
+
+    const run = [line];
+    for (let k = i + 1; k < block.length; k++) {
+      ANSWER_TOKEN.lastIndex = 0;
+      if (ANSWER_TOKEN.test(block[k].text)) break;
+      run.push(block[k]);
+    }
+
+    const first = open[2].trim();
+    ANSWER_TOKEN.lastIndex = 0;
+    if (ANSWER_TOKEN.test(first)) {
+      entry.hintRefused = "another answer's token follows the hint on the same line, so where it ends is not certain";
+      continue;
+    }
+
+    const offsets = offsetBaselines(run, body);
+    const damaged = run.some((l, j) => l.height < body * 0.85 || l.mixed || offsets[j]);
+    if (damaged) {
+      entry.hintRefused =
+        "the hint's block contains type set below body size or off the baseline — a superscript, subscript or formula that extraction separated from the text it belongs to, leaving a sentence that reads complete and is not";
+      continue;
+    }
+
+    const text = tidy([first, ...run.slice(1).map((l) => l.text)].join(" "));
+    if (!CLEAN.test(text)) {
+      entry.hintRefused = `the hint contains characters that do not survive extraction: ${JSON.stringify(
+        [...text].filter((c) => !CLEAN.test(c)).join(""),
+      )}`;
+      continue;
+    }
+    if (text.length < 20) {
+      entry.hintRefused = `the hint extracted as ${text.length} characters, too short to be the sentence the book prints`;
+      continue;
+    }
+    entry.hint = text;
+  }
+}
+
+/**
  * `<code>an.pdf` holds every unit's answers. Science opens each unit with
  * "Chapter / N / ANSWERS / Multiple Choice Questions"; Maths heads each with
  * "EXERCISE N.1". In both, the MCQ answers are a run of "12.(c)" tokens ending
  * where the written answers begin.
  */
-function scienceAnswers(lines: Line[]): Map<number, Map<number, string>> {
-  const out = new Map<number, Map<number, string>>();
+function scienceAnswers(lines: Line[], body: number): Map<number, AnswerKey> {
+  const out = new Map<number, AnswerKey>();
   for (let i = 0; i < lines.length; i++) {
     if (!marks(/^Multiple Choice Questions$/i, lines[i].text)) continue;
     // The banner is printed five times over itself as a drop shadow in the
@@ -628,48 +772,69 @@ function scienceAnswers(lines: Line[]): Map<number, Map<number, string>> {
     }
     if (unit === null) continue;
 
-    // Unit 3's key interleaves a worked explanation between the MCQ letters, so
-    // a token-less line cannot end the block. The letters are instead read as a
-    // strictly increasing run from 1: whatever the prose happens to look like is
-    // out of sequence and ignored, and a genuinely missing letter ends the run
-    // rather than silently shifting every answer after it by one.
-    const answers = new Map<number, string>();
-    let next = 1;
+    const block: Line[] = [];
     for (let k = i + 1; k < lines.length; k++) {
       const t = lines[k].text;
       if (marks(/^(Short|Long) Answer Questions?/i, t)) break;
       if (marks(/^Multiple Choice Questions$/i, t)) break;
       if (isNoise(lines[k]) || marks(/^(ANSWERS)+$/i, t)) continue;
-      for (const m of t.matchAll(/(\d{1,2})\s*\.\s*\(([a-eA-E])\)/g)) {
-        if (Number(m[1]) !== next) continue;
-        answers.set(next, m[2].toLowerCase());
-        next++;
-      }
+      block.push(lines[k]);
     }
-    if (answers.size) out.set(unit, answers);
+
+    const answers = lettersOfBlock(block);
+    if (answers.size) {
+      hintsOfBlock(block, body, answers);
+      out.set(unit, answers);
+    }
   }
   return out;
 }
 
-function mathsAnswers(lines: Line[]): Map<number, Map<number, string>> {
-  const out = new Map<number, Map<number, string>>();
+/**
+ * The MCQ letters of one answer block.
+ *
+ * Unit 3's key interleaves a worked explanation between the letters, so a
+ * token-less line cannot end the block. The letters are instead read as a
+ * strictly increasing run from 1: whatever the prose happens to look like is out
+ * of sequence and ignored, and a genuinely missing letter ends the run rather
+ * than silently shifting every answer after it by one.
+ */
+function lettersOfBlock(block: Line[]): AnswerKey {
+  const answers: AnswerKey = new Map();
+  let next = 1;
+  for (const line of block) {
+    for (const m of line.text.matchAll(ANSWER_TOKEN)) {
+      if (Number(m[1]) !== next) continue;
+      answers.set(next, { letter: m[2].toLowerCase() });
+      next++;
+    }
+  }
+  return answers;
+}
+
+function mathsAnswers(lines: Line[], body: number): Map<number, AnswerKey> {
+  const out = new Map<number, AnswerKey>();
   for (let i = 0; i < lines.length; i++) {
     const head = /^EXERCISE\s+(\d{1,2})\.1\b/.exec(lines[i].text);
     if (!head) continue;
     const unit = Number(head[1]);
-    const answers = new Map<number, string>();
-    let next = 1;
+    const block: Line[] = [];
     for (let k = i + 1; k < lines.length; k++) {
       const t = lines[k].text;
       if (/^EXERCISE\s+\d/.test(t)) break;
       if (isNoise(lines[k]) || /^ANSWERS/i.test(t)) continue;
-      for (const m of t.matchAll(/(\d{1,2})\s*\.\s*\(([A-Ea-e])\)/g)) {
-        if (Number(m[1]) !== next) continue;
-        answers.set(next, m[2].toLowerCase());
-        next++;
-      }
+      block.push(lines[k]);
     }
-    if (answers.size) out.set(unit, answers);
+    const answers = lettersOfBlock(block);
+    if (answers.size) {
+      // Neither Maths key prints a hint beside an MCQ answer today — both give
+      // bare letters, and the worked solutions in the chapters belong to the
+      // Sample Questions rather than to the exercise. The pass runs anyway, so
+      // that a reprint which starts printing them is picked up rather than
+      // needing to be noticed.
+      hintsOfBlock(block, body, answers);
+      out.set(unit, answers);
+    }
   }
   return out;
 }
@@ -819,6 +984,15 @@ async function main() {
   const books = new Map(manifest.books.map((b) => [b.code, b]));
   const questions: OutQuestion[] = [];
   const rejects: Reject[] = [];
+  /**
+   * Explanations the book printed and this script would not publish.
+   *
+   * Kept apart from `rejects`, which is a list of questions that never reached
+   * a student. These questions did; only the rationale beside them was refused,
+   * and the count is the honest measure of how much of the corpus's reasoning
+   * the text layer destroys.
+   */
+  const explanationRejects: Reject[] = [];
   const unitSummary: { unit: string; extracted: number; refused: number; note: string }[] = [];
 
   for (const exBook of exemplar.books) {
@@ -832,8 +1006,11 @@ async function main() {
       continue;
     }
     const keyLines = await readPdfLines(pdfjs, keyPath);
+    const keyBody = bodyHeight(keyLines);
     const isScience = exBook.subject === "Science";
-    const keys = isScience ? scienceAnswers(keyLines) : mathsAnswers(keyLines);
+    const keys = isScience
+      ? scienceAnswers(keyLines, keyBody)
+      : mathsAnswers(keyLines, keyBody);
     console.log(`[${exBook.code}] ${exBook.subject}: answer key has MCQ answers for ${keys.size} units`);
 
     for (const ch of exBook.chapters) {
@@ -935,6 +1112,27 @@ async function main() {
         continue;
       }
 
+      /** The out-of-syllabus note covering question `n`, if the map records one. */
+      const notedAsOutOfSyllabus = (n: number) =>
+        (mapping.outOfSyllabus ?? []).find((o) => o.questions.includes(n));
+
+      // A note that names a question the exercise does not have is a note that
+      // has stopped labelling anything — because the exercise was renumbered,
+      // or because the number was mistyped. Either way the label the student
+      // was promised is now missing from a question that still needs it, and
+      // nothing downstream would show that, so it fails here instead.
+      for (const note of mapping.outOfSyllabus ?? []) {
+        for (const n of note.questions) {
+          if (parsed.some((q) => q.n === n)) continue;
+          rejects.push({
+            ref: `${ref}-${String(n).padStart(3, "0")}`,
+            exemplarBook: exBook.code, unit: ch.n, questionNo: n, page: null,
+            reason: "stale-out-of-syllabus",
+            detail: `${MAP} marks question ${n} of this unit out of syllabus (${note.label}), but the exercise has no question ${n}`,
+          });
+        }
+      }
+
       let kept = 0;
       let refused = 0;
       for (const q of parsed) {
@@ -955,7 +1153,8 @@ async function main() {
         }
         const book = books.get(route.target.bookCode)!;
 
-        const verdict = classify(cleaned, answers.get(q.n), body);
+        const entry = answers.get(q.n);
+        const verdict = classify(cleaned, entry?.letter, body);
         if (!verdict.ok) {
           refused++;
           rejects.push({
@@ -966,6 +1165,19 @@ async function main() {
           continue;
         }
         kept++;
+        if (entry?.hintRefused) {
+          explanationRejects.push({
+            ref: `${ref}-${String(q.n).padStart(3, "0")}`,
+            exemplarBook: exBook.code, unit: ch.n, questionNo: q.n, page: q.page,
+            reason: "hint-mangled", detail: entry.hintRefused,
+          });
+        }
+        // The stem carries the out-of-syllabus label because the stem is the one
+        // field the app is certain to show. src/lib/quiz.ts normalises a fixed
+        // set of fields and drops the rest, so a flag invented here would reach
+        // the student as nothing at all — which is the exact failure the label
+        // exists to prevent.
+        const note = notedAsOutOfSyllabus(q.n);
         questions.push({
           id: `${ref}-${String(q.n).padStart(3, "0")}`,
           class: book.class,
@@ -973,9 +1185,10 @@ async function main() {
           bookCode: route.target.bookCode,
           chapter: route.target.chapter,
           type: "mcq",
-          question: cleaned.stem,
+          question: note ? `[Out of syllabus: ${note.label}] ${cleaned.stem}` : cleaned.stem,
           options: cleaned.options,
           answer: verdict.index,
+          ...(entry?.hint ? { explanation: entry.hint } : {}),
           // Every Exemplar MCQ is a one-mark objective question; the sample
           // papers print "(1)" beside each. Difficulty is left uniform for the
           // same reason — the source grades none of them, and inventing a
@@ -992,6 +1205,12 @@ async function main() {
             file: ch.file,
             answerKey: `${exBook.code}an.pdf`,
             mapConfidence: route.confidence,
+            ...(entry?.hint
+              ? {
+                  explanationSource: `${exBook.code}an.pdf, unit ${ch.n} answer key: the hint printed beside answer ${q.n} of the Multiple Choice Questions block`,
+                }
+              : {}),
+            ...(note ? { outOfSyllabus: { label: note.label, why: note.why } } : {}),
           },
         });
       }
@@ -1013,6 +1232,7 @@ async function main() {
   // Deterministic order, so an unchanged corpus produces a byte-identical file.
   questions.sort((a, b) => a.id.localeCompare(b.id));
   rejects.sort((a, b) => a.ref.localeCompare(b.ref));
+  explanationRejects.sort((a, b) => a.ref.localeCompare(b.ref));
 
   const file = {
     // Taken from the corpus, not from the clock: re-running over unchanged
@@ -1023,10 +1243,14 @@ async function main() {
     counts: {
       questions: questions.length,
       rejected: rejects.length,
+      withExplanation: questions.filter((q) => q.explanation).length,
+      explanationRefused: explanationRejects.length,
+      outOfSyllabus: questions.filter((q) => q.provenance.outOfSyllabus).length,
     },
     units: unitSummary,
     questions,
     rejects,
+    explanationRejects,
   };
 
   await writeFile(OUT, `${JSON.stringify(file, null, 2)}\n`);
@@ -1041,6 +1265,23 @@ async function main() {
   for (const [reason, n] of [...byReason].sort((a, b) => b[1] - a[1])) {
     console.log(`  ${reason.padEnd(20)} ${n}`);
   }
+
+  const withExplanation = questions.filter((q) => q.explanation);
+  console.log(
+    `\nExplanations: ${withExplanation.length} of ${questions.length} carry one; ` +
+      `${explanationRejects.length} more were printed by the book and refused as damaged.`,
+  );
+  for (const q of withExplanation) console.log(`  ${q.id}  ${q.provenance.explanationSource}`);
+  for (const r of explanationRejects) console.log(`  ${r.ref}  refused (${r.reason})`);
+
+  const flagged = questions.filter((q) => q.provenance.outOfSyllabus);
+  console.log(`\nMarked out of syllabus: ${flagged.length}`);
+  const byLabel = new Map<string, number>();
+  for (const q of flagged) {
+    const label = q.provenance.outOfSyllabus!.label;
+    byLabel.set(label, (byLabel.get(label) ?? 0) + 1);
+  }
+  for (const [label, n] of byLabel) console.log(`  ${String(n).padStart(3)}  ${label}`);
 }
 
 main().catch((err) => {

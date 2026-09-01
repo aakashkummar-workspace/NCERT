@@ -7,7 +7,10 @@
   ],
   "counts": {
     "questions": 434,
-    "rejected": 329
+    "rejected": 329,
+    "withExplanation": 2,
+    "explanationRefused": 2,
+    "outOfSyllabus": 16
   },
   "units": [
     {
@@ -6925,6 +6928,7 @@
         "Cu"
       ],
       "answer": 1,
+      "explanation": "Reactivity series Mg> Zn> Cu> Ag",
       "marks": 1,
       "difficulty": "medium",
       "origin": "exemplar",
@@ -6936,7 +6940,8 @@
         "page": 4,
         "file": "jeep103.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "high"
+        "mapConfidence": "high",
+        "explanationSource": "jeep1an.pdf, unit 3 answer key: the hint printed beside answer 20 of the Multiple Choice Questions block"
       }
     },
     {
@@ -9933,7 +9938,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "Select the incorrect statement",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] Select the incorrect statement",
       "options": [
         "Frequency of certain genes in a population change over several generations resulting in evolution",
         "Reduction in weight of the organism due to starvation is genetically controlled",
@@ -9952,7 +9957,11 @@
         "page": 2,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -9962,7 +9971,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "New species may be formed if (i) DNA undergoes significant changes in germ cells (ii) chromosome number changes in the gamete (iii) there is no change in the genetic material (iv) mating does not take place",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] New species may be formed if (i) DNA undergoes significant changes in germ cells (ii) chromosome number changes in the gamete (iii) there is no change in the genetic material (iv) mating does not take place",
       "options": [
         "(i) and (ii)",
         "(i) and (iii)",
@@ -9981,7 +9990,11 @@
         "page": 2,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -9991,7 +10004,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "A basket of vegetables contains carrot, potato, radish and tomato. Which of them represent the correct homologous structures?",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] A basket of vegetables contains carrot, potato, radish and tomato. Which of them represent the correct homologous structures?",
       "options": [
         "Carrot and potato",
         "Carrot and tomato",
@@ -10010,7 +10023,11 @@
         "page": 3,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10020,7 +10037,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "Select the correct statement",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] Select the correct statement",
       "options": [
         "Tendril of a pea plant and phylloclade of Opuntia are homologous",
         "Tendril of a pea plant and phylloclade of Opuntia are analogous",
@@ -10039,7 +10056,11 @@
         "page": 3,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10049,7 +10070,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "If the fossil of an organism is found in the deeper layers of earth, then we can predict that",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] If the fossil of an organism is found in the deeper layers of earth, then we can predict that",
       "options": [
         "the extinction of organism has occurred recently",
         "the extinction of organism has occurred thousands of years ago",
@@ -10068,7 +10089,11 @@
         "page": 3,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10136,7 +10161,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "Select the group which shares maximum number of common characters",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] Select the group which shares maximum number of common characters",
       "options": [
         "two individuals of a species",
         "two species of a genus",
@@ -10155,7 +10180,11 @@
         "page": 4,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10165,7 +10194,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "According to the evolutionary theory, formation of a new species is generally due to",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] According to the evolutionary theory, formation of a new species is generally due to",
       "options": [
         "sudden creation by nature",
         "accumulation of variations over several generations",
@@ -10184,7 +10213,11 @@
         "page": 4,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10194,7 +10227,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "From the list given below, select the character which can be acquired but not inherited",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] From the list given below, select the character which can be acquired but not inherited",
       "options": [
         "colour of eye",
         "colour of skin",
@@ -10213,7 +10246,11 @@
         "page": 4,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10310,7 +10347,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "The theory of evolution of species by natural selection was given by",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] The theory of evolution of species by natural selection was given by",
       "options": [
         "Mendel",
         "Darwin",
@@ -10329,7 +10366,11 @@
         "page": 5,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -10339,7 +10380,7 @@
       "bookCode": "jesc1",
       "chapter": 8,
       "type": "mcq",
-      "question": "Some dinosaurs had feathers although they could not fly but birds have feathers that help them to fly. In the context of evolution this means that",
+      "question": "[Out of syllabus: Evolution, cut from Class 10 Science in 2023] Some dinosaurs had feathers although they could not fly but birds have feathers that help them to fly. In the context of evolution this means that",
       "options": [
         "reptiles have evolved from birds",
         "there is no evolutionary connection between reptiles and birds",
@@ -10358,7 +10399,11 @@
         "page": 5,
         "file": "jeep109.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "Evolution, cut from Class 10 Science in 2023",
+          "why": "Every one of these ten asks about the evolution half of the old chapter: Darwin and natural selection (24), speciation and the formation of new species (10, 18), fossils in the strata (14), homologous and analogous organs (12, 13), the evolutionary relationship of birds and reptiles (25), evolution and classification (17), and acquired versus inherited traits (9, 19). jesc1 chapter 8 runs 8.1 variation and 8.2 heredity - inherited traits, Mendel's rules, how traits get expressed, sex determination - and stops. The other twelve questions in the unit are heredity and stay unmarked."
+        }
       }
     },
     {
@@ -11159,6 +11204,7 @@
         "B if the current is small and A if the current is large"
       ],
       "answer": 0,
+      "explanation": "Misconception is that magnetic field lines point from north to south pole. The fact is that they emerge out of North pole and entre into South pole.",
       "marks": 1,
       "difficulty": "medium",
       "origin": "exemplar",
@@ -11170,7 +11216,8 @@
         "page": 1,
         "file": "jeep113.pdf",
         "answerKey": "jeep1an.pdf",
-        "mapConfidence": "high"
+        "mapConfidence": "high",
+        "explanationSource": "jeep1an.pdf, unit 13 answer key: the hint printed beside answer 3 of the Multiple Choice Questions block"
       }
     },
     {
@@ -12311,7 +12358,7 @@
       "bookCode": "jemh1",
       "chapter": 6,
       "type": "mcq",
-      "question": "The lengths of the diagonals of a rhombus are 16 cm and 12 cm. Then, the length of the side of the rhombus is",
+      "question": "[Out of syllabus: the Pythagoras theorem, cut from Class 10 Maths in 2023] The lengths of the diagonals of a rhombus are 16 cm and 12 cm. Then, the length of the side of the rhombus is",
       "options": [
         "9 cm",
         "10 cm",
@@ -12330,7 +12377,11 @@
         "page": 3,
         "file": "jeep206.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "the Pythagoras theorem, cut from Class 10 Maths in 2023",
+          "why": "Q2 gives the two diagonals of a rhombus and asks for its side. It is answered by halving both diagonals and applying Pythagoras to the right triangle they make - and jemh1 ch6 has no Pythagoras section, only the promise of one in its introduction. No other question extracted from this unit turns on Pythagoras or on the ratio of areas of similar triangles."
+        }
       }
     },
     {
@@ -12398,7 +12449,7 @@
       "bookCode": "jemh1",
       "chapter": 7,
       "type": "mcq",
-      "question": "The area of a triangle with vertices A (3, 0), B (7, 0) and C (8, 4) is",
+      "question": "[Out of syllabus: the area of a triangle from its vertices, cut from Class 10 Maths in 2023] The area of a triangle with vertices A (3, 0), B (7, 0) and C (8, 4) is",
       "options": [
         "14",
         "28",
@@ -12417,7 +12468,11 @@
         "page": 2,
         "file": "jeep207.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "high"
+        "mapConfidence": "high",
+        "outOfSyllabus": {
+          "label": "the area of a triangle from its vertices, cut from Class 10 Maths in 2023",
+          "why": "Q7 asks for the area of the triangle A(3, 0), B(7, 0), C(8, 4) - the deleted section 7.4 exactly. The rest of the extracted questions are distance formula and section formula, both of which the chapter still teaches."
+        }
       }
     },
     {
@@ -12688,7 +12743,7 @@
       "bookCode": "jemh1",
       "chapter": 11,
       "type": "mcq",
-      "question": "If the circumference of a circle and the perimeter of a square are equal, then",
+      "question": "[Out of syllabus: the circumference and area of a whole circle, cut from Class 10 Maths in 2023] If the circumference of a circle and the perimeter of a square are equal, then",
       "options": [
         "Area of the circle = Area of the square",
         "Area of the circle > Area of the square",
@@ -12707,7 +12762,11 @@
         "page": 3,
         "file": "jeep211.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "the circumference and area of a whole circle, cut from Class 10 Maths in 2023",
+          "why": "All four compare the circumference or area of a whole circle with a square's perimeter or with another circle's. None mentions a sector or a segment, which is the only thing the rationalised chapter now teaches. This is the one Class 10 unit where every extracted question is out of syllabus, and it is why the row is medium."
+        }
       }
     },
     {
@@ -12717,7 +12776,7 @@
       "bookCode": "jemh1",
       "chapter": 11,
       "type": "mcq",
-      "question": "If the perimeter of a circle is equal to that of a square, then the ratio of their areas is",
+      "question": "[Out of syllabus: the circumference and area of a whole circle, cut from Class 10 Maths in 2023] If the perimeter of a circle is equal to that of a square, then the ratio of their areas is",
       "options": [
         "22: 7",
         "14: 11",
@@ -12736,7 +12795,11 @@
         "page": 3,
         "file": "jeep211.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "the circumference and area of a whole circle, cut from Class 10 Maths in 2023",
+          "why": "All four compare the circumference or area of a whole circle with a square's perimeter or with another circle's. None mentions a sector or a segment, which is the only thing the rationalised chapter now teaches. This is the one Class 10 unit where every extracted question is out of syllabus, and it is why the row is medium."
+        }
       }
     },
     {
@@ -12746,7 +12809,7 @@
       "bookCode": "jemh1",
       "chapter": 11,
       "type": "mcq",
-      "question": "It is proposed to build a single circular park equal in area to the sum of areas of two circular parks of diameters 16 m and 12 m in a locality. The radius of the new park would be",
+      "question": "[Out of syllabus: the circumference and area of a whole circle, cut from Class 10 Maths in 2023] It is proposed to build a single circular park equal in area to the sum of areas of two circular parks of diameters 16 m and 12 m in a locality. The radius of the new park would be",
       "options": [
         "10 m",
         "15 m",
@@ -12765,7 +12828,11 @@
         "page": 3,
         "file": "jeep211.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "the circumference and area of a whole circle, cut from Class 10 Maths in 2023",
+          "why": "All four compare the circumference or area of a whole circle with a square's perimeter or with another circle's. None mentions a sector or a segment, which is the only thing the rationalised chapter now teaches. This is the one Class 10 unit where every extracted question is out of syllabus, and it is why the row is medium."
+        }
       }
     },
     {
@@ -12775,7 +12842,7 @@
       "bookCode": "jemh1",
       "chapter": 11,
       "type": "mcq",
-      "question": "The radius of a circle whose circumference is equal to the sum of the circum- ferences of the two circles of diameters 36cm and 20 cm is",
+      "question": "[Out of syllabus: the circumference and area of a whole circle, cut from Class 10 Maths in 2023] The radius of a circle whose circumference is equal to the sum of the circum- ferences of the two circles of diameters 36cm and 20 cm is",
       "options": [
         "56 cm",
         "42 cm",
@@ -12794,7 +12861,11 @@
         "page": 3,
         "file": "jeep211.pdf",
         "answerKey": "jeep2an.pdf",
-        "mapConfidence": "medium"
+        "mapConfidence": "medium",
+        "outOfSyllabus": {
+          "label": "the circumference and area of a whole circle, cut from Class 10 Maths in 2023",
+          "why": "All four compare the circumference or area of a whole circle with a square's perimeter or with another circle's. None mentions a sector or a segment, which is the only thing the rationalised chapter now teaches. This is the one Class 10 unit where every extracted question is out of syllabus, and it is why the row is medium."
+        }
       }
     },
     {
@@ -15962,6 +16033,26 @@
       "page": null,
       "reason": "no-home-chapter",
       "detail": "Same as unit 14."
+    }
+  ],
+  "explanationRejects": [
+    {
+      "ref": "jeep1-u01-013",
+      "exemplarBook": "jeep1",
+      "unit": 1,
+      "questionNo": 13,
+      "page": 3,
+      "reason": "hint-mangled",
+      "detail": "the hint's block contains type set below body size or off the baseline — a superscript, subscript or formula that extraction separated from the text it belongs to, leaving a sentence that reads complete and is not"
+    },
+    {
+      "ref": "jeep1-u02-027",
+      "exemplarBook": "jeep1",
+      "unit": 2,
+      "questionNo": 27,
+      "page": 6,
+      "reason": "hint-mangled",
+      "detail": "the hint's block contains type set below body size or off the baseline — a superscript, subscript or formula that extraction separated from the text it belongs to, leaving a sentence that reads complete and is not"
     }
   ]
 }
