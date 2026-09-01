@@ -140,7 +140,10 @@ export const GET = route({ auth: "any" }, async ({ user }) => {
           return {
             parentUserId: l.parentUserId,
             displayName: parent?.displayName ?? null,
-            phoneHint: parent ? `•••••${parent.phone.slice(-4)}` : null,
+            // `phone` is nullable since email + password sign-in landed: an
+            // account created that way has no number to hint at. Null here, and
+            // ConsentGate already renders the no-hint case.
+            phoneHint: parent?.phone ? `•••••${parent.phone.slice(-4)}` : null,
             status: l.status,
             requestedAt: l.requestedAt.toISOString(),
             decidedAt: l.decidedAt?.toISOString() ?? null,

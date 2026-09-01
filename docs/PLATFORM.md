@@ -13,7 +13,7 @@ wrapper](#2-writing-a-route), [the error shape](#3-when-things-go-wrong), and
 ```
 src/lib/api.ts       route wrapper, validation, error shape, idempotency helpers
 src/lib/session.ts   getSession, requireUser, startSession, endSession
-src/lib/auth.ts      the OTP flow — requestOtp, verifyOtp
+src/lib/auth.ts      both ways in — the OTP flow and email + password
 src/lib/storage.ts   put / getSignedUrl / delete, over a local or S3 driver
 src/lib/db.ts        the one Prisma client (pre-existing; do not construct another)
 prisma/seed.ts       the fixtures you develop against
@@ -93,35 +93,117 @@ changes.
 
 ### Signing in
 
-Phone-first. A Class 9 student in India routinely has no email address, so `User.phone` is
-the identifier and there are no passwords anywhere.
+Two ways in. Both end at the same cookie, minted by the same `startSession()`.
 
 ```
+POST /api/auth/register/      { email, password, displayName?, classNum? }
+    → 201 { ok: true }, always, and never a session. See below.
+POST /api/auth/login/         { email, password }
+    → sets the cookie, returns { user, expiresAt }
+
 POST /api/auth/otp/request/   { phone }
     → { challenge, expiresInSec, devCode }     devCode is development-only
 POST /api/auth/otp/verify/    { challenge, code, displayName?, classNum? }
     → sets the cookie, returns { user, isNewUser }
+
 GET  /api/auth/session/       → { user, studentProfile, evaluatorProfile }  or 401
 POST /api/auth/logout/        → clears the cookie
 ```
 
-There is no SMS provider and this repo does not add one. In development the code is
-**deterministic** — derived from the phone number — printed to the server log, and returned
-as `devCode`. That is a development affordance and a production catastrophe, so
-`devCodeFor()` throws outright when `NODE_ENV === "production"`, and `deliverOtp()` throws
-rather than returning 200 for a message it did not send.
+The screen for both is `/signin/`, which is `src/components/SignInForm.tsx`.
+
+#### Why there are two
+
+Phone-first was the right call and still is: a Class 9 student in India routinely has no
+email address, and a one-time code to the number the account *is* beats a password to
+forget, to reset, and to reuse.
+
+But **there is no SMS provider**. `deliverOtp()` throws in production rather than returning
+200 for a message it did not send, which means that on a real deployment the phone flow
+cannot let anybody in at all. An identity system nobody can use is not a safer identity
+system. Email and password were added **alongside** the OTP flow, not instead of it: the
+OTP path is unchanged, and an account created by it is untouched by any of this.
+
+In development the OTP code is still **deterministic** — derived from the phone number,
+printed to the server log, and returned as `devCode`. That is a development affordance and
+a production catastrophe, so `devCodeFor()` throws outright when
+`NODE_ENV === "production"`.
+
+`phone`, `email` and `passwordHash` are consequently all nullable, and a user may hold any
+subset of them provided they hold at least one identifier. That last clause is a CHECK
+constraint, not a convention — §6.
+
+#### Passwords
+
+`scrypt` from `node:crypto`, and no new dependency: no bcrypt, no argon2, no jose. A random
+per-user salt, a `timingSafeEqual` comparison, and a stored value that describes itself —
+
+```
+scrypt$16384$8$1$64$<salt base64url>$<hash base64url>
+```
+
+— so the cost parameters can be raised later without anyone having to guess what an
+existing row was hashed with. `verifyPassword()` reads N, r, p and the key length out of
+the string it was handed and never assumes the current ones. Ten characters minimum, a
+short refusal list, and no strength meter: a meter teaches people to append `1!`.
+
+#### Neither endpoint says whether an address exists
 
 `POST /api/auth/otp/request/` answers identically for a number that has an account and one
-that does not. "No account with that number" is an account-existence oracle, and whether a
-given person uses this platform is nobody's business.
+that does not: "no account with that number" is an account-existence oracle, and whether a
+given person uses this platform is nobody's business. Registration and login must not
+reopen from the email side what that closed.
 
-**A new account is always `STUDENT`.** `verifyOtp()` has no `role` parameter, and the
-verify route's body validator has no `role` field. `EVALUATOR` and `ADMIN` are
-provisioned — by the seed, or by an admin-only route — never claimed. If your lane needs to
-grant a role, write a route behind `requireUser("ADMIN")`; do not add a field to sign-up.
-A role accepted from a request body is a one-line path from anonymous to administrator,
-and it gets added because the field looks like data rather than like a privilege.
+- **Registration always returns `201 {"ok":true}`.** A taken address is not an error, not a
+  409, and not a different latency — the password is hashed before anything is written and
+  the unique violation is swallowed, so both paths do the same work and return the same
+  bytes.
+- **Which is why registration cannot sign you in.** If the address already existed, the
+  session it minted would belong to somebody else. The client registers and then calls
+  login; that is one more round trip and no more steps for the person typing.
+- **Every login failure is one 401 with one message.** An unknown address, an address that
+  has only ever used a code, and the right address with a wrong password are three
+  different facts and one response. The no-user path verifies against a throwaway hash so
+  that it costs the same ~100 ms a real one does; identical wording with a one-millisecond
+  reply is still an oracle.
+- **Attempts are rate-limited per identifier**, counted on failures against addresses that
+  do not exist as well. A limiter that skips unknown addresses is itself an oracle — the
+  attacker learns which ones exist by watching which can be hammered forever. It is the
+  same in-process counter OTP sending uses, with the same caveat: §7.
 
+#### The role is never claimed
+
+**A new account is always `STUDENT`.** `verifyOtp()` has no `role` parameter; neither the
+verify route's body validator nor, in production, the register route's has a `role` field.
+`EVALUATOR` and `ADMIN` are provisioned — by the seed, or by an admin-only route — never
+claimed. If your lane needs to grant a role, write a route behind `requireUser("ADMIN")`;
+do not add a field to sign-up. A role accepted from a request body is a one-line path from
+anonymous to administrator, and it gets added because the field looks like data rather than
+like a privilege.
+
+Outside production `POST /api/auth/register/` does accept a `role`, so that one person can
+hold a student, an evaluator, a parent and an admin account without four admin-only routes
+existing first. It is gated the way `/api/dev/login/` gates itself — twice, independently:
+
+1. `bodyValidator()` in the route builds a shape with **no `role` key at all** when
+   `NODE_ENV === "production"`. `v.object` reads only the keys it declares, so a posted
+   `{"role":"ADMIN"}` is never parsed and there is no value to pass on.
+2. `registerWithPassword()` re-checks `isProduction()` itself and pins `STUDENT` before it
+   looks at the field, so reaching the function directly does not get past it either.
+
+Either would be sufficient. There is no environment variable that turns this on; there is
+only `NODE_ENV`, which turns it off.
+
+#### Scope
+
+Sign-in is always the **public scope**. `scopeId` is not accepted by any of these routes,
+for the reason §1 gives about tenants: letting a caller name their own tenant is the same
+class of hole as letting them name their own user. School-branded sign-in, when it lands,
+resolves the scope from the hostname or an invite token, server-side.
+
+A consequence worth knowing before you go looking for it: a seeded user in another scope —
+Vikram, the school admin — cannot sign in at `/signin/` even with the right password. He is
+reachable through `/api/dev/login/`, which does take a `scopeId` and 404s in production.
 ### Signing in during development, without the dance
 
 ```bash
@@ -133,6 +215,11 @@ curl -s localhost:3310/api/auth/session/ -b jar.txt
 `/api/dev/login/` signs you in as an existing seeded user with no code. It 404s when
 `NODE_ENV === "production"` and creates nothing. `GET /api/dev/login/?phone=+91…` returns
 the deterministic OTP if you would rather drive the real verify route.
+
+Every seeded user also has an email and the password **`ncert-dev-2026`**, printed at the
+end of a seed run, so `/signin/` is usable without a terminal at all. `seedPasswords()`
+refuses when `NODE_ENV === "production"` — a known password on every account is not a
+smaller hole than a known one-time code.
 
 ---
 
@@ -451,6 +538,17 @@ constraint you will hit both:
    `'PENDING'`). Getting this backwards is not an error — it is a constraint that quietly
    never fires.
 
+`prisma/migrations/20260831133652_email_password_signin/` adds one more, and it is the one
+worth reading if you touch the `users` table:
+
+- `user_has_identifier` — a user must have a phone, an email, or both. This is what
+  replaced `NOT NULL` on `phone` when email sign-in landed, and it is not decoration.
+  **NULLs are distinct in a Postgres unique index**, so `@@unique([scopeId, phone])`
+  constrains nothing at all once the column is nullable: without the CHECK the database
+  would accept any number of users in one scope with no phone, no email and nothing to tell
+  them apart. Empty strings are excluded explicitly, because `''` is not NULL and would
+  otherwise satisfy the CHECK while identifying nobody.
+
 The ones you are most likely to trip over while writing grading code:
 
 - `grade_source_consistent` — an `AI` grade has `evaluatorId` NULL; a `HUMAN` grade must
@@ -483,6 +581,10 @@ reseeds. It upserts and never truncates: another lane has real work in this data
 | `+919810000022` | Sandeep Rao | evaluator, `FREELANCE`, Mathematics 10 + Social Science 10 |
 | `+919810000023` | Priya Balan | evaluator, **`activeForRouting: false`** |
 | `+919810000031` | Vikram Desai | `ADMIN`, in the school scope |
+
+Every one of them also has an `@example.invalid` email address and the password
+`ncert-dev-2026`, so `/signin/` works out of the box; the seed prints them. Passwords are
+skipped entirely when `NODE_ENV === "production"`.
 
 The two evaluators have deliberately **disjoint** subjects, so a router that ignores
 subject entirely still shows up as the wrong name on a ticket. Priya is off the queue
@@ -523,10 +625,18 @@ re-imports. That departs from the schema comment's claim that `stepId` is "the a
 step id … 's1', 'g1', 'o1'". Anything joining a `CriterionResult` back to authored JSON
 must split on the `/`.
 
-**OTP rate limiting is in-process and best-effort.** The counters in `src/lib/auth.ts` live
-in memory: they reset on deploy and do not span instances. A 6-digit code with an unbounded
-attempt budget falls in well under a million tries. Before this faces the internet it needs
-a shared store, and `consumeAttempt()` is the one function that changes.
+**Rate limiting is in-process and best-effort.** The counters in `src/lib/auth.ts` live in
+memory: they reset on deploy and do not span instances. That covers OTP sends, OTP attempts
+and password sign-ins alike. A 6-digit code with an unbounded attempt budget falls in well
+under a million tries, and a password behind a limiter that forgets on every deploy is not
+much better. Before this faces the internet it needs a shared store; `consumeAttempt()` and
+`consumeWindowed()` are the two functions that change.
+
+**There is no password reset, and no email delivery to build one on.** The same missing
+provider that made the OTP flow unusable in production applies to email: nothing here sends
+a message. A forgotten password today is an admin fixing a row. Whoever wires up a mail
+provider gets reset tokens for nearly free — the challenge-token shape in `src/lib/auth.ts`
+is already the right one, signed and expiring and carrying no row.
 
 **Sessions cannot be revoked individually.** See §1.
 
@@ -544,6 +654,9 @@ a shared store, and `consumeAttempt()` is the one function that changes.
 - Do not read-then-insert for anything a retry could duplicate. §5.
 - Do not `UPDATE` a `GradingResult`. Grading is append-only — an override is a new row with
   `revision + 1` and `supersedesId` pointing at what it replaced. `prisma/README.md`.
-- Do not add a dependency without saying so. There is no `zod`, no `bcrypt`, no `jose`, no
-  AWS SDK, and everything here works without them.
+- Do not add a dependency without saying so. There is no `zod`, no `bcrypt`, no `argon2`, no
+  `jose`, no AWS SDK, and everything here works without them — passwords are `scrypt` out of
+  `node:crypto`.
+- Do not let an auth route reveal whether an address or a number is registered. Same
+  response, same status, same work. §1.
 - Do not drop the trailing slash on an API path. §2.

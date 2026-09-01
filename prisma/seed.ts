@@ -19,6 +19,16 @@
  * once. It never truncates: another lane will have real work sitting in this
  * database, and a seed that resets the schema is a seed nobody dares run.
  *
+ * ## Passwords
+ *
+ * Every seeded user gets an email and the same known password, so the app can
+ * actually be signed into from its own sign-in screen rather than only from a
+ * curl script. They are printed at the end of a run. That is a development
+ * fixture and nothing else: `seedPasswords()` refuses outright when
+ * `NODE_ENV === "production"`, for the same reason `devCodeFor()` does — a
+ * published password on every account is not a smaller hole than a published
+ * OTP.
+ *
  * ## The parent
  *
  * There is no `PARENT` in `UserRole`, and `prisma/README.md` scopes parent links
@@ -33,6 +43,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaClient, Prisma } from "@prisma/client";
+import { hashPassword, isProduction } from "../src/lib/auth";
 import type {
   CriterionKind,
   EvaluatorType,
@@ -52,6 +63,15 @@ const PUBLIC_SCOPE = "00000000-0000-0000-0000-000000000000";
  * write it against and something for it to correctly exclude.
  */
 const SCHOOL_SCOPE = "11111111-1111-1111-1111-111111111111";
+
+/**
+ * One password for every fixture account, printed at the end of a run.
+ *
+ * The same value each time on purpose, exactly as the ids are: a README, a
+ * smoke test and a screenshot can all name it and still be true after the next
+ * reseed. Long enough to clear `passwordProblem()` without being a puzzle.
+ */
+const SEED_PASSWORD = "ncert-dev-2026";
 
 /**
  * A stable UUID from a name. Not RFC 4122 v5 (no namespace ceremony), but the
@@ -100,6 +120,7 @@ const USERS: SeedUser[] = [
     key: "student-aarti",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000001",
+    email: "aarti.sharma@example.invalid",
     displayName: "Aarti Sharma",
     role: "STUDENT",
     // The one student routed to a human. Any lane testing the evaluator queue
@@ -111,6 +132,7 @@ const USERS: SeedUser[] = [
     key: "student-imran",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000002",
+    email: "imran.qureshi@example.invalid",
     displayName: "Imran Qureshi",
     role: "STUDENT",
     student: { classNum: 10, schoolName: "Govt. Sr. Sec. School, Nangloi", language: "en" },
@@ -119,6 +141,7 @@ const USERS: SeedUser[] = [
     key: "student-devika",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000003",
+    email: "devika.nair@example.invalid",
     displayName: "Devika Nair",
     role: "STUDENT",
     // Class 9 is on the new NCF books; Class 10 is not. Having one of each
@@ -129,6 +152,7 @@ const USERS: SeedUser[] = [
     key: "student-hindi-reader",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000004",
+    email: "rohit.yadav@example.invalid",
     displayName: "Rohit Yadav",
     role: "STUDENT",
     // The reader ships Hindi books and 44 of 149 have untitled chapters. A
@@ -143,6 +167,7 @@ const USERS: SeedUser[] = [
     key: "student-sibling-public",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000010",
+    email: "kabir.menon@example.invalid",
     displayName: "Kabir Menon",
     role: "STUDENT",
     student: { classNum: 9, schoolName: "Delhi Public School, Rohini" },
@@ -151,6 +176,7 @@ const USERS: SeedUser[] = [
     key: "student-sibling-school",
     scopeId: SCHOOL_SCOPE,
     phone: "+919810000010",
+    email: "ananya.menon@example.invalid",
     displayName: "Ananya Menon",
     role: "STUDENT",
     student: { classNum: 10, schoolName: "Delhi Public School, Rohini" },
@@ -194,6 +220,7 @@ const USERS: SeedUser[] = [
     key: "evaluator-inactive",
     scopeId: PUBLIC_SCOPE,
     phone: "+919810000023",
+    email: "priya.balan@example.invalid",
     displayName: "Priya Balan",
     role: "EVALUATOR",
     evaluator: {
@@ -297,6 +324,35 @@ async function seedUsers(): Promise<void> {
   }
 
   log(`  users            ${USERS.length}`);
+}
+
+/**
+ * Give every fixture account the same known password.
+ *
+ * Separate from `seedUsers()` because it is the one part of this file that must
+ * not run everywhere. `isProduction()` is the same guard `devCodeFor()` uses,
+ * and for the same reason: a published password on every account is not a
+ * smaller hole than a published one-time code.
+ *
+ * Hashed per user rather than once and copied, so the fixtures look like real
+ * rows — different salts, different hashes, one password. Re-hashed on every run
+ * rather than skipped when a hash is already there: what this prints has to be
+ * true, and an account whose password someone changed by hand would otherwise
+ * silently stop matching the line at the end of the output. A new salt for the
+ * same password is the same password.
+ */
+async function seedPasswords(): Promise<void> {
+  if (isProduction()) {
+    log("  passwords        skipped — NODE_ENV is production");
+    return;
+  }
+  for (const u of USERS) {
+    await prisma.user.update({
+      where: { id: id(u.key) },
+      data: { passwordHash: await hashPassword(SEED_PASSWORD) },
+    });
+  }
+  log(`  passwords        ${USERS.length} set to the development password`);
 }
 
 // ---------------------------------------------------------------------------
@@ -563,6 +619,7 @@ async function seedRubrics(): Promise<void> {
 async function main(): Promise<void> {
   log("\nSeeding…");
   await seedUsers();
+  await seedPasswords();
   await seedRubrics();
 
   const counts = {
@@ -576,6 +633,22 @@ async function main(): Promise<void> {
     `\nDone. users=${counts.users} students=${counts.students} ` +
       `evaluators=${counts.evaluators} rubrics=${counts.rubrics} criteria=${counts.criteria}\n`,
   );
+  if (!isProduction()) {
+    log(`Sign in at /signin/ with any of these. The password for all of them is: ${SEED_PASSWORD}`);
+    log("  aarti.sharma@example.invalid    Aarti Sharma — Class 10 student, HITL on");
+    log("  meera.iyer@example.invalid      Meera Iyer — Science evaluator, Class 9 + 10");
+    log("  imran.qureshi@example.invalid   Imran Qureshi — Class 10 student");
+    log("  devika.nair@example.invalid     Devika Nair — Class 9 student");
+    log("");
+    // Vikram is an ADMIN in the school scope, and the sign-in form is
+    // public-scope the way all B2C sign-in is here: nothing accepts a tenant
+    // from a browser. The development login route is where a scope may be
+    // named, and it 404s in production.
+    log("Vikram Desai is an ADMIN in the school scope, which the public sign-in form does");
+    log("not reach. Use the development login route below for him — or make your own admin");
+    log("at /signin/, where the role picker is development-only in the same way.");
+    log("");
+  }
   log("Sign in as any of them without a code (development only):");
   log(`  curl -X POST localhost:3310/api/dev/login/ -H 'content-type: application/json' \\`);
   log(`       -d '{"phone":"+919810000001"}'   # Aarti, Class 10 student, HITL on`);

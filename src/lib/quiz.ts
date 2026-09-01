@@ -22,6 +22,29 @@
  * never shipped to a phone.
  */
 import questionsJson from "@data/questions.json";
+/*
+ * A second bank, generated rather than authored: MCQs lifted from NCERT's
+ * Exemplar Problems books by `scripts/extract-exemplar-questions.ts`, paired
+ * with their published answer keys.
+ *
+ * Kept as its own file, and read here rather than merged into the first, for
+ * two reasons. Provenance: every row carries the book, unit and page it came
+ * from, and merging would blur an extracted question into a hand-written one.
+ * And ownership: `data/questions.json` is authored and edited by hand, while
+ * this file is regenerated wholesale by a script, so a merge would be undone
+ * by the next run.
+ *
+ * Order matters below — the authored bank is read first, so if the two ever
+ * claim the same id, the hand-written question wins.
+ */
+import exemplarJson from "@data/questions.exemplar.json";
+/*
+ * Class 9 Social Science, authored rather than extracted — NCERT publishes no
+ * Exemplar for the subject and CBSE no Class 9 paper, so there was nothing to
+ * extract from. Unlike the exemplar rows, every question here carries an
+ * explanation, because a question written by hand has no excuse not to.
+ */
+import socialScience9Json from "@data/questions.socialscience9.json";
 import {
   CLASSES,
   getBook,
@@ -215,7 +238,11 @@ function rowsOf(file: unknown): Raw[] {
 const questions: QuizQuestion[] = (() => {
   const seen = new Set<string>();
   const out: QuizQuestion[] = [];
-  for (const row of rowsOf(questionsJson)) {
+  for (const row of [
+    ...rowsOf(questionsJson),
+    ...rowsOf(exemplarJson),
+    ...rowsOf(socialScience9Json),
+  ]) {
     const q = normalise(row);
     // A duplicate id would give two questions the same React key and the same
     // result-sheet row; the first one wins.

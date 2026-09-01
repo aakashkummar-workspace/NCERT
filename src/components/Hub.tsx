@@ -156,16 +156,20 @@ export default function Hub() {
           <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-ink-faint">
             Needs an account
           </h2>
-          <div className="rounded-2xl border border-border bg-surface p-4">
-            <p className="text-[15px] font-semibold">Submitting written answers, doubts, marking and payouts</p>
+          <Link
+            href="/signin/"
+            className="block rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent"
+          >
+            <p className="text-[15px] font-semibold">Sign in or create an account</p>
             <p className="mt-1 text-[13px] leading-snug text-ink-soft">
-              These need a sign-in, and a connection. Everything above works without either.
+              Submitting written answers, doubts, marking and payouts need this, and a connection.
+              Everything above works without either.
             </p>
             <p className="mt-2 text-[12px] leading-snug text-ink-faint">
-              No SMS provider is configured yet, so there is no sign-in screen to send you to.
-              A seeded account can be used from a terminal — see docs/PLATFORM.md.
+              An email and a password. Grading itself still runs only when a model key is set —
+              until then submissions queue rather than guess.
             </p>
-          </div>
+          </Link>
         </section>
       )}
 

@@ -1,0 +1,989 @@
+{
+  "generatedAt": "2026-09-01",
+  "source": "Authored by hand. Every target was chosen by reading the numbered section headings extracted from the current textbook PDFs in public/ncert/, not by matching chapter titles. See data/exemplar-chapter-map.md for the reasoning behind each row.",
+  "note": "NCERT Exemplar book codes (ieep1, ieep2) are not textbook codes and appear in no manifest. This file is the only bridge between an Exemplar unit and a chapter of the book a Class 9 student actually has. A null target means the unit has no honest home in the current book; its questions are dropped rather than filed somewhere plausible.",
+  "mappings": [
+    {
+      "exemplarBook": "ieep1",
+      "unit": 1,
+      "unitTitle": "Matter in Our Surroundings",
+      "target": null,
+      "confidence": "none",
+      "why": "States of matter, interconversion, latent heat and the kelvin scale are not taught anywhere in iesc1. The word 'latent' appears nowhere in the thirteen chapters; 'states of matter' appears once, in iesc1 ch5, as a pointer to further reading. Rationalisation moved this material out of Class 9.",
+      "evidence": [
+        "grep 'latent' over public/ncert/iesc1: no hits",
+        "iesc105 line 1253: 'To learn more about the states of matter and concentration of solutions,' - a cross-reference, not coverage"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 2,
+      "unitTitle": "Is Matter Around Us Pure",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 5,
+        "chapterTitle": "Exploring Mixtures and their Separation"
+      },
+      "confidence": "high",
+      "why": "Section for section: 5.1 How Can We Classify Mixtures?, 5.2 Solutions, 5.3 Methods of Separation of Homogeneous Mixtures, 5.4 separating the components of a mixture, 5.5 Tyndall Effect. Colloid, suspension and sublimation occur only in this chapter.",
+      "evidence": [
+        "iesc1 ch5 headings 5.1-5.5",
+        "'colloid', 'suspension', 'sublimation' hit iesc105 only"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 3,
+      "unitTitle": "Atoms and Molecules",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 9,
+        "chapterTitle": "Atomic Foundations of Matter"
+      },
+      "confidence": "high",
+      "why": "9.1 Law of Conservation of Mass, 9.2 Law of Constant Proportions, 9.3 Dalton's Atomic Theory, 9.4 How Atoms Combine?, 9.5 Writing Chemical Formulae, 9.7 Molecular Mass of Covalent Compounds, 9.8 Formula Unit Mass of Ionic Compounds - the Exemplar unit's contents in the same order.",
+      "evidence": [
+        "iesc1 ch9 headings 9.1-9.8"
+      ],
+      "caveat": "The mole concept and Avogadro's number are in the Exemplar unit but not in iesc1 ch9 ('mole' and 'avogadro' get zero hits). Questions on moles are correctly filed by topic but are beyond the current syllabus."
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 4,
+      "unitTitle": "Structure of the Atom",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 8,
+        "chapterTitle": "Journey Inside the Atom"
+      },
+      "confidence": "high",
+      "why": "8.2 A Short Historical Journey Through Atomic Models, 8.4 Symbols of Elements, 8.5 Atomic Number, 8.6 Mass Number, 8.7 how electrons are distributed in shells, 8.8 Valency, 8.9.1 Isotopes.",
+      "evidence": [
+        "iesc1 ch8 headings 8.1-8.9",
+        "iesc108 line 832: '8.9.1 Isotopes'"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 5,
+      "unitTitle": "The Fundamental Unit of Life",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 2,
+        "chapterTitle": "Cell: The Building Block of Life"
+      },
+      "confidence": "high",
+      "why": "2.1 How to Study Cells?, 2.2 Structure of a Cell, 2.5 Cell Theory - The Unifying Principle of Biology. Prokaryotes, eukaryotes and the organelles are covered here and nowhere else.",
+      "evidence": [
+        "iesc1 ch2 headings 2.1-2.5",
+        "'prokaryot' hits iesc102 and iesc112 only"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 6,
+      "unitTitle": "Tissues",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 3,
+        "chapterTitle": "Tissues in Action"
+      },
+      "confidence": "high",
+      "why": "3.1 Why are Plant and Animal Tissues Different?, 3.2 Tissues for Growth in Plants, 3.3 Animal Tissues. Meristem, xylem and phloem are taught here.",
+      "evidence": [
+        "iesc1 ch3 headings 3.1-3.6",
+        "'meristem' hits iesc103"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 7,
+      "unitTitle": "Diversity in Living Organisms",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 12,
+        "chapterTitle": "Patterns in Life: Diversity and Classification"
+      },
+      "confidence": "high",
+      "why": "12.3 How to Classify Organisms?, 12.4 The Need for Classification, 12.6 Five Kingdom Classification, 12.8 Scientific Naming - The Binomial System.",
+      "evidence": [
+        "iesc1 ch12 headings 12.1-12.10"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 8,
+      "unitTitle": "Motion",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 4,
+        "chapterTitle": "Describing Motion Around Us"
+      },
+      "confidence": "high",
+      "why": "4.1 Motion in a Straight Line, 4.2 Graphical Representation of Motion, 4.3 Kinematic Equations for Motion in a Straight Line, 4.4 Motion in a Plane.",
+      "evidence": [
+        "iesc1 ch4 headings 4.1-4.4"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 9,
+      "unitTitle": "Force and Laws of Motion",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 6,
+        "chapterTitle": "How Forces Affect Motion"
+      },
+      "confidence": "high",
+      "why": "6.1 The Concept of Force, 6.2 Balanced and Unbalanced Forces, 6.3 The Force of Friction, 6.4-6.6 Newton's three laws, 6.7 Forces Acting on a System of Objects.",
+      "evidence": [
+        "iesc1 ch6 headings 6.1-6.7"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 10,
+      "unitTitle": "Gravitation",
+      "target": null,
+      "confidence": "none",
+      "why": "The universal law of gravitation, free fall, g, thrust, pressure and Archimedes' principle have no chapter in iesc1. 'universal law', 'free fall', 'thrust' and 'archimedes' all get zero hits. Buoyancy survives only as a paragraph inside iesc1 ch6 on kinds of force, which is not enough to file a whole unit against.",
+      "evidence": [
+        "zero hits for 'universal law', 'free fall', 'thrust', 'archimedes'",
+        "iesc106 lines 63, 103, 108 - buoyant force mentioned within 6.1 The Concept of Force"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 11,
+      "unitTitle": "Work and Energy",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 7,
+        "chapterTitle": "Work, Energy, and Simple Machines"
+      },
+      "confidence": "high",
+      "why": "7.1 Work Done by a Constant Force, 7.2 The Work-Energy Theorem, 7.3 Forms of Energy, 7.4 Mechanical Energy, 7.5 Power.",
+      "evidence": [
+        "iesc1 ch7 headings 7.1-7.6"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 12,
+      "unitTitle": "Sound",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 10,
+        "chapterTitle": "Sound Waves : Characteristics and Applications"
+      },
+      "confidence": "high",
+      "why": "10.1 Production of Sound, 10.2 Propagation of Sound, 10.3 Sound Waves, 10.5 Graphical Representation of a Sound Wave, 10.6 Characteristics of a Sound Wave, 10.7 Reflection of Sound.",
+      "evidence": [
+        "iesc1 ch10 headings 10.1-10.7"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 13,
+      "unitTitle": "Why Do We Fall Ill",
+      "target": null,
+      "confidence": "none",
+      "why": "There is no health-and-disease chapter in iesc1. 'antibiotic', 'vaccin' and 'infectious' occur only as passing words inside other chapters; no section covers disease, its causes, prevention or immunity.",
+      "evidence": [
+        "'pathogen' hits only iesc112, in one sentence about parasitic worms",
+        "'vaccin' hits iesc102 line 943 and iesc111 line 942, both incidental"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 14,
+      "unitTitle": "Natural Resources",
+      "target": {
+        "bookCode": "iesc1",
+        "chapter": 13,
+        "chapterTitle": "Earth as a System: Energy, Matter, and Life"
+      },
+      "confidence": "medium",
+      "why": "13.1 Uneven Heating of the Earth, 13.2 Uneven Heating Causes Wind and Ocean currents, 13.3 Biogeochemical Cycles, 13.4 Human Impact on Earth's Processes. Ozone, the greenhouse effect and the nitrogen cycle occur only here.",
+      "evidence": [
+        "iesc1 ch13 headings 13.1-13.4",
+        "'nitrogen cycle', 'ozone', 'greenhouse' hit iesc113 only"
+      ],
+      "caveat": "Medium rather than high: the Exemplar unit also carries soil formation and soil erosion, which the NCF chapter treats far more lightly. Those questions are on-topic for the chapter but not necessarily examinable from it."
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 15,
+      "unitTitle": "Improvement in Food Resources",
+      "target": null,
+      "confidence": "none",
+      "why": "Crop production, manure and fertilisers, animal husbandry and cropping patterns have no chapter in iesc1. 'husbandry' gets zero hits; the one 'irrigation' occurrence is a discussion prompt inside the tissues chapter.",
+      "evidence": [
+        "zero hits for 'husbandry'",
+        "iesc103 line 1149 is the only 'irrigation', inside an exercise"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 16,
+      "unitTitle": "Sample Question Paper I",
+      "target": null,
+      "confidence": "none",
+      "why": "Not a chapter. It is a whole mock paper drawing on every unit, and its MCQs are re-printed from the unit exercises. Filing it under any one chapter would be wrong, and extracting it would duplicate questions already taken from the units.",
+      "evidence": [
+        "ieep116.pdf page 1: 'SCIENCE CLASS IX (THEORY) SAMPLE QUESTION PAPER-I'",
+        "its Q1 is unit 1's Q6 verbatim"
+      ]
+    },
+    {
+      "exemplarBook": "ieep1",
+      "unit": 17,
+      "unitTitle": "Sample Question Paper II",
+      "target": null,
+      "confidence": "none",
+      "why": "Same as unit 16 - a mock paper, not a chapter.",
+      "evidence": [
+        "ieep117.pdf page 1: 'SAMPLE QUESTION PAPER - II'"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 1,
+      "unitTitle": "Number Systems",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 3,
+        "chapterTitle": "The World of Numbers"
+      },
+      "confidence": "high",
+      "why": "3.3 Integers: Expanding the Horizon, 3.4 Fractions and Rational numbers, 3.5 Irrational Numbers, 3.6 Real Numbers: Decimals and Cyclic Patterns. Same material, same order.",
+      "evidence": [
+        "iemh1 ch3 headings 3.1-3.7"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 2,
+      "unitTitle": "Polynomials",
+      "target": null,
+      "confidence": "none",
+      "why": "Re-cut across two chapters and partly dropped. Degree and zeroes now live in iemh1 ch2, but only for linear polynomials; the identities and factorisation live in iemh1 ch4. The remainder theorem and the factor theorem - a large share of the Exemplar unit - are gone entirely. There is no single chapter this unit belongs to.",
+      "evidence": [
+        "iemh1 ch2 is titled 'Introduction to Linear Polynomials'; headings 2.2 Linear Polynomials, 2.3 Exploring linear patterns",
+        "iemh1 ch4 headings 4.2 Visualising Identities, 4.5 and 4.6 Factorisation",
+        "zero hits for 'remainder theorem' and 'factor theorem' over public/ncert/iemh1"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 3,
+      "unitTitle": "Coordinate Geometry",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 1,
+        "chapterTitle": "Orienting Yourself: The Use of Coordinates"
+      },
+      "confidence": "high",
+      "why": "1.2 Settling In (the cartesian plane, axes, quadrants, plotting) and 1.4 Distance Between Two Points in the 2-D Plane. Abscissa, ordinate and quadrant questions land squarely here.",
+      "evidence": [
+        "iemh1 ch1 headings 1.1-1.4"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 4,
+      "unitTitle": "Linear Equations in Two Variables",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 2,
+        "chapterTitle": "Introduction to Linear Polynomials"
+      },
+      "confidence": "medium",
+      "why": "2.5 Linear Relationships and 2.6 Visualising linear relationships are exactly the graph of a linear equation in two variables, and the chapter's own exercises use that phrase.",
+      "evidence": [
+        "iemh102 line 359 '2.5 Linear Relationships', line 415 '2.6 Visualising linear relationships'",
+        "iemh102 line 854 uses the phrase 'a linear equation in two variables (work w and distance d)'"
+      ],
+      "caveat": "Medium rather than high: the NCF chapter approaches this through linear polynomials and their graphs, so Exemplar questions phrased purely in 'ax + by + c = 0' formalism sit slightly outside how the chapter presents it."
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 5,
+      "unitTitle": "Introduction to Euclid's Geometry",
+      "target": null,
+      "confidence": "none",
+      "why": "Axiomatic geometry is gone from Class 9. 'Euclid', 'axiom' and 'postulate' get zero hits across all eight chapters of iemh1.",
+      "evidence": [
+        "zero hits for 'Euclid', 'axiom', 'postulate' over public/ncert/iemh1"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 6,
+      "unitTitle": "Lines and Angles",
+      "target": null,
+      "confidence": "none",
+      "why": "No chapter covers parallel lines, transversals or the angle sum property. 'transversal', 'vertically opposite' and 'angle sum' get zero hits.",
+      "evidence": [
+        "zero hits for 'transversal', 'vertically opposite', 'angle sum'"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 7,
+      "unitTitle": "Triangles",
+      "target": null,
+      "confidence": "none",
+      "why": "Triangle congruence (SSS, SAS, ASA, RHS) is not taught in iemh1. 'congruent triangles' gets zero hits; the only 'congruen' matches are about congruent regions in the circles and area chapters, which is a different idea.",
+      "evidence": [
+        "zero hits for 'congruent triangles'",
+        "'congruen' hits only iemh105 and iemh106"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 8,
+      "unitTitle": "Quadrilaterals",
+      "target": null,
+      "confidence": "none",
+      "why": "There is no quadrilaterals chapter and no midpoint theorem. 'quadrilateral' appears only inside the circles and area chapters as a shape being used, not as a topic with its own properties and proofs.",
+      "evidence": [
+        "zero hits for 'midpoint theorem'",
+        "'quadrilateral' hits only iemh105 and iemh106"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 9,
+      "unitTitle": "Areas of Parallelograms and Triangles",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 6,
+        "chapterTitle": "Measuring Space: Perimeter and Area"
+      },
+      "confidence": "medium",
+      "why": "6.6 Area of a Rectangle, 6.7 Area of a Parallelogram, 6.8 Area of a Triangle, and the chapter argues the same-base-same-height result the Exemplar unit is built on.",
+      "evidence": [
+        "iemh1 ch6 headings 6.6-6.8",
+        "iemh106 line 533: 'ABCD) with the same base b and same height h'"
+      ],
+      "caveat": "Medium rather than high: the Exemplar unit states its results as formal theorems about figures on the same base and between the same parallels; the NCF chapter reaches the same facts by dissection rather than by proof."
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 10,
+      "unitTitle": "Circles",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 5,
+        "chapterTitle": "I'm Up and Down, and Round and Round"
+      },
+      "confidence": "high",
+      "why": "The title says nothing, the sections say everything: 5.1 Definitions, 5.2 Symmetries of a Circle, 5.4 Chords and the Angles They Subtend, 5.5 Midpoints and Perpendicular Bisectors of Chords, 5.6 Distance of Chords from the Centre, 5.7 Angles Subtended by an Arc, 5.8 Concyclicity of Points. This is the Class 9 circles chapter.",
+      "evidence": [
+        "iemh1 ch5 headings 5.1-5.8"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 11,
+      "unitTitle": "Constructions",
+      "target": null,
+      "confidence": "none",
+      "why": "Ruler-and-compass construction of bisectors and triangles is not a chapter in iemh1. The only 'compass' and 'ruler and' hits are in ch3, about locating an irrational number on the number line - a different task.",
+      "evidence": [
+        "'compass' and 'ruler and' hit iemh103 only"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 12,
+      "unitTitle": "Heron's Formula",
+      "target": {
+        "bookCode": "iemh1",
+        "chapter": 6,
+        "chapterTitle": "Measuring Space: Perimeter and Area"
+      },
+      "confidence": "high",
+      "why": "Section 6.8.1 is literally 'Heron's formula', with worked examples using the semi-perimeter.",
+      "evidence": [
+        "iemh106 line 680: '6.8.1 Heron's formula'",
+        "iemh106 lines 701, 736, 766 - worked examples using s, the semi-perimeter"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 13,
+      "unitTitle": "Surface Areas and Volumes",
+      "target": null,
+      "confidence": "none",
+      "why": "iemh1 ch6 is two-dimensional throughout - perimeter and area. Solids are gone: 'surface area', 'cylinder' and 'cone' get zero hits across iemh1.",
+      "evidence": [
+        "zero hits for 'surface area', 'cylinder', 'cone'"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 14,
+      "unitTitle": "Statistics and Probability",
+      "target": null,
+      "confidence": "none",
+      "why": "A merged unit whose halves went different ways. Probability is iemh1 ch7, but statistics - class marks, class intervals, frequency distributions, histograms, mean, median and mode - has no chapter at all, and the unit's single MCQ exercise runs both together (Q1-Q27 statistics, Q28-Q30 probability). Filing the unit anywhere mis-files most of it, and splitting it by keyword would be a guess about each question rather than a fact about the book.",
+      "evidence": [
+        "zero hits for 'histogram' over public/ncert/iemh1",
+        "iemh1 ch7 headings 7.1-7.4 are probability only",
+        "ieep214 EXERCISE 14.1 Q1-Q27 are class marks, frequency tables, mean, median and mode"
+      ],
+      "caveat": "The probability tail of EXERCISE 14.1 could be recovered by hand into iemh1 ch7 by a teacher who reads each question. This extractor will not do it automatically."
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 15,
+      "unitTitle": "Design of the Question Paper, Set I",
+      "target": null,
+      "confidence": "none",
+      "why": "Not a chapter - a blueprint and a full mock paper with a weightage table.",
+      "evidence": [
+        "ieep215.pdf: 'DESIGN OF THE QUESTION PAPER MATHEMATICS - CLASS IX'"
+      ]
+    },
+    {
+      "exemplarBook": "ieep2",
+      "unit": 16,
+      "unitTitle": "Design of the Question Paper, Set II",
+      "target": null,
+      "confidence": "none",
+      "why": "Same as unit 15.",
+      "evidence": [
+        "ieep216.pdf page 1: 'SET-II DESIGN OF THE QUESTION PAPER'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 1,
+      "unitTitle": "Chemical Reactions and Equations",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 1,
+        "chapterTitle": "Chemical Reactions and Equations"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name. Section 1.1 CHEMICAL EQUATIONS and 1.2 TYPES OF CHEMICAL REACTIONS cover writing and balancing equations, combination, decomposition, displacement, and oxidation-reduction, which is the whole of the Exemplar unit.",
+      "evidence": [
+        "jesc101 headings 1.1 CHEMICAL EQUATIONS, 1.2 TYPES OF CHEMICAL REACTIONS",
+        "'balanced chemical equation', 'redox' and 'decomposition reaction' all hit jesc101"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 2,
+      "unitTitle": "Acids, Bases and Salts",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 2,
+        "chapterTitle": "Acids, Bases and Salts"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name. Indicators, the pH scale, and the family of salts including bleaching powder and plaster of Paris are all taught here.",
+      "evidence": [
+        "'litmus', 'bleaching powder' and 'plaster of paris' hit jesc102"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 3,
+      "unitTitle": "Metals and Non-metals",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 3,
+        "chapterTitle": "Metals and Non-metals"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name. Section 3.2 CHEMICAL PROPERTIES OF METALS and 3.5 CORROSION; ionic compounds, extraction of metals and alloys are all present.",
+      "evidence": [
+        "jesc103 headings 3.2 CHEMICAL PROPERTIES OF METALS, 3.5 CORROSION",
+        "'ionic compound', 'extraction of metals' and 'alloy' hit jesc103"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 4,
+      "unitTitle": "Carbon and its Compounds",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 4,
+        "chapterTitle": "Carbon and its Compounds"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name. 4.1 BONDING IN CARBON, 4.2 VERSATILE NATURE OF CARBON, 4.3 CHEMICAL PROPERTIES OF CARBON COMPOUNDS, 4.4 ETHANOL AND ETHANOIC ACID, 4.5 SOAPS AND DETERGENTS.",
+      "evidence": [
+        "jesc104 headings 4.1-4.5",
+        "'covalent bond', 'homologous series' and 'esterification' hit jesc104"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 5,
+      "unitTitle": "Periodic Classification of Elements",
+      "target": null,
+      "confidence": "none",
+      "why": "Removed from Class 10 by the 2023 rationalisation, and the chapter is simply gone: jesc1 runs 1 Chemical Reactions, 2 Acids Bases and Salts, 3 Metals and Non-metals, 4 Carbon and its Compounds, then straight to 5 Life Processes. 'periodic table', 'Mendeleev', 'Dobereiner' and 'modern periodic' get zero hits across all thirteen chapters.",
+      "evidence": [
+        "zero hits for 'periodic table', 'Mendeleev', 'Dobereiner', 'modern periodic' over public/ncert/jesc1",
+        "jesc1 has 13 chapters where the pre-rationalisation book had 16"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 6,
+      "unitTitle": "Life Processes",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 5,
+        "chapterTitle": "Life Processes"
+      },
+      "confidence": "high",
+      "why": "Same chapter, renumbered from 6 to 5 by the loss of Periodic Classification. 5.2 NUTRITION, 5.3 RESPIRATION, 5.4 TRANSPORTATION, 5.5 EXCRETION.",
+      "evidence": [
+        "jesc105 headings 5.2-5.5",
+        "'photosynthesis', 'stomata', 'haemoglobin' and 'nephron' hit jesc105"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 7,
+      "unitTitle": "Control and Coordination",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 6,
+        "chapterTitle": "Control and Coordination"
+      },
+      "confidence": "high",
+      "why": "Same chapter, renumbered from 7 to 6. Section 6.2 COORDINATION IN PLANTS; the nervous system, reflex arc, plant hormones and the endocrine system are all present.",
+      "evidence": [
+        "jesc106 heading 6.2 COORDINATION IN PLANTS",
+        "'reflex arc', 'neuron', 'auxin', 'thyroxin' and 'endocrine' hit jesc106"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 8,
+      "unitTitle": "How do Organisms Reproduce?",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 7,
+        "chapterTitle": "How do Organisms Reproduce?"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, renumbered from 8 to 7. Section 7.3 SEXUAL REPRODUCTION; binary fission, the placenta, contraception and reproductive health are all still taught.",
+      "evidence": [
+        "jesc107 heading 7.3 SEXUAL REPRODUCTION",
+        "'binary fission', 'placenta', 'contracept' and 'reproductive health' hit jesc107"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 9,
+      "unitTitle": "Heredity and Evolution",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 8,
+        "chapterTitle": "Heredity"
+      },
+      "confidence": "medium",
+      "why": "The heredity half of the Exemplar unit is chapter 8, which is titled 'Heredity' rather than 'Heredity and Evolution' precisely because the evolution half was cut. Section 8.2 HEREDITY; Mendel and dominant/recessive traits are taught there.",
+      "evidence": [
+        "jesc108 heading 8.2 HEREDITY",
+        "'Mendel' and 'dominant' hit jesc108",
+        "zero hits for 'Darwin', 'speciation', 'natural selection' and 'vestigial' across all of jesc1"
+      ],
+      "caveat": "This is the Class 10 equivalent of the Class 9 mole note, and it is larger. Evolution - natural selection, speciation, fossils as evidence, homologous and analogous organs, human evolution - was removed by the 2023 rationalisation, and the chapter title records the removal. Exemplar questions on evolution are filed here because heredity and evolution were one chapter when the Exemplar was written, and they are on a topic this chapter no longer teaches. A student meeting them under 'Heredity' is being asked something the book does not answer. A teacher should read the unit's questions before setting them."
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 10,
+      "unitTitle": "Light - Reflection and Refraction",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 9,
+        "chapterTitle": "Light - Reflection and Refraction"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, renumbered from 10 to 9. Spherical mirrors, the mirror formula, refraction, refractive index and the lens formula are all present.",
+      "evidence": [
+        "'concave mirror', 'refractive index' and 'lens formula' hit jesc109"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 11,
+      "unitTitle": "The Human Eye and the Colourful World",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 10,
+        "chapterTitle": "The Human Eye and the Colourful World"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, renumbered from 11 to 10. 10.1 THE HUMAN EYE, 10.3 REFRACTION OF LIGHT THROUGH A PRISM, 10.5 ATMOSPHERIC REFRACTION, 10.6 SCATTERING OF LIGHT.",
+      "evidence": [
+        "jesc110 headings 10.1, 10.3, 10.5, 10.6",
+        "'myopia', 'prism', 'Tyndall' and 'scattering' hit jesc110"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 12,
+      "unitTitle": "Electricity",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 11,
+        "chapterTitle": "Electricity"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, renumbered from 12 to 11. 11.1 ELECTRIC CURRENT AND CIRCUIT, 11.4 OHM'S LAW, 11.6 RESISTANCE OF A SYSTEM OF RESISTORS, 11.7 HEATING EFFECT OF ELECTRIC CURRENT.",
+      "evidence": [
+        "jesc111 headings 11.1, 11.4, 11.6, 11.7",
+        "'resistivity' hits jesc111"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 13,
+      "unitTitle": "Magnetic Effects of Electric Current",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 12,
+        "chapterTitle": "Magnetic Effects of Electric Current"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, renumbered from 13 to 12. 12.1 MAGNETIC FIELD AND FIELD LINES, 12.2.2 Right-Hand Thumb Rule, 12.2.4 Magnetic Field due to a Current in a Solenoid, 12.4 DOMESTIC ELECTRIC CIRCUITS; the electric motor, Fleming's rules and the generator are all still there.",
+      "evidence": [
+        "jesc112 headings 12.1, 12.2.1-12.2.4, 12.4",
+        "'solenoid', 'electric motor', 'electric generator' and 'Fleming' hit jesc112"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 14,
+      "unitTitle": "Sources of Energy",
+      "target": null,
+      "confidence": "none",
+      "why": "Removed from Class 10 by the 2023 rationalisation. There is no energy-sources chapter in jesc1 and none of its content survives elsewhere: 'biogas', 'solar cooker' and 'nuclear energy' get zero hits across all thirteen chapters.",
+      "evidence": [
+        "zero hits for 'biogas', 'solar cooker', 'nuclear energy' over public/ncert/jesc1"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 15,
+      "unitTitle": "Our Environment",
+      "target": {
+        "bookCode": "jesc1",
+        "chapter": 13,
+        "chapterTitle": "Our Environment"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name, now the last chapter at 13. 13.1 ECOSYSTEM - WHAT ARE ITS COMPONENTS?, 13.1.1 Food Chains and Webs, 13.2.1 Ozone Layer and How it is Getting Depleted, 13.2.2 Managing the Garbage we Produce.",
+      "evidence": [
+        "jesc113 headings 13.1, 13.1.1, 13.2.1, 13.2.2",
+        "'food chain', 'trophic', 'ozone layer' and 'biodegradable' hit jesc113"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 16,
+      "unitTitle": "Management of Natural Resources",
+      "target": null,
+      "confidence": "none",
+      "why": "Removed from Class 10 by the 2023 rationalisation. 'Chipko', 'watershed', 'coliform' and 'Ganga' get zero hits across jesc1, and no chapter covers forests and wildlife, water harvesting, or the sustainable use of coal and petroleum. Our Environment (ch13) is the topical near-miss and it is not the same chapter: it stops at ecosystems, the ozone layer and waste.",
+      "evidence": [
+        "zero hits for 'Chipko', 'watershed', 'coliform', 'Ganga' over public/ncert/jesc1",
+        "jesc113 headings cover ecosystems, ozone and garbage only"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 17,
+      "unitTitle": "Sample Question Paper I",
+      "target": null,
+      "confidence": "none",
+      "why": "Not a chapter. A whole mock paper drawing on every unit, whose MCQs are re-printed from the unit exercises; filing it under any one chapter would be wrong and extracting it would duplicate questions already taken from the units.",
+      "evidence": [
+        "jeep117.pdf page 1: 'SCIENCE CLASS X (THEORY) SAMPLE QUESTION PAPER-I'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 18,
+      "unitTitle": "Sample Question Paper II",
+      "target": null,
+      "confidence": "none",
+      "why": "Same as unit 17 - a mock paper, not a chapter.",
+      "evidence": [
+        "jeep118.pdf page 1: 'SAMPLE QUESTION PAPER-II'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep1",
+      "unit": 19,
+      "unitTitle": "Design of the Sample Question Paper",
+      "target": null,
+      "confidence": "none",
+      "why": "Not a chapter - a blueprint with a weightage table.",
+      "evidence": [
+        "jeep119.pdf page 1: 'Appendix-I DESIGN OF THE SAMPLE QUESTION PAPER SCIENCE - CLASS - X'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 1,
+      "unitTitle": "Real Numbers",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 1,
+        "chapterTitle": "Real Numbers"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 1.2 The Fundamental Theorem of Arithmetic, 1.3 Revisiting Irrational Numbers.",
+      "evidence": [
+        "jemh101 headings 1.1-1.4"
+      ],
+      "caveat": "Rationalisation cut two topics the Exemplar unit still tests: Euclid's division algorithm as a method for HCF, and the criterion for a terminating decimal expansion. Both survive only in the chapter's introductory paragraph, which still promises them - the sections and the two remaining exercises do not deliver them. Questions on either are correctly filed and out of syllabus."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 2,
+      "unitTitle": "Polynomials",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 2,
+        "chapterTitle": "Polynomials"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 2.2 Geometrical Meaning of the Zeroes of a Polynomial, 2.3 Relationship between Zeroes and Coefficients of a Polynomial.",
+      "evidence": [
+        "jemh102 headings 2.1-2.4"
+      ],
+      "caveat": "The division algorithm for polynomials was cut; the chapter's introduction still says it will be studied, but there is no section and no exercise for it. Exemplar questions on dividing polynomials are out of syllabus."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 3,
+      "unitTitle": "Pair of Linear Equations in Two Variables",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 3,
+        "chapterTitle": "Pair of Linear Equations in Two Variables"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 3.2 Graphical Method of Solution, 3.3 Algebraic Methods of Solving a Pair of Linear Equations.",
+      "evidence": [
+        "jemh103 headings 3.1-3.4"
+      ],
+      "caveat": "The cross-multiplication method and equations reducible to a pair of linear equations were cut; substitution and elimination remain."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 4,
+      "unitTitle": "Quadratic Equations",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 4,
+        "chapterTitle": "Quadratic Equations"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 4.2 Quadratic Equations, 4.3 Solution of a Quadratic Equation by Factorisation, 4.4 Nature of Roots.",
+      "evidence": [
+        "jemh104 headings 4.1-4.5"
+      ],
+      "caveat": "Solving by completing the square was cut ('completing the square' gets zero hits); factorisation and the discriminant remain."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 5,
+      "unitTitle": "Arithmetic Progressions",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 5,
+        "chapterTitle": "Arithmetic Progressions"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 5.2 Arithmetic Progressions, 5.3 nth Term of an AP, 5.4 Sum of First n Terms of an AP.",
+      "evidence": [
+        "jemh105 headings 5.1-5.5, including '5.3 nth Term of an AP'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 6,
+      "unitTitle": "Triangles",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 6,
+        "chapterTitle": "Triangles"
+      },
+      "confidence": "medium",
+      "why": "Same chapter under the same name and number, and similarity - the spine of the Exemplar unit - is intact: 6.2 Similar Figures, 6.3 Similarity of Triangles, 6.4 Criteria for Similarity of Triangles.",
+      "evidence": [
+        "jemh106 headings 6.1-6.5"
+      ],
+      "caveat": "Medium rather than high because two topics the Exemplar unit leans on were cut: the areas of similar triangles, and the Pythagoras theorem with its converse. The chapter's introduction still promises 'a simple proof of Pythagoras Theorem', but there is no section for it - it survives as a fact used, not a result proved. Exemplar questions that turn on the ratio of areas, or on proving a triangle right-angled, are out of syllabus."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 7,
+      "unitTitle": "Coordinate Geometry",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 7,
+        "chapterTitle": "Coordinate Geometry"
+      },
+      "confidence": "high",
+      "why": "Same chapter under the same name and number. 7.2 Distance Formula, 7.3 Section Formula.",
+      "evidence": [
+        "jemh107 headings 7.1-7.4"
+      ],
+      "caveat": "Finding the area of a triangle from the coordinates of its vertices was cut ('area of a triangle' gets zero hits in jemh1)."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 8,
+      "unitTitle": "Introduction to Trigonometry and its Applications",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 8,
+        "chapterTitle": "Introduction to Trigonometry"
+      },
+      "exceptions": [
+        {
+          "from": 15,
+          "to": 15,
+          "target": {
+            "bookCode": "jemh1",
+            "chapter": 9,
+            "chapterTitle": "Some Applications of Trigonometry"
+          },
+          "confidence": "high",
+          "why": "Q15 is a heights-and-distances problem (a pole and its shadow, find the Sun's elevation), which is jemh1 ch9 section 9.1, not the ratios-and-identities chapter the rest of the exercise belongs to."
+        }
+      ],
+      "confidence": "high",
+      "why": "The Exemplar unit is a superset of two current chapters, and its MCQ exercise breaks cleanly between them. EXERCISE 8.1 runs fifteen questions: Q1-Q14 are trigonometric ratios and identities, which is jemh1 ch8 (8.2 Trigonometric Ratios, 8.3 Ratios of Some Specific Angles, 8.4 Trigonometric Identities); Q15 is a heights-and-distances problem, which is ch9. The break was read off the exercise, so the exception below is a fact about it rather than a judgement about each question.",
+      "evidence": [
+        "jemh108 headings 8.1-8.5, jemh109 heading 9.1 Heights and Distances",
+        "jeep208 EXERCISE 8.1 Q15: 'A pole 6 m high casts a shadow ... m long on the ground, then the Sun's ...' - the only heights-and-distances question in the exercise"
+      ],
+      "caveat": "Trigonometric ratios of complementary angles were cut from ch8 ('complementary angles' gets zero hits in jemh1), and several questions in this exercise are built on them - Q3, Q5, Q6 and Q7 among them. They are filed in the right chapter and are out of syllabus."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 9,
+      "unitTitle": "Circles",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 10,
+        "chapterTitle": "Circles"
+      },
+      "confidence": "high",
+      "why": "Same chapter, renumbered from 9 to 10 by the split of trigonometry into two chapters. 10.2 Tangent to a Circle, 10.3 Number of Tangents from a Point on a Circle - which is the whole of the Exemplar unit.",
+      "evidence": [
+        "jemh110 headings 10.1-10.3"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 10,
+      "unitTitle": "Constructions",
+      "target": null,
+      "confidence": "none",
+      "why": "Removed from Class 10 by the 2023 rationalisation. The pre-rationalisation book had a Constructions chapter; jemh1 now has fourteen chapters and none of them is it - dividing a line segment in a ratio, and constructing tangents to a circle, are taught nowhere.",
+      "evidence": [
+        "jemh1 chapter list runs ... 10 Circles, 11 Areas Related to Circles, 12 Surface Areas and Volumes, 13 Statistics, 14 Probability - no Constructions",
+        "the only 'construction' hits are incidental uses of the word inside other chapters"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 11,
+      "unitTitle": "Area Related to Circles",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 11,
+        "chapterTitle": "Areas Related to Circles"
+      },
+      "confidence": "medium",
+      "why": "Same chapter under nearly the same name and the same number, and the core of the Exemplar unit - sectors and segments - is what the chapter is now about: 11.1 Areas of Sector and Segment of a Circle.",
+      "evidence": [
+        "jemh111 headings 11.1-11.2"
+      ],
+      "caveat": "Medium rather than high because the chapter has been cut down to a single section. The circumference and area of a circle, and areas of combinations of plane figures, were removed ('combinations of plane figures' gets zero hits), and a good part of the Exemplar unit assumes them."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 12,
+      "unitTitle": "Surface Areas and Volumes",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 12,
+        "chapterTitle": "Surface Areas and Volumes"
+      },
+      "confidence": "medium",
+      "why": "Same chapter under the same name and number. 12.2 Surface Area of a Combination of Solids, 12.3 Volume of a Combination of Solids.",
+      "evidence": [
+        "jemh112 headings 12.1-12.4"
+      ],
+      "caveat": "Medium rather than high: the frustum of a cone and the conversion of a solid from one shape to another were both cut ('frustum' and 'conversion of solid' get zero hits), and the Exemplar unit tests both."
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 13,
+      "unitTitle": "Statistics and Probability",
+      "target": {
+        "bookCode": "jemh1",
+        "chapter": 13,
+        "chapterTitle": "Statistics"
+      },
+      "exceptions": [
+        {
+          "from": 12,
+          "to": 26,
+          "target": {
+            "bookCode": "jemh1",
+            "chapter": 14,
+            "chapterTitle": "Probability"
+          },
+          "confidence": "high",
+          "why": "Q12 onwards are probability questions - impossible events, complementary events, cards, dice and leap years - which is jemh1 ch14. Q12 is the first: 'If an event cannot occur, then its probability is'."
+        }
+      ],
+      "confidence": "high",
+      "why": "Another superset of two current chapters with a clean break in its MCQ exercise. EXERCISE 13.1 runs twenty-six questions: Q1-Q11 are grouped data, class marks, mean, median and ogives, which is jemh1 ch13 (13.2 Mean, 13.3 Mode, 13.4 Median of Grouped Data); Q12-Q26 are probability, which is ch14. The break was read off the exercise.",
+      "evidence": [
+        "jemh113 headings 13.1-13.5, jemh114 heading 14.1 Probability - A Theoretical Approach",
+        "jeep213 EXERCISE 13.1 Q11 'Consider the following distribution :' then Q12 'If an event cannot occur, then its probability is'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 14,
+      "unitTitle": "Design of the Question Paper, Set I",
+      "target": null,
+      "confidence": "none",
+      "why": "Not a chapter - a blueprint and a full mock paper with a weightage table.",
+      "evidence": [
+        "jeep214.pdf page 1: 'SET-I DESIGN OF THE QUESTION PAPER Mathematics Class X'"
+      ]
+    },
+    {
+      "exemplarBook": "jeep2",
+      "unit": 15,
+      "unitTitle": "Design of the Question Paper, Set II",
+      "target": null,
+      "confidence": "none",
+      "why": "Same as unit 14.",
+      "evidence": [
+        "jeep215.pdf page 1: 'SET-II DESIGN OF THE QUESTION PAPER Mathematics Class X'"
+      ]
+    }
+  ]
+}

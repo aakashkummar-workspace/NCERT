@@ -1,0 +1,2966 @@
+{
+  "generatedAt": "2026-09-01",
+  "source": "Authored against the NCERT Class 9 Social Science textbook 'Understanding Society: India and Beyond, Part 1' (bookCode iest1, 9 chapters). CBSE holds no Class 9 board exam and NCERT's Exemplar series covers only Science and Mathematics, so Class 9 Social Science has no official question source; every question here was written from the chapter text itself, extracted from public/ncert/iest1/*.pdf and read in full before authoring. Draft for teacher review - see data/questions.socialscience9.md for grounding, distractor rationale and flagged uncertainties.",
+  "questions": [
+    {
+      "id": "iest1-01-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "In the chapter's own words, Social Science is best described as:",
+      "options": [
+        "the study of governments and their laws",
+        "the systematic study of human society",
+        "the study of the natural world and its laws",
+        "the study of past events and their dates"
+      ],
+      "answer": 1,
+      "explanation": "The chapter defines Social Science as 'the systematic study of human society'. It does not only tell us what happened or where things are located; it explains why events occur and how society, environment, government and economy are connected. Physics, Chemistry and Biology study the natural world; Social Science studies society.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch1, opening section, p.1"
+    },
+    {
+      "id": "iest1-01-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "Which set names the four core disciplines that Social Science draws from in Grades 9-10?",
+      "options": [
+        "History, Sociology, Psychology, Economics",
+        "Geography, History, Anthropology, Philosophy",
+        "Political Science, Economics, Sociology, Psychology",
+        "Geography, History, Political Science, Economics"
+      ],
+      "answer": 3,
+      "explanation": "The chapter names Geography, History, Political Science and Economics as the four core disciplines for Grades 9-10. Sociology, Philosophy, Anthropology and Psychology are named too, but as part of the wider Social Science family that is developed in higher grades.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch1, 'Social Science as a Study of Disciplines', p.4"
+    },
+    {
+      "id": "iest1-01-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "The Panchamahabhutas are the five great elements. Which of these is NOT one of them?",
+      "options": [
+        "Space (Akasha)",
+        "Fire (Agni)",
+        "Metal",
+        "Water (Apah)"
+      ],
+      "answer": 2,
+      "explanation": "The five are earth (Prithvi), water (Apah), fire (Agni), air (Vayu) and space (Akasha). Metal belongs to a different five-element scheme and is not among them. The chapter presents the Panchamahabhutas as an early attempt to understand nature as one interconnected system in which human life is embedded.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, margin note on Panchamahabhutas, p.3"
+    },
+    {
+      "id": "iest1-01-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "The expression vasudhaiva kutumbakam means:",
+      "options": [
+        "the world is one family",
+        "knowledge is the highest wealth",
+        "truth alone triumphs",
+        "the ruler's first duty is the people's welfare"
+      ],
+      "answer": 0,
+      "explanation": "Vasudhaiva kutumbakam means 'the world is one family'. The chapter uses it to show that the interconnectedness of human societies across regions and cultures - what Social Science studies as global interaction - is an old idea in India's knowledge traditions.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch1, 'Understanding Society through Time and Traditions', p.3"
+    },
+    {
+      "id": "iest1-01-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "The Arthashastra, attributed to Kautilya and composed about 2,300 years ago, examined:",
+      "options": [
+        "the treatment of physical and mental ailments",
+        "the movement of planets and the prediction of rainfall",
+        "administration, economic management, taxation and the duties of rulers",
+        "the rules of Sanskrit grammar and poetic metre"
+      ],
+      "answer": 2,
+      "explanation": "The chapter cites the Arthashastra as evidence that systematic thinking about governance and the economy existed in India long before modern academic disciplines took shape. It dealt with administration, economic management, taxation and what a ruler owed the people.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, 'Understanding Society through Time and Traditions', p.3"
+    },
+    {
+      "id": "iest1-01-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "A historian studying coins issued by King Samudragupta is using which kind of source?",
+      "options": [
+        "Genealogical",
+        "Numismatic",
+        "Epigraphic",
+        "Literary"
+      ],
+      "answer": 1,
+      "explanation": "Numismatic sources are coins, currency and medals. Their metal content, inscriptions and symbols tell historians about the economy, chronology, rulers, trade and political boundaries. Inscriptions cut into stone or metal are epigraphic, which is a separate category.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, margin note on Numismatic Source and Fig. 1.8, p.8"
+    },
+    {
+      "id": "iest1-01-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "A Brahmi inscription cut into a stone pillar of the Gupta period is an example of:",
+      "options": [
+        "a numismatic source",
+        "a literary source",
+        "an oral tradition",
+        "an epigraphic source"
+      ],
+      "answer": 3,
+      "explanation": "An epigraphic source is a text, decree or record inscribed on a durable material such as stone, metal plates or rock surfaces. Such inscriptions give direct evidence about events, rulers, administration and society. Coins would be numismatic; folklore would be oral tradition.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, margin note on Epigraphic Source and Fig. 1.6, p.8"
+    },
+    {
+      "id": "iest1-01-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "Which of these is an archaeological source rather than a literary one?",
+      "options": [
+        "A memoir written by a ruler",
+        "A terracotta figurine from the Sindhu-Sarasvati Civilisation",
+        "A traveller's account of his journey through India",
+        "A revenue document listing land holdings"
+      ],
+      "answer": 1,
+      "explanation": "Archaeological sources are material remains - monuments, architectural structures, excavated sites, artefacts, sculptures and paintings. Travelogues, revenue documents and memoirs are all listed by the chapter as literary sources, because they are written texts rather than objects.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, 'History' section and Figs. 1.2-1.5, pp.6-7"
+    },
+    {
+      "id": "iest1-01-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "Which discipline asks where things are located, why they are found there, and how places near or distant affect one another?",
+      "options": [
+        "Geography",
+        "History",
+        "Economics",
+        "Political Science"
+      ],
+      "answer": 0,
+      "explanation": "Those are the questions the chapter puts at the centre of Geography. Geography combines a spatial perspective (location and its significance) with a temporal one (change over time), and views the world as a system of interdependencies.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch1, 'Geography', p.5"
+    },
+    {
+      "id": "iest1-01-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "The chapter cites the Panchayati Raj system as an example of:",
+      "options": [
+        "the working of India's foreign policy",
+        "state control over economic production",
+        "grassroots democracy that gives citizens a voice in local development planning",
+        "the separation of powers between the three organs of government"
+      ],
+      "answer": 2,
+      "explanation": "Political Science studies how power is distributed and exercised. The chapter uses Panchayati Raj to show that political power lives not only in formal national institutions but in local self-governance, where villagers take part in planning their own development.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, 'Political Science', p.9"
+    },
+    {
+      "id": "iest1-01-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "mcq",
+      "question": "According to the chapter, sustainable growth means growth that:",
+      "options": [
+        "raises national income as fast as possible",
+        "keeps prices stable in every market",
+        "distributes all resources equally among all citizens",
+        "meets present needs without harming the ability of future generations to meet theirs"
+      ],
+      "answer": 3,
+      "explanation": "The chapter defines sustainable growth in exactly these words while discussing Economics. Fast growth and stable prices are goals a government may balance, but neither is what sustainability means, which is about not borrowing from the future.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, 'Economics', p.10"
+    },
+    {
+      "id": "iest1-01-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 1,
+      "type": "assertion-reason",
+      "question": "Assertion: Social Science is not a single subject but a group of related disciplines. Reason: Human society is complex, and no single field of study can fully explain it.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 0,
+      "explanation": "The chapter makes this argument with the drought example: one drought touches crops, farmers' incomes, government relief, migration and traditional coping practices at once. Because no single discipline can see all of that, Social Science has to be a family of disciplines. The reason is precisely why the assertion holds.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch1, 'Social Science as a Study of Disciplines', p.4"
+    },
+    {
+      "id": "iest1-02-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The theory of plate tectonics is credited in this chapter to:",
+      "options": [
+        "Charles Lyell",
+        "W.J. Morgan",
+        "Alfred Wegener",
+        "Varahamihira"
+      ],
+      "answer": 1,
+      "explanation": "The chapter opens the section on plate tectonics by naming W.J. Morgan as the scientist who gave the theory. It explains how the outermost layer of the Earth is broken into plates that move slowly over the semi-molten layer beneath them.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch2, 'Plate Tectonics', p.13"
+    },
+    {
+      "id": "iest1-02-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The lithosphere, which is broken into tectonic plates, consists of:",
+      "options": [
+        "the whole mantle",
+        "the outer core and the mantle",
+        "the crust together with the upper part of the mantle",
+        "the crust alone"
+      ],
+      "answer": 2,
+      "explanation": "The Earth has three main layers - crust, mantle and core. The rigid outer shell made of the crust plus the upper mantle is the lithosphere, and it is this shell that is broken into plates. Below it lies the semi-molten asthenosphere, which lets the plates move.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Plate Tectonics' and Fig. 2.1, p.14"
+    },
+    {
+      "id": "iest1-02-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "What makes the tectonic plates move?",
+      "options": [
+        "Convection currents in the mantle",
+        "The rotation of the Earth on its axis",
+        "The gravitational pull of the Moon",
+        "Ocean currents pressing on the sea floor"
+      ],
+      "answer": 0,
+      "explanation": "Heat from the core makes molten material in the mantle rise while cooler material sinks. This circulation sets up convection currents that push and pull the plates. The Earth's rotation and the Moon's pull act on the atmosphere and the tides, not on plate movement.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Plate Tectonics', p.15"
+    },
+    {
+      "id": "iest1-02-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The Himalaya was formed at which kind of plate boundary?",
+      "options": [
+        "A divergent boundary, where two plates moved apart",
+        "A transform boundary, where two plates slid past each other",
+        "A boundary where an oceanic plate sank beneath a continental plate",
+        "A convergent boundary, where two continental plates collided"
+      ],
+      "answer": 3,
+      "explanation": "At a convergent boundary the plates move towards each other. When two continental plates collide, neither sinks easily, so the crust is crumpled upward into fold mountains such as the Himalaya. When an oceanic plate meets a continental plate the oceanic plate sinks instead, producing volcanoes and earthquakes rather than fold mountains.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Plate Tectonics', p.15"
+    },
+    {
+      "id": "iest1-02-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The Mid-Atlantic Ridge is the chapter's example of a feature formed at:",
+      "options": [
+        "a transform boundary",
+        "a hotspot far from any boundary",
+        "a divergent boundary",
+        "a convergent boundary"
+      ],
+      "answer": 2,
+      "explanation": "At a divergent boundary the plates move away from each other, magma rises from below into the gap, and new crust is created. Mid-ocean ridges such as the Mid-Atlantic Ridge are built this way. No crust is created or destroyed at a transform boundary.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Plate Tectonics', p.15"
+    },
+    {
+      "id": "iest1-02-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The San Andreas Fault in the United States is an example of a boundary where plates:",
+      "options": [
+        "sink one beneath the other and form volcanoes",
+        "slide past each other without creating or destroying crust",
+        "move towards each other and build fold mountains",
+        "move apart and form new crust"
+      ],
+      "answer": 1,
+      "explanation": "This is a transform boundary. Because the plates only grind past each other sideways, no crust is made or lost, but the sudden slipping releases energy - which is why this kind of boundary is known mainly for earthquakes.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Plate Tectonics', p.15"
+    },
+    {
+      "id": "iest1-02-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "The 'Ring of Fire', where most earthquakes and volcanoes occur, lies around the:",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean",
+        "Pacific Ocean"
+      ],
+      "answer": 3,
+      "explanation": "Most earthquakes and volcanoes occur along plate boundaries, and the belt of boundaries encircling the Pacific Ocean is so active that it is called the Ring of Fire. Comparing the plate map with the earthquake and volcano map shows the two patterns matching.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch2, 'Plate Tectonics' and Figs. 2.3-2.4, pp.16-17"
+    },
+    {
+      "id": "iest1-02-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "What is the essential difference between weathering and erosion?",
+      "options": [
+        "Weathering happens underground, while erosion happens on the surface",
+        "Weathering is slow, while erosion is always sudden",
+        "Weathering only breaks rock down, while erosion also moves the broken material away",
+        "Weathering is caused by water, while erosion is caused by wind"
+      ],
+      "answer": 2,
+      "explanation": "The chapter is explicit that weathering 'does not involve movement of the broken material, only the breaking down', whereas erosion is the wearing away and carrying of material from one place to another by water, wind, ice or waves. Both can be caused by water, and both are usually slow.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Weathering' and 'Erosion', pp.19-20"
+    },
+    {
+      "id": "iest1-02-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "Plant roots growing into cracks in a rock and splitting it apart is an example of:",
+      "options": [
+        "biological weathering",
+        "physical weathering",
+        "chemical weathering",
+        "glacial erosion"
+      ],
+      "answer": 0,
+      "explanation": "Biological weathering is caused by plants, animals or micro-organisms, and root-splitting is the chapter's own example of it. Physical weathering is breakage by temperature change, frost or wind; chemical weathering changes the minerals themselves through reaction with water, air or acids.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Weathering', pp.19-20"
+    },
+    {
+      "id": "iest1-02-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "Which of these is NOT listed as an agent of gradation?",
+      "options": [
+        "Glaciers",
+        "Groundwater",
+        "Earthquakes",
+        "Running water"
+      ],
+      "answer": 2,
+      "explanation": "The agents of gradation are running water, glaciers, wind, waves and groundwater - external forces that wear down, transport and deposit material and so level the surface. Earthquakes are an internal force of the Earth; they build and disturb relief rather than smooth it.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Agents of Gradation', pp.21-22"
+    },
+    {
+      "id": "iest1-02-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "Which landforms does the chapter place in the upper course of a river?",
+      "options": [
+        "Deltas, levees and alluvial fans",
+        "V-shaped valleys, waterfalls and rapids",
+        "Oxbow lakes and floodplains",
+        "Beaches, sand bars and sea cliffs"
+      ],
+      "answer": 1,
+      "explanation": "In the upper course the gradient is steep and erosion is strong, cutting V-shaped valleys and producing waterfalls and rapids. Oxbow lakes and floodplains belong to the middle course, deltas and levees to the lower course, and beaches and sea cliffs are coastal rather than river landforms.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Running Water', p.22"
+    },
+    {
+      "id": "iest1-02-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "A meander grows larger because the river:",
+      "options": [
+        "erodes the inner bank of a bend and deposits sediment on the outer bank",
+        "erodes its bed downward faster than sideways",
+        "carries no sediment at all in its middle course",
+        "erodes the outer bank of a bend and deposits sediment on the inner bank"
+      ],
+      "answer": 3,
+      "explanation": "Water moves fastest around the outside of a bend, so it cuts into the outer bank; on the slower inside it drops its load. Repeated over time this lateral erosion and deposition widens each bend into a large loop, and the fertile soil left along the banks is what makes meander country good farmland.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch2, 'Meander', pp.23-24"
+    },
+    {
+      "id": "iest1-02-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "A delta is formed:",
+      "options": [
+        "where a glacier melts and leaves its load behind",
+        "at the mouth of a river, where it deposits sediment on entering a sea, ocean or lake",
+        "in the upper course, where hard rock resists erosion",
+        "wherever a river bends sharply in its middle course"
+      ],
+      "answer": 1,
+      "explanation": "At its mouth a river slows down and drops the sediment it has carried from upstream, and over time these deposits build a fan-shaped or triangular area of land. Deltas are highly fertile, support crops such as rice and jute, and are also prone to flooding.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch2, 'Deltas', p.24"
+    },
+    {
+      "id": "iest1-02-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "A sea stack is formed when:",
+      "options": [
+        "an arch collapses, leaving an isolated pillar of rock standing",
+        "waves undercut the base of a coast and leave a steep rock face",
+        "a cliff retreats and leaves a flat area behind",
+        "sediment is deposited along the shoreline by waves"
+      ],
+      "answer": 0,
+      "explanation": "The chapter gives the sequence of coastal erosion: waves cut caves into weak rock, caves on opposite sides of a headland meet to form an arch, and when the arch finally collapses the isolated pillar left standing is a stack. A steep rock face is a cliff and the flat surface left as a cliff retreats is a wave-cut platform.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch2, coastal erosion landforms, p.26"
+    },
+    {
+      "id": "iest1-02-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "A bowl-shaped depression at the head of a glacier is called a:",
+      "options": [
+        "Fjord",
+        "Hanging valley",
+        "Cirque",
+        "Arete"
+      ],
+      "answer": 2,
+      "explanation": "A cirque is the bowl-shaped hollow carved at the head of a glacier. An arete is the sharp ridge left between two valleys, a hanging valley is where a smaller glacier joins a larger one, and a fjord is a deep narrow inlet where the sea has flooded a glacial valley.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Glaciers' and Fig. 2.17, p.27"
+    },
+    {
+      "id": "iest1-02-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "When two glaciers meet and their side moraines join in the middle, the result is a:",
+      "options": [
+        "Lateral moraine",
+        "Terminal moraine",
+        "Cirque",
+        "Medial moraine"
+      ],
+      "answer": 3,
+      "explanation": "Lateral moraines form along the sides of a glacier; when two glaciers merge, two lateral moraines come together in the centre of the combined ice stream as a medial moraine. A terminal moraine marks the furthest point the glacier advanced before melting back.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, moraines and Fig. 2.19, p.28"
+    },
+    {
+      "id": "iest1-02-017",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "mcq",
+      "question": "Crescent-shaped dunes that form where sand is limited and the wind blows mainly from one direction are called:",
+      "options": [
+        "Parabolic dunes",
+        "Barchan dunes",
+        "Star dunes",
+        "Longitudinal dunes"
+      ],
+      "answer": 1,
+      "explanation": "Barchan dunes are crescent-shaped and need limited sand and a single prevailing wind direction. Star dunes, with several arms, form where winds arrive from different directions; longitudinal dunes are long ridges parallel to the prevailing wind; parabolic dunes are U-shaped and often held in place by vegetation.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch2, 'Wind' - dunes, pp.30-31"
+    },
+    {
+      "id": "iest1-02-018",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 2,
+      "type": "assertion-reason",
+      "question": "Assertion: Glacial Lake Outburst Floods (GLOFs) cause sudden, destructive floods downstream. Reason: Rising temperatures melt glaciers rapidly, raising the water level of glacial lakes until their natural dams of ice or loose moraine give way.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 0,
+      "explanation": "The chapter describes exactly this chain: rapid melting enlarges the lake, pressure builds on a dam made only of ice or loose moraine, and heavy rain, an earthquake, an avalanche or a landslide can then break it. The stored water is released all at once, which is why a GLOF is sudden rather than gradual.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch2, 'GLOFs', p.35"
+    },
+    {
+      "id": "iest1-03-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Which gas makes up the largest share of the Earth's atmosphere?",
+      "options": [
+        "Argon (about 0.93%)",
+        "Carbon dioxide (about 0.04%)",
+        "Nitrogen (about 78%)",
+        "Oxygen (about 21%)"
+      ],
+      "answer": 2,
+      "explanation": "Nitrogen at about 78 per cent and oxygen at about 21 per cent are the two primary gases. Argon is under 1 per cent and carbon dioxide only about 0.04 per cent - small proportions, though carbon dioxide matters far more than its share suggests because it traps heat.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch3, 'Composition of the Atmosphere' and Fig. 3.2, p.40"
+    },
+    {
+      "id": "iest1-03-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "The proportion of water vapour in the atmosphere:",
+      "options": [
+        "varies, generally between 0.1 and 0.4 per cent",
+        "is fixed at about 21 per cent",
+        "is fixed at about 0.93 per cent",
+        "is the same at every altitude"
+      ],
+      "answer": 0,
+      "explanation": "Unlike the main gases, water vapour is variable - the chapter gives a usual range of 0.1 to 0.4 per cent. It is a small share but it is what makes cloud formation and precipitation possible. The composition of the atmosphere also changes with altitude.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Composition of the Atmosphere', p.40"
+    },
+    {
+      "id": "iest1-03-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Nearly all weather phenomena such as rainfall, fog and hail occur in the:",
+      "options": [
+        "Stratosphere",
+        "Mesosphere",
+        "Thermosphere",
+        "Troposphere"
+      ],
+      "answer": 3,
+      "explanation": "The troposphere, averaging about 12 kilometres in height, holds the air we breathe and most of the water vapour and clouds, so it is where weather happens. The stratosphere above it is largely free of clouds and weather disturbances.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere', p.41"
+    },
+    {
+      "id": "iest1-03-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Aeroplanes prefer to fly in the stratosphere because it:",
+      "options": [
+        "has the highest air density",
+        "is where most meteorites burn up",
+        "is free of clouds and other weather disturbances",
+        "is the layer closest to the Earth's surface"
+      ],
+      "answer": 2,
+      "explanation": "The stratosphere extends up to about 50 kilometres and is calm and cloud-free, which makes for a smooth flight. Air density is in fact highest near the surface and falls with altitude, and meteorites burn up higher still, in the mesosphere.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere', p.42"
+    },
+    {
+      "id": "iest1-03-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "The ozone layer, which filters the Sun's harmful ultraviolet radiation, lies in the:",
+      "options": [
+        "Exosphere",
+        "Stratosphere",
+        "Troposphere",
+        "Mesosphere"
+      ],
+      "answer": 1,
+      "explanation": "The chapter names the ozone layer as a notable feature of the stratosphere. Because ozone absorbs ultraviolet radiation, this is also the reason temperature does not simply keep falling with height above the troposphere.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere', p.42"
+    },
+    {
+      "id": "iest1-03-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Most meteorites entering from space burn up in the:",
+      "options": [
+        "Exosphere",
+        "Stratosphere",
+        "Troposphere",
+        "Mesosphere"
+      ],
+      "answer": 3,
+      "explanation": "The mesosphere is the third layer, extending to about 80 kilometres, and the chapter notes that most meteorites burn up there. Temperature also decreases with altitude in this layer, as it does in the troposphere.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere', p.42"
+    },
+    {
+      "id": "iest1-03-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "In which layer does temperature rise rapidly with increasing altitude?",
+      "options": [
+        "Mesosphere",
+        "Tropopause",
+        "Thermosphere",
+        "Troposphere"
+      ],
+      "answer": 2,
+      "explanation": "In the thermosphere the gas molecules absorb the Sun's X-rays and short-wave ultraviolet radiation, so temperature climbs steeply with height. The chapter warns that temperature decreases with altitude only in the troposphere and the mesosphere - a rule students often over-apply to the whole atmosphere.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere' and 'Don't Miss Out', p.42"
+    },
+    {
+      "id": "iest1-03-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "The auroras - the northern and southern lights - occur in the:",
+      "options": [
+        "Thermosphere",
+        "Stratosphere",
+        "Troposphere",
+        "Exosphere"
+      ],
+      "answer": 0,
+      "explanation": "The thermosphere is where the auroras occur, and it is also the layer that reflects radio waves back to Earth; the ionosphere is part of it. The aurora appears when charged particles of the solar wind are steered towards the magnetic poles and make atmospheric gases glow.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Structure of the Atmosphere' and Fig. 3.4, p.42"
+    },
+    {
+      "id": "iest1-03-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Climate, as distinct from weather, refers to conditions averaged over:",
+      "options": [
+        "one full season",
+        "exactly one year",
+        "a large area for an extended period, usually thirty years or more",
+        "a single day"
+      ],
+      "answer": 2,
+      "explanation": "Weather is the hour-to-hour and day-to-day state of the atmosphere. Climate is the sum total of weather conditions and variations over a large area for a long period, usually thirty years or more - which is why one unusually cold winter does not change a place's climate.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Weather and Climate', p.43"
+    },
+    {
+      "id": "iest1-03-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "A wind called a 'westerly' is one that:",
+      "options": [
+        "blows from west to east only in winter",
+        "blows from the west",
+        "blows towards the west",
+        "blows only in the western part of a country"
+      ],
+      "answer": 1,
+      "explanation": "The chapter states the naming rule plainly: winds are named after the direction they blow from, so a westerly comes from the west. Reading it as 'blowing towards the west' reverses every wind name on a map.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Don't Miss Out' on wind naming, p.45"
+    },
+    {
+      "id": "iest1-03-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "A sea breeze blows:",
+      "options": [
+        "from the land to the sea during the day",
+        "from the sea to the land at night",
+        "from the land to the sea at night",
+        "from the sea to the land during the day"
+      ],
+      "answer": 3,
+      "explanation": "By afternoon the land is warmer than the sea, so air rises over the land and a low-pressure region forms there; wind then blows in from the sea. At night the land cools faster than the sea and the flow reverses, giving the land breeze.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, land and sea breeze, Fig. 3.8, p.46"
+    },
+    {
+      "id": "iest1-03-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "How many distinct seasons does the India Meteorological Department recognise for India?",
+      "options": [
+        "Six",
+        "Four",
+        "Two",
+        "Three"
+      ],
+      "answer": 1,
+      "explanation": "The IMD recognises four seasons - winter, summer or pre-monsoon, monsoon, and post-monsoon. Six is the traditional Indian reckoning of ritus, and Himalayan states additionally experience autumn and spring, but the IMD's official count is four.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch3, 'Seasons in India', p.47"
+    },
+    {
+      "id": "iest1-03-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "The word 'monsoon' comes from the Arabic word mausim, which means:",
+      "options": [
+        "season",
+        "rain",
+        "wind",
+        "storm"
+      ],
+      "answer": 0,
+      "explanation": "Arab traders coming to India named the seasonal reversal of the wind system after mausim, meaning season. Sailors noticed the reversal early because they depended on it to travel, and the word describes the seasonal switch of wind direction rather than the rain itself.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Monsoon', p.49"
+    },
+    {
+      "id": "iest1-03-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "Why does the south-west monsoon blow from the sea towards the land in summer?",
+      "options": [
+        "The Earth's rotation forces all summer winds inland",
+        "Melting Himalayan snow draws moist air northward",
+        "The land heats faster than the ocean, creating low pressure over the subcontinent",
+        "The ocean heats faster than the land, creating low pressure over the sea"
+      ],
+      "answer": 2,
+      "explanation": "In summer the Indian landmass warms faster than the surrounding oceans, so a low-pressure area forms over land while the cooler Indian Ocean stays at higher pressure. Since wind always moves from high to low pressure, moist air is drawn in from the sea, bringing most of India's annual rainfall.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch3, 'Monsoon', p.49"
+    },
+    {
+      "id": "iest1-03-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "The north-east or winter monsoon brings significant rainfall mainly to:",
+      "options": [
+        "Punjab and Haryana",
+        "Rajasthan and Gujarat",
+        "Assam and Meghalaya",
+        "Tamil Nadu, Andhra Pradesh and parts of Karnataka"
+      ],
+      "answer": 3,
+      "explanation": "The winter monsoon blows from land to sea and is usually cold and dry. Where it crosses the Bay of Bengal it picks up moisture, so the south-eastern coast - Tamil Nadu, Andhra Pradesh and parts of Karnataka - gets rain from it while most of the country stays dry.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Monsoon', p.52"
+    },
+    {
+      "id": "iest1-03-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "mcq",
+      "question": "In the 2025 Punjab floods case study, which factor is described as a human-made cause rather than a natural one?",
+      "options": [
+        "Rain falling in Himachal Pradesh and Jammu and Kashmir",
+        "Weak and old river embankments and building too close to the rivers",
+        "Very heavy monsoon rainfall over Punjab",
+        "Western disturbances bringing extra moisture"
+      ],
+      "answer": 1,
+      "explanation": "The case study separates the two. Heavy monsoon rain, western disturbances and rain in the upper catchments were natural causes. Weak old embankments (dhusi bandh), houses and farms built too close to the rivers, silting of rivers and dams, and late flood warnings were the human-made ones that made the damage worse.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch3, 'Punjab Floods 2025: A Case Study', pp.54-55"
+    },
+    {
+      "id": "iest1-03-017",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 3,
+      "type": "assertion-reason",
+      "question": "Assertion: High-pressure areas are usually associated with clear and sunny skies. Reason: Air always moves from low-pressure areas to high-pressure areas.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 2,
+      "explanation": "The assertion is correct: cold heavy air sinks in a high-pressure area, and sinking air does not form clouds, so the sky stays clear. The reason reverses the rule - air always moves from high pressure to low pressure, which is what makes wind blow in the first place.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch3, 'Atmospheric pressure' and 'Wind', p.45"
+    },
+    {
+      "id": "iest1-04-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Which early writing system has still not been deciphered?",
+      "options": [
+        "Egyptian hieroglyphs",
+        "Brahmi",
+        "The Harappan script (Sindhu lipi)",
+        "Sumerian cuneiform"
+      ],
+      "answer": 2,
+      "explanation": "The Harappans used a pictographic script found on seals and pottery, but it has not yet been read, so we cannot hear the Harappans in their own words. Cuneiform and hieroglyphs have both been deciphered, and Brahmi - used from about 400 BCE and formalised under Ashoka - is read as well.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch4, opening section, p.61"
+    },
+    {
+      "id": "iest1-04-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Which was the first hominin to move out of Africa?",
+      "options": [
+        "Homo erectus",
+        "Homo habilis",
+        "Homo neanderthalensis",
+        "Homo sapiens"
+      ],
+      "answer": 0,
+      "explanation": "Homo erectus, the maker of handaxes and cleavers, was the first to leave Africa, spreading into Asia and Europe between about 2 and 0.5 million years ago. Homo habilis is known from Africa itself; Homo sapiens evolved in Africa around 300,000 years ago and left much later.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Why Should We Study Early Human History?', p.64"
+    },
+    {
+      "id": "iest1-04-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Homo habilis, the 'handy man' who made chopper stone tools, is associated with which site?",
+      "options": [
+        "Bhimbetka in Madhya Pradesh",
+        "Mehrgarh on the Bolan river",
+        "Attirampakkam in Tamil Nadu",
+        "Olduvai Gorge in Tanzania and Kenya"
+      ],
+      "answer": 3,
+      "explanation": "Homo habilis lived in Africa, especially at Olduvai Gorge in Tanzania and Kenya. Bhimbetka and Attirampakkam are Indian sites of much later human occupation, and Mehrgarh is a Neolithic farming village, not a site of early hominin fossils.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Who Were Our Human Ancestors?' and Fig. 4.6, p.66"
+    },
+    {
+      "id": "iest1-04-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Attirampakkam, dated to about 1.5-1.7 million years ago, is in which present-day state?",
+      "options": [
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Tamil Nadu",
+        "Karnataka"
+      ],
+      "answer": 2,
+      "explanation": "Attirampakkam in Tamil Nadu and Isampur in Karnataka (about 1.2 million years old) are the chapter's two dated examples of very early occupation in the subcontinent, where handaxes, cleavers, scrapers and choppers of quartzite and limestone were found alongside animal fossils.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Palaeolithic Hunter-Gatherers', p.68"
+    },
+    {
+      "id": "iest1-04-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Very small stone tools called microliths are characteristic of which period?",
+      "options": [
+        "Chalcolithic",
+        "Mesolithic",
+        "Lower Palaeolithic",
+        "Neolithic"
+      ],
+      "answer": 1,
+      "explanation": "Microlithic tools mark the Mesolithic, the transitional phase between hunting-gathering and agriculture. The Lower Palaeolithic is known for large tools such as handaxes and cleavers; the Neolithic for polished stone tools; the Chalcolithic for copper used alongside stone.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, Fig. 4.7 and 'Mesolithic Hunter-Gatherers', pp.67, 70"
+    },
+    {
+      "id": "iest1-04-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Bhimbetka in Madhya Pradesh, a World Heritage Site, is known for:",
+      "options": [
+        "the earliest evidence of ploughed fields",
+        "the oldest agricultural village in the subcontinent",
+        "a large Harappan dockyard",
+        "hundreds of painted rock shelters with Mesolithic and earlier occupation"
+      ],
+      "answer": 3,
+      "explanation": "Bhimbetka preserves hundreds of painted rock shelters used in the Mesolithic and earlier. The ploughed field is at Kalibangan, the oldest farming village is Mehrgarh, and the dockyard is at Lothal - all Harappan or Neolithic sites of a much later date.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch4, 'Mesolithic Hunter-Gatherers', p.70"
+    },
+    {
+      "id": "iest1-04-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "What was the hallmark of the Neolithic revolution?",
+      "options": [
+        "The invention of writing",
+        "The smelting of iron",
+        "The domestication of selected plants and animals",
+        "The first use of stone tools"
+      ],
+      "answer": 2,
+      "explanation": "The chapter identifies domestication - bringing selected plants and animals under human control and breeding them - as the hallmark of the Neolithic revolution. Stone tools are far older, writing came with the Bronze Age, and iron smelting belongs to the Iron Age.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'The Neolithic Revolution', p.71"
+    },
+    {
+      "id": "iest1-04-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The oldest Neolithic site and earliest agricultural village of the Indian subcontinent, dating to about 7000 BCE, is:",
+      "options": [
+        "Mehrgarh on the Bolan river",
+        "Sanganakallu in Karnataka",
+        "Kalibangan in Rajasthan",
+        "Burzahom in Kashmir"
+      ],
+      "answer": 0,
+      "explanation": "Mehrgarh, on the Bolan river in present-day Pakistan, dates to about 7000 BCE. Its people built sun-dried brick houses and granaries, cultivated wheat and barley, raised sheep, goats and zebu cattle, and were the first here to make copper objects, entering the Chalcolithic by about 4000 BCE.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Neolithic Period in Indian Subcontinent', p.73"
+    },
+    {
+      "id": "iest1-04-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The ploughed field at Kalibangan, showing horizontal and vertical furrows, is evidence of:",
+      "options": [
+        "an abandoned settlement",
+        "canal irrigation from the Indus",
+        "double crop cultivation, like today's Rabi and Kharif seasons",
+        "the earliest use of iron ploughshares"
+      ],
+      "answer": 2,
+      "explanation": "Furrows running in two directions across the same field show that two crops were grown, a practice close to the Rabi and Kharif cycle followed even now. The chapter offers it as an example of an agricultural tradition nearly 5,000 years old.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Don't Miss Out' on Kalibangan, Fig. 4.19, p.76"
+    },
+    {
+      "id": "iest1-04-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Which set correctly pairs each of the four earliest civilisations with its river system?",
+      "options": [
+        "Harappan - Sarasvati; Mesopotamian - Huang He; Egyptian - Nile; Chinese - Tigris",
+        "Harappan - Sindhu and Sarasvati; Mesopotamian - Euphrates and Tigris; Egyptian - Nile; Chinese - Huang He",
+        "Harappan - Ganga; Mesopotamian - Nile; Egyptian - Tigris; Chinese - Yangtze",
+        "Harappan - Sindhu; Mesopotamian - Nile; Egyptian - Euphrates; Chinese - Huang He"
+      ],
+      "answer": 1,
+      "explanation": "All four early civilisations grew in fertile river plains: the Harappan along the Sindhu and Sarasvati, the Mesopotamian between the Euphrates and Tigris, the Egyptian along the Nile, and the Chinese in the Huang He basin. Mixing up which river belongs to which is the commonest error here.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Bronze Age Civilisations Outside India', p.77"
+    },
+    {
+      "id": "iest1-04-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The name 'Mesopotamia' is Greek for:",
+      "options": [
+        "the black land",
+        "the fertile crescent",
+        "the land of two kings",
+        "the land in between"
+      ],
+      "answer": 3,
+      "explanation": "Mesopotamia means 'the land in between' - the land drained by the Euphrates and Tigris in West Asia, covering mainly modern Iraq and Kuwait with parts of Turkey and south-western Iran. 'The black' (kemet) was what the Egyptians called their own land, after its dark river soil.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Mesopotamian Civilisation', p.77"
+    },
+    {
+      "id": "iest1-04-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Cuneiform, the Sumerian writing system begun around 3200 BCE, was written by:",
+      "options": [
+        "stamping seals onto pottery",
+        "pressing a wedge-shaped stylus into damp clay tablets",
+        "carving symbols into animal bones and tortoise shells",
+        "painting signs on sheets made from a plant"
+      ],
+      "answer": 1,
+      "explanation": "Cuneiform takes its name from the Latin cuneus, 'wedge', after the wedge-shaped marks pressed into soft clay. Oracle bones were the Chinese source, papyrus sheets the Egyptian one, and stamped seals are Harappan - each civilisation's material shaped the look of its script.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'The Beginning of Writing', pp.80-81"
+    },
+    {
+      "id": "iest1-04-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Our 60-minute hour and 360-degree circle come from the number system of the:",
+      "options": [
+        "Sumerians",
+        "Egyptians",
+        "Harappans",
+        "Chinese"
+      ],
+      "answer": 0,
+      "explanation": "The Sumerian number system was based on 60, which is why we still count sixty seconds to a minute, sixty minutes to an hour and 360 degrees to a circle. The Sumerians also invented the wheeled cart and the sailboat.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Don't Miss Out' after 'The Beginning of Writing', p.81"
+    },
+    {
+      "id": "iest1-04-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "In Akkadian records of trade, Meluhha is generally identified with:",
+      "options": [
+        "the Oman peninsula",
+        "the Nile valley",
+        "the Sindhu-Sarasvati civilisation",
+        "Bahrain"
+      ],
+      "answer": 2,
+      "explanation": "The cuneiform tablets of the Akkadian king Sargon name three eastern trading partners: Dilmun (today's Bahrain), Magan (the Oman peninsula) and Meluhha, which is generally taken to be the Sindhu-Sarasvati civilisation. With the Harappans they traded semi-precious stone beads, ivory, timber, gold dust and probably copper.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch4, 'The Akkadians' and Fig. 4.26, p.82"
+    },
+    {
+      "id": "iest1-04-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The Code of Hammurabi, a compilation of rules for civil and social conduct, belongs to which Mesopotamian power?",
+      "options": [
+        "The Sumerians",
+        "The Akkadians",
+        "The Assyrians",
+        "The Babylonians"
+      ],
+      "answer": 3,
+      "explanation": "Hammurabi came to power in Babylonia in 1792 BCE and turned a small city-state into an empire. His compilation of rules, the Code of Hammurabi, was applied across that empire and became a model for many later legal systems.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'The Babylonians', p.83"
+    },
+    {
+      "id": "iest1-04-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "Which sequence gives the four Mesopotamian city-based powers in the order the chapter presents them?",
+      "options": [
+        "Sumerian, Assyrian, Babylonian, Akkadian",
+        "Sumerian, Akkadian, Assyrian, Babylonian",
+        "Akkadian, Sumerian, Babylonian, Assyrian",
+        "Babylonian, Assyrian, Akkadian, Sumerian"
+      ],
+      "answer": 1,
+      "explanation": "The Sumerians were first to become city-based; the Akkadians overshadowed them in 2334 BCE; Assur took supremacy from the Akkadians around 2154 BCE; and Babylonia rose in central Mesopotamia from 1900 BCE. Hammurabi's fame often makes students place Babylonia earlier than it belongs.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch4, Fig. 4.22 timeline and 'The Sumerians' to 'The Babylonians', pp.78-83"
+    },
+    {
+      "id": "iest1-04-017",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The Rosetta Stone was the key to reading Egyptian hieroglyphs because it:",
+      "options": [
+        "was written in an early form of Arabic",
+        "contained a picture dictionary of hieroglyphic signs",
+        "carried the same matter in three kinds of writing, one of which was Greek",
+        "listed the names of every pharaoh in order"
+      ],
+      "answer": 2,
+      "explanation": "Found by Pierre Bouchard in 1799, the stone bore three types of writing including Greek, which people could still read - in effect a bilingual dictionary for a lost language. Jean-Francois Champollion used it to decipher the script in 1822.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'Don't Miss Out' on the Egyptian script, p.84"
+    },
+    {
+      "id": "iest1-04-018",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "mcq",
+      "question": "The name 'China' probably comes from which dynasty?",
+      "options": [
+        "The Qin dynasty (221-206 BCE)",
+        "The Shang dynasty (1600-1046 BCE)",
+        "The Zhou dynasty (1046-256 BCE)",
+        "The Han dynasty (206 BCE-220 CE)"
+      ],
+      "answer": 0,
+      "explanation": "The Qin, an Iron Age dynasty and the first imperial dynasty, is credited with unifying the country and probably gave China its name. The Shang and Zhou were the Bronze Age dynasties; the Han, which followed the Qin, is the period when silk became a major export and the route it travelled came to be called the Silk Route.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch4, 'The Chinese Civilisation', p.89"
+    },
+    {
+      "id": "iest1-04-019",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 4,
+      "type": "assertion-reason",
+      "question": "Assertion: The four earliest world civilisations all emerged in river plains. Reason: The Harappan script has not yet been deciphered.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 1,
+      "explanation": "Both statements are true - the Harappan, Mesopotamian, Egyptian and Chinese civilisations all grew in fertile river plains, and the Harappan script is still unread. But the undeciphered script has nothing to do with why civilisations arose beside rivers; the real reason is that river plains yielded the agricultural surplus that cities need.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch4, 'Bronze Age Civilisations Outside India' and opening section, pp.61, 77"
+    },
+    {
+      "id": "iest1-05-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "How many hymns (suktas) does the Rigveda contain?",
+      "options": [
+        "108",
+        "10,552",
+        "500",
+        "1,028"
+      ],
+      "answer": 3,
+      "explanation": "The Rigveda is the earliest Veda and contains 1,028 hymns, some praising deities and others reflecting on creation, birth and death. It is also the earliest surviving corpus of Indian literature, which matters because the Harappan script cannot be read.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'The Four Vedas', p.99"
+    },
+    {
+      "id": "iest1-05-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which part of a Veda contains philosophical speculation on the Self (Atman) and the Ultimate Universal Being?",
+      "options": [
+        "The Brahmanas",
+        "The Aranyakas",
+        "The Upanishads",
+        "The Samhitas"
+      ],
+      "answer": 2,
+      "explanation": "Each Veda has four parts. The Samhitas are hymns for invoking deities, the Brahmanas explain ritual performance in prose, the Aranyakas expand on the speculations of forest sages, and the Upanishads deal with the Self and the Ultimate Universal Being.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'The Four Vedas', p.99"
+    },
+    {
+      "id": "iest1-05-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which Vedic assembly was a smaller body of select elites that primarily served a judicial function?",
+      "options": [
+        "Mantri-parishad",
+        "Sabha",
+        "Samiti",
+        "Vidhata"
+      ],
+      "answer": 1,
+      "explanation": "The sabha was the smaller body composed of select elites and mainly judicial. The samiti was the larger assembly dealing with policy decisions and political affairs, and the vidhata was a popular gathering of the janas that discussed warfare and other matters.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Assemblies during Vedic Period', p.101"
+    },
+    {
+      "id": "iest1-05-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The word janapada literally indicates:",
+      "options": [
+        "an assembly of village elders",
+        "a tax paid to the raja",
+        "a group of families sharing one gotra",
+        "the land where a people (jana) first set its feet - a territorial identity"
+      ],
+      "answer": 3,
+      "explanation": "Janapada marks the shift from identity based on kinship to identity based on land, a transition placed roughly between 1000 BCE and 600 BCE. Once land mattered, control over agriculture and trade routes mattered too, and administration grew more complex.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Early Kingdoms and Republics', p.103"
+    },
+    {
+      "id": "iest1-05-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Among the sixteen mahajanapadas, which gradually emerged as the most powerful?",
+      "options": [
+        "Avanti",
+        "Kosala",
+        "Magadha",
+        "Gandhara"
+      ],
+      "answer": 2,
+      "explanation": "Magadha, in present-day Bihar, had a strategic location, fertile plains and strong rulers, and expanded over its neighbours. That expansion led on to the Mauryan Empire, one of the largest in early Indian history.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Early Kingdoms and Republics', p.103"
+    },
+    {
+      "id": "iest1-05-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The royal emblem of the Cholas, the Cheras and the Pandyas respectively were:",
+      "options": [
+        "the tiger, the bow and the fish",
+        "the fish, the tiger and the bow",
+        "the bow, the fish and the tiger",
+        "the lion, the bow and the fish"
+      ],
+      "answer": 0,
+      "explanation": "The tiger stood for the Cholas, the bow for the Cheras and the fish for the Pandyas. These three, the crowned kings or Vendar of Tamilakam, are known mainly from Sangam literature, dated between 300 BCE and 300 CE.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Let's Recall' on southern kingdoms, p.105"
+    },
+    {
+      "id": "iest1-05-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which of these is NOT one of the seven constituents (Saptanga) of the state described by Kautilya?",
+      "options": [
+        "The forts (durga)",
+        "The allies (mitra)",
+        "The guilds (shrenis)",
+        "The treasury (kosha)"
+      ],
+      "answer": 2,
+      "explanation": "Kautilya's seven constituents are the king (swami), the ministers and high officials (amatya), the territory with its people (janapada), the fortified towns (durga), the treasury (kosha), the forces of defence and order (danda) and the allies (mitra). Guilds were important economic bodies but are not part of the Saptanga.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch5, 'Council of Ministers' and the Saptanga panel, pp.108-109"
+    },
+    {
+      "id": "iest1-05-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The Junagadh Rock Inscription near Girnar is unusual because it carries records of:",
+      "options": [
+        "the entire Code of Hammurabi in Sanskrit",
+        "three rulers from different periods - Ashoka, Rudradaman I and Skandagupta",
+        "a single ruler written in three different scripts",
+        "the earliest known Tamil village assembly"
+      ],
+      "answer": 1,
+      "explanation": "The same rock bears Ashoka's Prakrit edicts on Dhamma from the third century BCE, Rudradaman I's Sanskrit inscription of about 150 CE, and Skandagupta's record from the fifth century CE - roughly 700 years of administration and public works on one surface.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Don't Miss Out' on Junagadh, Fig. 5.5, p.110"
+    },
+    {
+      "id": "iest1-05-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The dam on Sudarshana Lake near Girnar was built by Pushyagupta, a governor appointed by:",
+      "options": [
+        "Ashoka",
+        "Rudradaman I",
+        "Skandagupta",
+        "Chandragupta Maurya"
+      ],
+      "answer": 3,
+      "explanation": "The Junagadh inscription records that Pushyagupta, Chandragupta Maurya's governor, built the dam. Rudradaman I later repaired the lake and Skandagupta restored it after severe damage, which is how one rock came to hold three dynasties' records.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch5, 'Irrigation', pp.128-129"
+    },
+    {
+      "id": "iest1-05-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which new office was introduced in the administration during the Gupta period?",
+      "options": [
+        "The pradeshika, or district governor",
+        "The sandhivigrahika, or minister of peace and war",
+        "The gramika, or village headman",
+        "The amatya, or minister"
+      ],
+      "answer": 1,
+      "explanation": "The Guptas kept most of the earlier administrative structure - mantri, commander-in-chief, amatyas - but added the sandhivigrahika, the minister of peace and war. The gramika and pradeshika belong to the earlier Satavahana-era arrangements described in the same section.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch5, 'How Were Empires Administered?', p.112"
+    },
+    {
+      "id": "iest1-05-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The Kudavolai or 'ballot pot' system of village elections is described in which inscription?",
+      "options": [
+        "The Uttaramerur inscription of Parantaka I",
+        "The Junagadh Rock Inscription",
+        "The Nashik cave inscription",
+        "The Mandsaur Stone Inscription"
+      ],
+      "answer": 0,
+      "explanation": "The tenth-century Uttaramerur inscription of the Chola king Parantaka I, in Kanchipuram district, describes how names of eligible candidates were written on palm leaves, placed in a pot, and drawn out by a young child in full public view. The elected members were then put into committees called variyams.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Don't Miss Out' on Uttaramerur, p.115"
+    },
+    {
+      "id": "iest1-05-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Tax-free land grants made to Brahmin settlements by the Chalukyas of Badami were known as:",
+      "options": [
+        "Valanadus",
+        "Bhuktis",
+        "Agraharams",
+        "Brahmadeya villages"
+      ],
+      "answer": 2,
+      "explanation": "The Chalukyas called such grants agraharams, and some of them - at Aihole and Badami - grew into important centres of learning. Brahmadeya was the equivalent term used by the Pallavas; valanadu and bhukti are administrative divisions, not grants.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch5, 'How Were Empires Administered?', pp.113-114"
+    },
+    {
+      "id": "iest1-05-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The 'tripartite struggle' for control of Kannauj involved which three powers?",
+      "options": [
+        "The Guptas, the Vakatakas and the Maitrakas",
+        "The Cholas, the Cheras and the Pandyas",
+        "The Mauryas, the Shungas and the Satavahanas",
+        "The Gurjara-Pratiharas, the Palas and the Rashtrakutas"
+      ],
+      "answer": 3,
+      "explanation": "Kannauj, the Gurjara-Pratihara capital in modern Uttar Pradesh, was contested by three major powers - the Gurjara-Pratiharas, the Palas and the Rashtrakutas - which is why the contest is called tripartite. All three ran the same kind of administration: monarchy at the top with decentralised provinces, districts and villages.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'How Were Empires Administered?', p.114"
+    },
+    {
+      "id": "iest1-05-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The earliest reference to the four social categories understood as varna appears in:",
+      "options": [
+        "the Tolkappiyam",
+        "the Purushasukta, a hymn in Book 10 of the Rigveda",
+        "the Arthashastra of Kautilya",
+        "the Manu-smriti"
+      ],
+      "answer": 1,
+      "explanation": "The Purushasukta in Book 10 of the Rigveda carries the earliest such reference. The chapter stresses that early Vedic texts show no social status fixed by birth, and quotes Rigveda 9.112.3, where one family holds three different occupations, as evidence of that flexibility.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Varna and Jati', p.119"
+    },
+    {
+      "id": "iest1-05-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "What is one clear difference between varna and jati as described in the chapter?",
+      "options": [
+        "Jatis were fixed at four while varnas kept multiplying",
+        "Only jatis were connected to occupation",
+        "The number of varnas was fixed at four, while there was no restriction on the number of jatis",
+        "Varnas were regional while jatis were national"
+      ],
+      "answer": 2,
+      "explanation": "Varnas were always four; jatis were not limited in number and kept growing as new social groups and occupations appeared. Jati emerged from several factors, including intermarriage among varnas, migrating communities becoming endogamous, and territorial differences.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch5, 'Varna and Jati', pp.119-120"
+    },
+    {
+      "id": "iest1-05-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which is the correct order of the four ashramas?",
+      "options": [
+        "Brahmacharya, grihastha, vanaprastha, samnyasa",
+        "Grihastha, brahmacharya, samnyasa, vanaprastha",
+        "Brahmacharya, vanaprastha, grihastha, samnyasa",
+        "Grihastha, vanaprastha, brahmacharya, samnyasa"
+      ],
+      "answer": 0,
+      "explanation": "The four stages run in order of life: studentship (brahmacharya), the householder (grihastha), life in the forest (vanaprastha) and renunciation (samnyasa). The last two carry the renunciatory sense that the chapter connects to the later shramana traditions.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Family and Society' and Fig. 5.8, p.121"
+    },
+    {
+      "id": "iest1-05-017",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "Which of these is NOT one of the four purusharthas, the goals of life?",
+      "options": [
+        "Dharma",
+        "Artha",
+        "Moksha",
+        "Yajna"
+      ],
+      "answer": 3,
+      "explanation": "The four purusharthas are dharma (righteousness), artha (material well-being), kama (fulfilment of desires) and moksha (liberation). A yajna is a ritual offering, not a goal of life. The chapter adds that artha is desirable only when guided by dharma.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Family and Society', p.122"
+    },
+    {
+      "id": "iest1-05-018",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The Alvars and the Nayanmars, saint-poets of the sixth-century Tamil region, composed hymns in praise of:",
+      "options": [
+        "Shakti and Vishnu respectively",
+        "Indra and Agni respectively",
+        "Vishnu and Shiva respectively",
+        "Shiva and Vishnu respectively"
+      ],
+      "answer": 2,
+      "explanation": "The twelve Alvars sang of Vishnu and the sixty-three Nayanmars of Shiva. Together they created the great body of Tamil Bhakti literature, offering a direct connection with the divine that needed no elaborate ritual and was open to all regardless of class or gender.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Religious Life and the Emergence of Bhakti', p.124"
+    },
+    {
+      "id": "iest1-05-019",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The Nashik cave inscription of the second century CE is cited as evidence that guilds (shrenis):",
+      "options": [
+        "were open only to members of a single jati",
+        "acted as banking and credit institutions, paying fixed interest on deposits",
+        "controlled the appointment of village headmen",
+        "collected land revenue on behalf of the king"
+      ],
+      "answer": 1,
+      "explanation": "The inscription records money deposited with guilds that were obliged to pay a fixed rate of interest, the income being used to maintain Buddhist monasteries and caves. So guilds were not only associations of traders and artisans but also trusted financial institutions.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Don't Miss Out' - Guilds as Financial Institutions, p.132"
+    },
+    {
+      "id": "iest1-05-020",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 5,
+      "type": "mcq",
+      "question": "The basic Mauryan tax on land was generally:",
+      "options": [
+        "a fixed amount of silver coins per household",
+        "one half of the produce",
+        "collected only in years of good harvest",
+        "a fixed proportion of the produce, usually one-sixth"
+      ],
+      "answer": 3,
+      "explanation": "The land tax was a fixed share of the produce, generally one-sixth, and land was classified into categories for assessment. Kautilya describes cultivated land, wasteland or fallow, high and dry land, sown fields and groves - detail that shows how carefully revenue was organised.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch5, 'Agriculture and Land Revenue', p.128"
+    },
+    {
+      "id": "iest1-06-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "The Constitution of India was adopted on 26 November 1949 and came into force on:",
+      "options": [
+        "26 November 1950",
+        "25 January 1950",
+        "26 January 1950",
+        "15 August 1947"
+      ],
+      "answer": 2,
+      "explanation": "Adoption and commencement are two different dates: the Constituent Assembly adopted the Constitution on 26 November 1949, and it came into force on 26 January 1950. India became independent earlier, on 15 August 1947, before the Constitution existed.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch6, opening section, p.137"
+    },
+    {
+      "id": "iest1-06-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "How long did the Constituent Assembly, formed in 1946, take to draft the Constitution?",
+      "options": [
+        "2 years, 11 months and 18 days",
+        "1 year and 6 months",
+        "5 years exactly",
+        "11 months and 18 days"
+      ],
+      "answer": 0,
+      "explanation": "The Assembly took 2 years, 11 months and 18 days to produce the world's longest written Constitution. Its debates drew both on India's own traditions of collective decision-making and on democratic ideas from around the world.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Tracing Democratic Traditions from Early Times', pp.139-140"
+    },
+    {
+      "id": "iest1-06-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Universal Adult Franchise in India means that:",
+      "options": [
+        "every adult must vote in every election",
+        "voting rights depend on education and property",
+        "every citizen aged 18 and above has the right to vote by secret ballot",
+        "every adult may stand for election to Parliament"
+      ],
+      "answer": 2,
+      "explanation": "Universal Adult Franchise is the right of every citizen aged 18 and above to vote through a secret ballot, without any test of property, education, caste or sex. It is the practical form popular sovereignty takes - the state drawing its authority from the people.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Popular Sovereignty', p.140"
+    },
+    {
+      "id": "iest1-06-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Which Article provides for amendments to the Constitution, keeping it flexible and responsive?",
+      "options": [
+        "Article 46",
+        "Article 368",
+        "Article 32",
+        "Article 21A"
+      ],
+      "answer": 1,
+      "explanation": "Article 368 provides for amendment. The Constituent Assembly's debates show the members wanted a dynamic document that could evolve through lawful amendment without losing its fundamental values. Article 32 is the right to constitutional remedies, 21A the right to education, and 46 concerns weaker sections.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Tracing Democratic Traditions from Early Times', p.140"
+    },
+    {
+      "id": "iest1-06-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "How many Fundamental Rights are enshrined in the Indian Constitution?",
+      "options": [
+        "Five",
+        "Seven",
+        "Eleven",
+        "Six"
+      ],
+      "answer": 3,
+      "explanation": "There are six: the Right to Equality, the Right to Freedom, the Right Against Exploitation, the Right to Freedom of Religion, Cultural and Educational Rights, and the Right to Constitutional Remedies. Eleven is the number of Fundamental Duties, which is a different list.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Fundamental Rights', p.141"
+    },
+    {
+      "id": "iest1-06-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Which right allows a citizen to move the Supreme Court directly when a Fundamental Right is violated?",
+      "options": [
+        "Cultural and Educational Rights (Articles 29-30)",
+        "The Right to Constitutional Remedies (Article 32)",
+        "The Right to Equality (Articles 14-18)",
+        "The Right Against Exploitation (Articles 23-24)"
+      ],
+      "answer": 1,
+      "explanation": "The Right to Constitutional Remedies under Article 32 is what makes the other rights enforceable - a right with no way to enforce it would be only a promise. Citizens may also approach a High Court under Article 226.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Fundamental Rights', p.141"
+    },
+    {
+      "id": "iest1-06-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "The Right to Education, added as Article 21A in 2009, guarantees free and compulsory education for children aged:",
+      "options": [
+        "6 to 14 years",
+        "3 to 12 years",
+        "6 to 18 years",
+        "5 to 16 years"
+      ],
+      "answer": 0,
+      "explanation": "Article 21A covers children from 6 to 14 years. It was added in 2009, which is why the chapter presents it as an example of the Constitution growing through amendment rather than standing still.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Let's Explore' after Fundamental Rights, p.141"
+    },
+    {
+      "id": "iest1-06-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Under the separation of powers, the judiciary's distinct role is to:",
+      "options": [
+        "implement the laws",
+        "collect the taxes",
+        "interpret the laws",
+        "make the laws"
+      ],
+      "answer": 2,
+      "explanation": "The legislature makes laws, the executive implements them and the judiciary interprets them. Keeping these apart prevents power concentrating in one organ: Parliament may amend the Constitution, but the judiciary can review whether an amendment or a law is consistent with it.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch6, 'Separation of Powers', p.142"
+    },
+    {
+      "id": "iest1-06-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Which country does the chapter give as its example of a direct democracy?",
+      "options": [
+        "India",
+        "The United States of America",
+        "Canada",
+        "Switzerland"
+      ],
+      "answer": 3,
+      "explanation": "Switzerland is the example of direct democracy, where citizens take part in most decision-making themselves. India and Canada are parliamentary representative democracies and the USA is a presidential one; direct democracy is described as difficult to run in large countries.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch6, Fig. 6.4 'Types of Democracy', p.146"
+    },
+    {
+      "id": "iest1-06-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "In the comparison of democracies, which country is listed as having an unwritten constitution?",
+      "options": [
+        "The United States of America",
+        "The United Kingdom",
+        "India",
+        "Switzerland"
+      ],
+      "answer": 1,
+      "explanation": "The United Kingdom is a parliamentary democracy with a constitutional monarchy and an unwritten constitution. India, Switzerland and the USA all have written constitutions - a point worth noticing, since a country can be democratic without a single written document.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, comparison table of democracies, p.148"
+    },
+    {
+      "id": "iest1-06-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "The PESA Act of 1996 applies to tribal areas and empowers:",
+      "options": [
+        "Autonomous District Councils in the north-eastern states",
+        "the district collector to approve all village spending",
+        "the Gram Sabha as the primary decision-making body",
+        "the state Governor to nominate village heads"
+      ],
+      "answer": 2,
+      "explanation": "PESA - the Panchayats Extension to Scheduled Areas Act - makes the Gram Sabha the primary decision-making body in scheduled tribal areas outside the north-east. Autonomous District Councils are the separate arrangement for specific north-eastern regions.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Democracy in Practice: India's Living Democracy', p.151"
+    },
+    {
+      "id": "iest1-06-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "Article 243(d) of the Constitution provides for women in every Panchayat:",
+      "options": [
+        "not less than one-third reservation of seats filled by direct election",
+        "exactly 50 per cent reservation of all seats",
+        "reservation only in the post of Sarpanch",
+        "no reservation, leaving it to each state"
+      ],
+      "answer": 0,
+      "explanation": "The constitutional floor is not less than one-third. Many states have gone further on their own - 21 states and 2 Union Territories provide 50 per cent reservation for women in Panchayati Raj Institutions - but 50 per cent is a state provision, not the constitutional minimum.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch6, 'Women's Reservation in Local Bodies', p.153"
+    },
+    {
+      "id": "iest1-06-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "How did women in India obtain the right to vote, compared with Britain and the United States?",
+      "options": [
+        "Only after a long protest movement lasting into the 1960s",
+        "Earlier than in Britain but later than in the United States",
+        "Only in states that chose to grant it",
+        "It came with the Constitution in 1950 for all citizens at once, without a prolonged separate struggle"
+      ],
+      "answer": 3,
+      "explanation": "Britain gave women full voting rights in 1928 and the United States in 1920, both after decades of protest. In India, Universal Adult Franchise was extended to men and women together when the Constitution came into force in 1950. The chapter adds that the right to vote does not by itself ensure equal participation.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch6, 'Women and the Right to Vote: The Indian Experience', p.153"
+    },
+    {
+      "id": "iest1-06-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "The National Emergency of 1975-77 was imposed on the ground of:",
+      "options": [
+        "financial collapse",
+        "the failure of constitutional machinery in a state",
+        "internal disturbance",
+        "external aggression by a neighbouring country"
+      ],
+      "answer": 2,
+      "explanation": "The Emergency was declared in June 1975 on the ground of internal disturbance. Most Fundamental Rights were suspended, the press was censored and many leaders were arrested. It was lifted in 1977, and the ruling government's defeat in the elections that followed is presented as a demonstration of the system's resilience.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Emergency', pp.155-156"
+    },
+    {
+      "id": "iest1-06-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "mcq",
+      "question": "The Right to Information Act, which lets citizens seek information from government departments, came into force in:",
+      "options": [
+        "1985",
+        "2005",
+        "1996",
+        "2009"
+      ],
+      "answer": 1,
+      "explanation": "The RTI Act came into force in 2005 after being debated in Parliament and refined through consultation. The chapter uses it as an example of accountability and transparency being built through ordinary democratic processes rather than imposed from outside.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Accountability and Transparency' and the RTI box, pp.143, 154"
+    },
+    {
+      "id": "iest1-06-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 6,
+      "type": "assertion-reason",
+      "question": "Assertion: India is described as the world's largest democracy. Reason: In 2024 it had a voter base of over 96.8 crore, the largest anywhere.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 0,
+      "explanation": "The chapter ties the title directly to the scale of participation - a population of over 140 crore and more than 96.8 crore registered voters in 2024. It also notes that the word 'largest' refers to numbers, and that challenges of deeper inclusion and representation remain.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch6, 'Let's Recall' opening and 'Don't Miss Out', pp.137, 149"
+    },
+    {
+      "id": "iest1-07-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Which of these is filled through direct election?",
+      "options": [
+        "The President of India",
+        "Members of the Rajya Sabha",
+        "The Vice President of India",
+        "Members of the Lok Sabha"
+      ],
+      "answer": 3,
+      "explanation": "Members of the Lok Sabha, the Vidhan Sabha and local bodies are chosen directly by voters every five years. The President, the Vice President and members of the Rajya Sabha are elected indirectly, by representatives whom the people have already elected.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch7, 'Why do Elections Matter?', p.161"
+    },
+    {
+      "id": "iest1-07-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Psephology, from the Greek psephos meaning 'pebble', is:",
+      "options": [
+        "the drawing of constituency boundaries",
+        "the study of political parties' finances",
+        "the scientific study of elections",
+        "the counting of votes by hand"
+      ],
+      "answer": 2,
+      "explanation": "Psephology is the scientific study of elections. The name recalls ancient Greece, where pebbles were used for voting - psephos plus logy, 'systematic study'. Redrawing constituency boundaries is delimitation, a different process.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Don't Miss Out' on psephology, p.162"
+    },
+    {
+      "id": "iest1-07-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Members of the Lok Sabha and the Vidhan Sabha are elected using:",
+      "options": [
+        "the First-Past-The-Post (plurality) system",
+        "proportional representation",
+        "the single transferable vote",
+        "a two-round majority system"
+      ],
+      "answer": 0,
+      "explanation": "The framers of the Constitution discussed the main electoral systems and chose the plurality or First-Past-The-Post system for the Lok Sabha and the Vidhan Sabha. Proportional representation with a single transferable vote is used for the Rajya Sabha, the Vidhan Parishad, and the President and Vice President.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'The Electoral System', p.163"
+    },
+    {
+      "id": "iest1-07-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Under the First-Past-The-Post system, a candidate wins when they:",
+      "options": [
+        "win a share of seats matching their party's share of votes",
+        "survive a second round of voting against the runner-up",
+        "receive the most votes, even if that is less than 50 per cent of votes polled",
+        "receive more than 50 per cent of the votes polled"
+      ],
+      "answer": 2,
+      "explanation": "FPTP asks only who is ahead, not whether the winner crossed half the votes. The chapter contrasts it with a majority system, where a candidate must cross 50 per cent or face the runner-up in a second round, and with proportional representation, where seats follow each party's vote share.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch7, 'Electoral Systems' comparison table, p.164"
+    },
+    {
+      "id": "iest1-07-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "How many Indian states have a bicameral legislature with both a Vidhan Sabha and a Vidhan Parishad?",
+      "options": [
+        "Twelve",
+        "Six",
+        "Four",
+        "Nine"
+      ],
+      "answer": 1,
+      "explanation": "Six states have two houses: Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana and Uttar Pradesh. Their Vidhan Parishad members are elected by proportional representation with a single transferable vote, with some nominated by the Governor.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'The Electoral System', p.163"
+    },
+    {
+      "id": "iest1-07-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "The Representation of the People Act, 1950 deals mainly with:",
+      "options": [
+        "nomination of candidates, campaigns and post-election disputes",
+        "the election of the President and the Vice President",
+        "the recognition of national and state political parties",
+        "allocation of seats, delimitation of constituencies and preparation of electoral rolls"
+      ],
+      "answer": 3,
+      "explanation": "The 1950 Act covers seats, constituency boundaries, electoral rolls and the right of every citizen of 18 and above to vote. The 1951 Act covers the actual conduct of elections - nominations, campaigns, voting procedures, disputes and corrupt practices. Presidential elections have their own Act of 1952.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch7, 'The Laws', p.165"
+    },
+    {
+      "id": "iest1-07-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Delimitation is the process of:",
+      "options": [
+        "deciding the dates on which polling will be held",
+        "fixing the number of seats and the territorial boundaries of constituencies",
+        "removing ineligible names from the electoral roll",
+        "allotting election symbols to political parties"
+      ],
+      "answer": 1,
+      "explanation": "Delimitation fixes how many seats a state has and where the boundaries lie, so that the ratio of seats to population is as equal as possible. Without it one MP might represent five lakh people and another twenty-five lakh, which would defeat equal representation.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Delimitation Commission', p.166"
+    },
+    {
+      "id": "iest1-07-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Which Article of the Constitution mandates the establishment of a Delimitation Commission?",
+      "options": [
+        "Article 82",
+        "Article 324",
+        "Article 368",
+        "Article 243(d)"
+      ],
+      "answer": 0,
+      "explanation": "Article 82 mandates the Delimitation Commission; India has had four, in 1952, 1963, 1973 and 2002. Articles 324 to 329 provide for the Election Commission, which is a separate body with a permanent role.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch7, 'Don't Miss Out' on Article 82, p.166"
+    },
+    {
+      "id": "iest1-07-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "The Election Commission of India was established on:",
+      "options": [
+        "26 November 1949",
+        "15 August 1947",
+        "25 January 1950",
+        "26 January 1950"
+      ],
+      "answer": 2,
+      "explanation": "The ECI was established on 25 January 1950, a day before the Constitution came into force - which is why 25 January is observed as National Voters' Day. It is an autonomous permanent constitutional body.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Let's Recall' on the ECI and the National Voters' Day box, pp.167, 169"
+    },
+    {
+      "id": "iest1-07-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Which Articles of the Constitution provide for the Election Commission of India and define its powers?",
+      "options": [
+        "Articles 14 to 18",
+        "Articles 243 to 243(t)",
+        "Articles 352 to 360",
+        "Articles 324 to 329"
+      ],
+      "answer": 3,
+      "explanation": "Articles 324 to 329 establish the ECI and set out its powers and duties, vesting in it the superintendence, direction and control of the whole election process. Articles 352 to 360 deal with emergencies, and Articles 14 to 18 with the Right to Equality.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Let's Recall' on the ECI, p.167"
+    },
+    {
+      "id": "iest1-07-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "The Special Intensive Revision (SIR) conducted by the ECI is meant to:",
+      "options": [
+        "review the election symbols allotted to parties",
+        "update, verify and correct the electoral rolls so no eligible voter is left out and no ineligible one included",
+        "recount votes after a disputed result",
+        "revise the boundaries of constituencies"
+      ],
+      "answer": 1,
+      "explanation": "SIR updates and verifies the rolls: it adds voters who have just turned 18 and may not know how to register, and deletes names on grounds of death, change of residence, duplicate enrolment or being permanently untraceable. Claims and objections are settled before the final roll is published.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'ECI creates the electoral roll', pp.167-168"
+    },
+    {
+      "id": "iest1-07-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Which app allows a voter to report violations of the Model Code of Conduct within minutes of witnessing them?",
+      "options": [
+        "Saksham",
+        "Sugam",
+        "cVIGIL",
+        "Suvidha"
+      ],
+      "answer": 2,
+      "explanation": "cVIGIL lets voters report violations and election misconduct, with flying squads navigating to the spot using the auto-location. Suvidha is for candidates and parties seeking permissions, Saksham is for persons with disabilities, and Sugam manages vehicles on election duty.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, Fig. 7.6 digital ecosystem, p.170"
+    },
+    {
+      "id": "iest1-07-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "The Electronically Transmitted Postal Ballot System (ETPBS) was developed for:",
+      "options": [
+        "service voters posted outside their own constituency",
+        "senior citizens above 85 years of age",
+        "voters with a benchmark disability of 40 per cent",
+        "citizens living permanently abroad"
+      ],
+      "answer": 0,
+      "explanation": "ETPBS lets service voters receive a postal ballot electronically and cast it from wherever they are posted, outside their assigned constituency. Home voting is the separate facility offered to senior citizens above 85 and to persons with disabilities of 40 per cent benchmark disability.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Let's Explore' on ETPBS and Fig. 7.6, pp.168, 170"
+    },
+    {
+      "id": "iest1-07-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Voting from home was extended across India for the first time in the 2024 General Elections for senior citizens above:",
+      "options": [
+        "60 years of age",
+        "70 years of age",
+        "80 years of age",
+        "85 years of age"
+      ],
+      "answer": 3,
+      "explanation": "The facility covers senior citizens above 85 and persons with disabilities with a benchmark disability of 40 per cent. It is one of several steps aimed at accessibility, alongside EVMs with Braille and assistance at polling stations.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch7, 'Ensuring free and fair elections', p.169"
+    },
+    {
+      "id": "iest1-07-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "The Anti-Defection Law was passed in 1985 through the:",
+      "options": [
+        "Representation of the People Act, 1951",
+        "73rd Constitutional Amendment Act",
+        "52nd Constitutional Amendment Act",
+        "42nd Constitutional Amendment Act"
+      ],
+      "answer": 2,
+      "explanation": "The 52nd Constitutional Amendment Act of 1985 brought in the Anti-Defection Law to give elected governments stability. A member who voluntarily gives up party membership or votes against the party whip can be disqualified, and the Speaker or Chairman of the House decides such cases.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch7, 'Don't Miss Out' on the Anti-Defection Law, p.175"
+    },
+    {
+      "id": "iest1-07-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 7,
+      "type": "mcq",
+      "question": "Under the criteria for recognition, a party is recognised as a national party if, among other conditions, it:",
+      "options": [
+        "has been registered with the ECI for at least ten years",
+        "is recognised as a State Party in at least four states",
+        "contests elections in at least two states",
+        "wins at least one seat in the Lok Sabha"
+      ],
+      "answer": 1,
+      "explanation": "Any one of three conditions suffices for national recognition: 6 per cent of valid votes in four or more states plus four Lok Sabha seats; or at least 2 per cent of Lok Sabha seats with candidates elected from at least three states; or recognition as a State Party in at least four states. Simply contesting widely or winning one seat is not enough.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch7, Fig. 7.12 criteria for party recognition, p.176"
+    },
+    {
+      "id": "iest1-08-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "Opportunity cost is:",
+      "options": [
+        "the money actually paid for a good",
+        "the profit earned from a chosen option",
+        "the tax paid on a purchase",
+        "the value of the alternative that is given up when a choice is made"
+      ],
+      "answer": 3,
+      "explanation": "When one alternative is chosen the others are given up, and the value of what is given up is the opportunity cost. It is not the price on the bill: a farmer who grows more barley pays for it in the wheat that is no longer grown.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch8, 'Choices and Limited Resources', p.184"
+    },
+    {
+      "id": "iest1-08-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "The word 'Economics' comes from the Greek oikonomia, which means:",
+      "options": [
+        "the exchange of goods",
+        "the wealth of nations",
+        "household management",
+        "the study of money"
+      ],
+      "answer": 2,
+      "explanation": "Oikonomia combines oikos, household, and nemein, management. The chapter uses the origin to make a point: the same problem of getting the most out of limited means faces a family and a nation alike.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'What does Economics Deal with?', p.186"
+    },
+    {
+      "id": "iest1-08-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "The Production Possibility Curve shows:",
+      "options": [
+        "the different combinations of goods that can be produced using all available resources",
+        "the prices at which goods will be sold in a market",
+        "the quantity consumers are willing to buy at each price",
+        "how national income grows over the years"
+      ],
+      "answer": 0,
+      "explanation": "The PPC plots the combinations a producer can achieve when resources are fully and efficiently used, with no wastage. Because it slopes downward, moving along it towards more barley always means less wheat - the curve is a picture of opportunity cost.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Choices and Limited Resources' and Fig. 8.3, p.185"
+    },
+    {
+      "id": "iest1-08-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "Which of these is NOT one of the factors of production named in the chapter?",
+      "options": [
+        "Labour",
+        "Capital",
+        "Opportunity cost",
+        "Land"
+      ],
+      "answer": 2,
+      "explanation": "The factors of production are land, labour, capital and technology. Opportunity cost is not an input at all - it is the value of the alternative sacrificed when a producer decides how to combine those inputs.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'How to Produce?' and Fig. 8.6, pp.189-190"
+    },
+    {
+      "id": "iest1-08-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "The three key questions that every economy must answer are:",
+      "options": [
+        "What to import, what to export, and what to store",
+        "What to produce, how to produce, and for whom to produce",
+        "What to buy, when to buy, and at what price",
+        "How much to tax, how much to spend, and how much to save"
+      ],
+      "answer": 1,
+      "explanation": "These three questions follow from the mismatch between unlimited wants and limited resources. What to produce settles the mix of goods, how to produce settles the methods and technology, and for whom to produce settles who the output is meant to serve.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch8, 'Key Questions in Economics' and Fig. 8.5, p.188"
+    },
+    {
+      "id": "iest1-08-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "A garment firm that uses more machines and fewer workers is using a method that is:",
+      "options": [
+        "labour-intensive",
+        "land-intensive",
+        "opportunity-intensive",
+        "capital-intensive"
+      ],
+      "answer": 3,
+      "explanation": "Capital-intensive production relies on machines and technology with fewer workers; labour-intensive production does the opposite. The chapter notes the choice depends on the cost of machines, the technology available, the nature of the product, the cost of labour, and government rules.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'How to Produce?', pp.189-190"
+    },
+    {
+      "id": "iest1-08-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "In a planned economy, the major economic decisions are made by:",
+      "options": [
+        "individual consumers through their purchases",
+        "a central planning authority of the government",
+        "the forces of demand and supply",
+        "private companies competing with each other"
+      ],
+      "answer": 1,
+      "explanation": "In a planned economy a central planning authority decides what and how much is produced, how, for whom, and at what prices, and the government owns most resources and sectors. Because private enterprise is limited and heavily licensed, competition is weak and there is little pressure to improve quality or innovate.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Planned Economy', p.191"
+    },
+    {
+      "id": "iest1-08-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "Which group is given as examples of planned economies?",
+      "options": [
+        "The former Soviet Union, North Korea and Cuba",
+        "The United States of America, Japan and Hong Kong",
+        "India, Germany and Sweden",
+        "China after 1978, Singapore and Canada"
+      ],
+      "answer": 0,
+      "explanation": "The chapter names the former Soviet Union, North Korea and Cuba as planned economies. The USA, Japan and Hong Kong are its examples of market economies, while India after 1991, China after 1978, Germany and Sweden are its mixed economies.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Planned Economy' and 'Market Economy', pp.191-192"
+    },
+    {
+      "id": "iest1-08-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "In a market economy the government is compared to a referee in a football match because it:",
+      "options": [
+        "owns the ground and the players",
+        "takes no part in the economy at all",
+        "ensures safety and law and order without controlling prices or production",
+        "decides which teams may play and what the score should be"
+      ],
+      "answer": 2,
+      "explanation": "The referee image is about enforcing rules while leaving the play to the players: the state ensures safety and order but does not set prices or output. Note the chapter's qualification - even in market economies the government still plays an important role.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Market Economy' and Fig. 8.7, p.191"
+    },
+    {
+      "id": "iest1-08-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "India's economy after the reforms of 1991 is best described as:",
+      "options": [
+        "a planned economy",
+        "a pure market economy",
+        "a subsistence economy",
+        "a mixed economy"
+      ],
+      "answer": 3,
+      "explanation": "After Independence India followed a largely state-led, planned approach. The 1991 reforms cut back regulation, encouraged private enterprise and opened the economy to trade and investment, moving it towards a market orientation while keeping an important role for the government - which is what a mixed economy means.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Mixed Economy' and the 'Don't Miss Out' box, pp.192-193"
+    },
+    {
+      "id": "iest1-08-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "Why does the chapter say that in reality most economies are mixed?",
+      "options": [
+        "Because no country can produce everything it needs",
+        "Because private ownership almost always coexists with some degree of government regulation",
+        "Because every country has both farms and factories",
+        "Because all countries trade with one another"
+      ],
+      "answer": 1,
+      "explanation": "The defining feature of a mixed economy is that private individuals and enterprises and the government both take part in economic decisions, with private players regulated by the state. On that test even market economies such as the USA and Singapore have significant government involvement.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch8, 'Mixed Economy', p.192"
+    },
+    {
+      "id": "iest1-08-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "Which of the following is a need rather than a want, as the chapter uses the terms?",
+      "options": [
+        "A new mobile phone",
+        "Jewellery",
+        "Shelter",
+        "A holiday abroad"
+      ],
+      "answer": 2,
+      "explanation": "Needs are essentials such as food, water and shelter. Wants are the rest - gadgets, vacations, luxury items - and the chapter notes that they are unlimited and keep changing, as when people move from wanting a bicycle to a motorbike to a car.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch8, opening section and Fig. 8.1, p.183"
+    },
+    {
+      "id": "iest1-08-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "mcq",
+      "question": "The Economic Survey of India is:",
+      "options": [
+        "an annual document prepared by the Ministry of Finance and presented before the Union Budget",
+        "a monthly price index published by the Reserve Bank of India",
+        "a census of households conducted every ten years",
+        "the government's statement of proposed taxes and spending"
+      ],
+      "answer": 0,
+      "explanation": "The Economic Survey reviews the past year's performance sector by sector and discusses the challenges ahead, acting as a blueprint for the Budget that follows. The statement of proposed taxes and spending is the Union Budget itself, a separate document.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch8, 'Economic Survey: A Report on Indian Economy', p.187"
+    },
+    {
+      "id": "iest1-08-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 8,
+      "type": "assertion-reason",
+      "question": "Assertion: Every economic choice carries an opportunity cost. Reason: Human wants are limited while resources are unlimited.",
+      "options": [
+        "Both are true and the reason explains the assertion",
+        "Both are true but the reason does not explain the assertion",
+        "The assertion is true but the reason is false",
+        "Both are false"
+      ],
+      "answer": 2,
+      "explanation": "The assertion is true - choosing one use of a resource means giving up another, and the value of what is given up is the opportunity cost. The reason states the scarcity problem backwards: it is wants that are unlimited and resources that are limited, and it is that way round which forces a choice at all.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch8, 'Choices and Limited Resources' and Fig. 8.5, pp.184, 188"
+    },
+    {
+      "id": "iest1-09-001",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "In economics, demand for a product means:",
+      "options": [
+        "the quantity buyers would like to have, whether or not they can pay",
+        "the quantity available in the shops",
+        "the quantity a producer plans to make",
+        "the quantity buyers are both willing and able to buy at a particular price"
+      ],
+      "answer": 3,
+      "explanation": "The chapter is careful here: demand is not merely the desire to buy, but desire backed by purchasing power. A person who wants mangoes but cannot pay for them adds nothing to demand. The quantity available for sale is supply, not demand.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Demand', p.196"
+    },
+    {
+      "id": "iest1-09-002",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "The Law of Demand states that, other things remaining the same:",
+      "options": [
+        "quantity demanded does not depend on price",
+        "quantity demanded depends only on income",
+        "when price rises, quantity demanded falls, and when price falls, quantity demanded rises",
+        "when price rises, quantity demanded rises"
+      ],
+      "answer": 2,
+      "explanation": "The Law of Demand describes an inverse relationship between price and quantity demanded, which is why the demand curve slopes downward. Srivalli buys 1 kg of mangoes at 150 rupees, 2 kg at 100 and 3 kg at 50.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch9, 'Demand' and Fig. 9.2, p.196"
+    },
+    {
+      "id": "iest1-09-003",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Market demand is obtained by:",
+      "options": [
+        "subtracting supply from total consumption",
+        "adding the individual demands of all buyers at each price",
+        "averaging the individual demands of all buyers",
+        "taking the demand of the largest single buyer"
+      ],
+      "answer": 1,
+      "explanation": "Market demand is the sum of individual demands at each price - in the chapter's table, 1 + 2 + 3 kg gives 6 kg at 150 rupees. Because many buyers respond together, the market demand curve is flatter than any one buyer's curve.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, Table 9.1 and 'Don't Miss Out', pp.197-198"
+    },
+    {
+      "id": "iest1-09-004",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Which pair are complementary goods?",
+      "options": [
+        "Tea and coffee",
+        "An air conditioner and a cooler",
+        "An apple and a banana",
+        "A mobile phone and earphones"
+      ],
+      "answer": 3,
+      "explanation": "Complementary goods are used together, so demand for one pulls demand for the other along with it - phones and earphones, cars and petrol, printers and cartridges. The other three pairs are substitutes: each can replace the other.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Price of related goods', p.198"
+    },
+    {
+      "id": "iest1-09-005",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "If the price of coffee rises while the price of tea stays the same, the demand for tea is likely to:",
+      "options": [
+        "stay exactly the same",
+        "fall to zero",
+        "increase",
+        "decrease"
+      ],
+      "answer": 2,
+      "explanation": "Tea and coffee are substitutes. When one becomes dearer, buyers move to the cheaper alternative, so demand for tea rises even though tea's own price has not changed. This is a change caused by the price of a related good, not by the good's own price.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Price of related goods' - substitute goods, p.198"
+    },
+    {
+      "id": "iest1-09-006",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "The principle of diminishing marginal utility explains why:",
+      "options": [
+        "the additional satisfaction from each extra unit consumed falls, so willingness to pay falls too",
+        "producers supply more when prices rise",
+        "prices fall during festival sales",
+        "market demand curves are flatter than individual ones"
+      ],
+      "answer": 0,
+      "explanation": "The first mango is delicious, the third much less so. Since each extra unit adds less usefulness than the one before, buyers will pay less for it - which is one reason demand falls as more is consumed. Supply behaviour and sale pricing are separate ideas.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch9, 'Think About It' on marginal utility, p.199"
+    },
+    {
+      "id": "iest1-09-007",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "If consumers expect the price of a durable good to fall during a festival sale, present demand is likely to:",
+      "options": [
+        "stay unchanged, since the current price has not changed",
+        "become zero until the sale begins",
+        "decrease, because purchases are postponed",
+        "increase, because people rush to buy now"
+      ],
+      "answer": 2,
+      "explanation": "Expectations move demand even when today's price has not changed. Expecting a lower price later, buyers wait, and present demand falls; expecting a rise, they buy at once and present demand goes up.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Future price expectations', p.200"
+    },
+    {
+      "id": "iest1-09-008",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "The Law of Supply states that as the price of a good rises, the quantity supplied:",
+      "options": [
+        "first falls and then rises",
+        "rises",
+        "falls",
+        "stays the same"
+      ],
+      "answer": 1,
+      "explanation": "Supply has a direct relationship with price, which is why the supply curve slopes upward - the mirror image of the downward-sloping demand curve. Confusing the two directions is the commonest mistake in this chapter.",
+      "marks": 1,
+      "difficulty": "easy",
+      "origin": "iest1 ch9, 'Supply' and Fig. 9.4, p.200"
+    },
+    {
+      "id": "iest1-09-009",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Why does a higher price lead producers to supply more?",
+      "options": [
+        "Higher prices reduce the cost of raw materials",
+        "Higher prices force consumers to buy more",
+        "Higher prices are fixed by the government",
+        "Higher prices raise profitability, which encourages more output and attracts new firms"
+      ],
+      "answer": 3,
+      "explanation": "A higher price makes each unit more profitable, so existing producers expand output and new firms are drawn into the market. Nothing about the cost of inputs changes, and buyers respond to higher prices by buying less, not more.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Supply', p.200"
+    },
+    {
+      "id": "iest1-09-010",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "How does an improvement in technology, such as drip irrigation, usually affect supply?",
+      "options": [
+        "It changes the price consumers are willing to pay",
+        "It lowers the cost of production, so producers can supply more",
+        "It raises the cost of production, so supply falls",
+        "It has no effect on supply, only on demand"
+      ],
+      "answer": 1,
+      "explanation": "Better technology brings the cost of producing each unit down, so more can be produced and offered for sale. The chapter's examples are drip irrigation and weather sensors raising crop output, and cold storage letting mangoes reach distant markets.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Technology' under determinants of supply, p.202"
+    },
+    {
+      "id": "iest1-09-011",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Market equilibrium is the point at which:",
+      "options": [
+        "quantity demanded equals quantity supplied, leaving neither shortage nor surplus",
+        "the price is at its lowest possible level",
+        "producers earn their maximum profit",
+        "the government fixes the price of the good"
+      ],
+      "answer": 0,
+      "explanation": "At equilibrium the market is 'cleared': there is no excess demand and no excess supply, so there is no pressure on the price to move. In the chapter's example this happens at 100 rupees, where 12 kg is both demanded and supplied.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Market Equilibrium', Table 9.3 and Fig. 9.7, pp.203-204"
+    },
+    {
+      "id": "iest1-09-012",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "If the price is set below the equilibrium price, the market will show:",
+      "options": [
+        "no change at all",
+        "a fall in the quantity demanded",
+        "excess demand, that is, a shortage",
+        "excess supply, that is, a surplus"
+      ],
+      "answer": 2,
+      "explanation": "At a low price buyers want much more than sellers are willing to offer, so quantity demanded exceeds quantity supplied and a shortage appears - 38 kg wanted against 6 kg supplied at 40 rupees in the chapter's table. A price above equilibrium produces the opposite, a surplus.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch9, Table 9.3, p.203"
+    },
+    {
+      "id": "iest1-09-013",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "A government-fixed maximum price for an essential medicine is an example of a:",
+      "options": [
+        "price floor",
+        "minimum wage",
+        "monopoly",
+        "price ceiling"
+      ],
+      "answer": 3,
+      "explanation": "A price ceiling caps how much a seller may charge, and is used to stop overcharging for essentials. A price floor is the opposite - a lower limit, such as a minimum wage, which must be set above the equilibrium price to have any effect.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Regulation of Unfair Practices' and margin notes, p.206"
+    },
+    {
+      "id": "iest1-09-014",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Which regulator is named in the chapter as overseeing the securities market?",
+      "options": [
+        "The Central Consumer Protection Authority",
+        "SEBI",
+        "TRAI",
+        "RBI"
+      ],
+      "answer": 1,
+      "explanation": "The Securities and Exchange Board of India regulates the securities market. The RBI regulates banking, TRAI the telecommunications sector, and the Central Consumer Protection Authority deals with violations of consumer rights and unfair trade practices.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Don't Miss Out' on regulators, p.206"
+    },
+    {
+      "id": "iest1-09-015",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "During COVID-19 the government capped the price of sanitisers by declaring them essential commodities under the:",
+      "options": [
+        "Right to Information Act, 2005",
+        "Consumer Protection Act, 1986",
+        "Essential Commodities Act, 1955",
+        "Representation of the People Act, 1951"
+      ],
+      "answer": 2,
+      "explanation": "With demand surging and some shopkeepers hoarding and black-marketing, the government used the Essential Commodities Act, 1955 to cap the maximum retail price at 100 rupees for a 200 ml bottle. As more companies began producing, supply caught up and prices settled.",
+      "marks": 1,
+      "difficulty": "medium",
+      "origin": "iest1 ch9, 'Don't Miss Out' on sanitisers, p.207"
+    },
+    {
+      "id": "iest1-09-016",
+      "class": 9,
+      "subject": "Social Science",
+      "bookCode": "iest1",
+      "chapter": 9,
+      "type": "mcq",
+      "question": "Why does the chapter argue that goods such as roads, street lighting and public parks usually have to be provided by the government?",
+      "options": [
+        "People can use them without paying, so private firms cannot make a direct profit from them",
+        "Private firms lack the technology to build them",
+        "The Constitution forbids private ownership of such goods",
+        "They are too cheap for a private firm to bother with"
+      ],
+      "answer": 0,
+      "explanation": "The chapter's park example makes the point: each family reasons that if others pay, it can use the park anyway, so not enough money is collected and the park is never built. Because nobody can be excluded from using a public good, private provision fails and government funding is needed.",
+      "marks": 1,
+      "difficulty": "hard",
+      "origin": "iest1 ch9, 'Provision of Public Goods', p.207"
+    }
+  ]
+}

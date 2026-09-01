@@ -208,10 +208,24 @@ model User {
   /// The nil UUID = the public (B2C) scope. Becomes `tenant_id` when tenancy lands.
   scopeId String  @default("00000000-0000-0000-0000-000000000000") @db.Uuid
   /// E.164, e.g. "+919876543210". Normalise before writing; the database will not.
-  phone   String  @db.VarChar(20)
+  ///
+  /// Nullable only because email + password sign-in exists, and an account
+  /// created that way has no number. The original reasoning for NOT NULL still
+  /// holds and is *not* abandoned: Postgres treats NULLs as distinct, so a
+  /// nullable identifier under a plain unique index permits unlimited rows
+  /// with no identifier at all. What replaces NOT NULL is the CHECK
+  /// `user_has_identifier` (see the migration) — a user must carry a phone, an
+  /// email, or both, and whichever they carry is still unique per scope.
+  phone   String? @db.VarChar(20)
   /// NULL for most students. Postgres treats NULLs as distinct, so the scoped
   /// unique below permits any number of email-less users.
   email   String? @db.VarChar(255)
+  /// scrypt, self-describing: `scrypt$N$r$p$dkLen$salt$hash`, both parts
+  /// base64url. NULL for an OTP-only or seeded account that has never set one —
+  /// having no password is legal, and is not the same as having a wrong one.
+  /// See src/lib/auth.ts; the parameters live in the string so they can be
+  /// raised later without guessing what an old row was hashed with.
+  passwordHash String? @db.VarChar(255)
 
   displayName String?  @db.VarChar(120)
   role        UserRole

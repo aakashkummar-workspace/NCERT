@@ -50,6 +50,23 @@ const DELAY_MS = 1000;
 const PDF_DIRS = ["textbook/pdf", "exemplar/pdf", "pdf/publication/exemplarproblem"] as const;
 
 /**
+ * The directory that actually serves exemplar PDFs, confirmed against the live
+ * site: `pdf/publication/exemplarproblem/classIX/mathematics/ieep201.pdf`.
+ *
+ * The generic entries above are kept as fallbacks — NCERT has moved its
+ * e-content before — but none of them resolve on their own, because the real
+ * path is segmented by class and subject. Probing only the unsegmented form is
+ * why an earlier run reported every unit missing while the files were there.
+ *
+ * The class segment is a Roman numeral and the subject is lowercased.
+ */
+function dirsFor(book: { class: 9 | 10; subject: string }): readonly string[] {
+  const cls = book.class === 9 ? "classIX" : "classX";
+  const subject = book.subject.toLowerCase();
+  return [`pdf/publication/exemplarproblem/${cls}/${subject}`, ...PDF_DIRS];
+}
+
+/**
  * Back matter NCERT publishes as its own file rather than as a numbered unit.
  * The Science exemplar chapters carry questions only — their answers live in a
  * separate section — so finding these matters more than it does for Maths,
@@ -331,13 +348,13 @@ async function buildManifest(counts: Map<string, number>): Promise<ExemplarManif
         return carry(t.code, {
           n,
           title: t.units[i] ?? `Unit ${n}`,
-          ...plan(t.code, file, PDF_DIRS[0]),
+          ...plan(t.code, file, dirsFor(t)[0]),
         });
       }),
       extras: EXTRAS.map((e) =>
         carry(t.code, {
           name: e.name,
-          ...plan(t.code, `${t.code}${e.suffix}.pdf`, PDF_DIRS[0]),
+          ...plan(t.code, `${t.code}${e.suffix}.pdf`, dirsFor(t)[0]),
         }),
       ),
     };
@@ -430,7 +447,7 @@ async function main() {
     );
 
     // Pinned once the first chapter reveals which directory NCERT serves from.
-    let dirs: readonly string[] = PDF_DIRS;
+    let dirs: readonly string[] = dirsFor(book);
 
     for (const ch of book.chapters) {
       if (offline) break;

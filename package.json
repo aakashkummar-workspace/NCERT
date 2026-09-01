@@ -37,7 +37,8 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "shadow:check": "node scripts/test-shadow.mjs",
-    "queue:test": "node scripts/test-queue.mjs"
+    "queue:test": "node scripts/test-queue.mjs",
+    "content:exemplar-questions": "tsx scripts/extract-exemplar-questions.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

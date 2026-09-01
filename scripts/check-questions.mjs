@@ -16,7 +16,24 @@
  */
 import { readFile } from "node:fs/promises";
 
-const QUESTIONS = "data/questions.json";
+/**
+ * The banks the app actually serves, validated together.
+ *
+ * `src/lib/quiz.ts` reads several files and concatenates them, so validating
+ * only the first left the great majority of questions unchecked — and the
+ * unchecked ones are the generated and drafted banks, which are exactly the
+ * ones most likely to be wrong. Checking them as one set also catches an id or
+ * a stem colliding *across* files, which no per-file run ever could.
+ *
+ * Pass paths to override, e.g. `node scripts/check-questions.mjs data/mine.json`.
+ */
+const DEFAULT_BANKS = [
+  "data/questions.json",
+  "data/questions.exemplar.json",
+  "data/questions.socialscience9.json",
+];
+const BANKS = process.argv.slice(2).length ? process.argv.slice(2) : DEFAULT_BANKS;
+const QUESTIONS = BANKS.join(", ");
 const MANIFEST = "data/manifest.json";
 
 const errors = [];
@@ -82,7 +99,25 @@ function rowsOf(file) {
 }
 
 const main = async () => {
-  const raw = JSON.parse(await readFile(QUESTIONS, "utf8"));
+  // A bank that does not exist yet is skipped rather than fatal: the generated
+  // ones are absent on a fresh clone until their script has been run.
+  const present = [];
+  for (const path of BANKS) {
+    try {
+      present.push({ path, raw: JSON.parse(await readFile(path, "utf8")) });
+    } catch (err) {
+      if (err.code !== "ENOENT") throw err;
+      console.log(`  (${path} not present — skipped)`);
+    }
+  }
+  const raw = present.flatMap(({ path, raw: r }) => {
+    const rows = rowsOf(r);
+    if (rows === null) {
+      console.error(`${path}: expected an array, or an object with a "questions" array.`);
+      process.exit(1);
+    }
+    return rows;
+  });
   const manifest = JSON.parse(await readFile(MANIFEST, "utf8"));
 
   const books = new Map(manifest.books.map((b) => [b.code, b]));

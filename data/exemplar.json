@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T08:06:01.296Z",
+  "generatedAt": "2026-09-01T05:21:56.638Z",
   "source": "https://ncert.nic.in/exemplar-problems.php",
   "books": [
     {
@@ -15,105 +15,153 @@
           "title": "Matter in Our Surroundings",
           "file": "ieep101.pdf",
           "path": "/exemplar/ieep1/ieep101.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep101.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep101.pdf",
+          "bytes": 242135,
+          "sha256": "93ec534a1173d39e489252775f873c3efbf3084b94cbb81d7c7c87402d8f8f57"
         },
         {
           "n": 2,
           "title": "Is Matter Around Us Pure",
           "file": "ieep102.pdf",
           "path": "/exemplar/ieep1/ieep102.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep102.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep102.pdf",
+          "bytes": 564925,
+          "sha256": "0f862edc758f19758d0c2a6783c60ed6e072978abb9e83a0fa487041c14fd091"
         },
         {
           "n": 3,
           "title": "Atoms and Molecules",
           "file": "ieep103.pdf",
           "path": "/exemplar/ieep1/ieep103.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep103.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep103.pdf",
+          "bytes": 1530743,
+          "sha256": "0754322452b737c1514f44272bf6ec010913f2d45bceb98f933cdf546daa3c48"
         },
         {
           "n": 4,
           "title": "Structure of the Atom",
           "file": "ieep104.pdf",
           "path": "/exemplar/ieep1/ieep104.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep104.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep104.pdf",
+          "bytes": 168427,
+          "sha256": "726bd187013796ddb5500a379df1b66b84af7e28751820b0ff2261b42a64f2c9"
         },
         {
           "n": 5,
           "title": "The Fundamental Unit of Life",
           "file": "ieep105.pdf",
           "path": "/exemplar/ieep1/ieep105.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep105.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep105.pdf",
+          "bytes": 144326,
+          "sha256": "de53c20db2008f308019e3d77dc9785f99f767349ef385581552e43bb81124e6"
         },
         {
           "n": 6,
           "title": "Tissues",
           "file": "ieep106.pdf",
           "path": "/exemplar/ieep1/ieep106.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep106.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep106.pdf",
+          "bytes": 137609,
+          "sha256": "89c4282b1a6bd2833db0ff07cc34fe8949bdaa76507be99d762a91b75fb75836"
         },
         {
           "n": 7,
           "title": "Diversity in Living Organisms",
           "file": "ieep107.pdf",
           "path": "/exemplar/ieep1/ieep107.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep107.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep107.pdf",
+          "bytes": 285152,
+          "sha256": "bd402359610aca0654b68eba56a964f2407d7ed65c62783e804eb257ee0386b8"
         },
         {
           "n": 8,
           "title": "Motion",
           "file": "ieep108.pdf",
           "path": "/exemplar/ieep1/ieep108.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep108.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep108.pdf",
+          "bytes": 173737,
+          "sha256": "1967cfce38b98b3a42c7bba0280412cf33af3fa48fb737cd96e48682d34211aa"
         },
         {
           "n": 9,
           "title": "Force and Laws of Motion",
           "file": "ieep109.pdf",
           "path": "/exemplar/ieep1/ieep109.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep109.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep109.pdf",
+          "bytes": 141049,
+          "sha256": "d691d8e71c9f5fcca6c7c43f3b7bc0bba957fca95b1ec84e38ed698279d7e480"
         },
         {
           "n": 10,
           "title": "Gravitation",
           "file": "ieep110.pdf",
           "path": "/exemplar/ieep1/ieep110.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep110.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep110.pdf",
+          "bytes": 133783,
+          "sha256": "686ddae43cf11619d576a5ac8775e17645855b141e76e142ca332ca02f4951e4"
         },
         {
           "n": 11,
           "title": "Work and Energy",
           "file": "ieep111.pdf",
           "path": "/exemplar/ieep1/ieep111.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep111.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep111.pdf",
+          "bytes": 147930,
+          "sha256": "44503fa20ef85a18f1bc6f3510050f66fabb657c493db39aa677ab494bdfb31b"
         },
         {
           "n": 12,
           "title": "Sound",
           "file": "ieep112.pdf",
           "path": "/exemplar/ieep1/ieep112.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep112.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep112.pdf",
+          "bytes": 214296,
+          "sha256": "9485226e1b8b7b425c50a178330eb8c3542e0125754bfad85491c327e0aa88b3"
         },
         {
           "n": 13,
           "title": "Why Do We Fall Ill",
           "file": "ieep113.pdf",
           "path": "/exemplar/ieep1/ieep113.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep113.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep113.pdf",
+          "bytes": 132393,
+          "sha256": "687b81ab5323fd65195f47589b5b1d5e95609e2bc9a8f6f56f19bdbbfcdbded4"
         },
         {
           "n": 14,
           "title": "Natural Resources",
           "file": "ieep114.pdf",
           "path": "/exemplar/ieep1/ieep114.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep114.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep114.pdf",
+          "bytes": 137461,
+          "sha256": "2532583d548ded1c99f37eb8b37ec7a6bb96bce852d1759553335488d251dea4"
         },
         {
           "n": 15,
           "title": "Improvement in Food Resources",
           "file": "ieep115.pdf",
           "path": "/exemplar/ieep1/ieep115.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep115.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep115.pdf",
+          "bytes": 298128,
+          "sha256": "08af7a09b56286ac5b782aa228a5ed465eb4984b449fb6dbc7c5707c51750b62"
+        },
+        {
+          "n": 16,
+          "title": "Unit 16",
+          "file": "ieep116.pdf",
+          "path": "/exemplar/ieep1/ieep116.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep116.pdf",
+          "bytes": 255120,
+          "sha256": "780972d18da2494710ebaf17a01b9c037a0fcdf307e67a3173aa20acc571b27e"
+        },
+        {
+          "n": 17,
+          "title": "Unit 17",
+          "file": "ieep117.pdf",
+          "path": "/exemplar/ieep1/ieep117.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep117.pdf",
+          "bytes": 238689,
+          "sha256": "33302e8db332b3fabec4c1d07fdc2765b319efb73f39c45b59041b21386802df"
         }
       ],
       "extras": [
@@ -121,13 +169,9 @@
           "name": "answers",
           "file": "ieep1an.pdf",
           "path": "/exemplar/ieep1/ieep1an.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep1an.pdf"
-        },
-        {
-          "name": "prelims",
-          "file": "ieep1ps.pdf",
-          "path": "/exemplar/ieep1/ieep1ps.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep1ps.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/science/ieep1an.pdf",
+          "bytes": 16336380,
+          "sha256": "48edac654dd5021b03c105b02614729fead267bd2013661f8b05c1aae7638e31"
         }
       ]
     },
@@ -144,105 +188,144 @@
           "title": "Number Systems",
           "file": "ieep201.pdf",
           "path": "/exemplar/ieep2/ieep201.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep201.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep201.pdf",
+          "bytes": 183348,
+          "sha256": "6d412aa7f6ab7d3f9e91e70d8881c948058c8cb6cb42db3e8681595561fae91d"
         },
         {
           "n": 2,
           "title": "Polynomials",
           "file": "ieep202.pdf",
           "path": "/exemplar/ieep2/ieep202.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep202.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep202.pdf",
+          "bytes": 172369,
+          "sha256": "db227bf82f3b31c5214dfda8289c73f65c24d7d394c7df92fd1325bba8dace63"
         },
         {
           "n": 3,
           "title": "Coordinate Geometry",
           "file": "ieep203.pdf",
           "path": "/exemplar/ieep2/ieep203.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep203.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep203.pdf",
+          "bytes": 605084,
+          "sha256": "280acb72458c05ca86f37e037766593e932edc5e5ad677dab08ed15006a0ebf7"
         },
         {
           "n": 4,
           "title": "Linear Equations in Two Variables",
           "file": "ieep204.pdf",
           "path": "/exemplar/ieep2/ieep204.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep204.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep204.pdf",
+          "bytes": 192516,
+          "sha256": "8ebba62713fd9c2fc03db02bf48309cc45f9f97d26138eb496115d68b6d19d05"
         },
         {
           "n": 5,
           "title": "Introduction to Euclid's Geometry",
           "file": "ieep205.pdf",
           "path": "/exemplar/ieep2/ieep205.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep205.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep205.pdf",
+          "bytes": 170166,
+          "sha256": "dde549901a5db6cfdc0c85e3046c52888771e66590ebcee7cf07af2c136a468f"
         },
         {
           "n": 6,
           "title": "Lines and Angles",
           "file": "ieep206.pdf",
           "path": "/exemplar/ieep2/ieep206.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep206.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep206.pdf",
+          "bytes": 202719,
+          "sha256": "ca81acec0e3b0e1804bd76c1764a8ccb7db3dd850e0336254a06ea48d86731b1"
         },
         {
           "n": 7,
           "title": "Triangles",
           "file": "ieep207.pdf",
           "path": "/exemplar/ieep2/ieep207.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep207.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep207.pdf",
+          "bytes": 172679,
+          "sha256": "271f907d0965c7549f06f719c986e08f0ccee6d1ac1d031876fea80b653b8af5"
         },
         {
           "n": 8,
           "title": "Quadrilaterals",
           "file": "ieep208.pdf",
           "path": "/exemplar/ieep2/ieep208.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep208.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep208.pdf",
+          "bytes": 170952,
+          "sha256": "0d130710ba10f8294df8593ad456c9c839f15b1411d68fd7456a15a67bb23cde"
         },
         {
           "n": 9,
           "title": "Areas of Parallelograms and Triangles",
           "file": "ieep209.pdf",
           "path": "/exemplar/ieep2/ieep209.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep209.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep209.pdf",
+          "bytes": 223820,
+          "sha256": "d54ea27581bf5d88eec25e938375a68c343d4edf786932527995f963265de130"
         },
         {
           "n": 10,
           "title": "Circles",
           "file": "ieep210.pdf",
           "path": "/exemplar/ieep2/ieep210.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep210.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep210.pdf",
+          "bytes": 204055,
+          "sha256": "218defd0de09c3d40d617612bad5c11efb3ad86a280d54318155808220343deb"
         },
         {
           "n": 11,
           "title": "Constructions",
           "file": "ieep211.pdf",
           "path": "/exemplar/ieep2/ieep211.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep211.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep211.pdf",
+          "bytes": 119455,
+          "sha256": "218e662c13bfe2d9ba1f7f4aa4f8795a3a4e88ec8051aa389b6891eb3be89b8b"
         },
         {
           "n": 12,
           "title": "Heron's Formula",
           "file": "ieep212.pdf",
           "path": "/exemplar/ieep2/ieep212.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep212.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep212.pdf",
+          "bytes": 188529,
+          "sha256": "177fa04030f388f23e8bf83601e04cd9f054c703254e460f5bebdc4779b4ab8e"
         },
         {
           "n": 13,
           "title": "Surface Areas and Volumes",
           "file": "ieep213.pdf",
           "path": "/exemplar/ieep2/ieep213.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep213.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep213.pdf",
+          "bytes": 145591,
+          "sha256": "2743fa3a384c3ecf1943a7efe4dd8d852d9c7000f95bc4b88197a9897935be02"
         },
         {
           "n": 14,
           "title": "Statistics and Probability",
           "file": "ieep214.pdf",
           "path": "/exemplar/ieep2/ieep214.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep214.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep214.pdf",
+          "bytes": 271989,
+          "sha256": "dfcd900ecbea51943231e227cee0788b8ee9d7e99be3ce10a12730193a54ebbe"
         },
         {
           "n": 15,
           "title": "Design of the Question Paper, Set I",
           "file": "ieep215.pdf",
           "path": "/exemplar/ieep2/ieep215.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep215.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep215.pdf",
+          "bytes": 233066,
+          "sha256": "02c9629b43f27b31492a164d50ef983e0a04a9bd1a7cff092bc840d5d9c62994"
+        },
+        {
+          "n": 16,
+          "title": "Unit 16",
+          "file": "ieep216.pdf",
+          "path": "/exemplar/ieep2/ieep216.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep216.pdf",
+          "bytes": 258892,
+          "sha256": "874ee7438740a5be022f68a54a0edfe3a6a4eeb373e38cf739e80b062fd2b4f3"
         }
       ],
       "extras": [
@@ -250,13 +333,9 @@
           "name": "answers",
           "file": "ieep2an.pdf",
           "path": "/exemplar/ieep2/ieep2an.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep2an.pdf"
-        },
-        {
-          "name": "prelims",
-          "file": "ieep2ps.pdf",
-          "path": "/exemplar/ieep2/ieep2ps.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/ieep2ps.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classIX/mathematics/ieep2an.pdf",
+          "bytes": 183163,
+          "sha256": "f5202bd0a4f2d1207cb5f6b986363b996e1a31e8e2e98292ff4f52cc7bb744b3"
         }
       ]
     },
@@ -273,112 +352,171 @@
           "title": "Chemical Reactions and Equations",
           "file": "jeep101.pdf",
           "path": "/exemplar/jeep1/jeep101.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep101.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep101.pdf",
+          "bytes": 1129209,
+          "sha256": "5545a030f4e70139731d44f9f96064834cf6ea26ccb807082419deed58804273"
         },
         {
           "n": 2,
           "title": "Acids, Bases and Salts",
           "file": "jeep102.pdf",
           "path": "/exemplar/jeep1/jeep102.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep102.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep102.pdf",
+          "bytes": 1446012,
+          "sha256": "310961b642ee8f9ea6a9752607fbca1c0849ab7449c4ed1c9422188fcd2e07ad"
         },
         {
           "n": 3,
           "title": "Metals and Non-metals",
           "file": "jeep103.pdf",
           "path": "/exemplar/jeep1/jeep103.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep103.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep103.pdf",
+          "bytes": 1475483,
+          "sha256": "017974ae1fa3591fb6501181fe3173ed48d3116ece57804671620d6b90311bf9"
         },
         {
           "n": 4,
           "title": "Carbon and its Compounds",
           "file": "jeep104.pdf",
           "path": "/exemplar/jeep1/jeep104.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep104.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep104.pdf",
+          "bytes": 4826223,
+          "sha256": "56128c6e1c55cd2dc513d391729551ada87138a74ef756265f5198f63f259b18"
         },
         {
           "n": 5,
           "title": "Periodic Classification of Elements",
           "file": "jeep105.pdf",
           "path": "/exemplar/jeep1/jeep105.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep105.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep105.pdf",
+          "bytes": 1896650,
+          "sha256": "9b708904e0ce84974138c4234b32bc9abc691f0cbfc745f235b6bf08a5b630c2"
         },
         {
           "n": 6,
           "title": "Life Processes",
           "file": "jeep106.pdf",
           "path": "/exemplar/jeep1/jeep106.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep106.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep106.pdf",
+          "bytes": 1442333,
+          "sha256": "55fe1a801e434577868cfaa64e646d4c29cffcef446d354f6f862927b198aa07"
         },
         {
           "n": 7,
           "title": "Control and Coordination",
           "file": "jeep107.pdf",
           "path": "/exemplar/jeep1/jeep107.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep107.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep107.pdf",
+          "bytes": 2068263,
+          "sha256": "3444771a4ce80e78fa3f2884415e15593ea0a159027129f666769c9e3e919b7e"
         },
         {
           "n": 8,
           "title": "How do Organisms Reproduce?",
           "file": "jeep108.pdf",
           "path": "/exemplar/jeep1/jeep108.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep108.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep108.pdf",
+          "bytes": 1607637,
+          "sha256": "6873f867d6fca2650da9a31186643feb9743931fc98f6909d84e0a99a6f40686"
         },
         {
           "n": 9,
           "title": "Heredity and Evolution",
           "file": "jeep109.pdf",
           "path": "/exemplar/jeep1/jeep109.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep109.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep109.pdf",
+          "bytes": 912351,
+          "sha256": "b6113ee4922359c8107a7b7a9f6769865a8971f9b7255a1bc6d134265d433d54"
         },
         {
           "n": 10,
           "title": "Light – Reflection and Refraction",
           "file": "jeep110.pdf",
           "path": "/exemplar/jeep1/jeep110.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep110.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep110.pdf",
+          "bytes": 1013431,
+          "sha256": "ac871051fa24d1e1aec93410513e99d430b9ec48c628fe8c9dd187804a5e2d40"
         },
         {
           "n": 11,
           "title": "The Human Eye and the Colourful World",
           "file": "jeep111.pdf",
           "path": "/exemplar/jeep1/jeep111.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep111.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep111.pdf",
+          "bytes": 650509,
+          "sha256": "b2d5129b25bd2ffe517279752eed1030b82fb8729a8e07ea9dfd7c32ab0519b0"
         },
         {
           "n": 12,
           "title": "Electricity",
           "file": "jeep112.pdf",
           "path": "/exemplar/jeep1/jeep112.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep112.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep112.pdf",
+          "bytes": 1029941,
+          "sha256": "6ef23cb48549681f19271dea498f374599a3497821c3d7d2b8d2c3c9674bd24e"
         },
         {
           "n": 13,
           "title": "Magnetic Effects of Electric Current",
           "file": "jeep113.pdf",
           "path": "/exemplar/jeep1/jeep113.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep113.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep113.pdf",
+          "bytes": 812891,
+          "sha256": "cdb106df2545e0bc41be15a16d9923958eb4732f526e5e5f3235c0d8313cc63c"
         },
         {
           "n": 14,
           "title": "Sources of Energy",
           "file": "jeep114.pdf",
           "path": "/exemplar/jeep1/jeep114.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep114.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep114.pdf",
+          "bytes": 979960,
+          "sha256": "25840065783cbbe3fd32b8137e9e15ac1d6a0b355b2920693038a65357aa46a5"
         },
         {
           "n": 15,
           "title": "Our Environment",
           "file": "jeep115.pdf",
           "path": "/exemplar/jeep1/jeep115.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep115.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep115.pdf",
+          "bytes": 700556,
+          "sha256": "f7c67193eecaa27b33bb26ff28a6fddb64988fb245d52fc33f8674639de5a073"
         },
         {
           "n": 16,
           "title": "Management of Natural Resources",
           "file": "jeep116.pdf",
           "path": "/exemplar/jeep1/jeep116.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep116.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep116.pdf",
+          "bytes": 1048559,
+          "sha256": "aa7eb3e3dd54b107480274c50dc958bfdfcffaca7ae0d081de8919d250dc0176"
+        },
+        {
+          "n": 17,
+          "title": "Unit 17",
+          "file": "jeep117.pdf",
+          "path": "/exemplar/jeep1/jeep117.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep117.pdf",
+          "bytes": 3066951,
+          "sha256": "c7634ca6b861a307759679b2f16fde8b2aa45b01f231cfd6b252854c60a4a2f1"
+        },
+        {
+          "n": 18,
+          "title": "Unit 18",
+          "file": "jeep118.pdf",
+          "path": "/exemplar/jeep1/jeep118.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep118.pdf",
+          "bytes": 1529594,
+          "sha256": "9983a98baef4070f8e63f9fb0260242b70210614a9208597a7605b04a42e61e6"
+        },
+        {
+          "n": 19,
+          "title": "Unit 19",
+          "file": "jeep119.pdf",
+          "path": "/exemplar/jeep1/jeep119.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep119.pdf",
+          "bytes": 84413,
+          "sha256": "3563307b8df6268a186bdfd7ffc4a480fe889842c8c37fa95fe0ac9c81edebb5"
         }
       ],
       "extras": [
@@ -386,13 +524,9 @@
           "name": "answers",
           "file": "jeep1an.pdf",
           "path": "/exemplar/jeep1/jeep1an.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep1an.pdf"
-        },
-        {
-          "name": "prelims",
-          "file": "jeep1ps.pdf",
-          "path": "/exemplar/jeep1/jeep1ps.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep1ps.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/science/jeep1an.pdf",
+          "bytes": 12532380,
+          "sha256": "7de8c7d43dde30c7b7f389f965c7883998cdd39f61643b8eaa00ec899df0e48b"
         }
       ]
     },
@@ -409,91 +543,135 @@
           "title": "Real Numbers",
           "file": "jeep201.pdf",
           "path": "/exemplar/jeep2/jeep201.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep201.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep201.pdf",
+          "bytes": 148875,
+          "sha256": "fc086ce751578d627b0a0ca8d30e420d8ecbc82df2b23fbf7ae2f472f9540599"
         },
         {
           "n": 2,
           "title": "Polynomials",
           "file": "jeep202.pdf",
           "path": "/exemplar/jeep2/jeep202.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep202.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep202.pdf",
+          "bytes": 158962,
+          "sha256": "9a52d86311c46198975ac6f16e55c7c485738deeeb45740ff842fd0dc595fbc9"
         },
         {
           "n": 3,
           "title": "Pair of Linear Equations in Two Variables",
           "file": "jeep203.pdf",
           "path": "/exemplar/jeep2/jeep203.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep203.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep203.pdf",
+          "bytes": 240322,
+          "sha256": "1df95896811850fcd3610ec326ec285a5d2cb1157d9381d93aa9699cf89e3af1"
         },
         {
           "n": 4,
           "title": "Quadratic Equations",
           "file": "jeep204.pdf",
           "path": "/exemplar/jeep2/jeep204.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep204.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep204.pdf",
+          "bytes": 172278,
+          "sha256": "e9f33b659ccba4d716b4ed5632d7c7cf0e9e6fa9a99ec1c3396a917d17bdee0c"
         },
         {
           "n": 5,
           "title": "Arithmetic Progressions",
           "file": "jeep205.pdf",
           "path": "/exemplar/jeep2/jeep205.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep205.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep205.pdf",
+          "bytes": 186306,
+          "sha256": "2ccae635d64f6cb4606acc402bbeaab10c289da416ac85f573f52df71b6f3883"
         },
         {
           "n": 6,
           "title": "Triangles",
           "file": "jeep206.pdf",
           "path": "/exemplar/jeep2/jeep206.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep206.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep206.pdf",
+          "bytes": 549971,
+          "sha256": "6c273b3ffb2f2a4556c06c39db1920b0959b4c415795b075e61ca9f2ee23a42a"
         },
         {
           "n": 7,
           "title": "Coordinate Geometry",
           "file": "jeep207.pdf",
           "path": "/exemplar/jeep2/jeep207.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep207.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep207.pdf",
+          "bytes": 214936,
+          "sha256": "09417c5e472fc85c49e890b3ae643fb04038eddda39eeb47777d7151847fbd9e"
         },
         {
           "n": 8,
           "title": "Introduction to Trigonometry and its Applications",
           "file": "jeep208.pdf",
           "path": "/exemplar/jeep2/jeep208.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep208.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep208.pdf",
+          "bytes": 220777,
+          "sha256": "10c29407405faad1e1d848df3f09e4468b05ffa77f139e4926dcff8746984b2c"
         },
         {
           "n": 9,
           "title": "Circles",
           "file": "jeep209.pdf",
           "path": "/exemplar/jeep2/jeep209.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep209.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep209.pdf",
+          "bytes": 296476,
+          "sha256": "be0425d48eec0f27982b8b6315785b7e5a35bb12a31bc5cdfac7b7dedc090d31"
         },
         {
           "n": 10,
           "title": "Constructions",
           "file": "jeep210.pdf",
           "path": "/exemplar/jeep2/jeep210.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep210.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep210.pdf",
+          "bytes": 142628,
+          "sha256": "2b25f68ae08d2d8adace833e93e53e317ce2ecdd5c9c2a171087a39b66a0c7d1"
         },
         {
           "n": 11,
           "title": "Area Related to Circles",
           "file": "jeep211.pdf",
           "path": "/exemplar/jeep2/jeep211.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep211.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep211.pdf",
+          "bytes": 315582,
+          "sha256": "c859a91d2ebb56a5bffd738ffd633cd30b8fdc9efaa0480c05b432304326dcce"
         },
         {
           "n": 12,
           "title": "Surface Areas and Volumes",
           "file": "jeep212.pdf",
           "path": "/exemplar/jeep2/jeep212.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep212.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep212.pdf",
+          "bytes": 251893,
+          "sha256": "827e9cba8c4c39402b2918c52cb2f8707cb9f8ca9c24127e3d507cd98af1e1b4"
         },
         {
           "n": 13,
           "title": "Statistics and Probability",
           "file": "jeep213.pdf",
           "path": "/exemplar/jeep2/jeep213.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep213.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep213.pdf",
+          "bytes": 211194,
+          "sha256": "e7507c9879c593599ab65cd38d25238e8da3668dbd3920f4f97dd4418b48ce1a"
+        },
+        {
+          "n": 14,
+          "title": "Unit 14",
+          "file": "jeep214.pdf",
+          "path": "/exemplar/jeep2/jeep214.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep214.pdf",
+          "bytes": 290815,
+          "sha256": "18f895ad15863e5da3b4e428c30ad409fdca709b11d6473811ad3d86b877a84a"
+        },
+        {
+          "n": 15,
+          "title": "Unit 15",
+          "file": "jeep215.pdf",
+          "path": "/exemplar/jeep2/jeep215.pdf",
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep215.pdf",
+          "bytes": 340471,
+          "sha256": "c11420e2f52b613ba4681cb4750d28ec966463fda1b80f0cf721e98955471480"
         }
       ],
       "extras": [
@@ -501,13 +679,9 @@
           "name": "answers",
           "file": "jeep2an.pdf",
           "path": "/exemplar/jeep2/jeep2an.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep2an.pdf"
-        },
-        {
-          "name": "prelims",
-          "file": "jeep2ps.pdf",
-          "path": "/exemplar/jeep2/jeep2ps.pdf",
-          "sourceUrl": "https://ncert.nic.in/textbook/pdf/jeep2ps.pdf"
+          "sourceUrl": "https://ncert.nic.in/pdf/publication/exemplarproblem/classX/mathematics/jeep2an.pdf",
+          "bytes": 450344,
+          "sha256": "4feba622a61f67de6f254985d6f57f379f651769b3d6b45f4e533f698693081c"
         }
       ]
     }
