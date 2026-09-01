@@ -1,0 +1,84 @@
+# What must never be uploaded to Vercel by `vercel deploy`.
+#
+# ## Read this before editing
+#
+# `.vercelignore` applies to **CLI uploads only**. A Git-integration deploy
+# clones the repository, so what it contains is decided by `.gitignore` and by
+# nothing here — Vercel's own docs are explicit that the default exclusions
+# "are only relevant when using Vercel CLI".
+#
+# That split is why this file matters more than it looks. Everything large or
+# copyrighted in this project is already gitignored, so a Git deploy is safe by
+# construction. A CLI deploy is not: `vercel deploy` uploads the working
+# directory, gitignored files included. Without the entries below, one
+# `npx vercel --prod` publishes 300 MB of NCERT textbooks and CBSE papers to a
+# public URL — the exact thing PERMISSIONS.md says must not happen until a
+# permission request that has still not been sent.
+#
+# The prevailing rule: if a path is in `.gitignore` because of copyright or
+# size, it belongs here too.
+
+# ---------------------------------------------------------------------------
+# Copyright. Not ours to publish. See PERMISSIONS.md.
+# ---------------------------------------------------------------------------
+
+# NCERT chapter PDFs, ~264 MB compressed. Republishing without permission is
+# what NCERT's own press release calls infringement.
+public/ncert/
+data/ncert-original/
+
+# CBSE sample papers and marking schemes, 78 MB. A teacher reaches these
+# through object storage instead — `npx tsx scripts/publish-schemes.ts` — never
+# from a public path. See DEPLOY.md.
+public/papers/
+data/cbse/
+
+# Past-paper page scans: ~1.3 GB and ~20,000 files. The archive they come from
+# permits personal download and forbids redistribution. Build with
+# NEXT_PUBLIC_PYQ_ARCHIVE=off so the app does not generate routes into them.
+public/pyqs/
+
+# NCERT Exemplar, same position as the textbooks.
+public/exemplar/
+
+# Pipeline inputs. Nothing serves these; they exist so the scripts can re-run.
+data/curriculum/
+data/prelims/
+
+# ---------------------------------------------------------------------------
+# Secrets and local state
+# ---------------------------------------------------------------------------
+
+# Vercel's default exclusions cover `.env.local` and `.env.*.local` but NOT a
+# plain `.env`, which is where this project's DATABASE_URL and SESSION_SECRET
+# live. Environment variables belong in the Vercel dashboard.
+.env
+.env.*
+!.env.example
+
+# Students' photographed answer sheets and voice notes, written by the local
+# storage driver. Uploading them would be the single worst thing in this file.
+.storage/
+
+# ---------------------------------------------------------------------------
+# Build output — Vercel builds from source
+# ---------------------------------------------------------------------------
+# `.next` and `node_modules` are excluded by Vercel automatically; `out/` is a
+# leftover from when this was a static export and no longer produced.
+out/
+tsconfig.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# `scripts/` is deliberately NOT excluded
+# ---------------------------------------------------------------------------
+# It used to be, and that was a real bug: `npm run build` begins with
+# `node scripts/copy-pdf-worker.mjs`, which copies pdf.js's worker into
+# `public/`. Vercel runs that build command on its own builders from whatever
+# was uploaded, so on a CLI deploy the directory was absent and the build failed
+# at its first command. A Git deploy was unaffected — `.vercelignore` does not
+# apply there — which is exactly the kind of asymmetry that gets diagnosed as
+# "works from GitHub, broken from my laptop".
+#
+# The content pipeline in `scripts/` still never runs on Vercel. It is a few
+# hundred kilobytes of source; uploading it costs nothing and not uploading it
+# costs the build.

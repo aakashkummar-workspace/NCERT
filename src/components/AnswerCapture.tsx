@@ -92,6 +92,70 @@ const TYPES: { value: QuestionType; label: string }[] = [
 ];
 
 /**
+ * The longest edge we upload, and the JPEG quality we re-encode at.
+ *
+ * An A4 answer sheet at 2200px on its long edge is about 185 dpi — comfortably
+ * more than a marker needs to read handwriting, and far more than the grader
+ * does. A modern phone shoots four times that and produces a 4-8 MB JPEG.
+ *
+ * That size is not merely wasteful, it is fatal: a serverless function body is
+ * capped at 4.5 MB on Vercel, and the request is rejected at the edge with a
+ * 413 *before* the route runs — so no server-side size policy can soften it and
+ * no error message we write would ever be seen. A student on a phone would
+ * simply be told the upload failed.
+ *
+ * Downscaling happens after `measure()`, deliberately: sharpness and glare are
+ * judged on the original pixels, so a photograph is never accepted because
+ * re-encoding smoothed the blur away.
+ */
+const UPLOAD_MAX_EDGE = 2200;
+const UPLOAD_QUALITY = 0.82;
+/** Leaves room for the multipart envelope under the 4.5 MB body cap. */
+const UPLOAD_MAX_BYTES = 3.5 * 1024 * 1024;
+
+/**
+ * Re-encode a photograph down to something an upload can survive.
+ *
+ * Returns the original untouched when it is already small enough — most scans
+ * and any picture from an older phone — so nothing is recompressed for the sake
+ * of it. If the browser cannot do the work, the original is returned rather
+ * than the page failing: an upload that might be refused beats one that
+ * certainly never happens.
+ */
+async function fitForUpload(file: File): Promise<File> {
+  if (file.size <= UPLOAD_MAX_BYTES) return file;
+
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, UPLOAD_MAX_EDGE / Math.max(bitmap.width, bitmap.height));
+    const w = Math.max(1, Math.round(bitmap.width * scale));
+    const h = Math.max(1, Math.round(bitmap.height * scale));
+
+    const canvas = document.createElement("canvas");
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      bitmap.close();
+      return file;
+    }
+    ctx.drawImage(bitmap, 0, 0, w, h);
+    bitmap.close();
+
+    const blob = await new Promise<Blob | null>((resolve) =>
+      canvas.toBlob(resolve, "image/jpeg", UPLOAD_QUALITY),
+    );
+    // A downscale that came out larger is not a downscale worth keeping.
+    if (!blob || blob.size >= file.size) return file;
+
+    const name = file.name.replace(/\.[^.]+$/, "") || "page";
+    return new File([blob], `${name}.jpg`, { type: "image/jpeg", lastModified: file.lastModified });
+  } catch {
+    return file;
+  }
+}
+
+/**
  * How readable this photograph is, measured rather than guessed.
  *
  * Variance of the Laplacian on a downscaled greyscale copy — the standard
@@ -356,7 +420,7 @@ export default function AnswerCapture({
       for (const [i, shot] of shots.entries()) {
         setBusy(`Uploading page ${i + 1} of ${shots.length}…`);
         const form = new FormData();
-        form.append("file", shot.file);
+        form.append("file", await fitForUpload(shot.file));
         form.append("pageIndex", String(i));
         // Re-uploading the same index replaces it, so a retake after a failed
         // upload does not leave the first attempt behind.

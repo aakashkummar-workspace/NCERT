@@ -11,10 +11,10 @@
  *
  * `local` writes under a gitignored directory and hands out short-lived signed
  * URLs pointing at `/api/dev/storage/…`, which checks the signature and then
- * checks that the signed-in user is allowed the object. `s3` is the shape the
- * production driver takes; it is deliberately unimplemented rather than
- * half-implemented, because a storage driver that silently succeeds while
- * writing nowhere is the worst thing this file could contain.
+ * checks that the signed-in user is allowed the object. `s3` talks to any
+ * S3-compatible store — R2, AWS S3, MinIO — and lets the store sign and serve
+ * its own URLs. Signing lives in `src/lib/s3.ts`; no provider is named in
+ * either file, only an endpoint read from the environment.
  *
  * ## What is pinned server-side, and why all of it is
  *
@@ -38,6 +38,15 @@ import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ApiError } from "@/lib/api";
+import {
+  S3RequestError,
+  presignGet,
+  s3ConfigFromEnv,
+  s3Delete,
+  s3Get,
+  s3Head,
+  s3Put,
+} from "@/lib/s3";
 
 // ---------------------------------------------------------------------------
 // Policy
@@ -313,40 +322,72 @@ const localDriver: StorageDriver = {
 };
 
 // ---------------------------------------------------------------------------
-// S3 driver — the shape, not the implementation
+// S3 driver
 // ---------------------------------------------------------------------------
 
 /**
- * Unimplemented, and loudly so.
+ * The production driver: any S3-compatible object store, addressed by endpoint,
+ * bucket, region and credentials. No provider is named anywhere in it, because
+ * naming one is how a codebase ends up unable to move off it — R2, AWS S3,
+ * Backblaze B2 and MinIO differ here only in the value of `S3_ENDPOINT`.
  *
- * `@aws-sdk/client-s3` is not a dependency and this lane does not add one. Each
- * method throws rather than returning a plausible value, because the failure
- * this guards against is a deployment that appears to accept uploads and stores
- * none of them — discovered when a student asks where their marks are.
+ * Signing is `src/lib/s3.ts`, hand-written over `node:crypto` rather than the
+ * AWS SDK; that file's header argues the case and `scripts/test-s3.mjs` is what
+ * makes it defensible.
  *
- * To implement: `put` is `PutObjectCommand` with `ContentType`, `ContentLength`
- * and `ChecksumSHA256` all set from the values computed here, never from the
- * request. `getSignedUrl` is `@aws-sdk/s3-request-presigner`. `verifySignedUrl`
- * and `/api/dev/storage` become dead code and should be deleted with it — S3
- * signs its own URLs, and the ownership check moves to whatever route hands the
- * URL out.
+ * Everything this module pins server-side stays pinned. The content type sent
+ * to S3 is the allowlisted one, not a client's claim; the length is the
+ * buffer's; the SHA-256 that goes on the row is also sent as
+ * `x-amz-content-sha256` and covered by the signature, so the store rejects the
+ * request outright if the bytes on the wire are not the bytes we hashed.
+ *
+ * Note what does **not** change: callers still store `object.key`. A pre-signed
+ * URL is minted at read time, expires, and is never written to a row.
  */
 const s3Driver: StorageDriver = {
   name: "s3",
-  async put() {
-    throw new ApiError("NOT_AVAILABLE", "The S3 storage driver is not implemented yet.");
+
+  async put(opts) {
+    const key = assertSafeKey(opts.key);
+    const buf = toBuffer(opts.body);
+    checkPolicy(opts, buf.byteLength);
+
+    await s3Put(s3ConfigFromEnv(), key, buf, opts.contentType);
+
+    return {
+      key,
+      contentType: opts.contentType,
+      bytes: buf.byteLength,
+      sha256: createHash("sha256").update(buf).digest("hex"),
+    };
   },
-  async getSignedUrl() {
-    throw new ApiError("NOT_AVAILABLE", "The S3 storage driver is not implemented yet.");
+
+  async getSignedUrl(key, ttlSec = DEFAULT_URL_TTL_SEC) {
+    const safe = assertSafeKey(key);
+    // Signed into the URL, so the store echoes them back as response headers.
+    // An object that is not what its content type claims then downloads instead
+    // of executing — the same guarantee /api/dev/storage/ gives on the local
+    // driver, kept now that the bytes are served from a different origin.
+    return presignGet(s3ConfigFromEnv(), safe, ttlSec, {
+      "response-content-disposition": "attachment",
+    });
   },
-  async delete() {
-    throw new ApiError("NOT_AVAILABLE", "The S3 storage driver is not implemented yet.");
+
+  async delete(key) {
+    await s3Delete(s3ConfigFromEnv(), assertSafeKey(key));
   },
-  async read() {
-    throw new ApiError("NOT_AVAILABLE", "The S3 storage driver is not implemented yet.");
+
+  async read(key) {
+    try {
+      return await s3Get(s3ConfigFromEnv(), assertSafeKey(key));
+    } catch (err) {
+      if (err instanceof S3RequestError && err.status === 404) throw ApiError.notFound("Object");
+      throw err;
+    }
   },
-  async exists() {
-    throw new ApiError("NOT_AVAILABLE", "The S3 storage driver is not implemented yet.");
+
+  async exists(key) {
+    return s3Head(s3ConfigFromEnv(), assertSafeKey(key));
   },
 };
 

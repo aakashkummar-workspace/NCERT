@@ -18,6 +18,22 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  /// The same database, reached without the connection pooler.
+  ///
+  /// Every managed Postgres this would deploy on — Neon, Supabase, Vercel
+  /// Postgres — sits behind PgBouncer in transaction mode. That is right for
+  /// the app (a serverless function opens a connection per invocation and the
+  /// pooler is what stops that exhausting the database) and wrong for
+  /// migrations, which need session-level state: advisory locks to serialise
+  /// concurrent deploys, and `CREATE TYPE`/`ALTER TABLE` inside one long-lived
+  /// session. Run `prisma migrate deploy` through the pooler and it fails
+  /// somewhere in the middle with a lock or prepared-statement error that names
+  /// neither.
+  ///
+  /// So: DATABASE_URL is the pooled URL and is what the app uses; DIRECT_URL is
+  /// the direct one, port 5432, and is used only by migrate and introspect.
+  /// Locally they are the same string — see .env.example — and that is fine.
+  directUrl = env("DIRECT_URL")
 }
 
 // ---------------------------------------------------------------------------

@@ -412,13 +412,45 @@ call sites is three prefixes.
 ### Two drivers
 
 `STORAGE_DRIVER=local` (the default) writes under a gitignored `.storage/` and signs URLs
-pointing at `/api/dev/storage/`. `STORAGE_DRIVER=s3` is the production shape and is
-**deliberately unimplemented** — every method throws. A storage driver that silently
-succeeds while writing nowhere is discovered when a student asks where their marks went.
+pointing at `/api/dev/storage/`. `STORAGE_DRIVER=s3` talks to any S3-compatible object
+store — R2, AWS S3, Backblaze, MinIO — addressed by `S3_ENDPOINT`, `S3_BUCKET`,
+`S3_REGION` and a key pair. No provider is named anywhere in the code.
 
 `.storage/` rather than `public/` on purpose: anything under `public/` is served by Next.js
 with no check at all, which would make every answer sheet world-readable to anyone who can
 guess a UUID.
+
+**Production must be `s3`.** `/api/dev/storage/` returns 404 when `NODE_ENV=production`,
+so a deployed `local` driver accepts uploads and then hands back links that do not
+resolve. The default is `local` because a missing variable should fail in development,
+where it is noticed; the deploy checklist in `DEPLOY.md` is where it stops being a default.
+
+**Signing is hand-written.** `src/lib/s3.ts` implements SigV4 over `node:crypto` rather
+than pulling in `@aws-sdk/client-s3` and `@aws-sdk/s3-request-presigner`, for the same
+reason `scrypt` and the session HMAC are not libraries either. The cost of that choice is
+that a signing bug looks like `SignatureDoesNotMatch`, or worse like an upload that appears
+to work, so it is paid for by `scripts/test-s3.ts` — 44 checks that round-trip real bytes
+through a real S3 server:
+
+```bash
+docker run -d --name ncert-minio -p 9010:9000   -e MINIO_ROOT_USER=ncertminio -e MINIO_ROOT_PASSWORD=ncertminio123   minio/minio:latest server /data
+docker exec ncert-minio mkdir -p /data/ncert-test
+
+S3_ENDPOINT=http://127.0.0.1:9010 S3_BUCKET=ncert-test S3_REGION=us-east-1 S3_ACCESS_KEY_ID=ncertminio S3_SECRET_ACCESS_KEY=ncertminio123   npx tsx scripts/test-s3.ts
+
+docker rm -f ncert-minio
+```
+
+Run it against any endpoint before trusting that endpoint. With no `S3_ENDPOINT` set it
+checks the signing primitives only and says so.
+
+The S3 driver pins exactly what the local one does. The content type sent is the
+allowlisted one; the length is the buffer's; and the SHA-256 that goes on the row is also
+sent as `x-amz-content-sha256` and covered by the signature, so the store rejects the
+request outright if the bytes on the wire are not the bytes we hashed. The pre-signed GET
+carries `response-content-disposition=attachment` **inside the signature**, which keeps the
+"a mislabelled object downloads, it does not render" guarantee now that the bytes are
+served from an origin we do not control.
 
 ### A signed URL is not authorisation
 
@@ -519,6 +551,57 @@ docker run -d --name ncert-pg \
 **Port 5433, not 5432.** Inside the container it is still 5432; only the host mapping
 moved, because 5432 on this machine belongs to an unrelated project. `.env` and
 `.env.example` both say 5433.
+
+### Two URLs in production, and why
+
+The datasource takes `url = env("DATABASE_URL")` **and** `directUrl = env("DIRECT_URL")`.
+Locally they are the same string. In production they are not:
+
+| | what it is | who uses it |
+| --- | --- | --- |
+| `DATABASE_URL` | the **pooled** URL — Neon's `-pooler` host, Supabase's port 6543, Vercel Postgres' `POSTGRES_PRISMA_URL` | the app, every request |
+| `DIRECT_URL` | the **direct** URL, port 5432, no pooler | `prisma migrate deploy`, introspection |
+
+Both are required. Prisma refuses to load a schema whose `env()` is unset, so a missing
+`DIRECT_URL` fails `prisma generate` — and therefore the build — before it fails anything
+subtler. Migrations need session-level state that a transaction-mode pooler does not keep:
+an advisory lock to serialise concurrent deploys, and `CREATE TYPE` / `ALTER TABLE` inside
+one session. Point `migrate deploy` at the pooled URL and it fails partway through with a
+lock or prepared-statement error that names neither cause.
+
+> ### The landmine: `SET` leaks through a transaction pooler
+>
+> Every managed Postgres this deploys on — Neon, Supabase, Vercel Postgres — is PgBouncer
+> in **transaction mode**. A connection is handed to one transaction and then given to
+> somebody else's. A session-level `SET` therefore outlives the request that issued it and
+> is still in effect for whoever gets that connection next.
+>
+> This matters the day tenancy lands. `prisma/README.md` already notes that the
+> specification's RLS policy compares a UUID to `current_setting(...)`, which returns
+> `text`. The pooling half is the part that bites harder: the obvious implementation
+>
+> ```sql
+> SET app.current_tenant_id = '…';   -- WRONG behind a transaction pooler
+> ```
+>
+> does not scope anything. It sets a variable on a pooled connection, the request ends, and
+> the next tenant's query runs under the previous tenant's setting — an RLS policy that
+> reads perfectly and isolates nothing.
+>
+> The correct form is the transaction-local one, inside the same transaction as the queries
+> it governs:
+>
+> ```ts
+> await prisma.$transaction(async (tx) => {
+>   //                                          ↓ true = local to this transaction
+>   await tx.$executeRaw`SELECT set_config('app.current_tenant_id', ${scopeId}::text, true)`;
+>   return tx.user.findMany();
+> });
+> ```
+>
+> `set_config(..., true)` is reset when the transaction ends, which is exactly when the
+> pooler may hand the connection on. Anything outside a transaction, or with `false`,
+> is a cross-tenant read waiting for load.
 
 ```bash
 cp .env.example .env                # then fill DATABASE_URL

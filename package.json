@@ -41,7 +41,10 @@
     "content:exemplar-questions": "tsx scripts/extract-exemplar-questions.ts",
     "journey:test": "node scripts/smoke-journey.mjs",
     "teacher:queue": "node scripts/build-teacher-queue.mjs",
-    "proposal:check": "node scripts/check-proposals.mjs"
+    "proposal:check": "node scripts/check-proposals.mjs",
+    "postinstall": "prisma generate",
+    "s3:check": "tsx scripts/test-s3.ts",
+    "schemes:publish": "tsx scripts/publish-schemes.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

@@ -1,6 +1,21 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /*
+   * Next infers the workspace root from the nearest enclosing lockfile, and on
+   * this machine there is a stray `package-lock.json` in the home directory
+   * above OneDrive — so it infers `C:\Users\<name>` and warns. The inference is
+   * only wrong locally: a Vercel build clones into a directory with exactly one
+   * lockfile and would resolve to the project anyway. Pinning it says out loud
+   * what the hosted build already does, and stops the local warning that would
+   * otherwise train someone to ignore build output.
+   *
+   * It also bounds file tracing to this directory, which matters more than the
+   * warning does: tracing a OneDrive-synced home directory is slow and can pull
+   * unrelated files into a serverless bundle.
+   */
+  outputFileTracingRoot: path.resolve(__dirname),
   /*
    * Runs on a Node runtime rather than exporting a static folder, so the app
    * can grow a server-side half (grading, accounts, evaluators) without
